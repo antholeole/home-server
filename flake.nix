@@ -19,7 +19,7 @@
         inherit inputs pkgs;
         modules = [
           ({ pkgs, config, ... }: {
-            packages = with pkgs; [ ];
+            packages = with pkgs; [ flutter ];
 
             
 
