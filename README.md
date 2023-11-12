@@ -12,4 +12,4 @@ Hosts:
 3. run `direnv allow`
 
 ## TODO 
-- hook in treefmt-nix
+- hook in treefmt-ni
