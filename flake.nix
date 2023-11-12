@@ -19,7 +19,10 @@
         inherit inputs pkgs;
         modules = [
           ({ pkgs, config, ... }: {
-            packages = with pkgs; [ flutter ];
+            packages = with pkgs; [ 
+              flutter 
+              hasura-cli
+            ];
 
             
 
