@@ -32,6 +32,6 @@
             "**/*.lock": true,
             "**/.direnv": true,
             "**./devenv": true
-        }
-    }
+        },
+    },
 }

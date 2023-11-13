@@ -12,24 +12,48 @@
 
   outputs = { self, nixpkgs, devenv, hasura, ... } @ inputs:
     let
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      # TODO darwin
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages."${system}";
     in
     {
-      devShell.x86_64-linux = devenv.lib.mkShell {
+      devShell."${system}" = devenv.lib.mkShell {
         inherit inputs pkgs;
         modules = [
-          ({ pkgs, config, ... }: {
+          ({ pkgs, config, ... }: let 
+            postgres = {
+              port = 5432;
+              db = "db";
+            };
+          in {
             packages = with pkgs; [ 
               flutter 
               hasura-cli
             ];
-
             
-
-            processes = with pkgs; {
-              hasura.exec = "${hasura} run hasura/graphql-engine:v2.35.0";
+            languages = {
+              rust = {
+                enable = true;
+              };
             };
 
+            services.postgres = {
+              enable = true;
+
+              listen_addresses = "127.0.0.1";
+              port = postgres.port;
+
+              initialDatabases = [{ 
+                name = postgres.db;
+              }];
+            };
+
+
+            scripts = let 
+             hasura_bin = hasura.packages."${system}".default;
+            in {
+              h.exec = "${hasura_bin}/bin/graphql-engine";
+            };
           })
         ];
       };

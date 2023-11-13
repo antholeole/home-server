@@ -16,3 +16,4 @@ The project is setup so you can open the `code-workspace` in vscode and it is ve
 
 ## TODO 
 - hook in treefmt-ni
+- add a script that runs ./gradlew build and ./gradlew run 
