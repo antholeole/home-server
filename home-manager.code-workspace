@@ -9,8 +9,8 @@
             "name": "🐦 Frontend"
         },
         {
-            "name": "⚙️ Functions",
-            "path": "./functions"
+            "name": "⚙️ Middleware",
+            "path": "./middleware"
         },
         {
             "path": "./iac",
@@ -19,6 +19,10 @@
         {
             "path": "./hasura",
             "name": "📦 Hasura"
+        },
+        {
+            "path": "./e2e",
+            "name": "🧪 E2E"
         }
     ],
     "settings": {

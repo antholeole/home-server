@@ -40,10 +40,6 @@
 
               listen_addresses = "127.0.0.1";
               port = postgres.port;
-
-              initialDatabases = [{
-                name = postgres.db;
-              }];
             };
 
 

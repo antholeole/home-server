@@ -9,6 +9,8 @@
         "hasura": true,
         "home-server": true,
         "functions": true,
-        "iac": true
+        "iac": true,
+        "e2e": true,
+        "middleware": true,
     },
 }
