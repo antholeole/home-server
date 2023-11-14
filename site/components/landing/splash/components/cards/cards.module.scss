@@ -1,0 +1,62 @@
+@import "../../../../../styles/_utils";
+@import "../../../../../styles/_vars";
+
+.trifold {
+  display: flex;
+  flex-direction: column;
+
+  & > .card {
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: white;
+
+    & > * {
+      transition: all .25s ease-in;
+    }
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+
+      & > .icon {
+        background-color: $primary-color;
+        border: transparent;
+
+        & > svg {
+          color: white;
+          fill: white;
+        }
+      }
+    }
+
+    & > .icon {
+      justify-self: start;
+      align-self: center;
+      border-radius: 100%;
+      border: 1px solid rgba(36, 74, 117, 0.1);
+      height: 50px;
+      width: 50px;
+      @include center;
+      grid-column: 1;
+
+      & > svg {
+        color: $primary-color;
+        fill: $primary-color;
+        height: 25px;
+      }
+    }
+
+    & > .copy {
+      margin-left: 10px;
+      grid-column: 2;
+      justify-self: start;
+      align-self: center;
+
+      & > h3, p {
+        margin: 5px;
+      }
+    }
+  }
+}

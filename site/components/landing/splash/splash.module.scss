@@ -1,0 +1,57 @@
+@import '../../../styles/_utils';
+@import '../../../styles/_vars';
+
+.splash {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "copy image"
+  "email email";
+
+  @media only screen and (max-width: 650px) {
+    grid-template-columns: 100vw;
+    grid-template-areas:
+    "copy"
+    "email"
+    "image";
+    height: auto;
+  }
+
+  & .image {
+    @include center;
+    grid-area: image;
+    margin-top: 50px;
+
+    & .phone {
+      object-fit: contain;
+    }
+  }
+
+  & .copy {
+    grid-area: copy;
+    margin-top: 10%;
+    padding: 0 40px;
+
+
+    & > p, h1 {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    & > p {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+    }
+
+    & > h1 {
+      font-size: 3.5rem;
+      color: $primary-color;
+      font-weight: bold;
+      height: 3ex;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/transpiled/**": true
+    },
+    "editor.formatOnSave": true
+}
