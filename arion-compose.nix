@@ -19,7 +19,7 @@ in {
 
     hasura = {
       adminSecret = "ImASecret";
-      jwtSecret = "jwtSecret";
+      jwtSecret = "jwtSecretAtLeast32CharactersLongLmfaoo";
       webhookUrl = "TODO";
       webookSecret = "SomeSecret";
       migrationDir = "/migrations";
@@ -55,7 +55,10 @@ in {
       HASURA_GRAPHQL_ADMIN_SECRET = adminSecret;
       HASURA_GRAPHQL_MIGRATIONS_DIR = migrationDir;
       HASURA_GRAPHQL_METADATA_DIR = metadataDir;
-      HASURA_GRAPHQL_JWT_SECRET = "{'type': 'HS256','key': '${jwtSecret}'}";
+      HASURA_GRAPHQL_JWT_SECRET = builtins.toJSON {
+        type = "HS256";
+        key = jwtSecret;
+      };
       WEBHOOK_URL = webhookUrl;
       WEBHOOK_SECRET_KEY = webookSecret;
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE = "'unauthenticated'";
