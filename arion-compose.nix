@@ -27,7 +27,7 @@ in {
     };
   in {
     "${postgres.serviceName}".service = {
-        image = "postgres:16";
+        image = "postgres:15";
         restart = "always";
         volumes = [
             "${dbDataVolume}:/var/lib/postgresql/data"
@@ -49,7 +49,9 @@ in {
 
     environment = with hasura; {
       HASURA_GRAPHQL_DATABASE_URL = with postgres; "postgres://${user}:${password}@${serviceName}:${builtins.toString port}/${db}";
-      HASURA_GRAPHQL_ENABLE_CONSOLE = "true";
+
+      # we need to use the CLI in order for migrations to be automatically persisted
+      HASURA_GRAPHQL_ENABLE_CONSOLE = "false";
       HASURA_GRAPHQL_DEV_MODE = "true";
       HASURA_GRAPHQL_ENABLED_LOG_TYPES = "http-log, webhook-log, websocket-log, query-log";
       HASURA_GRAPHQL_ADMIN_SECRET = adminSecret;
