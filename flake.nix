@@ -17,6 +17,9 @@
       pkgs = nixpkgs.legacyPackages."${system}";
     in
     {
+      # arion reads this value
+      inherit pkgs;
+
       devShell."${system}" = devenv.lib.mkShell {
         inherit inputs pkgs;
         modules = [
@@ -29,24 +32,11 @@
             packages = with pkgs; [
               flutter
               hasura-cli
+              arion
             ];
 
             languages = {
 
-            };
-
-            services.postgres = {
-              enable = true;
-
-              listen_addresses = "127.0.0.1";
-              port = postgres.port;
-            };
-
-
-            scripts = let
-             hasura_bin = hasura.packages."${system}".default;
-            in {
-              h.exec = "${hasura_bin}/bin/graphql-engine";
             };
           })
         ];

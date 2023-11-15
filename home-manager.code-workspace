@@ -23,6 +23,10 @@
         {
             "path": "./e2e",
             "name": "🧪 E2E"
+        },
+        {
+            "path": "./site",
+            "name": "🏠 Site"
         }
     ],
     "settings": {
@@ -35,7 +39,7 @@
             "**/Thumbs.db": true,
             "**/*.lock": true,
             "**/.direnv": true,
-            "**./devenv": true
+            "**/.devenv": true
         },
     },
 }

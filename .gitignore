@@ -1,2 +1,8 @@
 .devenv
+.direnv
 .envrc
+
+# tmp file that is deleted upon run. but we should
+# ignore it just incase a commit is done before it is
+# deleted
+.tmp-arion-docker-compose*
