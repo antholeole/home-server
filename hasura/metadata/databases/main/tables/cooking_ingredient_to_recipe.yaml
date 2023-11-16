@@ -1,0 +1,3 @@
+table:
+  name: ingredient_to_recipe
+  schema: cooking

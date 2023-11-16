@@ -1,0 +1,3 @@
+table:
+  name: subscription_types
+  schema: private

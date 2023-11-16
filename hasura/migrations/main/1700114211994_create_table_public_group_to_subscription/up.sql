@@ -1,0 +1,2 @@
+CREATE TABLE "public"."group_to_subscription" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "group_id" uuid NOT NULL, "subscription_type" text NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("group_id") REFERENCES "public"."group"("id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("subscription_type") REFERENCES "private"."subscription_types"("type") ON UPDATE restrict ON DELETE restrict);
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
