@@ -1,30 +1,14 @@
 { pkgs, ... }: let
  dbDataVolume = "db_data";
 in {
-
-
   config = {
 
   project.name = "home-manager";
 
   docker-compose.raw.volumes = { "${dbDataVolume}" = {}; };
   services = let
-    postgres = {
-        password = "pgpass";
-        serviceName = "postgres";
-        db = "postgres";
-        user = "postgres";
-        port = 5432;
-    };
-
-    hasura = {
-      adminSecret = "ImASecret";
-      jwtSecret = "jwtSecretAtLeast32CharactersLongLmfaoo";
-      webhookUrl = "TODO";
-      webookSecret = "SomeSecret";
-      migrationDir = "/migrations";
-      metadataDir = "/metadata";
-    };
+    postgres = (import ./vars.nix).postgres;
+    hasura = (import ./vars.nix).hasura;
   in {
     "${postgres.serviceName}".service = {
         image = "postgres:15";

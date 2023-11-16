@@ -1,3 +1,0 @@
-{ hasuraInput, pkgs }: {
-
-}

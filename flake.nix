@@ -15,6 +15,7 @@
       # TODO darwin
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages."${system}";
+      vars = import ./vars.nix;
     in
     {
       # arion reads this value
@@ -37,6 +38,10 @@
 
             languages = {
 
+            };
+
+            scripts = with pkgs; {
+              console.exec = "cd $DEVENV_ROOT/hasura && ${lib.getExe hasura-cli}/bin/hasura console --admin-secret ${vars.hasura.adminSecret}";
             };
           })
         ];
