@@ -1,3 +1,10 @@
 table:
   name: group_to_subscription
   schema: public
+object_relationships:
+- name: group
+  using:
+    foreign_key_constraint_on: group_id
+- name: subscriptionTypeBySubscriptionType
+  using:
+    foreign_key_constraint_on: subscription_type

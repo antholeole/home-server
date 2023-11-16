@@ -33,6 +33,7 @@
             packages = with pkgs; [
               flutter
               hasura-cli
+              deno
             ];
 
             languages = {

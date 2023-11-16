@@ -1,3 +1,11 @@
 table:
   name: subscription_types
   schema: private
+array_relationships:
+- name: group_to_subscriptions
+  using:
+    foreign_key_constraint_on:
+      column: subscription_type
+      table:
+        name: group_to_subscription
+        schema: public

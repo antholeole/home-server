@@ -1,3 +1,10 @@
 table:
   name: ingredient_to_recipe
   schema: cooking
+object_relationships:
+- name: ingredient
+  using:
+    foreign_key_constraint_on: ingredient_id
+- name: recipe
+  using:
+    foreign_key_constraint_on: recipie_id
