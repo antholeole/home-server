@@ -33,7 +33,6 @@
             packages = with pkgs; [
               flutter
               hasura-cli
-              arion
             ];
 
             languages = {
@@ -41,7 +40,8 @@
             };
 
             scripts = with pkgs; {
-              console.exec = "cd $DEVENV_ROOT/hasura && ${lib.getExe hasura-cli}/bin/hasura console --admin-secret ${vars.hasura.adminSecret}";
+              dev.exec = "cd $DEVENV_ROOT && ${lib.getExe arion} up";
+              console.exec = "cd $DEVENV_ROOT/hasura && ${lib.getExe hasura-cli} console --admin-secret ${vars.hasura.adminSecret}";
             };
           })
         ];
