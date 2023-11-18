@@ -40,7 +40,7 @@
             "**/*.lock": true,
             "**/.direnv": true,
             "**/.devenv": true
-        },
-        "deno.path": "/nix/store/9zvnmp0q245z51g2ya7bl7dpmv1f7zvx-devenv-profile/bin/deno"
+        }
     },
 }
+

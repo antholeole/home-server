@@ -33,7 +33,19 @@
             packages = with pkgs; [
               flutter
               hasura-cli
-              deno
+              bun
+              buildNpmPackage {
+                name = "@graphql-codegen/cli";
+                version = "v5.0.0";
+
+                src = fetchFromGithub {
+                  owner = "dotansimha";
+                  repo = "graphql-code-generator";
+                  rev = "asdsa";
+                  sha256 = "sha256-kDrflQVENjOY7ei3+D3Znx4eUDPoja8UGG2Phv1eptA=";
+                };
+                npmDepsHash = "sha256-i6clvSyHtQEGl2C/wcCXonl1W/Kxq7WPTYH46AhUvDM=";
+              }
             ];
 
             languages = {
