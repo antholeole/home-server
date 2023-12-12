@@ -12,7 +12,8 @@ The project is setup so you can open the `code-workspace` in vscode and it is ve
 1. nix
 2. direnv
 3. run `direnv allow`
-4. to launch the dev environment, run `devenv up`.
+4. you also need to install and have a docker daemon running.
+5. run `dev`
 
 ## TODO 
 - hook in treefmt-ni
