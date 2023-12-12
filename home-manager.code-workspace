@@ -40,6 +40,16 @@
             "**/*.lock": true,
             "**/.direnv": true,
             "**/.devenv": true
+        },
+        "remote.portsAttributes": {
+            "9695": {
+                "label": "Console",
+                "onAutoForward": "openBrowserOnce"
+            },
+            "8080": {
+                "label": "Engine",
+                "onAutoForward": "openBrowserOnce"
+            }
         }
     },
 }
