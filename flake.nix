@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     devenv.url = "github:cachix/devenv/v0.6.3";
-    hasura.url = "github:thenonameguy/graphql-engine/master-nix-gql-engine";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   nixConfig = {
@@ -10,10 +10,8 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, hasura, ... } @ inputs:
+  outputs = { self, flake-utils, nixpkgs, devenv, ... } @ inputs: flake-utils.lib.eachDefaultSystem (system:
     let
-      # TODO darwin
-      system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages."${system}";
       vars = import ./vars.nix;
     in
@@ -21,7 +19,7 @@
       # arion reads this value
       inherit pkgs;
 
-      devShell."${system}" = devenv.lib.mkShell {
+      devShell = devenv.lib.mkShell {
         inherit inputs pkgs;
         modules = [
           ({ pkgs, config, ... }: let
@@ -34,18 +32,6 @@
               flutter
               hasura-cli
               bun
-              buildNpmPackage {
-                name = "@graphql-codegen/cli";
-                version = "v5.0.0";
-
-                src = fetchFromGithub {
-                  owner = "dotansimha";
-                  repo = "graphql-code-generator";
-                  rev = "asdsa";
-                  sha256 = "sha256-kDrflQVENjOY7ei3+D3Znx4eUDPoja8UGG2Phv1eptA=";
-                };
-                npmDepsHash = "sha256-i6clvSyHtQEGl2C/wcCXonl1W/Kxq7WPTYH46AhUvDM=";
-              }
             ];
 
             languages = {
@@ -59,5 +45,5 @@
           })
         ];
       };
-    };
+    });
 }

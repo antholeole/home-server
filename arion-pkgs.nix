@@ -9,4 +9,4 @@ let
     sha256 = narHash;
   };
 in
-  flake.pkgs
+  flake."${builtins.currentSystem}".pkgs

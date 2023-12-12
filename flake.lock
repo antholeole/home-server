@@ -57,12 +57,15 @@
       }
     },
     "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
       "locked": {
-        "lastModified": 1659877975,
-        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
         "type": "github"
       },
       "original": {
@@ -90,26 +93,6 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
-        "type": "github"
-      }
-    },
-    "hasura": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1667180805,
-        "narHash": "sha256-dc3B3AOzv799QR8hRZDyQh9xrx25qC441yQ+kxMJqhc=",
-        "owner": "thenonameguy",
-        "repo": "graphql-engine",
-        "rev": "9ea39ad210b473fe39c30de540cb3eaa25c66777",
-        "type": "github"
-      },
-      "original": {
-        "owner": "thenonameguy",
-        "ref": "master-nix-gql-engine",
-        "repo": "graphql-engine",
         "type": "github"
       }
     },
@@ -203,21 +186,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1664957017,
-        "narHash": "sha256-beO1xAHLXXfVTAq4E/pbdt+vUMgYtOGjAUyPq81LV7c=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "1237bfb999d269c46868b34bb4b33b5ff084ac5f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1699291058,
         "narHash": "sha256-5ggduoaAMPHUy4riL+OrlAZE14Kh7JWX4oLEs22ZqfU=",
         "owner": "NixOS",
@@ -263,11 +231,26 @@
     "root": {
       "inputs": {
         "devenv": "devenv",
-        "hasura": "hasura",
-        "nixpkgs": "nixpkgs_3"
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
