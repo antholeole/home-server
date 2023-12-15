@@ -48,7 +48,7 @@
             },
             "8080": {
                 "label": "Engine",
-                "onAutoForward": "openBrowserOnce"
+                "onAutoForward": "notify"
             }
         }
     },
