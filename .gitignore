@@ -8,3 +8,7 @@ node_modules/
 # ignore it just incase a commit is done before it is
 # deleted
 .tmp-arion-docker-compose*
+
+# pulled by graphqurl. don't commit this since it'll
+# be generated in CI.
+schema.graphql

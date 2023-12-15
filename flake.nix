@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     devenv.url = "github:cachix/devenv/v0.6.3";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -30,17 +30,26 @@
                   db = "db";
                 };
               in {
-                packages = with pkgs; [ flutter hasura-cli bun ];
+                packages = with pkgs; [ 
+                  flutter 
+                ];
 
                 languages = {
-
+                  rust.enable = true;
                 };
 
-                scripts = with pkgs; {
-                  dev.exec = "cd $DEVENV_ROOT && ${lib.getExe arion} up";
-                  console.exec = "cd $DEVENV_ROOT/hasura && ${
-                      lib.getExe hasura-cli
-                    } console --admin-secret ${vars.hasura.adminSecret}";
+                scripts = with pkgs; let 
+                fetchSchema = "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
+                in {
+                  fetch.exec = fetchSchema;
+
+                  dev.exec = ''
+                  cd $DEVENV_ROOT && ${lib.getExe arion} up
+                  '';
+
+                  watch.exec = ''
+                  ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch}"
+                  '';
                 };
               })
           ];
