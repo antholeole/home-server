@@ -38,17 +38,15 @@
                   rust.enable = true;
                 };
 
-                scripts = with pkgs; let 
-                fetchSchema = "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
-                in {
-                  fetch.exec = fetchSchema;
+                scripts = with pkgs; rec {
+                  fetch.exec = "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
 
                   dev.exec = ''
                   cd $DEVENV_ROOT && ${lib.getExe arion} up
                   '';
 
                   watch.exec = ''
-                  ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch}"
+                  ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch.exec}"
                   '';
                 };
               })
