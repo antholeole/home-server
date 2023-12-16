@@ -1,0 +1,37 @@
+mutation InsertUser($userId: uuid!) {
+  insert_user_one(object: {
+    first_name: "TEST_USER", 
+    last_name:"TEST_USER",
+    user_id: $userId
+  }) {
+    user_id
+  }
+}
+
+mutation InsertUserWithGroup($userId: uuid!, $groupId: uuid!) {
+  insert_user_one(object: {
+    first_name: "TEST_USER", 
+    last_name:"TEST_USER",
+    user_id: $userId,
+    user_to_groups: {
+      data: {
+        group: {
+          data: {
+            id: $groupId
+          }
+        }
+      }
+    }
+  }) {
+    user_id,
+    user_to_groups {
+      group_id
+    }
+  }
+}
+
+mutation CleanupUser($userId: uuid!) {
+  delete_user_by_pk(user_id: $userId) {
+		user_id
+  }
+}

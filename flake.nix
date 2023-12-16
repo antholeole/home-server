@@ -45,6 +45,8 @@
                   cd $DEVENV_ROOT && ${lib.getExe arion} up
                   '';
 
+                  e2e.exec = (import ./e2e/run.nix) pkgs vars;
+
                   watch.exec = ''
                   ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch.exec}"
                   '';

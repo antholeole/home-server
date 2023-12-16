@@ -2,9 +2,74 @@ table:
   name: ingredient_to_recipe
   schema: cooking
 object_relationships:
-- name: ingredient
-  using:
-    foreign_key_constraint_on: ingredient_id
-- name: recipe
-  using:
-    foreign_key_constraint_on: recipie_id
+  - name: ingredient
+    using:
+      foreign_key_constraint_on: ingredient_id
+  - name: recipe
+    using:
+      foreign_key_constraint_on: recipie_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        _or:
+          - recipe:
+              group:
+                user_to_groups:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+          - recipe:
+              group:
+                id:
+                  _is_null: true
+      columns:
+        - quantity
+        - recipie_id
+        - unit
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - ingredient_id
+        - quantity
+        - recipie_id
+        - unit
+        - updated_at
+      filter:
+        _and:
+          - recipe:
+              group:
+                user_to_groups:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - ingredient_id
+        - quantity
+        - unit
+      filter:
+        _and:
+          - recipe:
+              group:
+                user_to_groups:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+      check: null
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        _and:
+          - recipe:
+              group:
+                user_to_groups:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+    comment: ""

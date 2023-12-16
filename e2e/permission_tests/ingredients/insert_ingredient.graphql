@@ -1,0 +1,8 @@
+mutation InsertIngredient($userId: uuid!, $ingredientName: String!) {
+  insert_cooking_ingredients_one(object: {
+    created_by: $userId,
+    name: $ingredientName,
+  }) {
+    id
+  }
+}

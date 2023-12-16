@@ -2,14 +2,14 @@ table:
   name: recipe
   schema: cooking
 object_relationships:
-- name: group
-  using:
-    foreign_key_constraint_on: group_id
+  - name: group
+    using:
+      foreign_key_constraint_on: group_id
 array_relationships:
-- name: ingredient_to_recipes
-  using:
-    foreign_key_constraint_on:
-      column: recipie_id
-      table:
-        name: ingredient_to_recipe
-        schema: cooking
+  - name: ingredient_to_recipes
+    using:
+      foreign_key_constraint_on:
+        column: recipie_id
+        table:
+          name: ingredient_to_recipe
+          schema: cooking

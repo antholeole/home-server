@@ -1,0 +1,10 @@
+# Default genqlient config; for full documentation see:
+# https://github.com/Khan/genqlient/blob/main/docs/genqlient.yaml
+schema: ../schema.graphql
+operations:
+- "permission_tests/**/*.graphql"
+- "permission_tests/*.graphql"
+generated: generated.go
+bindings:
+  uuid:
+    type: github.com/google/uuid.UUID

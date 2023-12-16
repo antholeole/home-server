@@ -2,30 +2,30 @@ table:
   name: user
   schema: public
 array_relationships:
-- name: ingredients
-  using:
-    foreign_key_constraint_on:
-      column: created_by
-      table:
-        name: ingredients
-        schema: cooking
-- name: user_to_groups
-  using:
-    foreign_key_constraint_on:
-      column: user_id
-      table:
-        name: user_to_group
-        schema: public
+  - name: ingredients
+    using:
+      foreign_key_constraint_on:
+        column: group_id
+        table:
+          name: ingredients
+          schema: cooking
+  - name: user_to_groups
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: user_to_group
+          schema: public
 select_permissions:
-- comment: ""
-  permission:
-    columns:
-    - first_name
-    - last_name
-    - user_id
-    filter:
-      user_to_groups:
-        user:
-          user_id:
-            _eq: X-Hasura-User-Id
-  role: user
+  - role: user
+    permission:
+      columns:
+        - first_name
+        - last_name
+        - user_id
+      filter:
+        user_to_groups:
+          user:
+            user_id:
+              _eq: X-Hasura-User-Id
+    comment: ""

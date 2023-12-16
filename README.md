@@ -15,6 +15,7 @@ The project is setup so you can open the `code-workspace` in vscode and it is ve
 4. you also need to install and have a docker daemon running.
 5. run `dev`
 6. you should forward ports 8080 (hasura engine) 9695 (console), 9693 (i have no idea but its required).
-7. run `watch` to get graphql live updates to the schema as you dev
+7. run `watch` to get graphql live updates to the schema as you dev.
+8. For better graphql experience, `stpn.vscode-graphql` is a good vsc ext.
 ## TODO 
 - hook in treefmt-ni

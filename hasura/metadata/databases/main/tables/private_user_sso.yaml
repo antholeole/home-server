@@ -2,6 +2,6 @@ table:
   name: user_sso
   schema: private
 object_relationships:
-- name: login_provider
-  using:
-    foreign_key_constraint_on: provider
+  - name: login_provider
+    using:
+      foreign_key_constraint_on: provider
