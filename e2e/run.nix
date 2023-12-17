@@ -1,6 +1,6 @@
 pkgs: vars: let
     goExe = "${pkgs.go}/bin/go";
-in ''
+in with vars.hasura; ''
 ${goExe} run github.com/Khan/genqlient
-HASURA_ADMIN_SECRET=${vars.hasura.adminSecret} HASURA_PORT=${vars.hasura.port} ${goExe} test ./...
+JWT_SECRET=${jwtSecret} HASURA_ADMIN_SECRET=${adminSecret} HASURA_PORT=${port} ${goExe} test ./...
 ''

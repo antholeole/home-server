@@ -5,6 +5,7 @@ operations:
 - "permission_tests/**/*.graphql"
 - "permission_tests/*.graphql"
 generated: generated.go
+context_type: "-"
 bindings:
   uuid:
     type: github.com/google/uuid.UUID

@@ -5,7 +5,7 @@ in {
 
     project.name = "home-manager";
 
-    docker-compose.raw.volumes = { "${dbDataVolume}" = { }; };
+    docker-compose.volumes = { "${dbDataVolume}" = { }; };
     services = let
       postgres = (import ./vars.nix).postgres;
       hasura = (import ./vars.nix).hasura;
@@ -55,7 +55,7 @@ in {
 
         healthcheck = with hasura; {
           test = ["CMD" "nc" "-z" "localhost" port];
-          interval = "5s";
+          interval = "4s";
           timeout = "5s";
           start_period = "10s";
         };

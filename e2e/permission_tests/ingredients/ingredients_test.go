@@ -12,7 +12,7 @@ func TestIngredients(t *testing.T) {
 	uId, err := pt.InsertUser(nil)
 	ensure.Nil(t, err)
 
-	_, err = e2e.InsertIngredient(pt.Context(), pt.AdminClient(), *uId, "hamburger")
+	_, err = e2e.InsertIngredient(pt.AdminClient(), *uId, "hamburger")
 	ensure.Nil(t, err)
 
 	ensure.Nil(t, pt.CleanupUser(*uId))
