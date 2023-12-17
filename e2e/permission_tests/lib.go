@@ -1,7 +1,6 @@
 package permission_tests
 
 import (
-	"e2e"
 	"fmt"
 	"net/http"
 	"os"
@@ -12,6 +11,12 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )
+
+func UuidOrFail(t *testing.T) uuid.UUID {
+	id, err := uuid.NewV7()
+	ensure.Nil(t, err)
+	return id
+}
 
 func NewUuid() (*uuid.UUID, error) {
 	id, err := uuid.NewV7()
@@ -70,32 +75,8 @@ func UserClient(t *testing.T, userId uuid.UUID) graphql.Client {
 	})
 }
 
-func InsertUser(userId *uuid.UUID) (*uuid.UUID, error) {
-	uId := userId
-	if uId == nil {
-		madeUid, err := NewUuid()
-		if err != nil {
-			return nil, err
-		}
-		uId = madeUid
-	}
-
-	res, err := e2e.InsertUser(AdminClient(), *uId)
-	if err != nil {
-		return nil, err
-	}
-
-	ret := res.GetInsert_user_one().User_id
-	return &ret, nil
-}
-
-func CleanupUser(userId uuid.UUID) error {
-	_, err := e2e.CleanupUser(AdminClient(), userId)
-	return err
-}
-
 func mintJwt(userId uuid.UUID) (string, error) {
-	jwtSecret := os.Getenv("jwtSecret")
+	jwtSecret := os.Getenv("JWT_SECRET")
 	newJwt := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"https://hasura.io/jwt/claims": map[string]string{
 			"x-hasura-default-role": "user",

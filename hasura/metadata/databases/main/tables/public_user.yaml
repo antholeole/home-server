@@ -22,10 +22,10 @@ select_permissions:
       columns:
         - first_name
         - last_name
-        - user_id
+        - id
       filter:
         user_to_groups:
           user:
-            user_id:
+            id:
               _eq: X-Hasura-User-Id
     comment: ""

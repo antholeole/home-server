@@ -6,14 +6,24 @@ import (
 	"testing"
 
 	"github.com/facebookgo/ensure"
+	"github.com/google/uuid"
 )
 
 func TestIngredients(t *testing.T) {
-	uId, err := pt.InsertUser(nil)
+	userAA := pt.UuidOrFail(t)
+	userAB := pt.UuidOrFail(t)
+
+	groupA, err := e2e.InsertGroup(pt.AdminClient())
+	ensure.Nil(t, err)
+	_, err = e2e.InsertUserWithGroup(pt.AdminClient(), userAA, groupA.Insert_group_one.Id)
+	ensure.Nil(t, err)
+	_, err = e2e.InsertUserWithGroup(pt.AdminClient(), userAB, groupA.Insert_group_one.Id)
 	ensure.Nil(t, err)
 
-	_, err = e2e.InsertIngredient(pt.AdminClient(), *uId, "hamburger")
-	ensure.Nil(t, err)
-
-	ensure.Nil(t, pt.CleanupUser(*uId))
+	defer e2e.CleanupUsers(pt.AdminClient(), []uuid.UUID{
+		userAA,
+		userAB,
+	}, []uuid.UUID{
+		groupA.Insert_group_one.Id,
+	})
 }
