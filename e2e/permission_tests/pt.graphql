@@ -1,19 +1,34 @@
 mutation InsertUser($userId: uuid!, $userName: String!) {
   insert_user_one(object: {
     first_name: $userName, 
-    last_name:"TEST_USER",
+    last_name: $userName,
     id: $userId
   }) {
     id
   }
 }
 
-mutation InsertGroup {
-  insert_group_one(object: {}) {
+mutation InsertGroup($ownerId: uuid!) {
+  insert_group_one(object: {
+    user_to_groups: {
+      data: {
+        owner: true, 
+        user_id: $ownerId
+      }
+    }
+  }) {
       id
   }
 }
 
+mutation DeleteAll {
+  delete_group(where: {}) {
+    affected_rows
+  }
+  delete_user(where: {}) {
+    affected_rows
+  }
+}
 
 mutation AddUserToGroup($userId: uuid!, $groupId: uuid!) {
  insert_user_to_group_one(object: {

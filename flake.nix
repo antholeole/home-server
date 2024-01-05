@@ -38,14 +38,18 @@
                   rust.enable = true;
                 };
 
-                scripts = with pkgs; rec {
+                scripts = with pkgs; let 
+                  e2e = (import ./e2e/run.nix) pkgs vars;
+                in rec {
                   fetch.exec = "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
 
                   dev.exec = ''
                   cd $DEVENV_ROOT && ${lib.getExe arion} up
                   '';
 
-                  e2e.exec = (import ./e2e/run.nix) pkgs vars;
+                  test.exec = e2e.test;
+                  seed.exec = e2e.seed;
+
 
                   watch.exec = ''
                   ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch.exec}"

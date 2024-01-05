@@ -10,21 +10,28 @@ import (
 type argT struct {
 	cli.Helper
 
-	Type   string `cli:"*t,type" usage:"The seed type. Can only be 'test' for now."`
-	Action string `cli:"*a,action" usage:"Can either be 'setup' or 'teardown'."`
+	Action string `cli:"*a,action" usage:"nuke, setup-test"`
 }
 
 func main() {
 	os.Exit(cli.Run(new(argT), func(ctx *cli.Context) error {
 		argv := ctx.Argv().(*argT)
 
-		if argv.Action == "setup" && argv.Type == "test" {
-			SeedForTests()
+		var err error
+		if argv.Action == "setup-test" {
+			_, err = MkTestEnv()
+		} else if argv.Action == "nuke" {
+			err = Nuke()
 		} else {
-			return fmt.Errorf("unknown action and test combo '%s' '%s'", argv.Action, argv.Type)
+			err = fmt.Errorf("unknown action '%s'", argv.Action)
 		}
 
-		return nil
+		if err != nil {
+			return err
+		} else {
+			fmt.Println("Done!")
+			return nil
+		}
 	}))
 
 }

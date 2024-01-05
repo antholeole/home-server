@@ -10,8 +10,8 @@ in {
   '';
 
   
-  test = ''
+  seed = ''
     ${goExe} run github.com/Khan/genqlient
-    ${envSetup} ${goExe} test ./...
+    ${envSetup} ${goExe} run ./seed/ $@
   '';
 }

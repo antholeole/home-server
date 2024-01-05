@@ -8,6 +8,7 @@ import (
 
 	"github.com/Khan/genqlient/graphql"
 	"github.com/facebookgo/ensure"
+	"github.com/facebookgo/stackerr"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )
@@ -63,16 +64,24 @@ func (h *hasuraJwtClient) RoundTrip(req *http.Request) (*http.Response, error) {
 	return h.wrapped.RoundTrip(req)
 }
 
-func UserClient(t *testing.T, userId uuid.UUID) graphql.Client {
-	jwt, err := mintJwt(userId)
+func UserClientOrFail(t *testing.T, userId uuid.UUID) graphql.Client {
+	client, err := UserClient(userId)
 	ensure.Nil(t, err)
+	return client
+}
+
+func UserClient(userId uuid.UUID) (graphql.Client, error) {
+	jwt, err := mintJwt(userId)
+	if err != nil {
+		return nil, stackerr.Wrap(err)
+	}
 
 	return client(&http.Client{
 		Transport: &hasuraJwtClient{
 			jwt:     jwt,
 			wrapped: http.DefaultTransport,
 		},
-	})
+	}), nil
 }
 
 func mintJwt(userId uuid.UUID) (string, error) {
@@ -84,9 +93,9 @@ func mintJwt(userId uuid.UUID) (string, error) {
 		},
 	})
 
-	mintedJwt, err := newJwt.SignedString(jwtSecret)
+	mintedJwt, err := newJwt.SignedString([]byte(jwtSecret))
 	if err != nil {
-		return "", err
+		return "", stackerr.Wrap(err)
 	}
 
 	return mintedJwt, nil
