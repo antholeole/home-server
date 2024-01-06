@@ -14,7 +14,6 @@ in rec {
     ${envSetup} ${goExe} test ./... $@
   '';
 
-  
   seed = ''
     ${generate}
     ${envSetup} ${goExe} run ./seed/ $@

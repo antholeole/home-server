@@ -30,32 +30,28 @@
                   db = "db";
                 };
               in {
-                packages = with pkgs; [ 
-                  flutter 
-                ];
+                packages = with pkgs; [ flutter ];
 
-                languages = {
-                  rust.enable = true;
-                };
+                languages = { rust.enable = true; };
 
-                scripts = with pkgs; let 
-                  e2e = (import ./e2e/run.nix) pkgs vars;
-                in rec {
-                  fetch.exec = "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
+                scripts = with pkgs;
+                  let e2e = (import ./e2e/run.nix) pkgs vars;
+                  in rec {
+                    fetch.exec =
+                      "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
 
-                  dev.exec = ''
-                  cd $DEVENV_ROOT && ${lib.getExe arion} up
-                  '';
+                    dev.exec = ''
+                      cd $DEVENV_ROOT && ${lib.getExe arion} up
+                    '';
 
-                  e2eTest.exec = e2e.test;
-                  seed.exec = e2e.seed;
-                  generate.exec = e2e.generate;
+                    e2eTest.exec = e2e.test;
+                    seed.exec = e2e.seed;
+                    generate.exec = e2e.generate;
 
-
-                  watch.exec = ''
-                  ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch.exec}"
-                  '';
-                };
+                    watch.exec = ''
+                      ${watchexec}/bin/watchexec -w $DEVENV_ROOT/hasura/ "${fetch.exec}"
+                    '';
+                  };
               })
           ];
         };

@@ -12,5 +12,6 @@
         "iac": true,
         "e2e": true,
         "middleware": true,
+        "scratch": true,
     },
 }

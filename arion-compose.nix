@@ -23,11 +23,26 @@ in {
         };
       };
 
-      "${functions.serviceName}".service = {
-        build.context = "${toString ./functions/watch.dockerfile}";
+      "${functions.serviceName}" = {
 
-        environment = {
+        image.enableRecommendedContents = true;
+        service = {
+          useHostStore = true;
+          command = [
+            "sh"
+            "-c"
+            ''
+              cd /src
 
+              ${pkgs.cargo-watch}/bin/cargo-watch -x run -w src
+            ''
+          ];
+
+          volumes = [ "${toString ./functions}:/src" ];
+
+          environment = {
+
+          };
         };
       };
 
@@ -63,7 +78,7 @@ in {
         };
 
         healthcheck = with hasura; {
-          test = ["CMD" "nc" "-z" "localhost" port];
+          test = [ "CMD" "nc" "-z" "localhost" port ];
           interval = "4s";
           timeout = "5s";
           start_period = "10s";
@@ -93,7 +108,8 @@ in {
 
           working_dir = "${workDir}";
 
-          entrypoint = with hasura; "sh -c 'hasura-cli console --no-browser --address 0.0.0.0 --endpoint http://${serviceName}:${port} --console-hge-endpoint http://localhost:${port}'";
+          entrypoint = with hasura;
+            "sh -c 'hasura-cli console --no-browser --address 0.0.0.0 --endpoint http://${serviceName}:${port} --console-hge-endpoint http://localhost:${port}'";
 
           environment = { HASURA_GRAPHQL_ADMIN_SECRET = hasura.adminSecret; };
         };

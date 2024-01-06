@@ -12,3 +12,6 @@ node_modules/
 # pulled by graphqurl. don't commit this since it'll
 # be generated in CI.
 schema.graphql
+
+# I use this for testing stuff
+scratch/

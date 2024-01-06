@@ -27,6 +27,10 @@
         {
             "path": "./site",
             "name": "🏠 Site"
+        },
+        {
+            "path": "./scratch",
+            "name": "📝 Scratch"
         }
     ],
     "settings": {
