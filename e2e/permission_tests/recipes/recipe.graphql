@@ -1,0 +1,42 @@
+mutation InsertMockRecipe($groupId: uuid!, $id: uuid!) {
+	insert_cooking_recipe_one(object: {
+    id: $id,
+    group_id: $groupId,
+    name: "TEST RECIPE", 
+    ingredient_to_recipes: {
+      data: {
+        unit: "Lbs",
+        quantity: 5,
+        ingredient: {
+          data: {
+            recipe_id: $id,
+            name: "FAKE",
+          }
+        }
+      }
+    }
+  }) {
+    id,
+    ingredient_to_recipes {
+      ingredient_id
+    }
+  }
+}
+
+query GetRecipe($id: uuid!) {
+  cooking_recipe_by_pk(id: $id) {
+    id
+  }
+}
+
+mutation DeleteRecipe($id: uuid!) {
+  delete_cooking_recipe_by_pk(id: $id) {
+    id
+  }
+}
+
+query GetIngredient($id: uuid!) {
+  cooking_ingredients_by_pk(id: $id) {
+    id
+  }
+}

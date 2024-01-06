@@ -13,3 +13,54 @@ array_relationships:
         table:
           name: ingredient_to_recipe
           schema: cooking
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        group:
+          user_to_groups:
+            user_id:
+              _eq: X-Hasura-User-Id
+      columns:
+        - description
+        - group_id
+        - name
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - description
+        - group_id
+        - id
+        - name
+        - updated_at
+      filter:
+        group:
+          user_to_groups:
+            user_id:
+              _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - description
+        - name
+      filter:
+        group:
+          user_to_groups:
+            user_id:
+              _eq: X-Hasura-User-Id
+      check: null
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        group:
+          user_to_groups:
+            user_id:
+              _eq: X-Hasura-User-Id
+    comment: ""

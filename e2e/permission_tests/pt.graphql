@@ -28,11 +28,7 @@ mutation DeleteAll {
   delete_user(where: {}) {
     affected_rows
   }
-  delete_cooking_ingredients(where: {
-    group_id: {
-      _is_null: true
-    }
-  }) {
+  delete_cooking_ingredients(where: {}) {
     affected_rows
   }
 }

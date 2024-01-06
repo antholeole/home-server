@@ -10,6 +10,7 @@ in rec {
 
   test = ''
     ${generate}
+    ${goExe} clean -testcache
     ${envSetup} ${goExe} test ./... $@
   '';
 

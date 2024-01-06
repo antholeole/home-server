@@ -1,6 +1,16 @@
 table:
   name: ingredients
   schema: cooking
+object_relationships:
+  - name: recipe
+    using:
+      manual_configuration:
+        column_mapping:
+          recipe_id: id
+        insertion_order: null
+        remote_table:
+          name: recipe
+          schema: cooking
 array_relationships:
   - name: ingredient_to_recipes
     using:
@@ -9,42 +19,35 @@ array_relationships:
         table:
           name: ingredient_to_recipe
           schema: cooking
-  - name: owner
-    using:
-      manual_configuration:
-        column_mapping:
-          group_id: id
-        insertion_order: null
-        remote_table:
-          name: group
-          schema: public
 insert_permissions:
   - role: user
     permission:
       check:
-        owner:
-          user_to_groups:
-            user_id:
-              _eq: X-Hasura-User-Id
+        recipe:
+          group:
+            user_to_groups:
+              user_id:
+                _eq: X-Hasura-User-Id
       columns:
-        - group_id
         - name
     comment: ""
 select_permissions:
   - role: user
     permission:
       columns:
-        - name
-        - group_id
         - id
+        - name
+        - recipe_id
       filter:
         _or:
-          - owner:
-              user_to_groups:
-                user_id:
-                  _eq: X-Hasura-User-Id
-          - group_id:
-              _is_null: true
+          - recipe:
+              group:
+                user_to_groups:
+                  user_id:
+                    _eq: X-Hasura-User-Id
+          - recipe:
+              group_id:
+                _is_null: true
     comment: ""
 update_permissions:
   - role: user
@@ -52,18 +55,20 @@ update_permissions:
       columns:
         - name
       filter:
-        owner:
-          user_to_groups:
-            user_id:
-              _eq: X-Hasura-User-Id
+        recipe:
+          group:
+            user_to_groups:
+              user_id:
+                _eq: X-Hasura-User-Id
       check: null
     comment: ""
 delete_permissions:
   - role: user
     permission:
       filter:
-        owner:
-          user_to_groups:
-            user_id:
-              _eq: X-Hasura-User-Id
+        recipe:
+          group:
+            user_to_groups:
+              user_id:
+                _eq: X-Hasura-User-Id
     comment: ""
