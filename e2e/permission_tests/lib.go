@@ -105,3 +105,9 @@ func MintJwt(userId uuid.UUID) (string, error) {
 func IsDefaultUuid(id uuid.UUID) bool {
 	return id.String() == "00000000-0000-0000-0000-000000000000"
 }
+
+func DebugGetJwt(t *testing.T, id uuid.UUID) string {
+	jwt, err := MintJwt(id)
+	ensure.Nil(t, err)
+	return fmt.Sprintf("Bearer %s\n", jwt)
+}

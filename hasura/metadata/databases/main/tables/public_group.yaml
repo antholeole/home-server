@@ -23,3 +23,15 @@ array_relationships:
         table:
           name: user_to_group
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+      filter:
+        user_to_groups:
+          user:
+            user_to_groups:
+              user_id:
+                _eq: X-Hasura-User-Id
+    comment: ""

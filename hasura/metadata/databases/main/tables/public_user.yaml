@@ -18,7 +18,19 @@ select_permissions:
         - id
       filter:
         user_to_groups:
-          user:
-            id:
-              _eq: X-Hasura-User-Id
+          group:
+            user_to_groups:
+              user_id:
+                _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - first_name
+        - last_name
+      filter:
+        id:
+          _eq: X-Hasura-User-Id
+      check: null
     comment: ""

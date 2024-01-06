@@ -1,0 +1,33 @@
+query QueryUser($id: uuid!) {
+  user_by_pk(id: $id) {
+    id
+  }
+}
+
+mutation UpdateFirstName($uid: uuid!, $newFirstName: String!) {
+  update_user(where: {
+    id: {
+      _eq: $uid,
+    }
+  },
+  _set: {
+    first_name: $newFirstName
+  }) {
+    returning {
+      first_name
+    }
+  }
+}
+
+mutation RemoveUserFromGroup($uid: uuid!, $groupid: uuid!) {
+  delete_user_to_group(where: {
+    user_id: {
+      _eq: $uid
+    },
+    group_id: {
+      _eq: $groupid
+    }
+  }) {
+    affected_rows
+  }
+}
