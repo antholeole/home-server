@@ -71,7 +71,7 @@ func UserClientOrFail(t *testing.T, userId uuid.UUID) graphql.Client {
 }
 
 func UserClient(userId uuid.UUID) (graphql.Client, error) {
-	jwt, err := mintJwt(userId)
+	jwt, err := MintJwt(userId)
 	if err != nil {
 		return nil, stackerr.Wrap(err)
 	}
@@ -84,7 +84,7 @@ func UserClient(userId uuid.UUID) (graphql.Client, error) {
 	}), nil
 }
 
-func mintJwt(userId uuid.UUID) (string, error) {
+func MintJwt(userId uuid.UUID) (string, error) {
 	jwtSecret := os.Getenv("JWT_SECRET")
 	newJwt := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"https://hasura.io/jwt/claims": map[string]any{
@@ -100,4 +100,8 @@ func mintJwt(userId uuid.UUID) (string, error) {
 	}
 
 	return mintedJwt, nil
+}
+
+func IsDefaultUuid(id uuid.UUID) bool {
+	return id.String() == "00000000-0000-0000-0000-000000000000"
 }

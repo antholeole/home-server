@@ -21,8 +21,10 @@ func TestCantSeeOtherGroupIngredient(t *testing.T) {
 	defer e2e.DeleteIngredient(pt.AdminClient(), groupAIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
 
-	_, err = e2e.GetIngredient(env.GroupB.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
-	ensure.NotNil(t, err)
+	v, err := e2e.GetIngredient(env.GroupB.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
+	ensure.Nil(t, err)
+
+	ensure.True(t, pt.IsDefaultUuid(v.Cooking_ingredients_by_pk.Id))
 }
 
 func TestCanSeeNoUserIngredient(t *testing.T) {
@@ -34,8 +36,10 @@ func TestCanSeeNoUserIngredient(t *testing.T) {
 	defer e2e.DeleteIngredient(pt.AdminClient(), adminIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
 
-	_, err = e2e.GetIngredient(env.GroupB.Owner.Client, adminIngredient.Insert_cooking_ingredients_one.Id)
+	v, err := e2e.GetIngredient(env.GroupB.Owner.Client, adminIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
+
+	ensure.DeepEqual(t, v.Cooking_ingredients_by_pk.Id, adminIngredient.Insert_cooking_ingredients_one.Id)
 }
 
 func TestCanSeeGroupmateIngredient(t *testing.T) {
@@ -47,8 +51,10 @@ func TestCanSeeGroupmateIngredient(t *testing.T) {
 	defer e2e.DeleteIngredient(pt.AdminClient(), groupAIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
 
-	_, err = e2e.GetIngredient(env.GroupA.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
-	ensure.NotNil(t, err)
+	v, err := e2e.GetIngredient(env.GroupA.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
+	ensure.Nil(t, err)
+
+	ensure.DeepEqual(t, v.Cooking_ingredients_by_pk.Id, groupAIngredient.Insert_cooking_ingredients_one.Id)
 }
 
 func TestCantDeleteOtherGroupIngredient(t *testing.T) {
@@ -60,8 +66,10 @@ func TestCantDeleteOtherGroupIngredient(t *testing.T) {
 	defer e2e.DeleteIngredient(pt.AdminClient(), groupAIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
 
-	_, err = e2e.DeleteIngredient(env.GroupB.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
+	v, err := e2e.DeleteIngredient(env.GroupB.Owner.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
+
+	ensure.True(t, pt.IsDefaultUuid(v.Delete_cooking_ingredients_by_pk.Id))
 }
 
 func TestCanDeleteGroupIngredient(t *testing.T) {
@@ -71,8 +79,11 @@ func TestCanDeleteGroupIngredient(t *testing.T) {
 
 	groupAIngredient, err := e2e.InsertIngredient(env.GroupA.Owner.Client, &env.GroupA.Uid, ingredientName)
 	defer e2e.DeleteIngredient(pt.AdminClient(), groupAIngredient.Insert_cooking_ingredients_one.Id)
+
 	ensure.Nil(t, err)
 
-	_, err = e2e.DeleteIngredient(env.GroupA.Friend.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
+	v, err := e2e.DeleteIngredient(env.GroupA.Friend.Client, groupAIngredient.Insert_cooking_ingredients_one.Id)
 	ensure.Nil(t, err)
+
+	ensure.DeepEqual(t, v.Delete_cooking_ingredients_by_pk.Id, groupAIngredient.Insert_cooking_ingredients_one.Id)
 }
