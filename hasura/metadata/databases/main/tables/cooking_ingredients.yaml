@@ -11,14 +11,6 @@ object_relationships:
         remote_table:
           name: recipe
           schema: cooking
-array_relationships:
-  - name: ingredient_to_recipes
-    using:
-      foreign_key_constraint_on:
-        column: ingredient_id
-        table:
-          name: ingredient_to_recipe
-          schema: cooking
 insert_permissions:
   - role: user
     permission:

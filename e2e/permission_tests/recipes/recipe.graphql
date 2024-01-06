@@ -1,24 +1,17 @@
-mutation InsertMockRecipe($groupId: uuid!, $id: uuid!) {
+mutation InsertMockRecipe($groupId: uuid!) {
 	insert_cooking_recipe_one(object: {
-    id: $id,
     group_id: $groupId,
     name: "TEST RECIPE", 
-    ingredient_to_recipes: {
+    ingredients: {
       data: {
-        unit: "Lbs",
-        quantity: 5,
-        ingredient: {
-          data: {
-            recipe_id: $id,
             name: "FAKE",
-          }
         }
       }
-    }
+    
   }) {
     id,
-    ingredient_to_recipes {
-      ingredient_id
+    ingredients {
+      id
     }
   }
 }
