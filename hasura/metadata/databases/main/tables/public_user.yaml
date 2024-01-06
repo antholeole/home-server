@@ -2,13 +2,6 @@ table:
   name: user
   schema: public
 array_relationships:
-  - name: ingredients
-    using:
-      foreign_key_constraint_on:
-        column: group_id
-        table:
-          name: ingredients
-          schema: cooking
   - name: user_to_groups
     using:
       foreign_key_constraint_on:

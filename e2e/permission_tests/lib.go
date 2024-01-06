@@ -87,9 +87,10 @@ func UserClient(userId uuid.UUID) (graphql.Client, error) {
 func mintJwt(userId uuid.UUID) (string, error) {
 	jwtSecret := os.Getenv("JWT_SECRET")
 	newJwt := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"https://hasura.io/jwt/claims": map[string]string{
-			"x-hasura-default-role": "user",
-			"X-hasura-user-id":      userId.String(),
+		"https://hasura.io/jwt/claims": map[string]any{
+			"x-hasura-default-role":  "user",
+			"x-hasura-allowed-roles": []string{"user"},
+			"X-hasura-user-id":       userId.String(),
 		},
 	})
 

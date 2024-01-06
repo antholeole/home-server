@@ -50,7 +50,7 @@ in {
           WEBHOOK_URL = webhookUrl;
           WEBHOOK_SECRET_KEY = webookSecret;
           HASURA_GRAPHQL_UNAUTHORIZED_ROLE = "'unauthenticated'";
-          HASURA_GRAPHQL_ENABLE_ALLOWLIST = "true";
+          HASURA_GRAPHQL_ENABLE_ALLOWLIST = "false";
         };
 
         healthcheck = with hasura; {

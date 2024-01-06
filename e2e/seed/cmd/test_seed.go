@@ -1,10 +1,12 @@
-package main
+package cmd
 
 import (
 	"e2e"
 	pt "e2e/permission_tests"
+	"testing"
 
 	"github.com/Khan/genqlient/graphql"
+	"github.com/facebookgo/ensure"
 	"github.com/facebookgo/stackerr"
 
 	"github.com/google/uuid"
@@ -25,7 +27,7 @@ type TestEnv struct {
 	GroupA Group
 	GroupB Group
 
-	Cleanup func() error
+	Cleanup func(t *testing.T)
 }
 
 func MkTestEnv() (*TestEnv, error) {
@@ -137,14 +139,14 @@ func MkTestEnv() (*TestEnv, error) {
 				Client: bFriendClient,
 			},
 		},
-		Cleanup: func() error {
+		Cleanup: func(t *testing.T) {
 			_, err = e2e.Cleanup(
 				adminClient,
 				[]uuid.UUID{*groupAOwner, *groupAFriend, *groupBOwner, *groupBFriend},
 				[]uuid.UUID{groupAId, groupBId},
 			)
 
-			return err
+			ensure.Nil(t, err)
 		},
 	}, nil
 }

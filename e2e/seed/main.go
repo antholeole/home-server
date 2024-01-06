@@ -1,6 +1,7 @@
 package main
 
 import (
+	"e2e/seed/cmd"
 	"fmt"
 	"os"
 
@@ -19,9 +20,9 @@ func main() {
 
 		var err error
 		if argv.Action == "setup-test" {
-			_, err = MkTestEnv()
+			_, err = cmd.MkTestEnv()
 		} else if argv.Action == "nuke" {
-			err = Nuke()
+			err = cmd.Nuke()
 		} else {
 			err = fmt.Errorf("unknown action '%s'", argv.Action)
 		}

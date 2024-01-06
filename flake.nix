@@ -47,8 +47,9 @@
                   cd $DEVENV_ROOT && ${lib.getExe arion} up
                   '';
 
-                  test.exec = e2e.test;
+                  e2eTest.exec = e2e.test;
                   seed.exec = e2e.seed;
+                  generate.exec = e2e.generate;
 
 
                   watch.exec = ''

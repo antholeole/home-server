@@ -1,8 +1,0 @@
-mutation InsertIngredient($groupId: uuid!, $ingredientName: String!) {
-  insert_cooking_ingredients_one(object: {
-    group_id: $groupId,
-    name: $ingredientName,
-  }) {
-    id
-  }
-}

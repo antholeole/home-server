@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"e2e"
@@ -8,5 +8,6 @@ import (
 func Nuke() error {
 	adminClient := pt.AdminClient()
 	_, err := e2e.DeleteAll(adminClient)
+
 	return err
 }

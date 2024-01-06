@@ -28,6 +28,13 @@ mutation DeleteAll {
   delete_user(where: {}) {
     affected_rows
   }
+  delete_cooking_ingredients(where: {
+    group_id: {
+      _is_null: true
+    }
+  }) {
+    affected_rows
+  }
 }
 
 mutation AddUserToGroup($userId: uuid!, $groupId: uuid!) {
