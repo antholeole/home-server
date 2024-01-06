@@ -22,6 +22,10 @@ in {
         };
       };
 
+      "${functions}".service = {
+        build = "${toString ./functions}";
+      };
+
       "${hasura.serviceName}".service = {
         image = hasura.image;
 
