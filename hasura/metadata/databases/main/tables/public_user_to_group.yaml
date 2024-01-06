@@ -31,4 +31,11 @@ delete_permissions:
         _or:
           - user_id:
               _eq: X-Hasura-User-Id
+          - group:
+              user_to_groups:
+                _and:
+                  - user_id:
+                      _eq: X-Hasura-User-Id
+                  - owner:
+                      _eq: true
     comment: ""

@@ -55,9 +55,21 @@ func TestUserCanRemoveThemselvesFromGroup(t *testing.T) {
 }
 
 func TestOwnerCanRemoveOtherFromGroup(t *testing.T) {
-	t.Skip()
+	env, err := seed.MkTestEnv()
+	ensure.Nil(t, err)
+	defer env.Cleanup(t)
+
+	res, err := e2e.RemoveUserFromGroup(env.GroupA.Owner.Client, env.GroupA.Friend.Uid, env.GroupA.Uid)
+	ensure.Nil(t, err)
+	ensure.DeepEqual(t, res.Delete_user_to_group.Affected_rows, 1)
 }
 
 func TestOtherCantRemoveOtherFromGroup(t *testing.T) {
-	t.Skip()
+	env, err := seed.MkTestEnv()
+	ensure.Nil(t, err)
+	defer env.Cleanup(t)
+
+	res, err := e2e.RemoveUserFromGroup(env.GroupA.Friend.Client, env.GroupA.Owner.Uid, env.GroupA.Uid)
+	ensure.Nil(t, err)
+	ensure.DeepEqual(t, res.Delete_user_to_group.Affected_rows, 1)
 }
