@@ -71,5 +71,5 @@ func TestOtherCantRemoveOtherFromGroup(t *testing.T) {
 
 	res, err := e2e.RemoveUserFromGroup(env.GroupA.Friend.Client, env.GroupA.Owner.Uid, env.GroupA.Uid)
 	ensure.Nil(t, err)
-	ensure.DeepEqual(t, res.Delete_user_to_group.Affected_rows, 1)
+	ensure.DeepEqual(t, res.Delete_user_to_group.Affected_rows, 0)
 }
