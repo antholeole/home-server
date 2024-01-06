@@ -17,7 +17,7 @@ rec {
     serviceName = "graphql-engine";
     adminSecret = "ImASecret";
     jwtSecret = "jwtSecretAtLeast32CharactersLongLmfaoo";
-    webhookUrl = with functions; "${serviceName}:${port}";
+    webhookUrl = with functions; "${serviceName}:${toString port}";
     webookSecret = "SomeSecret";
     migrationDir = "/migrations";
     metadataDir = "/metadata";

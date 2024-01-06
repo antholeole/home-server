@@ -10,6 +10,7 @@ in {
       postgres = (import ./vars.nix).postgres;
       hasura = (import ./vars.nix).hasura;
       console = (import ./vars.nix).console;
+      functions = (import ./vars.nix).functions;
     in {
       "${postgres.serviceName}".service = {
         image = "postgres:15";
@@ -22,8 +23,12 @@ in {
         };
       };
 
-      "${functions}".service = {
-        build = "${toString ./functions}";
+      "${functions.serviceName}".service = {
+        build.context = "${toString ./functions/watch.dockerfile}";
+
+        environment = {
+
+        };
       };
 
       "${hasura.serviceName}".service = {

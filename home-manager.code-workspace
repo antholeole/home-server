@@ -9,8 +9,8 @@
             "name": "🐦 Frontend"
         },
         {
-            "name": "⚙️ Middleware",
-            "path": "./middleware"
+            "name": "⚙️ Functions",
+            "path": "./functions"
         },
         {
             "path": "./iac",
