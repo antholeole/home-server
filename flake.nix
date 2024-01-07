@@ -30,7 +30,7 @@
                   db = "db";
                 };
               in {
-                packages = with pkgs; [ flutter ];
+                packages = with pkgs; [ flutter  arion ];
 
                 languages = { rust.enable = true; };
 

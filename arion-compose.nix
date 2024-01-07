@@ -32,10 +32,8 @@ in {
         image.enableRecommendedContents = true;
         service = {
           build.context = "${./functions/watch.Dockerfile}";
+          useHostStore = true;
           working_dir = "/src";
-          command = ["sh" "-c" ''
-            cargo-watch -x run
-          ''];
 
           volumes = [ 
             "${toString ./functions}:/src"
