@@ -32,7 +32,7 @@ in {
         image.enableRecommendedContents = true;
         service = {
           build = {
-            context = "${./functions}/Dockerfile";
+            context = "${toString ./functions}";
           };
           useHostStore = true;
           working_dir = "/src";
