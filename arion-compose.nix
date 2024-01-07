@@ -1,11 +1,16 @@
 { pkgs, ... }:
-let dbDataVolume = "db_data";
+let 
+  dbDataVolume = "db_data";
+  watchTempVolume = "tmp";
 in {
   config = {
 
     project.name = "home-manager";
 
-    docker-compose.volumes = { "${dbDataVolume}" = { }; };
+    docker-compose.volumes = { 
+      "${dbDataVolume}" = { }; 
+      "${watchTempVolume}" = { };
+    };
     services = let
       postgres = (import ./vars.nix).postgres;
       hasura = (import ./vars.nix).hasura;
@@ -24,21 +29,18 @@ in {
       };
 
       "${functions.serviceName}" = {
-
         image.enableRecommendedContents = true;
         service = {
-          useHostStore = true;
-          command = [
-            "sh"
-            "-c"
-            ''
-              cd /src
+          build.context = "${./functions/watch.Dockerfile}";
+          working_dir = "/src";
+          command = ["sh" "-c" ''
+            cargo-watch -x run
+          ''];
 
-              ${pkgs.cargo-watch}/bin/cargo-watch -x run -w src
-            ''
+          volumes = [ 
+            "${toString ./functions}:/src"
+            "${watchTempVolume}:/tmp"
           ];
-
-          volumes = [ "${toString ./functions}:/src" ];
 
           environment = {
 

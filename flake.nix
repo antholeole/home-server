@@ -41,7 +41,7 @@
                       "${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' > $DEVENV_ROOT/schema.graphql";
 
                     dev.exec = ''
-                      cd $DEVENV_ROOT && ${lib.getExe arion} up
+                      cd $DEVENV_ROOT && ${lib.getExe arion} up $@
                     '';
 
                     e2eTest.exec = e2e.test;
