@@ -31,7 +31,9 @@ in {
       "${functions.serviceName}" = {
         image.enableRecommendedContents = true;
         service = {
-          build.context = "${./functions/watch.Dockerfile}";
+          build = {
+            context = "${./functions}/Dockerfile";
+          };
           useHostStore = true;
           working_dir = "/src";
 

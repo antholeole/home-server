@@ -30,7 +30,11 @@
                   db = "db";
                 };
               in {
-                packages = with pkgs; [ flutter  arion ];
+                packages = with pkgs; [ 
+                  flutter  
+                  arion 
+                  docker-compose
+                ];
 
                 languages = { rust.enable = true; };
 
