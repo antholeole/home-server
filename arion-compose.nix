@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let 
   dbDataVolume = "db_data";
-  watchTempVolume = "tmp";
+  cargoDir = "artifacts";
 in {
   config = {
 
@@ -9,7 +9,7 @@ in {
 
     docker-compose.volumes = { 
       "${dbDataVolume}" = { }; 
-      "${watchTempVolume}" = { };
+      "${cargoDir}" = { };
     };
     services = let
       postgres = (import ./vars.nix).postgres;
@@ -39,11 +39,11 @@ in {
 
           volumes = [ 
             "${toString ./functions}:/src"
-            "${watchTempVolume}:/tmp"
+            "${cargoDir}:/${cargoDir}"
           ];
 
           environment = {
-
+            CARGO_TARGET_DIR = "/${cargoDir}";
           };
         };
       };

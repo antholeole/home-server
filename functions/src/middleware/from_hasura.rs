@@ -1,58 +1,36 @@
-use std::future::{ready, Ready};
-
-use actix_web::{
-    dev::{self, Service, ServiceRequest, ServiceResponse, Transform},
-    Error,
-};
-use futures_util::future::LocalBoxFuture;
-
-
-pub struct SayHi;
-
-
-impl<S, B> Transform<S, ServiceRequest> for SayHi
-where
-    S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
-    S::Future: 'static,
-    B: 'static,
-{
-    type Response = ServiceResponse<B>;
-    type Error = Error;
-    type InitError = ();
-    type Transform = SayHiMiddleware<S>;
-    type Future = Ready<Result<Self::Transform, Self::InitError>>;
-
-    fn new_transform(&self, service: S) -> Self::Future {
-        ready(Ok(SayHiMiddleware { service }))
+impl Fairing for Counter {
+    // This is a request and response fairing named "GET/POST Counter".
+    fn info(&self) -> Info {
+        Info {
+            name: "GET/POST Counter",
+            kind: Kind::Request | Kind::Response
+        }
     }
-}
 
-pub struct SayHiMiddleware<S> {
-    service: S,
-}
+    // Increment the counter for `GET` and `POST` requests.
+    fn on_request(&self, request: &mut Request, _: &Data) {
+        match request.method() {
+            Method::Get => self.get.fetch_add(1, Ordering::Relaxed),
+            Method::Post => self.post.fetch_add(1, Ordering::Relaxed),
+            _ => return
+        };
+    }
 
-impl<S, B> Service<ServiceRequest> for SayHiMiddleware<S>
-where
-    S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error>,
-    S::Future: 'static,
-    B: 'static,
-{
-    type Response = ServiceResponse<B>;
-    type Error = Error;
-    type Future = LocalBoxFuture<'static, Result<Self::Response, Self::Error>>;
+    fn on_response(&self, request: &Request, response: &mut Response) {
+        // Don't change a successful user's response, ever.
+        if response.status() != Status::NotFound {
+            return
+        }
 
-    dev::forward_ready!(service);
+        // Rewrite the response to return the current counts.
+        if request.method() == Method::Get && request.uri().path() == "/counts" {
+            let get_count = self.get.load(Ordering::Relaxed);
+            let post_count = self.post.load(Ordering::Relaxed);
+            let body = format!("Get: {}\nPost: {}", get_count, post_count);
 
-    fn call(&self, req: ServiceRequest) -> Self::Future {
-        println!("Hi from start. You requested: {}", req.path());
-
-        let fut = self.service.call(req);
-
-        Box::pin(async move {
-            let res = fut.await?;
-
-            println!("Hi from response");
-            Ok(res)
-        })
+            response.set_status(Status::Ok);
+            response.set_header(ContentType::Plain);
+            response.set_sized_body(Cursor::new(body));
+        }
     }
 }
