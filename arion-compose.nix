@@ -29,12 +29,8 @@ in {
       };
 
       "${functions.serviceName}" = {
-        image.enableRecommendedContents = true;
         service = {
-          build = {
-            context = "${toString ./functions}";
-          };
-          useHostStore = true;
+          image = "rust:1.75";
           working_dir = "/src";
 
           volumes = [ 
@@ -45,6 +41,8 @@ in {
           environment = {
             CARGO_TARGET_DIR = "/${cargoDir}";
           };
+
+          command = "cargo watch -x run -w src";
         };
       };
 
@@ -80,9 +78,9 @@ in {
         };
 
         healthcheck = with hasura; {
-          test = [ "CMD" "nc" "-z" "localhost" port ];
+          test = [ "CMD" "nc" "-z" serviceName port ];
           interval = "4s";
-          timeout = "5s";
+          timeout = "15s";
           start_period = "10s";
         };
 

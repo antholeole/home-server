@@ -34,6 +34,7 @@
                   flutter  
                   arion 
                   docker-compose
+                  hasura-cli
                 ];
 
                 languages = { rust.enable = true; };
