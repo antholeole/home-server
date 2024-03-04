@@ -1,0 +1,60 @@
+targets:
+  $default:
+    builders:
+      gql_build|ast_builder:
+        enabled: true
+      gql_build|schema_builder:
+        enabled: true
+        options:
+          schema: stdlib|lib/schema.graphql
+          type_overrides:
+              uuid:
+                  name: UuidType
+                  import: 'package:stdlib/helpers/uuid_type.dart'
+              timestamptz:
+                  name: DateTime
+      gql_build|data_builder:
+        enabled: true
+        options:
+          schema: stdlib|lib/schema.graphql
+          type_overrides:
+              uuid:
+                  name: UuidType
+                  import: 'package:stdlib/helpers/uuid_type.dart'
+              timestamptz:
+                  name: DateTime
+      gql_build|var_builder:
+        enabled: true
+        options:
+          schema: stdlib|lib/schema.graphql
+          type_overrides:
+              uuid:
+                  name: UuidType
+                  import: 'package:stdlib/helpers/uuid_type.dart'
+              timestamptz:
+                  name: DateTime
+      gql_build|serializer_builder:
+        enabled: true
+        options:
+          schema: stdlib|lib/schema.graphql
+          custom_serializers:
+          - import: 'package:stdlib/helpers/uuid_type.dart'
+            name: UuidTypeSerializer
+          - import: 'package:stdlib/helpers/datetime_type_converter.dart'
+            name: DateTimeSerializer
+          type_overrides:
+            uuid:
+              import: 'package:stdlib/helpers/uuid_type.dart'
+              name: UuidType
+            timestamptz:
+              name: DateTime
+      stdlibrry_generator|req_builder:
+        enabled: true
+        options:
+          schema: stdlib|lib/schema.graphql
+          type_overrides:
+            uuid:
+              name: UuidType
+              import: 'package:stdlib/helpers/uuid_type.dart'
+            timestamptz:
+              name: DateTime

@@ -42,7 +42,12 @@ in {
             CARGO_TARGET_DIR = "/${cargoDir}";
           };
 
-          command = "cargo watch -x run -w src";
+          command = ["sh" "-c"
+          ''
+          cargo install cargo-watch && cargo watch -x run -w src
+          ''  
+
+          ];
         };
       };
 

@@ -1,6 +1,6 @@
 #[macro_use] extern crate rocket;
 
-mod middleware;
+//mod middleware;
 
 #[get("/")]
 fn index() -> &'static str {
