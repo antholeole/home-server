@@ -14,7 +14,7 @@ ports to forward:
 - 8080 (hasura engine) 
 - 9695 (console)
 - 9693 (i have no idea but its required)
-- 8081 (flutter web)
+- 9600 (flutter web)
 
 1. nix
 2. direnv

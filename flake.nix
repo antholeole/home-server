@@ -1,6 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     devenv.url = "github:cachix/devenv/v0.6.3";
     flake-utils.url = "github:numtide/flake-utils";
     procfile-nix = {
@@ -15,11 +17,14 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, flake-utils, nixpkgs, devenv, procfile-nix, ... }@inputs:
+  outputs = { self, flake-utils, nixpkgs, devenv, procfile-nix, nixpkgs-unstable, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages."${system}";
+        pkgsUnstable = nixpkgs-unstable.legacyPackages."${system}";
+
         vars = import ./vars.nix;
+        flutter_316 = pkgsUnstable.flutter316;
       in {
         # arion reads this value
         inherit pkgs;
@@ -47,7 +52,7 @@
                 };
               in {
                 packages = with pkgs; [ 
-                  flutter  
+                  flutter_316
                   arion 
                   docker-compose
                   hasura-cli
@@ -61,10 +66,8 @@
                   in rec {
                     e2eTest.exec = e2e.test;
                     seed.exec = e2e.seed;
-                    generate.exec = e2e.generate;
 
-                    watch.exec = ''
-                    '';
+                    shopping.exec = "cd $DEVENV_ROOT/flutter/shopping && ${flutter_316}/bin/flutter run -d web-server --web-port 9600";
                   };
               })
           ];
