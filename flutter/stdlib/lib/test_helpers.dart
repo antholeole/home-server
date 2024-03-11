@@ -5,5 +5,9 @@ class VoidCapture {
     _ranNTimes++;
   }
 
+  void runA(dynamic arg) {
+    _ranNTimes++;
+  }
+
   bool get didRun => _ranNTimes > 0;
 }

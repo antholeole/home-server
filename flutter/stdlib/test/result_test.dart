@@ -12,12 +12,45 @@ void main() {
   test("on value should run on value", () {
     String? ran;
     value.onValue((s) => ran = s);
-    expect(ran, value);
+    expect(ran, valueV);
   }); 
+
   test("on value should not run on error", () {
     String? ran;
     
     value.onErr((s) => ran = s);
     expect(ran, null);
+  }); 
+
+  test("on error should run on err", () {
+    final vc = VoidCapture();
+
+    err.onErr(vc.runA);
+
+    expect(vc.didRun, true);
+  });
+
+  test("on error should run on err", () {
+    final vc = VoidCapture();
+
+    value.onErr(vc.runA);
+
+    expect(vc.didRun, false);
+  });
+
+  test("tap should call f", () {
+    final vc = VoidCapture();
+    
+    value.tap(vc.runA);
+
+    expect(vc.didRun, true);
+  }); 
+
+  test("tap should call f", () {
+    final vc = VoidCapture();
+    
+    value.tap(vc.runA);
+
+    expect(vc.didRun, true);
   }); 
 }

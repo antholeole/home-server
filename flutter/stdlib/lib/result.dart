@@ -1,13 +1,12 @@
-class Result<T, E> {
+sealed class Result<T, E> {
   final T? _value;
-  final E? _error;
+  final E? _err;
 
-  Result._internal(T? value, E? error)
+  Result._(T? value, E? err)
       : _value = value,
-        _error = error;
+        _err = err;
 
-  factory Result.value(T value) => Result._internal(value, null);
-  factory Result.error(E err) => Result._internal(null, err);
+  bool get isOk => _err != null;
 
   Result<T, E> tap(Function(Result<T, E>) f) {
     f(this);
@@ -24,7 +23,7 @@ class Result<T, E> {
   }
 
   H? onErr<H>(H? Function(E) f) {
-    final v = _error;
+    final v = _err;
     if (v != null) {
       return f(v);
     }
@@ -41,9 +40,26 @@ class Result<T, E> {
       return vf(v);
     } else {
       // ignore: null_check_on_nullable_type_parameter
-      return ef(_error!);
+      return ef(_err!);
     }
   }
+
+
+  static Result<void, Exception?> ok = Err(err: null) as Result<void, Exception?>;
 }
 
-typedef SideEffect<E> = Result<void, E>;
+class Ok<T> extends Result<T, Exception> {
+  T get value => super._value!;
+
+  Ok({required T value}) : super._(value, null);
+}
+
+class Err<E> extends Result {
+  E get err => super._err!;
+
+  Err({required E err}) : super._(null, err);
+}
+
+typedef SideEffect<E> = Result<void, E?>;
+
+
