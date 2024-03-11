@@ -28,6 +28,7 @@ dependencies:
   result_type: ^0.2.0
   toaster_next: ^1.1.0
   json_serializable: ^6.7.1
+  get_it: ^7.6.7
 
 dev_dependencies:
   flutter_test:

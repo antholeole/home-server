@@ -1,4 +1,5 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:stdlib/result.dart';
 
 import 'login_state.dart';
 
@@ -7,5 +8,7 @@ import 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit(super.initialState);
 
-  Result
+  SideEffect<Throwable> login() {
+    
+  }
 }
