@@ -43,9 +43,14 @@
                   name = "devprocs";
                   procGroup = with pkgs; let 
                     watch = dir: exec: "${watchexec}/bin/watchexec -w $DEVENV_ROOT/${dir} ${exec}";
+
+                    # TODO This should restart if dead
+                    mkBuildRunner = dir: "cd $DEVENV_ROOT/flutter/${dir} && ${flutter_316}/bin/dart run build_runner watch -d";
                   in {
-                    gqlfetch = watch "hasura/" "\"${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' | tee $DEVENV_ROOT/schema.graphql >> $DEVENV_ROOT/flutter/stdlib/lib/schema.graphql\"";
+                    gqlfetch = watch "hasura/" "\"${graphqurl}/bin/gq http://localhost:${vars.hasura.port}/v1/graphql --introspect -H 'X-Hasura-Admin-Secret: ${vars.hasura.adminSecret}' | tee $DEVENV_ROOT/schema.graphql > $DEVENV_ROOT/flutter/stdlib/lib/schema.graphql\"";
                     backend = "cd $DEVENV_ROOT && ${lib.getExe arion} up $@";
+
+                    stdlibBuildRunner = mkBuildRunner "stdlib";
                   };
 
                   procRunner = pkgs.honcho;

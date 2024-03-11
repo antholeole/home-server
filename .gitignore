@@ -15,3 +15,9 @@ schema.graphql
 
 # I use this for testing stuff
 scratch/
+
+# flutter generated
+__generated__/
+.flutter-plugins*
+*.freezed.dart
+*.g.dart
