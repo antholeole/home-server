@@ -4,6 +4,7 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    deno2nix.url = "github:SnO2WMaN/deno2nix";
 
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +30,12 @@
         system,
         ...
       }: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.deno2nix.overlays.default
+          ];
+        };
       };
     };
 }

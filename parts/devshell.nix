@@ -2,13 +2,16 @@
   perSystem = {
     system,
     pkgs,
+    config,
     ...
-  }: let
-    server = (import "${inputs.self}/server") pkgs;
-  in {
+  }: {
     devShells.default = pkgs.mkShell {
       inputsFrom = [
-        server
+        config.packages.server
+      ];
+
+      packages = with pkgs; [
+        deno
       ];
     };
   };

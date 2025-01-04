@@ -1,13 +1,20 @@
-pkgs: let
-  python = pkgs.python312;
-in
-  python.pkgs.buildPythonApplication {
-    pyproject = false;
-    pname = "home-server";
-    version = "0.0.0";
-    src = ./.;
+pkgs:
+pkgs.stdenv.mkDerivation rec {
+  pname = "home-server";
+  version = "0.1.0";
 
-    dependencies = with python.pkgs; [
-      fastapi
-    ];
-  }
+  src = ./.;
+
+  buildInputs = with pkgs; [
+    deno
+  ];
+
+  buildPhase = ''
+    deno compile .
+  '';
+
+  installPhase = ''
+    mkdir -p $out/bin
+    mv chord $out/bin
+  '';
+}
