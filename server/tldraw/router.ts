@@ -1,6 +1,6 @@
-import { Router } from "@oak/oak/router";
+import { Router } from "oak";
 import { room } from "./tldraw.ts";
-import { Status } from "jsr:@oak/commons@1/status";
+import { Status } from "oak";
 
 export const tldrawRouter = new Router().get("/draw/connect", (ctx) => {
 	const sessionId = ctx.request.url.searchParams.get("sessionId");
