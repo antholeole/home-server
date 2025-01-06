@@ -111,6 +111,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-denofetch": {
+      "locked": {
+        "lastModified": 1732443528,
+        "narHash": "sha256-Azj+5Q/jwwTk4nynUBUuzjNj6LAwqHquForethKFbgA=",
+        "owner": "pluiedev",
+        "repo": "nixpkgs",
+        "rev": "47ebca5fe22ffc9566e7d2ec11245a9db0135716",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pluiedev",
+        "ref": "push-qmztkqutxutr",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1733096140,
@@ -144,6 +160,7 @@
         "deno2nix": "deno2nix",
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-denofetch": "nixpkgs-denofetch",
         "treefmt-nix": "treefmt-nix"
       }
     },

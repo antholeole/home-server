@@ -4,6 +4,8 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # this nixpkgs contains deno.fetchDeps.
+    nixpkgs-denofetch.url = "github:pluiedev/nixpkgs/push-qmztkqutxutr";
     deno2nix.url = "github:SnO2WMaN/deno2nix";
 
     treefmt-nix = {
@@ -12,7 +14,11 @@
     };
   };
 
-  outputs = inputs @ {flake-parts, ...}:
+  outputs = inputs @ {
+    flake-parts,
+    nixpkgs-denofetch,
+    ...
+  }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.treefmt-nix.flakeModule
@@ -30,11 +36,16 @@
         system,
         ...
       }: {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          overlays = [
-            inputs.deno2nix.overlays.default
-          ];
+        _module.args = {
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              (final: prev: {
+                deno = (import nixpkgs-denofetch {inherit system;}).pkgs.deno;
+              })
+              inputs.deno2nix.overlays.default
+            ];
+          };
         };
       };
     };
