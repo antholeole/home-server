@@ -2,12 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { type Platform, platform } from '@tauri-apps/api/os'
 import { Route, Switch } from 'wouter'
 
-import { TailwindIndicator } from './components/common'
-import WindowControls from './components/ui-controls'
-import { cn } from './libraries/utils'
-import NotFoundScreen from './screens/not-found'
-import SettingScreen from './screens/settings'
-import WelcomeScreen from './screens/welcome'
+import { clsx } from 'clsx'
 
 export default function App() {
   const [osType, setOsType] = useState<Platform>('darwin')
@@ -21,16 +16,10 @@ export default function App() {
   }, [fetchOsType])
 
   return (
-    <div className={cn('disable-select')}>
-      <WindowControls
-        platform='darwin'
-        className={cn(
-          osType === 'darwin' ? 'sticky' : 'hidden',
-          'z-999 absolute top-0 h-7 w-full bg-transparent'
-        )}
-      />
+    <div className={clsx('disable-select')}>
 
-      <Switch>
+      <p>hi</p>
+      {/* <Switch>
         <Route path='/'>
           <WelcomeScreen />
         </Route>
@@ -40,9 +29,7 @@ export default function App() {
         <Route>
           <NotFoundScreen />
         </Route>
-      </Switch>
-
-      <TailwindIndicator />
+      </Switch> */}
     </div>
   )
 }

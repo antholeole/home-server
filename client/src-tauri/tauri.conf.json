@@ -73,36 +73,10 @@
             },
             "appimage": {
                 "bundleMediaFramework": false
-            },
-            "icon": [
-                "icons/32x32.png",
-                "icons/128x128.png",
-                "icons/128x128@2x.png",
-                "icons/icon.icns",
-                "icons/icon.ico"
-            ]
+            }
         },
         "security": {
             "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost"
-        },
-        "updater": {
-            "active": true,
-            "dialog": false,
-            "endpoints": [
-                "https://raw.githubusercontent.com/riipandi/tauri-tray-app/main/updates.json"
-            ],
-            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJBNjI1QzJCNzlCMTEzRjAKUldUd0U3RjVLMXhpdWdvUUxRT1FGQm5tVUJ0QVVJWVRtSXE4Yi9RZFNLUXJOdGtSWWFpQkRWclYK",
-            "windows": {
-                "installMode": "basicUi",
-                "installerArgs": []
-            }
-        },
-        "macOSPrivateApi": true,
-        "systemTray": {
-            "iconPath": "icons/128x128@2x.png",
-            "iconAsTemplate": true,
-            "menuOnLeftClick": true
-        },
-        "windows": []
+        }
     }
 }

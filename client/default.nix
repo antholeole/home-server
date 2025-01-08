@@ -1,23 +1,31 @@
 # src https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/by-name/po/pot/package.nix#L105
 pkgs: let
+  pnpm = pkgs.pnpm_9;
 in
-  stdenv.mkDerivation (finalAttrs: {
+  pkgs.stdenv.mkDerivation (finalAttrs: {
     pname = "home-server-client-app";
     version = "3.0.5";
 
     src = ./.;
-    sourceRoot = "${finalAttrs.src.name}/src-tauri";
+    # sourceRoot = "${finalAttrs.src.name}/src-tauri";
+
+    pnpmDeps = pnpm.fetchDeps {
+      inherit (finalAttrs) pname version src;
+      hash = "sha256-AmMV8Nrn+zH/9bDkFX3Mx5xIQjkoXR8SzkdJRXkxTbA=";
+    };
+
+    pnpmRoot = "..";
 
     postPatch = ''
       substituteInPlace $cargoDepsCopy/libappindicator-sys-*/src/lib.rs \
-        --replace "libayatana-appindicator3.so.1" "${libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
+        --replace "libayatana-appindicator3.so.1" "${pkgs.libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
     '';
 
-    cargoDeps = rustPlatform.importCargoLock {
-      lockFile = ./Cargo.lock;
+    cargoDeps = pkgs.rustPlatform.importCargoLock {
+      lockFile = ./src-tauri/Cargo.lock;
       outputHashes = {
         # All other crates in the same workspace reuse this hash.
-        "tauri-plugin-autostart-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
+        "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
       };
     };
 
@@ -27,13 +35,14 @@ in
       rustc
       cargo-tauri.hook
       nodejs
+      pnpm.configHook
       wrapGAppsHook3
       pkg-config
     ];
 
-    buildInputs = [
+    buildInputs = with pkgs; [
       gtk3
-      libsoup
+      libsoup_2_4
       libayatana-appindicator
       openssl
       webkitgtk_4_0

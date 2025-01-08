@@ -20,11 +20,8 @@ tauri = { version = "1.5", features = [
   "http-request",
   "icon-ico",
   "icon-png",
-  "macos-private-api",
   "notification-all",
   "shell-open",
-  "system-tray",
-  "updater",
   "window-all",
 ] }
 

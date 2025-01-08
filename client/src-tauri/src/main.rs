@@ -8,9 +8,6 @@
 #[macro_use]
 extern crate objc;
 
-mod cmd;
-mod deeplink;
-mod menu;
 mod meta;
 mod utils;
 
@@ -49,10 +46,7 @@ fn main() {
                 .build(),
         )
         .plugin(tauri_plugin_store::Builder::default().build())
-        .plugin(tauri_plugin_positioner::init())
-        .plugin(plugin_window_theme::ThemePlugin::init(
-            tauri_ctx.config_mut(),
-        ));
+        .plugin(tauri_plugin_positioner::init());
 
     // setup and create window
     builder = builder.setup(|app| {
@@ -75,46 +69,9 @@ fn main() {
         Ok(())
     });
 
-    // setup window menu
-    builder = builder
-        .enable_macos_default_menu(false)
-        .menu(menu::build_app_menu())
-        .on_menu_event(menu::app_menu_event);
-
-    // configure tray menu
-    builder = builder
-        .system_tray(menu::build_tray_menu())
-        .on_system_tray_event(menu::tray_menu_event)
-        .on_window_event(|e| {
-            match e.event() {
-                WindowEvent::CloseRequested { api, .. } => {
-                    // don't kill the app when the user clicks close.
-                    if e.window().label() == meta::MAIN_WINDOW {
-                        e.window().hide().unwrap();
-                        api.prevent_close();
-                    }
-                }
-                // WindowEvent::Focused(false) => {
-                //     // hide the window automaticall when the user
-                //     // clicks out. this is for a matter of taste.
-                //     e.window().hide().unwrap();
-                // }
-                _ => {}
-            }
-        });
-
     // run the application
     builder
-        .register_uri_scheme_protocol(meta::SCHEME_PROTOCOL, deeplink::callback)
         .invoke_handler(tauri::generate_handler![
-            cmd::general::open_devtools,
-            cmd::general::get_machine_id,
-            cmd::general::create_child_window,
-            cmd::general::open_settings_window,
-            cmd::general::set_darkmode,
-            cmd::general::check_update,
-            cmd::quotes::get_quotes,
-            cmd::quotes::get_single_quote,
         ])
         .build(tauri_ctx)
         .expect("error while building tauri application")
