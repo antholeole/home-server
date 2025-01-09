@@ -1,35 +1,32 @@
-/// <reference types="vitest" />
-/// <reference types="vite/client" />
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-import { resolve } from 'node:path'
+// @ts-expect-error process is a nodejs global
+const host = process.env.TAURI_DEV_HOST;
 
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-
+// https://vitejs.dev/config/
 export default defineConfig(async () => ({
   plugins: [react()],
-  define: { 'import.meta.env.APP_VERSION': `"${process.env.npm_package_version}"` },
+
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-  // @reference: https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
+  //
+  // 1. prevent vite from obscuring rust errors
   clearScreen: false,
-  server: { port: 1420, strictPort: true },
-  envPrefix: ['VITE_', 'TAURI_'],
-  resolve: {
-    alias: [
-      { find: '@', replacement: resolve(__dirname, 'src') },
-      { find: '~', replacement: resolve(__dirname, 'public') },
-    ],
+  // 2. tauri expects a fixed port, fail if that port is not available
+  server: {
+    port: 1420,
+    strictPort: true,
+    host: host || false,
+    hmr: host
+      ? {
+          protocol: "ws",
+          host,
+          port: 1421,
+        }
+      : undefined,
+    watch: {
+      // 3. tell vite to ignore watching `src-tauri`
+      ignored: ["**/src-tauri/**"],
+    },
   },
-  build: {
-    emptyOutDir: true,
-    chunkSizeWarningLimit: 1200,
-    reportCompressedSize: false,
-    outDir: resolve(__dirname, 'dist'),
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    cache: { dir: './node_modules/.vitest' },
-    include: ['./**/*.{test,spec}.{ts,tsx}'],
-  },
-}))
+}));

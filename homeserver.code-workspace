@@ -1,0 +1,17 @@
+{
+    "folders": [
+        {
+            "name": "Root",
+            "path": "."
+        },
+        {
+            "name": "Tauri",
+            "path": "client/src-tauri"
+        }
+    ],
+    "settings": {
+        "rust-analyzer.linkedProjects": [
+            "/home/oleina/Projects/home-server/client/src-tauri/Cargo.toml",
+        ]
+    }
+}

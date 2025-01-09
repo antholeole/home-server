@@ -25,7 +25,7 @@ in
       lockFile = ./src-tauri/Cargo.lock;
       outputHashes = {
         # All other crates in the same workspace reuse this hash.
-        "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
+        # "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
       };
     };
 
@@ -42,10 +42,10 @@ in
 
     buildInputs = with pkgs; [
       gtk3
-      libsoup_2_4
+      libsoup_3
       libayatana-appindicator
       openssl
-      webkitgtk_4_0
+      webkitgtk_4_1
       xdotool
     ];
 
