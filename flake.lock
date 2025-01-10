@@ -46,10 +46,31 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/5487e69da40cbd611ab2cadee0b4637225f7cfae.tar.gz"
       }
     },
+    "procfile-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728353684,
+        "narHash": "sha256-jPRKGelcmWT/gavg92vbVX+hfQ5V/LKYqUVuVVVjVdQ=",
+        "owner": "getchoo",
+        "repo": "procfile-nix",
+        "rev": "ef9f588b7014050b0e5580c589e63e1fc5ca97cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "getchoo",
+        "repo": "procfile-nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
+        "procfile-nix": "procfile-nix",
         "rust-overlay": "rust-overlay",
         "treefmt-nix": "treefmt-nix"
       }

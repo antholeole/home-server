@@ -1,13 +1,13 @@
-import Koa from "koa";
-import { tldrawRouter } from "./tldraw/router";
+import { tldraw } from "./tldraw/router.ts";
+import Fastify from 'fastify'
+import websocketPlugin from '@fastify/websocket'
 
-const app = new Koa();
+const fastify = Fastify({
+	logger: true
+});
 
-app.use(tldrawRouter.routes());
+fastify.register(websocketPlugin);
+fastify.register(tldraw);
 
-if (import.meta.env.PROD) {
-	app.listen(3000);
-	console.log("running on http://localhost:3000");
-}
+await fastify.listen({ port: 3000 });
 
-export const viteNodeApp = app;

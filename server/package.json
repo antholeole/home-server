@@ -1,25 +1,23 @@
 {
     "name": "home-server",
     "version": "1.0.0",
-    "main": "index.js",
+    "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "dev": "nodemon"
     },
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
+        "@fastify/vite": "^7.0.1",
+        "@fastify/websocket": "^11.0.2",
         "@koa/router": "^13.1.0",
-        "@tldraw/sync-core": "^3.6.1",
-        "koa": "^2.15.3",
-        "koa-pino-logger": "^4.0.0"
+        "@tldraw/sync-core": "^3.7.0",
+        "fastify": "^5.2.1"
     },
     "devDependencies": {
-        "@types/koa": "^2.15.0",
-        "@types/koa__router": "^12.0.4",
-        "@types/koa-pino-logger": "^3.0.4",
-        "vite": "^5.4.11",
-        "vite-plugin-node": "^4.0.0"
+        "nodemon": "^3.1.9",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.2"
     }
 }

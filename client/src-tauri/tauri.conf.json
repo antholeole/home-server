@@ -12,7 +12,15 @@
   "app": {
     "windows": [
       {
-        "title": "client",
+        "title": "global-picker",
+        "label": "global-picker",
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true
+      },
+      {
+        "title": "tldraw",
+        "label": "tldraw",
         "width": 800,
         "height": 600
       }

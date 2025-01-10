@@ -5,11 +5,14 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    procfile-nix = {
+      url = "github:getchoo/procfile-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
     };
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +27,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.treefmt-nix.flakeModule
+        inputs.procfile-nix.flakeModule
 
         ./parts/devshell.nix
         ./parts/treefmt.nix

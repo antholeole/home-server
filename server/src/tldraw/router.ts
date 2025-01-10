@@ -1,16 +1,10 @@
-import Router from "@koa/router";
+import type { FastifyInstance } from "fastify";
 import { room } from "./tldraw.ts";
 
-export const tldrawRouter = new Router().get("/draw/connect", (ctx) => {
-	const sessionId = ctx.request.query.sessionId as string | undefined;
-
-	if (sessionId === undefined) {
-		ctx.response.status = 401;
-		ctx.response.body = "please add a sessionId parameter";
-		return;
-	}
-
-	const socket = ctx.upgrade();
-	room.handleSocketConnect({ socket, sessionId });
-	return new Response(null, { status: 101 });
-});
+export const tldraw = async (app: FastifyInstance) => {
+	// This is the main entrypoint for the multiplayer sync
+	app.get('/draw/connect', { websocket: true }, async (socket, req) => {
+		const sessionId = (req.query as any)?.['sessionId'] as string
+		room.handleSocketConnect({ sessionId, socket })
+	})
+}

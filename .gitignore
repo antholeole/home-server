@@ -20,5 +20,6 @@ CPM_modules/
 RAPIDS.cmake
 cmake/CPM_*.cmake
 
-result/
-target/
+**/result/
+**/target/
+**/dist/
