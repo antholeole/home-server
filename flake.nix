@@ -31,7 +31,10 @@
 
         ./parts/devshell.nix
         ./parts/treefmt.nix
-        ./parts/pkgs.nix
+
+        ./client
+        ./server
+        ./vm
       ];
       systems = ["x86_64-linux"];
       perSystem = {

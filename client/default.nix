@@ -1,57 +1,60 @@
 # src https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/by-name/po/pot/package.nix#L105
-pkgs: let
-  pnpm = pkgs.pnpm_9;
-in
-  pkgs.stdenv.mkDerivation (finalAttrs: {
-    pname = "home-server-client-app";
-    version = "3.0.5";
+{inputs, ...}: {
+  perSystem = {pkgs, ...}: let
+    pnpm = pkgs.pnpm_9;
+  in {
+    packages.client-app = pkgs.stdenv.mkDerivation (finalAttrs: {
+      pname = "home-server-client-app";
+      version = "3.0.5";
 
-    src = ./.;
-    # sourceRoot = "${finalAttrs.src.name}/src-tauri";
+      src = ./.;
+      # sourceRoot = "${finalAttrs.src.name}/src-tauri";
 
-    pnpmDeps = pnpm.fetchDeps {
-      inherit (finalAttrs) pname version src;
-      hash = "sha256-AmMV8Nrn+zH/9bDkFX3Mx5xIQjkoXR8SzkdJRXkxTbA=";
-    };
-
-    pnpmRoot = "..";
-
-    postPatch = ''
-      substituteInPlace $cargoDepsCopy/libappindicator-sys-*/src/lib.rs \
-        --replace "libayatana-appindicator3.so.1" "${pkgs.libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
-    '';
-
-    cargoDeps = pkgs.rustPlatform.importCargoLock {
-      lockFile = ./src-tauri/Cargo.lock;
-      outputHashes = {
-        # All other crates in the same workspace reuse this hash.
-        # "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
+      pnpmDeps = pnpm.fetchDeps {
+        inherit (finalAttrs) pname version src;
+        hash = "sha256-AmMV8Nrn+zH/9bDkFX3Mx5xIQjkoXR8SzkdJRXkxTbA=";
       };
-    };
 
-    nativeBuildInputs = with pkgs; [
-      rustPlatform.cargoSetupHook
-      cargo
-      rustc
-      cargo-tauri.hook
-      nodejs
-      pnpm.configHook
-      wrapGAppsHook3
-      pkg-config
-    ];
+      pnpmRoot = "..";
 
-    buildInputs = with pkgs; [
-      gtk3
-      libsoup_3
-      libayatana-appindicator
-      openssl
-      webkitgtk_4_1
-      xdotool
-    ];
+      postPatch = ''
+        substituteInPlace $cargoDepsCopy/libappindicator-sys-*/src/lib.rs \
+          --replace "libayatana-appindicator3.so.1" "${pkgs.libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
+      '';
 
-    preConfigure = ''
-      # pnpm.configHook has to write to .., as our sourceRoot is set to src-tauri
-      # TODO: move frontend into its own drv
-      chmod +w ..
-    '';
-  })
+      cargoDeps = pkgs.rustPlatform.importCargoLock {
+        lockFile = ./src-tauri/Cargo.lock;
+        outputHashes = {
+          # All other crates in the same workspace reuse this hash.
+          # "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
+        };
+      };
+
+      nativeBuildInputs = with pkgs; [
+        rustPlatform.cargoSetupHook
+        cargo
+        rustc
+        cargo-tauri.hook
+        nodejs
+        pnpm.configHook
+        wrapGAppsHook3
+        pkg-config
+      ];
+
+      buildInputs = with pkgs; [
+        gtk3
+        libsoup_3
+        libayatana-appindicator
+        openssl
+        webkitgtk_4_1
+        xdotool
+      ];
+
+      preConfigure = ''
+        # pnpm.configHook has to write to .., as our sourceRoot is set to src-tauri
+        # TODO: move frontend into its own drv
+        chmod +w ..
+      '';
+    });
+  };
+}

@@ -13,7 +13,7 @@ const myAssetStore: TLAssetStore = {
 }
 
 // const uri = `ws://${import.meta.env.VITE_SERVER_URL}/draw/connect`;
-const uri = `ws://localhost:3000/draw/connect`;
+const uri = `ws://${import.meta.env.VITE_SERVER_URL}/draw/connect`;
 
 export const TldrawFrontend = () => {
     const store = useSync({
@@ -24,6 +24,9 @@ export const TldrawFrontend = () => {
     })
 
     return <div style={{ position: 'fixed', inset: 0 }}>
-        <Tldraw store={store}  />
+        <Tldraw
+            store={store}
+        >
+        </Tldraw>
     </div>
 }

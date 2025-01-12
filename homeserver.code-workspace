@@ -9,12 +9,20 @@
             "path": "client/src-tauri"
         },
         {
-            "name": "🖥️ Server",
+            "name": "⚙️ Server",
             "path": "server"
         },
         {
             "name": "📱 Frontend",
             "path": "client"
+        },
+        {
+            "name": "🖥️ VM",
+            "path": "vm"
+        },
+        {
+            "name": "☁️ CDK",
+            "path": "cdk"
         }
     ],
     "settings": {
@@ -25,7 +33,9 @@
             ".jj": true,
             ".direnv": true,
             "server": true,
-            "client": true
+            "client": true,
+            "cdk": true,
+            "vm": true, 
         }
     }
 }
