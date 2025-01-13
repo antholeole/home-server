@@ -4,17 +4,26 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos"; # docs say don't override inputs.nixpkgs.
 
     procfile-nix = {
       url = "github:getchoo/procfile-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix = {
-      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-snaphotter = {
+      url = "github:pdtpartners/nix-snapshotter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

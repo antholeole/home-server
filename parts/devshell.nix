@@ -34,7 +34,7 @@
       ];
 
       packages = with pkgs; [
-        pkgs.cargo
+        cargo
 
         config.procfiles.dev.package
         config.procfiles.fe-dev.package

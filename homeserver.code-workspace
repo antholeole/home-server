@@ -19,10 +19,6 @@
         {
             "name": "🖥️ VM",
             "path": "vm"
-        },
-        {
-            "name": "☁️ CDK",
-            "path": "cdk"
         }
     ],
     "settings": {
@@ -34,7 +30,6 @@
             ".direnv": true,
             "server": true,
             "client": true,
-            "cdk": true,
             "vm": true, 
         }
     }
