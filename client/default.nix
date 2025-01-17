@@ -24,10 +24,7 @@
 
       cargoDeps = pkgs.rustPlatform.importCargoLock {
         lockFile = ./src-tauri/Cargo.lock;
-        outputHashes = {
-          # All other crates in the same workspace reuse this hash.
-          # "tauri-plugin-log-0.0.0" = "sha256-fgJvoe3rKom2DdXXgd5rx7kzaWL/uvvye8jfL2SNhrM=";
-        };
+        outputHashes = {};
       };
 
       nativeBuildInputs = with pkgs; [

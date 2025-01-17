@@ -1,30 +1,57 @@
-{inputs, ...}: {
+{
+  withSystem,
+  inputs,
+  config,
+  ...
+}: let
+  specialArgs = system: {
+    inherit inputs system;
+  };
+in {
+  flake = {
+    modules.nixos.boilerplate = {pkgs, ...}: {
+      system.stateVersion = "25.05";
+    };
+
+    nixosConfigurations.master-full = withSystem "x86_64-linux" ({
+      inputs',
+      system,
+      ...
+    }:
+      inputs.nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs system;
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              config.flake.modules.nixos.boilerplate
+              inputs'.proxmox-nixos.overlays
+            ];
+          };
+        };
+      });
+  };
+
   perSystem = {
-    pkgs,
     lib,
     system,
     ...
   }: {
-    packages.host-image = inputs.nixos-generators.nixosGenerate {
+    packages.bootstrap-iso = inputs.nixos-generators.nixosGenerate {
+      # meta.description = "the minimal iso required to boot and switch into the full config.";
       inherit system;
       specialArgs = {
-        pkgs = pkgs;
+        inherit inputs system;
       };
-      modules = [
-        inputs.proxmox-nixos.nixosModules.proxmox-ve
 
-        ./proxmox.nix
-        ./snapshotter.nix
+      modules = [
+        config.flake.modules.nixos.boilerplate
 
         ({...}: {
-          nix.registry.nixpkgs.flake = inputs.nixpkgs;
           virtualisation.diskSize = 30 * 1024;
-          system.stateVersion = "25.05";
-          nixpkgs.overlays = [
-            inputs.proxmox-nixos.overlays.${system}
-          ];
         })
       ];
+
       format = "linode";
     };
   };
