@@ -9,8 +9,14 @@
   };
 in {
   flake = {
-    modules.nixos.boilerplate = {pkgs, ...}: {
-      system.stateVersion = "25.05";
+    modules.nixos = {
+      boilerplate = {pkgs, ...}: {
+        modules = [
+          ./ssh.nix
+        ];
+
+        system.stateVersion = "25.05";
+      };
     };
 
     nixosConfigurations.master-full = withSystem "x86_64-linux" ({
