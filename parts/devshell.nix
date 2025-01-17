@@ -4,6 +4,7 @@
     pkgs,
     lib,
     config,
+    inputs',
     ...
   }: {
     procfiles = let
@@ -35,6 +36,8 @@
 
       packages = with pkgs; [
         cargo
+
+        inputs'.agenix.packages.default
 
         config.procfiles.dev.package
         config.procfiles.fe-dev.package
