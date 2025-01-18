@@ -12,7 +12,11 @@ in {
     modules.nixos = {
       boilerplate = {pkgs, ...}: {
         imports = [
+          inputs.agenix.nixosModules.default
+
           ./ssh.nix
+          ./age.nix
+          ./wifi.nix
         ];
 
         system.stateVersion = "25.05";
@@ -66,14 +70,29 @@ in {
       format = "iso";
     };
 
-    apps.run-iso = {
-      type = "app";
-      program = pkgs.writeShellApplication {
-        name = "run-iso";
-        runtimeInputs = [pkgs.qemu];
-        text = ''
-          qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2222-:22 -enable-kvm -m 256 -cdrom ${packages.bootstrap-iso}/iso/nixos-*.iso
-        '';
+    apps = {
+      build-iso = {
+        program = pkgs.writeShellApplication {
+          text = ''
+            xorriso -boot_image any keep \
+              -dev ${packages.bootstrap-iso}/iso/nixos-*.iso \
+              -map <pathtofile>/registration.yaml /livecd-cloud-config.yaml
+          '';
+        };
+      };
+
+      run-iso = {
+        type = "app";
+        program = pkgs.writeShellApplication {
+          name = "run-iso";
+          runtimeInputs = [pkgs.qemu];
+          text = ''
+            qemu-system-x86_64 -net nic \
+              -net user,hostfwd=tcp::2222-:22 \
+              -enable-kvm -m 256 \
+              -cdrom ${packages.bootstrap-iso}/iso/nixos-*.iso
+          '';
+        };
       };
     };
   };

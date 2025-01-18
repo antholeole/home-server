@@ -36,6 +36,7 @@
 
       packages = with pkgs; [
         cargo
+        libisoburn
 
         inputs'.agenix.packages.default
 
