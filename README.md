@@ -15,6 +15,8 @@ When deploying, pulumi uses the secrets encrypted with [agenix](https://github.c
 
 # Devshell
 
+`direnv allow` will enable the devshell.
+
 the devshell provides the following scripts:
 - `dev`, which launches the frontend tauri application.
 - `dev-fe`,  which launches the frontend application in a browser window.

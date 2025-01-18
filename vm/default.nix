@@ -44,8 +44,9 @@ in {
   perSystem = {
     lib,
     system,
+    pkgs,
     ...
-  }: {
+  }: rec {
     packages.bootstrap-iso = inputs.nixos-generators.nixosGenerate {
       # meta.description = "the minimal iso required to boot and switch into the full config.";
       inherit system;
@@ -63,6 +64,17 @@ in {
       ];
 
       format = "iso";
+    };
+
+    apps.run-iso = {
+      type = "app";
+      program = pkgs.writeShellApplication {
+        name = "run-iso";
+        runtimeInputs = [pkgs.qemu];
+        text = ''
+          qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2222-:22 -enable-kvm -m 256 -cdrom ${packages.bootstrap-iso}/iso/nixos-*.iso
+        '';
+      };
     };
   };
 }
