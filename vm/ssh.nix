@@ -1,15 +1,24 @@
-{inputs, ...}: {
-  users.users = {
-    # disable root ssh access
-    root.hashedPassword = "!";
+{
+  inputs,
+  lib,
+  ...
+}: {
+  # enable SSH in boot process.
+  systemd.services.sshd.wantedBy = lib.mkForce ["multi-user.target"];
+  users = {
+    mutableUsers = false;
+    users = {
+      # disable root ssh access
+      root.hashedPassword = "!";
 
-    manager = {
-      isNormalUser = true;
-      description = "the user used to manage this server. Typically, only switches nixos generations.";
-      extraGroups = ["wheel"];
+      manager = {
+        isNormalUser = true;
+        description = "the user used to manage this server. Typically, only switches nixos generations.";
+        extraGroups = ["wheel"];
 
-      # TODO: don't get this by import
-      openssh.authorizedKeys.keys = import "${inputs.self}/ssot/keys.nix".public-keys;
+        # TODO: don't get this by import
+        openssh.authorizedKeys.keys = (import "${inputs.self}/ssot/keys.nix").public-keys;
+      };
     };
   };
 }

@@ -11,12 +11,14 @@ in {
   flake = {
     modules.nixos = {
       boilerplate = {pkgs, ...}: {
-        modules = [
+        imports = [
           ./ssh.nix
         ];
 
         system.stateVersion = "25.05";
       };
+
+      bootable = ./bootable.nix;
     };
 
     nixosConfigurations.master-full = withSystem "x86_64-linux" ({
@@ -29,8 +31,9 @@ in {
           inherit inputs system;
           pkgs = import inputs.nixpkgs {
             inherit system;
-            overlays = [
-              config.flake.modules.nixos.boilerplate
+            overlays = with config.flake.modules.nixos; [
+              boilerplate
+
               inputs'.proxmox-nixos.overlays
             ];
           };
@@ -50,15 +53,16 @@ in {
         inherit inputs system;
       };
 
-      modules = [
-        config.flake.modules.nixos.boilerplate
+      modules = with config.flake.modules.nixos; [
+        boilerplate
+        bootable
 
         ({...}: {
           virtualisation.diskSize = 30 * 1024;
         })
       ];
 
-      format = "linode";
+      format = "iso";
     };
   };
 }

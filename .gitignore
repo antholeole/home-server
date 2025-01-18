@@ -23,3 +23,6 @@ cmake/CPM_*.cmake
 **/result/
 **/target/
 **/dist/
+
+result
+result-*
