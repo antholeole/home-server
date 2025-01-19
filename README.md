@@ -3,7 +3,7 @@
 This repo is split up into many parts. Each part is in a folder.
 
 -  **🗿 Root**: The root directory; holds shared configs between each part.
--  **📱 Client**: A client application to use on a tablet to talk to the home server; The tablet itself is configured in VMs.
+-  **📱 Client**: A client application to use on a tablet to talk to the home server.
 -  **🖥️ VM**: Contains three VM configurations: 
    - .#bootstrap-iso: a shared iso that can be loaded onto a device and booted from; from there, you can rebuild switch the system over ssh into one of the two below.
    - .#client: the client device, that communicates with the server.

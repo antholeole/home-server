@@ -26,3 +26,5 @@ cmake/CPM_*.cmake
 
 result
 result-*
+
+**/iso-with-secrets.iso

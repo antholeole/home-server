@@ -1,6 +1,7 @@
 {
   inputs,
   lib,
+  ssot,
   ...
 }: {
   # enable SSH in boot process.
@@ -17,7 +18,7 @@
         extraGroups = ["wheel"];
 
         # TODO: don't get this by import
-        openssh.authorizedKeys.keys = (import "${inputs.self}/ssot/keys.nix").public-keys;
+        openssh.authorizedKeys.keys = ssot.public-keys;
       };
     };
   };
