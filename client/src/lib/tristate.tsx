@@ -1,6 +1,6 @@
 import { AsyncState } from "react-use/lib/useAsyncFn";
 
-export const tristate = <R, T extends JSX.Element>(
+export const tristate = <R, T extends React.ReactNode>(
 	state: AsyncState<R>,
 	tristate: {
 		loading: () => T;

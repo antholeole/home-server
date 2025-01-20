@@ -1,7 +1,5 @@
-# Tauri + React + Typescript
+# Running a Specific Window
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+To run a specific window in tauri, use the following command: `npm run tauri dev -- -- -- --windows=tldraw`. The first block is for node, the second is for tauri, and the third is finally for our app.
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+If developing in the browser, use `npm run dev:web` and then navigate to `localhost:1420/windows/<window>.html`.
