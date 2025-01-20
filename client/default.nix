@@ -1,57 +1,67 @@
-# src https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/by-name/po/pot/package.nix#L105
 {inputs, ...}: {
-  perSystem = {pkgs, ...}: let
-    pnpm = pkgs.pnpm_9;
-  in {
-    packages.client-app = pkgs.stdenv.mkDerivation (finalAttrs: {
-      pname = "home-server-client-app";
-      version = "3.0.5";
+  perSystem = {pkgs, ...}:
+    with pkgs; {
+      packages = rec {
+        client-frontend = pkgs.buildNpmPackage rec {
+          pname = "home-server-client";
+          version = "1.0.0";
+          src = ./.;
+          npmDeps = pkgs.fetchNpmDeps {
+            name = "${pname}-npm-deps-${version}";
+            inherit src;
+            hash = "sha256-oRWShW57FRrzI4NJcjCnN+XOe/bha6GZcWenLdUjS0c=";
+          };
 
-      src = ./.;
-      # sourceRoot = "${finalAttrs.src.name}/src-tauri";
+          buildPhase = ''
+            npm run build
+          '';
 
-      pnpmDeps = pnpm.fetchDeps {
-        inherit (finalAttrs) pname version src;
-        hash = "sha256-AmMV8Nrn+zH/9bDkFX3Mx5xIQjkoXR8SzkdJRXkxTbA=";
+          installPhase = ''
+            mkdir -p $out/dist
+            mv dist/ $out/dist
+          '';
+        };
+
+        client-app = pkgs.rust.packages.stable.rustPlatform.buildRustPackage rec {
+          pname = "home-server-client-app";
+          version = "1.0.0";
+          cargoHash = "sha256-nLfBITr4G+6Y0S+aKZr0PkSXTGwfor4n9g+1Q/Qu6ag=";
+          src = ./.;
+
+          # Assuming our app's frontend uses `npm` as a package manager
+          npmDeps = fetchNpmDeps {
+            name = "${pname}-npm-deps-${version}";
+            inherit src;
+            hash = "sha256-oRWShW57FRrzI4NJcjCnN+XOe/bha6GZcWenLdUjS0c=";
+          };
+
+          nativeBuildInputs = [
+            # Pull in our main hook
+            cargo-tauri.hook
+
+            # Setup npm
+            nodejs
+            npmHooks.npmConfigHook
+
+            # Make sure we can find our libraries
+            pkg-config
+            wrapGAppsHook4
+          ];
+
+          buildInputs =
+            [openssl]
+            ++ lib.optionals stdenv.hostPlatform.isLinux [
+              glib-networking # Most Tauri apps need networking
+              webkitgtk_4_1
+            ];
+
+          # Set our Tauri source directory
+          cargoRoot = "src-tauri";
+          # And make sure we build there too
+          buildAndTestSubdir = cargoRoot;
+
+          # . . .
+        };
       };
-
-      pnpmRoot = "..";
-
-      postPatch = ''
-        substituteInPlace $cargoDepsCopy/libappindicator-sys-*/src/lib.rs \
-          --replace "libayatana-appindicator3.so.1" "${pkgs.libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
-      '';
-
-      cargoDeps = pkgs.rustPlatform.importCargoLock {
-        lockFile = ./src-tauri/Cargo.lock;
-        outputHashes = {};
-      };
-
-      nativeBuildInputs = with pkgs; [
-        rustPlatform.cargoSetupHook
-        cargo
-        rustc
-        cargo-tauri.hook
-        nodejs
-        pnpm.configHook
-        wrapGAppsHook3
-        pkg-config
-      ];
-
-      buildInputs = with pkgs; [
-        gtk3
-        libsoup_3
-        libayatana-appindicator
-        openssl
-        webkitgtk_4_1
-        xdotool
-      ];
-
-      preConfigure = ''
-        # pnpm.configHook has to write to .., as our sourceRoot is set to src-tauri
-        # TODO: move frontend into its own drv
-        chmod +w ..
-      '';
-    });
-  };
+    };
 }

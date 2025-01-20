@@ -4,7 +4,7 @@ import './style.css'
 
 
 const myAssetStore: TLAssetStore = {
-    async upload(file, asset) {
+    async upload() {
         return ""
     },
     resolve(asset) {
