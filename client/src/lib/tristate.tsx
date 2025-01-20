@@ -1,19 +1,18 @@
-import { AsyncState } from 'react-use/lib/useAsyncFn'
-
+import { AsyncState } from "react-use/lib/useAsyncFn";
 
 export const tristate = <R, T extends JSX.Element>(
-    state: AsyncState<R>, 
-    tristate: {
-        loading: () => T,
-        error: (e: Error) => T,
-        value: (v: R) => T, 
-    }
+	state: AsyncState<R>,
+	tristate: {
+		loading: () => T;
+		error: (e: Error) => T;
+		value: (v: R) => T;
+	},
 ) => {
-    if (state.loading) {
-        return tristate.loading()
-    } else if (state.error !== undefined) {
-        return tristate.error(state.error)
-    } else {
-        return tristate.value(state.value!)
-    }
-}
+	if (state.loading) {
+		return tristate.loading();
+	} else if (state.error !== undefined) {
+		return tristate.error(state.error);
+	} else {
+		return tristate.value(state.value!);
+	}
+};
