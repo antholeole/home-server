@@ -1,9 +1,11 @@
+import { MantineProvider } from '@mantine/core';
 import { TldrawFrontend } from "./tldraw/tldraw";
 import { useAsync } from 'react-use';
-
-
 import {setupLogging} from './lib/logging';
 import { tristate } from "./lib/tristate";
+
+import '@mantine/core/styles.css';
+import { theme } from './lib/theme';
 
 function App() {
   const loadState = useAsync(
@@ -13,6 +15,7 @@ function App() {
 
   return (
     <main className="container">
+      <MantineProvider theme={theme}>
       {tristate(
         loadState,
         {
@@ -20,6 +23,7 @@ function App() {
           value: () => <TldrawFrontend />,
           error: (e) => <p>{e.toString()}</p>,
         })}
+        </MantineProvider>
     </main>
   );
 }
