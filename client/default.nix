@@ -28,7 +28,6 @@
           cargoHash = "sha256-nLfBITr4G+6Y0S+aKZr0PkSXTGwfor4n9g+1Q/Qu6ag=";
           src = ./.;
 
-          # Assuming our app's frontend uses `npm` as a package manager
           npmDeps = fetchNpmDeps {
             name = "${pname}-npm-deps-${version}";
             inherit src;
@@ -36,14 +35,9 @@
           };
 
           nativeBuildInputs = [
-            # Pull in our main hook
             cargo-tauri.hook
-
-            # Setup npm
             nodejs
             npmHooks.npmConfigHook
-
-            # Make sure we can find our libraries
             pkg-config
             wrapGAppsHook4
           ];
@@ -51,16 +45,12 @@
           buildInputs =
             [openssl]
             ++ lib.optionals stdenv.hostPlatform.isLinux [
-              glib-networking # Most Tauri apps need networking
+              glib-networking
               webkitgtk_4_1
             ];
 
-          # Set our Tauri source directory
           cargoRoot = "src-tauri";
-          # And make sure we build there too
           buildAndTestSubdir = cargoRoot;
-
-          # . . .
         };
       };
     };

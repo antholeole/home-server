@@ -4,20 +4,13 @@
   "version": "0.1.0",
   "identifier": "com.client.app",
   "build": {
-    "beforeDevCommand": "npm run dev",
+    "beforeDevCommand": "npm run dev:tauri",
+    "beforeBuildCommand": "npm run build:tauri",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
     "frontendDist": "../dist"
   },
   "app": {
     "windows": [
-      {
-        "title": "global-picker",
-        "label": "global-picker",
-        "decorations": false,
-        "transparent": true,
-        "alwaysOnTop": true
-      },
       {
         "title": "tldraw",
         "label": "tldraw",

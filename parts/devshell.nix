@@ -15,7 +15,7 @@
         };
       };
     in {
-      dev =
+      tauri-dev =
         lib.attrsets.recursiveUpdate procfileBase
         {
           processes.tauri = "cd $ROOT_DIR/client/ && npm run tauri dev";
@@ -40,7 +40,7 @@
 
         inputs'.agenix.packages.default
 
-        config.procfiles.dev.package
+        config.procfiles.tauri-dev.package
         config.procfiles.fe-dev.package
       ];
 
