@@ -1,6 +1,7 @@
 import { Tldraw, defaultShapeUtils, defaultBindingUtils, TLAssetStore } from 'tldraw'
 import { useSync } from '@tldraw/sync'
 import './style.css'
+import { assets } from './lib/assets'
 
 
 const myAssetStore: TLAssetStore = {
@@ -12,7 +13,6 @@ const myAssetStore: TLAssetStore = {
     },
 }
 
-// const uri = `ws://${import.meta.env.VITE_SERVER_URL}/draw/connect`;
 const uri = `ws://${import.meta.env.VITE_SERVER_URL}/draw/connect`;
 
 export const TldrawFrontend = () => {
@@ -26,6 +26,7 @@ export const TldrawFrontend = () => {
     return <div style={{ position: 'fixed', inset: 0 }}>
         <Tldraw
             store={store}
+            assetUrls={assets}
         >
         </Tldraw>
     </div>

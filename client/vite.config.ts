@@ -26,6 +26,6 @@ export default defineConfig(async () => {
         ignored: ["**/src-tauri/**"],
       },
     },
-    node: { fs: 'empty' }
+    optimizeDeps: { exclude: ['@tldraw/assets'] }
   }
 });
