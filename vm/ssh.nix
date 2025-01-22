@@ -2,6 +2,7 @@
   inputs,
   lib,
   ssot,
+  pkgs,
   ...
 }: {
   # enable SSH in boot process.
@@ -19,6 +20,10 @@
 
         # TODO: don't get this by import
         openssh.authorizedKeys.keys = ssot.public-keys;
+
+        packages = with pkgs; [
+          kakoune
+        ];
       };
     };
   };

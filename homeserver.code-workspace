@@ -19,7 +19,12 @@
         {
             "name": "🖥️ VM",
             "path": "vm"
+        },
+        {
+            "name": "☝ Tablet",
+            "path": "tablet"
         }
+        
     ],
     "settings": {
         "rust-analyzer.linkedProjects": [
@@ -31,6 +36,7 @@
             "server": true,
             "client": true,
             "vm": true, 
+            "tablet": true, 
         }
     }
 }

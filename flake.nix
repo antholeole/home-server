@@ -4,31 +4,41 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos"; # docs say don't override inputs.nixpkgs.
 
+    ## nix utils
+    # dev utils for local testing.
     procfile-nix = {
       url = "github:getchoo/procfile-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # format the whole repo in one command
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # use rust nightly
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # secrets
+    agenix = {
+      url = "github:ryantm/agenix";
+      # inputs.nixpkgs.follows = "nixpkgs"; does not work with nixos-unstable age
+    };
+
+    ## Kubernetes utils
+    # CRI
     nix-snaphotter = {
       url = "github:pdtpartners/nix-snapshotter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ## VM Utils
+    # generate a minimal boot iso with my utils
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    agenix = {
-      url = "github:ryantm/agenix";
-      # inputs.nixpkgs.follows = "nixpkgs"; does not work with nixos-unstable age
     };
   };
 

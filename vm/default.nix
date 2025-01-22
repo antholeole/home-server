@@ -10,15 +10,19 @@
   };
 in {
   flake = {
-    modules.nixos = {
+    modules.nixos = rec {
+      bootable = ./bootable.nix;
+      wifi = ./wifi.nix;
+      ssh = ./ssh.nix;
+
       boilerplate = {pkgs, ...}: {
         imports = [
           inputs.agenix.nixosModules.default
 
-          ./ssh.nix
+          ssh
           # TODO: including wifi in the boilerplate makes it incompatible with
           # cloud vendors.
-          ./wifi.nix
+          wifi
         ];
 
         age.identityPaths = [
@@ -29,8 +33,6 @@ in {
         ];
         system.stateVersion = "25.05";
       };
-
-      bootable = ./bootable.nix;
     };
 
     nixosConfigurations.master-full = withSystem "x86_64-linux" ({
@@ -45,7 +47,7 @@ in {
             pkgs = import inputs.nixpkgs {
               inherit system;
               overlays = with config.flake.modules.nixos; [
-                inputs'.proxmox-nixos.overlays
+                boilerplate
               ];
             };
           };
@@ -86,7 +88,7 @@ in {
           in ''
             xorriso -indev ${packages.bootstrap-iso}/iso/nixos-*.iso \
               -outdev iso-with-secrets.iso \
-              -map ~/.secrets/id_ed25519 /var/lib/private/id_ed25519 \
+              -map ~/.secrets/id_ed25519 ${ageSecretPath} \
               -boot_image any replay \
               -commit
           '';
