@@ -10,8 +10,8 @@
   users = {
     mutableUsers = false;
     users = {
-      # disable root ssh access
-      root.hashedPassword = "!";
+      # nixos anywhere needs root ssh access...
+      root.openssh.authorizedKeys.keys = ssot.public-keys;
 
       manager = {
         isNormalUser = true;

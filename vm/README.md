@@ -1,3 +1,8 @@
+# Quickstart
+
+1. to first "infect" the system with nixos, boot it using the iso generated from `make-iso`. 
+2. Then, 
+
 # Building
 
 `bootstrap-iso` contains the configuration required to to make a minimal boot iso _except_ for the agenix secret files. To generate an iso, please run `make-iso`: this is to ensure that no secret files end up in the nix store. `make-iso` assumes you have a secret key in `~/.secrets/id_ed25519`.  

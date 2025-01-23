@@ -34,11 +34,27 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## VM Utils
+    ## Hardware device utils
     # generate a minimal boot iso with my utils
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # format the disk for a device automatically
+    disko = {
+      url = "github:nix-community/disko";
+    };
+    # cli for installing nix on devices
+    nixos-anywhere = {
+      url = "github:nix-community/nixos-anywhere";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.disko.follows = "disko";
+      inputs.treefmt-nix.follows = "treefmt-nix";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+    # hardware config without generating it
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
     };
   };
 

@@ -10,14 +10,19 @@
   };
 in {
   flake = {
-    modules.nixos = rec {
-      bootable = ./bootable.nix;
-      wifi = ./wifi.nix;
-      ssh = ./ssh.nix;
+    modules.nixos = {
+      bootable = ./modules/bootable.nix;
+      wifi = ./modules/wifi.nix;
+      ssh = ./modules/ssh.nix;
 
+      # hardware modules
+      tablet = ./devices/tablet.nix;
+
+      # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
-        imports = [
+        imports = with config.flake.modules.nixos; [
           inputs.agenix.nixosModules.default
+          inputs.disko.nixosModules.disko
 
           ssh
           # TODO: including wifi in the boilerplate makes it incompatible with
@@ -25,17 +30,49 @@ in {
           wifi
         ];
 
+        time.timeZone = "America/Los_Angeles";
         age.identityPaths = [
           ssot.age-private-key-path
 
           # in the raw boo iso, the private-key-path is in the /iso directory.
           "/iso${ssot.age-private-key-path}"
         ];
+
+        nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
       };
     };
 
-    nixosConfigurations.master-full = withSystem "x86_64-linux" ({
+    colmena = {
+      meta = {
+        nixpkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+        };
+
+        specialArgs = {inherit ssot;};
+      };
+
+      # the default physical configuration. should be overridden per device.
+      defaults = {pkgs, ...}: {
+        replaceUnknownProfiles = true;
+
+        keys."id_ed25519" = {
+          keyFile = "~/.secrets/id_ed25519";
+          destDir = ssot.age-private-key-path;
+        };
+      };
+
+      # colmena devices
+      tablet.deployment = {ssot, ...}: {
+        targetHost = "192.168.12.171";
+        targetUser = "manager";
+        replaceUnknownProfiles = true;
+        tags = ["tablet"];
+      };
+    };
+
+    # TODO: invert this
+    nixosConfigurations.tablet = withSystem "x86_64-linux" ({
       inputs',
       system,
       ...
@@ -46,11 +83,13 @@ in {
           // {
             pkgs = import inputs.nixpkgs {
               inherit system;
-              overlays = with config.flake.modules.nixos; [
-                boilerplate
-              ];
             };
           };
+
+        modules = with config.flake.modules.nixos; [
+          boilerplate
+          tablet
+        ];
       });
   };
 
