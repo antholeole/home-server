@@ -16,7 +16,7 @@
       enable = true;
       ensureProfiles = {
         environmentFiles = [
-          # config.age.secrets.nm-secrets.path
+          config.age.secrets.nm-secrets.path
         ];
 
         profiles = {

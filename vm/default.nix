@@ -64,7 +64,8 @@ in {
           replaceUnknownProfiles = true;
           # TODO: get this intergrated with rekey
           keys."id_ed25519" = {
-            keyFile = ssot.age-private-key-path;
+            uploadAt = "pre-activation";
+            keyFile = "/home/oleina/.secrets/id_ed25519";
             destDir = "/var/lib/private/"; # TODO calculate this from the var
           };
         };
@@ -75,6 +76,7 @@ in {
         deployment = {
           targetHost = "192.168.12.171";
           targetUser = "root";
+          buildOnTarget = true; #8gb ram good enough
           replaceUnknownProfiles = true;
           tags = ["tablet"];
         };
