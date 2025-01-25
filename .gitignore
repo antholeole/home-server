@@ -27,4 +27,5 @@ cmake/CPM_*.cmake
 result
 result-*
 
+node_modules/
 **/iso-with-secrets.iso

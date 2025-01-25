@@ -1,7 +1,10 @@
 # Quickstart
 
 1. to first "infect" the system with nixos, boot it using the iso generated from `make-iso`. 
-2. Then, 
+1. Then, boot the system with the iso. It should show up in your router - grab the private IP that the router assigned.
+1. create a disko config in `./devices/<device>.nix`.
+1.  `nixos-anywhere --generate-hardware-config nixos-generate-config ./vm/devices/<device>-hardware-config.nix --flake .#<device> root@<device ip>`
+1. voila! reboot the system without USB and enjoy your nixOS install.
 
 # Building
 

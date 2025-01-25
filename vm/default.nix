@@ -38,6 +38,7 @@ in {
           "/iso${ssot.age-private-key-path}"
         ];
 
+        nix.settings.experimental-features = "nix-command flakes";
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
       };
@@ -97,6 +98,7 @@ in {
     lib,
     system,
     pkgs,
+    inputs',
     ...
   }: rec {
     packages.bootstrap-iso = inputs.nixos-generators.nixosGenerate {
@@ -145,6 +147,23 @@ in {
               -net user,hostfwd=tcp::2222-:22 \
               -enable-kvm -m 256 \
               -cdrom "$@"
+          '';
+        };
+      };
+
+      nixos-anywhere-full = {
+        type = "app";
+        program = pkgs.writeShellApplication {
+          meta.description = "nixos-anywhere a remote host. args: 1: which device, 2: device ip.";
+          name = "nixos-anywhere-full";
+          runtimeInputs = [
+            inputs'.nixos-anywhere.packages.default
+          ];
+          text = ''
+            root=$(mktemp -d)
+            mkdir -p "$root"/var/lib/private
+            cp ~/.secrets/id_ed25519 "$root"/var/lib/private
+            nixos-anywhere --flake .#"$1" root@"$2" -i ~/.secrets/id_ed25519 --extra-files "$root"
           '';
         };
       };

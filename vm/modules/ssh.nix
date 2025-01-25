@@ -7,6 +7,10 @@
 }: {
   # enable SSH in boot process.
   systemd.services.sshd.wantedBy = lib.mkForce ["multi-user.target"];
+  services.openssh.enable = true;
+
+  # passwordless sudo
+  security.sudo.wheelNeedsPassword = false;
   users = {
     mutableUsers = false;
     users = {
