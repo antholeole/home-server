@@ -37,9 +37,9 @@
       packages = with pkgs; [
         cargo
         libisoburn
-        colmena
 
         inputs'.agenix.packages.default
+        inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
 
         config.procfiles.tauri-dev.package

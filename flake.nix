@@ -56,6 +56,10 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
+    colmena = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:zhaofengli/colmena";
+    };
   };
 
   outputs = inputs @ {

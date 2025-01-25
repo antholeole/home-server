@@ -22,6 +22,8 @@
         description = "the user used to manage this server. Typically, only switches nixos generations.";
         extraGroups = ["wheel"];
 
+        hashedPassword = "$6$jWAZ0TSfHY9p....$fYhpiJy1KeEuGdYkudbQsYVEDDj4ujVah2ujCOzP2NZRxxjZOGjYO60ATvIRNrOuPZC2R.OQHaDBlzMtNxzsr/";
+
         # TODO: don't get this by import
         openssh.authorizedKeys.keys = ssot.public-keys;
 

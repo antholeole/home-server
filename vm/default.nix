@@ -2,11 +2,15 @@
   withSystem,
   inputs,
   config,
+  self,
   ...
 }: let
   ssot = import "${inputs.self}/ssot/keys.nix";
   mkSpecialArgs = system: {
     inherit inputs system ssot;
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+    };
   };
 in {
   flake = {
@@ -14,9 +18,7 @@ in {
       bootable = ./modules/bootable.nix;
       wifi = ./modules/wifi.nix;
       ssh = ./modules/ssh.nix;
-
-      # hardware modules
-      tablet = ./devices/tablet.nix;
+      nix = ./modules/nix.nix;
 
       # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
@@ -25,6 +27,7 @@ in {
           inputs.disko.nixosModules.disko
 
           ssh
+          nix
           # TODO: including wifi in the boilerplate makes it incompatible with
           # cloud vendors.
           wifi
@@ -38,39 +41,58 @@ in {
           "/iso${ssot.age-private-key-path}"
         ];
 
-        nix.settings.experimental-features = "nix-command flakes";
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
       };
     };
 
-    colmena = {
+    colmena = let
+      system = "x86_64-linux";
+      colmena = true;
+    in {
       meta = {
         nixpkgs = import inputs.nixpkgs {
-          system = "x86_64-linux";
+          inherit system;
         };
 
-        specialArgs = {inherit ssot;};
+        specialArgs = mkSpecialArgs system;
       };
 
       # the default physical configuration. should be overridden per device.
       defaults = {pkgs, ...}: {
-        replaceUnknownProfiles = true;
-
-        keys."id_ed25519" = {
-          keyFile = "~/.secrets/id_ed25519";
-          destDir = ssot.age-private-key-path;
+        deployment = {
+          replaceUnknownProfiles = true;
+          # TODO: get this intergrated with rekey
+          keys."id_ed25519" = {
+            keyFile = ssot.age-private-key-path;
+            destDir = "/var/lib/private/"; # TODO calculate this from the var
+          };
         };
       };
 
       # colmena devices
-      tablet.deployment = {ssot, ...}: {
-        targetHost = "192.168.12.171";
-        targetUser = "manager";
-        replaceUnknownProfiles = true;
-        tags = ["tablet"];
+      tablet = {system, ...}: {
+        deployment = {
+          targetHost = "192.168.12.171";
+          targetUser = "root";
+          replaceUnknownProfiles = true;
+          tags = ["tablet"];
+        };
+
+        imports = [
+          ((import ./hosts/tablet) {
+            specialArgs =
+              (mkSpecialArgs system)
+              // {
+                inherit colmena;
+              };
+            inherit config;
+          })
+        ];
       };
     };
+
+    colmenaHive = inputs.colmena.lib.makeHive self.outputs.colmena;
 
     # TODO: invert this
     nixosConfigurations.tablet = withSystem "x86_64-linux" ({
@@ -80,16 +102,13 @@ in {
     }:
       inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
-          (mkSpecialArgs system)
-          // {
-            pkgs = import inputs.nixpkgs {
-              inherit system;
-            };
-          };
+          mkSpecialArgs system;
 
-        modules = with config.flake.modules.nixos; [
-          boilerplate
-          tablet
+        imports = [
+          (./hosts/tablet {
+            specialArgs = mkSpecialArgs system;
+            inherit config;
+          })
         ];
       });
   };

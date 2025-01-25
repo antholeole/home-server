@@ -1,7 +1,10 @@
 {...}: {
   nix = {
     enable = true;
-    nix.gc.automatic = true;
-    settings.experimental-features = ["nix-command" "flakes"];
+    gc.automatic = true;
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["root" "manager"];
+    };
   };
 }
