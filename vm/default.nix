@@ -8,6 +8,7 @@
   ssot = import "${inputs.self}/ssot/keys.nix";
   mkSpecialArgs = system: {
     inherit inputs system ssot;
+    flake-config = config;
     pkgs = import inputs.nixpkgs {
       inherit system;
     };
@@ -19,6 +20,8 @@ in {
       wifi = ./modules/wifi.nix;
       ssh = ./modules/ssh.nix;
       nix = ./modules/nix.nix;
+      disk-efi = ./modules/disk-efi.nix;
+      per-device = ./modules/per-device.nix;
 
       # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
@@ -26,6 +29,7 @@ in {
           inputs.agenix.nixosModules.default
           inputs.disko.nixosModules.disko
 
+          per-device
           ssh
           nix
           # TODO: including wifi in the boilerplate makes it incompatible with
@@ -62,6 +66,7 @@ in {
       defaults = {pkgs, ...}: {
         deployment = {
           replaceUnknownProfiles = true;
+          targetUser = "root";
           # TODO: get this intergrated with rekey
           keys."id_ed25519" = {
             uploadAt = "pre-activation";
@@ -84,12 +89,22 @@ in {
         imports = [
           ((import ./hosts/tablet) {
             specialArgs =
-              (mkSpecialArgs system)
-              // {
-                inherit colmena;
-              };
-            inherit config;
+              mkSpecialArgs system;
           })
+        ];
+      };
+
+      microserver = {system, ...}: {
+        deployment = {
+          targetHost = "192.168.12.167";
+          targetUser = "root";
+          buildOnTarget = true;
+          replaceUnknownProfiles = true;
+          tags = ["server" "master"];
+        };
+
+        imports = [
+          (import ./hosts/microserver)
         ];
       };
     };
@@ -97,22 +112,29 @@ in {
     colmenaHive = inputs.colmena.lib.makeHive self.outputs.colmena;
 
     # TODO: invert this
-    nixosConfigurations.tablet = withSystem "x86_64-linux" ({
+    nixosConfigurations = withSystem "x86_64-linux" ({
       inputs',
       system,
       ...
-    }:
-      inputs.nixpkgs.lib.nixosSystem {
+    }: {
+      tablet = inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
           mkSpecialArgs system;
 
-        imports = [
-          (./hosts/tablet {
-            specialArgs = mkSpecialArgs system;
-            inherit config;
-          })
+        modules = [
+          (import ./hosts/tablet)
         ];
-      });
+      };
+
+      microserver = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs =
+          mkSpecialArgs system;
+
+        modules = [
+          (import ./hosts/microserver)
+        ];
+      };
+    });
   };
 
   perSystem = {

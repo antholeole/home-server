@@ -58,7 +58,7 @@
     };
     colmena = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:zhaofengli/colmena";
+      url = "github:zhaofengli/colmena/main";
     };
   };
 
@@ -75,7 +75,6 @@
         ./parts/devshell.nix
         ./parts/treefmt.nix
 
-        ./client
         ./server
         ./vm
       ];

@@ -7,33 +7,7 @@
     inputs',
     ...
   }: {
-    procfiles = let
-      procfileBase = {
-        procRunner = pkgs.honcho;
-        processes = {
-          server = "cd $ROOT_DIR/server/ && npm run dev";
-        };
-      };
-    in {
-      tauri-dev =
-        lib.attrsets.recursiveUpdate procfileBase
-        {
-          processes.tauri = "cd $ROOT_DIR/client/ && npm run tauri dev";
-        };
-
-      fe-dev =
-        lib.attrsets.recursiveUpdate procfileBase
-        {
-          processes.fe = "cd $ROOT_DIR/client/ && npm run dev";
-        };
-    };
-
     devShells.default = pkgs.mkShell {
-      inputsFrom = [
-        config.packages.server
-        config.packages.client-app
-      ];
-
       packages = with pkgs; [
         cargo
         libisoburn
@@ -41,9 +15,6 @@
         inputs'.agenix.packages.default
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
-
-        config.procfiles.tauri-dev.package
-        config.procfiles.fe-dev.package
       ];
 
       shellHook = ''

@@ -21,7 +21,9 @@
         isNormalUser = true;
         description = "the user used to manage this server. Typically, only switches nixos generations.";
         extraGroups = ["wheel"];
-hashedPassword ="$y$j9T$RMKfDgvJ96QRTNHegStMO0$BBMRJ0QA8Mc7BLlA44i7eRiqgGa1hmjiwRAgEfKjsg6";
+
+        # python3 -c 'import crypt; print(crypt.crypt("1111", "$y$j9T$"))'
+        hashedPassword = "$y$j9T$$wfS3vxRHU4C86kX/3ml/KDvTTi4Y1xC/c/WL.pqLJ1/";
 
         # TODO: don't get this by import
         openssh.authorizedKeys.keys = ssot.public-keys;

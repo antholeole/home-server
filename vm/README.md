@@ -4,7 +4,8 @@
 1. Then, boot the system with the iso. It should show up in your router - grab the private IP that the router assigned.
 1. create a disko config in `./devices/<device>.nix`.
 1.  `nixos-anywhere --generate-hardware-config nixos-generate-config ./vm/devices/<device>-hardware-config.nix --flake .#<device> root@<device ip>`
-1. voila! reboot the system without USB and enjoy your nixOS install.
+1. While still SSH'd into the iso, mount the system partition to `/mnt` and cp the root secret into the parititon at the agenix decrypt path.
+2. voila! reboot the system without USB and enjoy your nixOS install. 
 
 `colema apply --impure` will put
 

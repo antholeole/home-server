@@ -1,14 +1,4 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
-  imports = [
-    ./tablet-hardware-config.nix
-    inputs.nixos-hardware.nixosModules.microsoft-surface-go
-  ];
-
+{config, ...}: {
   boot.loader = {
     systemd-boot.enable = true;
     grub.device = "nodev";
@@ -19,7 +9,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/sdb";
+        device = config.diskName;
         content = {
           type = "gpt";
           partitions = {
@@ -35,6 +25,7 @@
             };
 
             plainSwap = {
+              # TODO should be overrideable.
               size = "4G";
               content = {
                 type = "swap";
