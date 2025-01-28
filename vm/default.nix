@@ -21,30 +21,22 @@ in {
       ssh = ./modules/ssh.nix;
       nix = ./modules/nix.nix;
       disk-efi = ./modules/disk-efi.nix;
-      per-device = ./modules/per-device.nix;
+      secrets = ./modules/secrets.nix;
 
       # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
         imports = with config.flake.modules.nixos; [
           inputs.agenix.nixosModules.default
+          inputs.agenix-rekey.nixosModules.default
           inputs.disko.nixosModules.disko
 
-          per-device
           ssh
           nix
-          # TODO: including wifi in the boilerplate makes it incompatible with
-          # cloud vendors.
           wifi
+          secrets
         ];
 
         time.timeZone = "America/Los_Angeles";
-        age.identityPaths = [
-          ssot.age-private-key-path
-
-          # in the raw boo iso, the private-key-path is in the /iso directory.
-          "/iso${ssot.age-private-key-path}"
-        ];
-
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
       };
@@ -67,12 +59,7 @@ in {
         deployment = {
           replaceUnknownProfiles = true;
           targetUser = "root";
-          # TODO: get this intergrated with rekey
-          keys."id_ed25519" = {
-            uploadAt = "pre-activation";
-            keyFile = "/home/oleina/.secrets/id_ed25519";
-            destDir = "/var/lib/private/"; # TODO calculate this from the var
-          };
+          buildOnTarget = true;
         };
       };
 
@@ -87,19 +74,13 @@ in {
         };
 
         imports = [
-          ((import ./hosts/tablet) {
-            specialArgs =
-              mkSpecialArgs system;
-          })
+          (import ./hosts/tablet)
         ];
       };
 
       microserver = {system, ...}: {
         deployment = {
           targetHost = "192.168.12.167";
-          targetUser = "root";
-          buildOnTarget = true;
-          replaceUnknownProfiles = true;
           tags = ["server" "master"];
         };
 
@@ -144,6 +125,25 @@ in {
     inputs',
     ...
   }: rec {
+    agenix-rekey.nixosConfigurations = ((inputs.colmena.lib.makeHive self.colmena).introspect (x: x)).nodes;
+
+    packages.test-only-full-iso = inputs.nixos-generators.nixosGenerate {
+      # meta.description = "just to test nixos configurations - don't fully-load an iso!";
+      inherit system;
+
+      specialArgs = mkSpecialArgs system;
+
+      modules = with config.flake.modules.nixos; [
+        (import ./hosts/microserver)
+
+        ({...}: {
+          virtualisation.diskSize = 30 * 1024;
+        })
+      ];
+
+      format = "iso";
+    };
+
     packages.bootstrap-iso = inputs.nixos-generators.nixosGenerate {
       # meta.description = "the minimal iso required to boot and switch into the full config.";
       inherit system;

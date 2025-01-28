@@ -9,4 +9,5 @@
 
   networking.hostName = "microserver";
   diskName = "/dev/nvme0n1";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAD9e26kcrBfe7Zho/WcUA3pVswKfCn1lgVK4i2RAxIs";
 }

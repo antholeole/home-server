@@ -3,8 +3,8 @@
     system,
     pkgs,
     lib,
-    config,
     inputs',
+    config,
     ...
   }: {
     devShells.default = pkgs.mkShell {
@@ -12,9 +12,10 @@
         cargo
         libisoburn
 
-        inputs'.agenix.packages.default
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
+
+        config.agenix-rekey.package
       ];
 
       shellHook = ''

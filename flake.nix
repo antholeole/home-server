@@ -6,11 +6,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     ## nix utils
-    # dev utils for local testing.
-    procfile-nix = {
-      url = "github:getchoo/procfile-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # format the whole repo in one command
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -25,6 +20,10 @@
     agenix = {
       url = "github:ryantm/agenix";
       # inputs.nixpkgs.follows = "nixpkgs"; does not work with nixos-unstable age
+    };
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ## Kubernetes utils
@@ -70,7 +69,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.treefmt-nix.flakeModule
-        inputs.procfile-nix.flakeModule
+        inputs.agenix-rekey.flakeModule
 
         ./parts/devshell.nix
         ./parts/treefmt.nix

@@ -3,11 +3,8 @@
   inputs,
   ...
 }: {
-  # use the wifi password
   age.secrets.nm-secrets = {
-    file = "${inputs.self}/secrets/wifi-pass.age";
-    owner = "root";
-    group = "root";
+    rekeyFile = "${inputs.self}/secrets/wifi-pass.age";
   };
 
   networking = {
