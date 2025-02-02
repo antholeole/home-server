@@ -3,6 +3,9 @@
   imports = with flake-config.flake.modules.nixos; [
     ./hardware-config.nix
 
+    ./modules/k3s.nix
+
+    utils
     boilerplate
     disk-efi
   ];

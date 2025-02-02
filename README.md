@@ -1,22 +1,30 @@
-# Parts
+# My Home Server
 
-This repo is split up into many parts. Each part is in a folder.
+This is my tiny home server! it runs on  small lenovo IOT device. The frontend
+is a surface go.
 
--  **🗿 Root**: The root directory; holds shared configs between each part.
--  **📱 Client**: A client application to use on a tablet to talk to the home server.
--  **☝️ Tablet**: The Microsoft Surface 4 NixOS config that interfaces the server.
--  **🖥️ VM**: Contains three VM configurations: 
-   - .#bootstrap-iso: a shared iso that can be loaded onto a device and booted from; from there, you can rebuild switch the system over ssh into one of the two below.
-   - .#master-full: A master node for  kubernetes cluster. This also contains the slave node configs, so it can function as a single node kubernetes cluster.
 
-# A Note on Secrets
+## Using
 
-When deploying, pulumi uses the secrets encrypted with [agenix](https://github.com/ryantm/agenix). Even when self hosting, [backblaze](backblaze.com) is used for blob storage (to avoid having to deal with redundancy) so age secrets are required.
+The below instructions assume that you are me; that is, all the configuation
+of your devices are exactly the same - you should read this disclaimer as "this
+repo is useless unless you change all the constants first".
 
-# Devshell
+1. to first "infect" the system with nixos, boot it using the iso generated from `make-iso`. 
+1. Then, boot the system with the iso. It should show up in your router - grab the private IP that the router assigned.
+1. create a disko config in `./devices/<device>.nix`.
+1.  `nixos-anywhere --generate-hardware-config nixos-generate-config ./vm/devices/<device>-hardware-config.nix --flake .#<device> root@<device ip>`
+1. While still SSH'd into the iso, mount the system partition to `/mnt` and cp the root secret into the parititon at the agenix decrypt path.
+1. voila! reboot the system without USB and enjoy your nixOS install.
 
-`direnv allow` will enable the devshell.
+Colmena will manage the systems from then on.
 
-the devshell provides the following scripts:
-- `dev`, which launches the frontend tauri application.
-- `dev-fe`,  which launches the frontend application in a browser window.
+# Building
+
+`bootstrap-iso` contains the configuration required to to make a minimal boot iso _except_ for the agenix secret files. To generate an iso, please run `make-iso`: this is to ensure that no secret files end up in the nix store. `make-iso` assumes you have a secret key in `~/.secrets/id_ed25519`.  
+
+# Developing
+
+To start the minimal iso in qemu, run the `run-iso` app. Then, you can ssh into it with `ssh localhost -p 2222 -l manager`, provided you have configured it with the correct public keys. 
+
+Once the machine is running in qemu, `nixos-rebuild switch --use-remote-sudo --build-host localhost --target-host localhost:2222 --flake ".#<flake-role>"` should allow you to iterate on a specialization without having to worry about rebuiliding the iso every time (unless, of course, you're working on the iso itself).

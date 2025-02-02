@@ -1,6 +1,5 @@
 {
   inputs,
-  ssot,
   config,
   ...
 }: {
@@ -14,7 +13,7 @@
         }
       ];
       storageMode = "local";
-      localStorageDir = "${inputs.self}/vm/hosts/${config.networking.hostName}/secrets";
+      localStorageDir = "${inputs.self}/hosts/${config.networking.hostName}/secrets";
     };
   };
 }

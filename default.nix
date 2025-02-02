@@ -5,7 +5,7 @@
   self,
   ...
 }: let
-  ssot = import "${inputs.self}/ssot/keys.nix";
+  ssot = import "${inputs.self}/ssot.nix";
   mkSpecialArgs = system: {
     inherit inputs system ssot;
     flake-config = config;
@@ -22,6 +22,7 @@ in {
       nix = ./modules/nix.nix;
       disk-efi = ./modules/disk-efi.nix;
       secrets = ./modules/secrets.nix;
+      utils = ./modules/utils.nix;
 
       # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
@@ -44,7 +45,6 @@ in {
 
     colmena = let
       system = "x86_64-linux";
-      colmena = true;
     in {
       meta = {
         nixpkgs = import inputs.nixpkgs {
@@ -66,7 +66,7 @@ in {
       # colmena devices
       tablet = {system, ...}: {
         deployment = {
-          targetHost = "192.168.12.171";
+          targetHost = ssot.ips.tablet;
           targetUser = "root";
           buildOnTarget = true; #8gb ram good enough
           replaceUnknownProfiles = true;
@@ -80,7 +80,7 @@ in {
 
       microserver = {system, ...}: {
         deployment = {
-          targetHost = "192.168.12.167";
+          targetHost = ssot.ips.microserver;
           tags = ["server" "master"];
         };
 
@@ -133,7 +133,7 @@ in {
 
       specialArgs = mkSpecialArgs system;
 
-      modules = with config.flake.modules.nixos; [
+      modules = [
         (import ./hosts/microserver)
 
         ({...}: {

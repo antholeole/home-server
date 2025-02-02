@@ -11,12 +11,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # use rust nightly
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # secrets
+   # secrets
     agenix = {
       url = "github:ryantm/agenix";
       # inputs.nixpkgs.follows = "nixpkgs"; does not work with nixos-unstable age
@@ -63,7 +58,6 @@
 
   outputs = inputs @ {
     flake-parts,
-    rust-overlay,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -73,9 +67,7 @@
 
         ./parts/devshell.nix
         ./parts/treefmt.nix
-
-        ./server
-        ./vm
+        ./.
       ];
       systems = ["x86_64-linux"];
       perSystem = {
@@ -89,9 +81,7 @@
         _module.args = {
           pkgs = import inputs.nixpkgs {
             inherit system;
-            overlays = [
-              rust-overlay.overlays.default
-            ];
+            overlays = [];
           };
         };
       };
