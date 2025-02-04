@@ -1,5 +1,5 @@
 #  import this to get everything required to make a system
-{flake-config, ...}: {
+{flake-config, pkgs, ...}: {
   imports = with flake-config.flake.modules.nixos; [
     ./hardware-config.nix
 
@@ -8,6 +8,11 @@
     utils
     boilerplate
     disk-efi
+  ];
+
+  environment.systemPackages = with pkgs; [
+    k9s
+    kubeseal
   ];
 
   networking.hostName = "microserver";

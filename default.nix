@@ -6,13 +6,11 @@
   ...
 }: let
   ssot = import "${inputs.self}/ssot.nix";
-  mkSpecialArgs = system: {
-    inherit inputs system ssot;
+  mkSpecialArgs = system: withSystem system ({ pkgs, ... }:{
+    inherit inputs system ssot pkgs;
+    lib = pkgs.lib;
     flake-config = config;
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-    };
-  };
+  });
 in {
   flake = {
     modules.nixos = {

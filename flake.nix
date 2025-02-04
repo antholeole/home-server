@@ -11,7 +11,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   # secrets
+    # secrets
     agenix = {
       url = "github:ryantm/agenix";
       # inputs.nixpkgs.follows = "nixpkgs"; does not work with nixos-unstable age
@@ -54,12 +54,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:zhaofengli/colmena/main";
     };
+
+    # helm
+    nix-kube-generators = {
+      url = "github:farcaller/nix-kube-generators";
+    };
+    nixhelm = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nix-kube-generators.follows = "nix-kube-generators";
+      # TODO: wait for https://github.com/farcaller/nixhelm/pull/32
+      url = "github:antholeole/nixhelm/testing";
+    };
   };
 
-  outputs = inputs @ {
-    flake-parts,
-    ...
-  }:
+  outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.treefmt-nix.flakeModule
@@ -70,6 +78,7 @@
         ./.
       ];
       systems = ["x86_64-linux"];
+      
       perSystem = {
         config,
         self',
@@ -81,7 +90,14 @@
         _module.args = {
           pkgs = import inputs.nixpkgs {
             inherit system;
-            overlays = [];
+            overlays = let
+                helm-overlays = final: prev: {
+                  lib = prev.lib // {
+                    kubelib = inputs.nix-kube-generators.lib { pkgs = prev; };
+                  };
+                  helm-charts = inputs.nixhelm.charts { pkgs = prev; };
+                };
+            in [ helm-overlays ];
           };
         };
       };

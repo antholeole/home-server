@@ -9,8 +9,8 @@
   }: {
     devShells.default = pkgs.mkShell {
       packages = with pkgs; [
-        libisoburn
         kubectl
+        kubeseal
 
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default

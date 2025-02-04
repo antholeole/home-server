@@ -1,4 +1,11 @@
 {...}: {
+  # some base, "always on", deployments.
+  imports = [
+    ./manifests/admin-role.nix
+    ./manifests/sealed-secrets.nix
+    ./manifests/kubernetes-dashboard.nix
+  ];
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
