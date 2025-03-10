@@ -11,6 +11,7 @@
       packages = with pkgs; [
         kubectl
         kubeseal
+        fluxcd
 
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default

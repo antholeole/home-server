@@ -4,6 +4,7 @@
     ./manifests/admin-role.nix
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
+    ./manifests/flux.nix
   ];
 
   networking.firewall = {
