@@ -12,6 +12,7 @@
         kubectl
         kubeseal
         fluxcd
+        kubernetes-helm
 
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
