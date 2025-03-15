@@ -62,7 +62,7 @@
     nixhelm = {
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-kube-generators.follows = "nix-kube-generators";
-      url = "github:farcaller/nixhelm/master";
+      url = "github:antholeole/nixhelm/vault";
     };
   };
 

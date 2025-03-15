@@ -10,4 +10,6 @@
       };
     };
   };
+
+  longhorn.storageClass.main = "longhorn-main";
 }

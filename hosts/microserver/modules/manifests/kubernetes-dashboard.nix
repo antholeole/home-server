@@ -16,7 +16,7 @@
           inherit namespace;
 
           name = "kubernetes-dashboard";
-          chart = pkgs.helm-charts.kubernetes.dashboard;
+          chart = pkgs.helm-charts.kubernetes-dashboard.kubernetes-dashboard;
 
           values = {
             # fix for https://github.com/Kong/kong/issues/13730

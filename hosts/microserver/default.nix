@@ -4,6 +4,7 @@
     ./hardware-config.nix
 
     ./modules/k3s.nix
+    ./modules/longhorn-support.nix
 
     utils
     boilerplate
