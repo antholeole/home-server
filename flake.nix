@@ -21,6 +21,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-root.url = "github:srid/flake-root"; # wtf transitive dependency for agenix-shell?
+    agenix-shell = {
+      url = "github:aciceri/agenix-shell";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ## Kubernetes utils
     # CRI
     nix-snaphotter = {
@@ -71,9 +78,13 @@
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.agenix-rekey.flakeModule
+        inputs.agenix-shell.flakeModules.default
 
         ./parts/devshell.nix
         ./parts/treefmt.nix
+
+        ./cdk
+
         ./.
       ];
       systems = ["x86_64-linux"];

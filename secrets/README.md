@@ -1,1 +1,1 @@
-for the rekey secrets, edit with `EDITOR=kak agenix edit secrets/wifi-pass.age`.
+for the rekey secrets, edit with `EDITOR=hx agenix edit secrets/wifi-pass.age`.

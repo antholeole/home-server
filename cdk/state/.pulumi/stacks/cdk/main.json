@@ -1,0 +1,101 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/cdk/main",
+        "latest": {
+            "manifest": {
+                "time": "2025-03-16T00:02:09.507155278-07:00",
+                "magic": "e6f9b63eec1c02224f3d9bb9346dbfaeb256b3b4d71dc3ee7581d37b584369c2",
+                "version": "v3.152.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:K2EYnUwTOm4=:v1:vcDbGN1+Z8EtzWa7:giBLeKRj6e7VdAKjPkYTBdE2TRnDLw=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:main::cdk::pulumi:pulumi:Stack::cdk-main",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2025-03-16T06:56:40.382853725Z",
+                    "modified": "2025-03-16T06:56:40.382853725Z",
+                    "sourcePosition": "project:///node_modules/.pnpm/@pulumi+pulumi@3.156.0_typescript@5.8.2/node_modules/@pulumi/runtime/stack.ts#38,23"
+                },
+                {
+                    "urn": "urn:pulumi:main::cdk::pulumi:providers:cloudflare::default_5_49_1",
+                    "custom": true,
+                    "id": "c291bb30-1e1c-47ec-ae93-6cd105f14d14",
+                    "type": "pulumi:providers:cloudflare",
+                    "inputs": {
+                        "__internal": {},
+                        "apiClientLogging": "false",
+                        "maxBackoff": "30",
+                        "minBackoff": "1",
+                        "retries": "3",
+                        "rps": "4",
+                        "version": "5.49.1"
+                    },
+                    "outputs": {
+                        "apiClientLogging": "false",
+                        "maxBackoff": "30",
+                        "minBackoff": "1",
+                        "retries": "3",
+                        "rps": "4",
+                        "version": "5.49.1"
+                    },
+                    "created": "2025-03-16T06:56:41.437550547Z",
+                    "modified": "2025-03-16T06:56:41.437550547Z"
+                },
+                {
+                    "urn": "urn:pulumi:main::cdk::cloudflare:index/zeroTrustTunnelCloudflared:ZeroTrustTunnelCloudflared::home-server-tunnel",
+                    "custom": true,
+                    "id": "26f72124-321f-43ac-b875-d37033b94733",
+                    "type": "cloudflare:index/zeroTrustTunnelCloudflared:ZeroTrustTunnelCloudflared",
+                    "inputs": {
+                        "__defaults": [],
+                        "accountId": "e0d74c227439ece29e62209d109ae43e",
+                        "configSrc": "local",
+                        "name": "home-server-tunnel",
+                        "secret": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:FmdpviiVXnsi7cu9:Tqf86aNYBnkttJ6DMFgD4VuQa0XlezZYdFI="
+                        }
+                    },
+                    "outputs": {
+                        "accountId": "e0d74c227439ece29e62209d109ae43e",
+                        "cname": "26f72124-321f-43ac-b875-d37033b94733.cfargotunnel.com",
+                        "configSrc": "local",
+                        "id": "26f72124-321f-43ac-b875-d37033b94733",
+                        "name": "home-server-tunnel",
+                        "secret": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:CSOaq/2Ey4f/fpJY:/BtwTE2iAxXUjUNhGo7Eqqu7BlWFbkc1JZM="
+                        },
+                        "tunnelToken": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:ZhPpKLOcKV9yVyF/:6VzoRYuIqjfjcKnaQaN3/4ccqdN64SIRQZtI3pbPhH7FBS9/V9GV4TWRUexLeDY2TR1cQa32uefKUNs7KiuRRMytiRbBVJFuQgsB2JgJ4buxHPgKBwnVlkZsXPJEpzTdmfVj9r1a35nR+sNw2wb134jdE4f0Ez1777h8xnCRcFoUpz+YwXOig1gppRV/wbJoRr2WYR7l"
+                        }
+                    },
+                    "parent": "urn:pulumi:main::cdk::pulumi:pulumi:Stack::cdk-main",
+                    "provider": "urn:pulumi:main::cdk::pulumi:providers:cloudflare::default_5_49_1::c291bb30-1e1c-47ec-ae93-6cd105f14d14",
+                    "propertyDependencies": {
+                        "accountId": [],
+                        "configSrc": [],
+                        "name": [],
+                        "secret": []
+                    },
+                    "additionalSecretOutputs": [
+                        "secret",
+                        "tunnelToken"
+                    ],
+                    "created": "2025-03-16T07:02:09.45450002Z",
+                    "modified": "2025-03-16T07:02:09.45450002Z",
+                    "sourcePosition": "project:///index.ts#8,1"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}
