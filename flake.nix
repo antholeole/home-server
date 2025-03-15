@@ -62,8 +62,7 @@
     nixhelm = {
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-kube-generators.follows = "nix-kube-generators";
-      # TODO: wait for https://github.com/farcaller/nixhelm/pull/32
-      url = "github:antholeole/nixhelm/testing";
+      url = "github:farcaller/nixhelm/master";
     };
   };
 
@@ -78,7 +77,7 @@
         ./.
       ];
       systems = ["x86_64-linux"];
-      
+
       perSystem = {
         config,
         self',
@@ -86,18 +85,38 @@
         pkgs,
         system,
         ...
-      }: {
+      } @ sysInputs: {
         _module.args = {
           pkgs = import inputs.nixpkgs {
             inherit system;
             overlays = let
-                helm-overlays = final: prev: {
-                  lib = prev.lib // {
-                    kubelib = inputs.nix-kube-generators.lib { pkgs = prev; };
+              overlay = final: prev: {
+                lib = let
+                  # recurses into ./lib, creating a attrset for every file. so,
+                  # `lib/kubernetes.nix` would be accessable by every module
+                  # like:
+                  #
+                  # ```
+                  # { lib, ... }: lib.kubernetes.some-custom-function ...
+                  # ```
+                  #
+                  # 
+                  customLib = prev.lib.filesystem.packagesFromDirectoryRecursive {
+                    callPackage = prev.lib.callPackageWith sysInputs;
+                    directory = ./lib;
                   };
-                  helm-charts = inputs.nixhelm.charts { pkgs = prev; };
-                };
-            in [ helm-overlays ];
+                in
+                  prev.lib
+                  // {
+                    # add the following to pkgs.lib
+                    kubelib = inputs.nix-kube-generators.lib {pkgs = prev;};
+                    homeServer = customLib;
+                  };
+
+                # and the following to pkgs.
+                helm-charts = inputs.nixhelm.charts {pkgs = prev;};
+              };
+            in [overlay];
           };
         };
       };

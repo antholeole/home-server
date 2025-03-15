@@ -11,7 +11,6 @@
       packages = with pkgs; [
         kubectl
         kubeseal
-        fluxcd
         kubernetes-helm
 
         inputs'.colmena.packages.colmena

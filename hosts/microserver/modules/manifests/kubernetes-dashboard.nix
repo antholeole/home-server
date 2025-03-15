@@ -7,17 +7,7 @@
     namespace = "kubernetes-dashboard";
     admin-account-name = "dashboard-admin";
   in {
-    dashboard-namespace = {
-      enable = true;
-      content = {
-        apiVersion = "v1";
-        kind = "Namespace";
-        metadata = {
-          name = namespace;
-          labels.name = namespace;
-        };
-      };
-    };
+    dashboard-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
 
     dashboard = {
       enable = true;

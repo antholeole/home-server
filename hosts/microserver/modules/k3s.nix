@@ -2,6 +2,7 @@
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
+    ./manifests/ingress-nginx.nix
   ];
 
   networking.firewall = {
