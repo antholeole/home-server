@@ -67,38 +67,49 @@
 
     "${admin-account-name}-rbac" = let
       rbacForNamespace = forNamespace: {
-          apiVersion = "rbac.authorization.k8s.io/v1";
-          kind = "ClusterRoleBinding";
+        apiVersion = "rbac.authorization.k8s.io/v1";
+        kind = "ClusterRoleBinding";
 
-          metadata = {
-            namespace = forNamespace;
+        metadata = {
+          namespace = forNamespace;
+          name = admin-account-name;
+        };
+
+        roleRef = {
+          apiGroup = "rbac.authorization.k8s.io";
+          kind = "ClusterRole";
+          # TODO: give a read-only role to this user.
+          name = "cluster-admin";
+        };
+
+        subjects = [
+          {
+            inherit namespace;
+
+            kind = "ServiceAccount";
             name = admin-account-name;
-          };
-
-          roleRef = {
-            apiGroup = "rbac.authorization.k8s.io";
-            kind = "ClusterRole";
-            # TODO: give a read-only role to this user.
-            name = "cluster-admin";
-          };
-
-          subjects = [
-            {
-              inherit namespace;
-
-              kind = "ServiceAccount";
-              name = admin-account-name;
-            }
-          ];
+          }
+        ];
       };
     in {
-      
-        enable = true;
-        target = "${admin-account-name}.rbac.serviceaccount.yaml";
-        content = 
-[
-      (rbacForNamespace "default")
-      (rbacForNamespace namespace)
-    ];
-    };  };
+      enable = true;
+      target = "${admin-account-name}.rbac.serviceaccount.yaml";
+      content = [
+        (rbacForNamespace "default")
+        (rbacForNamespace namespace)
+      ];
+    };
+
+    nodeport = lib.homeServer.kubernetes.mkNodeport {
+      inherit namespace;
+      name = "kubernetes-dashboard-nodeport";
+      from = 8000;
+      to = 30000;
+      selectors = {
+        "app.kubernetes.io/instance" = "kubernetes-dashboard";
+        "app.kubernetes.io/name" = "kubernetes-dashboard-web";
+        "app.kubernetes.io/part-of" = "kubernetes-dashboard";
+      };
+    };
+  };
 }

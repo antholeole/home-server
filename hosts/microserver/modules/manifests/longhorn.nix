@@ -1,4 +1,8 @@
-{lib, pkgs,...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   services.k3s.manifests = let
     namespace = "longhorn-system";
   in {
@@ -11,9 +15,16 @@
 
         name = "longhorn";
         chart = pkgs.helm-charts.longhorn.longhorn;
+
+        values = {
+          service.ui = {
+            type = "NodePort";
+          # TODO get rid of this
+            nodePort = 30001;
+          };
+        };
       };
     };
-    
 
     main-storage-class = {
       enable = true;
