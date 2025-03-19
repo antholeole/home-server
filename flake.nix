@@ -96,8 +96,10 @@
         pkgs,
         system,
         ...
-      } @ sysInputs: {
+      } @ sysInputs: {          
         _module.args = {
+          ssot = import "${inputs.self}/ssot.nix";
+          
           pkgs = import inputs.nixpkgs {
             inherit system;
             overlays = let

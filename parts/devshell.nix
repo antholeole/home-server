@@ -1,6 +1,7 @@
 {inputs, ...}: {
   agenix-shell = let
     secrets = import "${inputs.self}/secrets/secrets.nix";
+    ssot = import "${inputs.self}/ssot.nix";
   in {
     # each secret to be exposed to the shell should be added here.
     secrets = {
@@ -19,14 +20,20 @@
     ...
   }: {
     devShells.default = pkgs.mkShell {
-       # Provides $FLAKE_ROOT in dev shell
-      inputsFrom = [ config.flake-root.devShell ]; 
-      
+      inputsFrom = [
+      # Provides $FLAKE_ROOT in dev shell
+        config.flake-root.devShell
+
+        config.packages.cdk
+      ];
+
       packages = with pkgs; [
         kubectl
         kubeseal
         kubernetes-helm
 
+        pnpm_10
+        
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
 

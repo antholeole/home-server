@@ -14,6 +14,9 @@ importers:
       '@pulumi/pulumi':
         specifier: ^3.113.0
         version: 3.156.0(typescript@5.8.2)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@types/node':
         specifier: ^18
@@ -1093,6 +1096,9 @@ packages:
   yocto-queue@1.2.0:
     resolution: {integrity: sha512-KHBC7z61OJeaMGnF3wqNZj+GGNXOyypZviiKpQeiHirG5Ib1ImwcLBH70rbMSkKfSmUNBsdf2PwaEJtKvgmkNw==}
     engines: {node: '>=12.20'}
+
+  zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
 
 snapshots:
 
@@ -2286,3 +2292,5 @@ snapshots:
       yargs-parser: 21.1.1
 
   yocto-queue@1.2.0: {}
+
+  zod@3.24.2: {}
