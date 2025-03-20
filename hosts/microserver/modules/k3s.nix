@@ -4,6 +4,7 @@
     ./manifests/kubernetes-dashboard.nix
     ./manifests/ingress-nginx.nix
     ./manifests/longhorn.nix
+    ./manifests/cert-manager.nix
   ];
 
   networking.firewall = {
