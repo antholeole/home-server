@@ -1,0 +1,67 @@
+{
+  lib,
+  pkgs,
+  ...
+}: {
+  services.k3s.manifests = let
+    namespace = "cert-manager";
+    api-secret = {
+      name = "cloudflare-api-token-secret";
+      key = "api-token";
+    };
+  in {
+    cert-manager-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+
+    cert-manager = {
+      enable = true;
+      content = lib.kubelib.fromHelm {
+        inherit namespace;
+
+        name = "cert-manager";
+        chart = pkgs.helm-charts.jetstack.cert-manager;
+        values = {
+          crds.enabled = true;
+        };
+      };
+    };
+
+    cloudflare-secret-sealed =  {
+      enable = true;
+      content = {
+        apiVersion = "bitnami.com/v1alpha1";
+        kind = "SealedSecret";
+        metadata = {
+          inherit namespace;
+
+          name = api-secret.name;
+        };
+        type = "opaque";
+
+        encryptedData.stringData.${api-secret.key} = lib.homeServer.sealed.cloudflare-dns;
+      };
+    };
+
+    cloudflare-issuer = {
+      enable = true;
+      content = {
+        apiVersion = "cert-manager.io/v1";
+        kind = "Issuer";
+        metadata = {
+          inherit namespace;
+
+          name = "cf-issuer";
+        };
+
+        spec = {
+          acme = {
+            solvers = [
+              {
+                dns01.cloudflare.apiTokenSecretRef = api-secret;
+              }
+            ];
+          };
+        };
+      };
+    };
+  };
+}
