@@ -19,7 +19,6 @@
         values = {
           service.ui = {
             type = "NodePort";
-            # TODO get rid of this
             nodePort = 30001;
           };
         };
