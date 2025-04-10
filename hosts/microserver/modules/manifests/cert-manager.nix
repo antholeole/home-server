@@ -25,19 +25,28 @@
       };
     };
 
-    cloudflare-secret-sealed =  {
+    cloudflare-secret-sealed = let
+      metadata = {
+        inherit namespace;
+
+        name = api-secret.name;
+      };
+    in {
       enable = true;
       content = {
+        inherit metadata;
+
         apiVersion = "bitnami.com/v1alpha1";
         kind = "SealedSecret";
-        metadata = {
-          inherit namespace;
 
-          name = api-secret.name;
+        spec = {
+          template = {
+            metadata = metadata;
+            type = "opaque";
+          };
+
+          encryptedData.${api-secret.key} = lib.homeServer.sealed.secrets.cloudflare-dns;
         };
-        type = "opaque";
-
-        encryptedData.stringData.${api-secret.key} = lib.homeServer.sealed.cloudflare-dns;
       };
     };
 
