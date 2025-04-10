@@ -1,10 +1,11 @@
-{...}: {
+{pkgs,...}: {
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
     ./manifests/ingress-nginx.nix
     ./manifests/longhorn.nix
     ./manifests/cert-manager.nix
+    ./manifests/tldraw.nix
   ];
 
   networking.firewall = {
@@ -18,5 +19,8 @@
   services.k3s = {
     enable = true;
     role = "server";
+    package = pkgs.k3s_1_29;
+    snapshotter = "nix";
+    setKubeConfig = true;
   };
 }

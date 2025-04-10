@@ -5,6 +5,7 @@
 
     ./modules/k3s.nix
     ./modules/longhorn-support.nix
+    ./modules/snapshotter.nix
 
     utils
     boilerplate
@@ -13,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     kubeseal
+    nerdctl
   ];
 
   networking.hostName = "microserver";
