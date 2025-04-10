@@ -30,7 +30,7 @@
 
     ## Kubernetes utils
     # CRI
-    nix-snaphotter = {
+    nix-snapshotter = {
       url = "github:pdtpartners/nix-snapshotter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -70,6 +70,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-kube-generators.follows = "nix-kube-generators";
       url = "github:antholeole/nixhelm/vault";
+    };
+
+    # code for software
+    tldraw-server-client = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:antholeole/tldraw-server-client";
     };
   };
 
@@ -128,8 +134,14 @@
 
                 # and the following to pkgs.
                 helm-charts = inputs.nixhelm.charts {pkgs = prev;};
+                tldraw-server = inputs'.tldraw-server-client.tldraw-server;
               };
-            in [overlay];
+            in [
+              overlay
+
+              # 3rd party overlays
+              inputs.nix-snapshotter.overlays.default
+            ];
           };
         };
       };
