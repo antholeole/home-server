@@ -6,6 +6,7 @@
     ./manifests/longhorn.nix
     ./manifests/cert-manager.nix
     ./manifests/tldraw.nix
+    ./manifests/cloudflared.nix
   ];
 
   networking.firewall = {

@@ -72,10 +72,16 @@
       url = "github:antholeole/nixhelm/vault";
     };
 
+    # some 3p non-helm repo charts
+    cloudflare-operator = {
+      url = "github:adyanth/cloudflare-operator";
+      flake = false;
+    };
+
     # code for software
     tldraw-server-client = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:antholeole/tldraw-server-client";
+      url = "github:antholeole/tldraw-server-client/env-vars";
     };
   };
 

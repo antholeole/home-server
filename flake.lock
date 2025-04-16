@@ -72,6 +72,22 @@
         "type": "github"
       }
     },
+    "cloudflare-operator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744389560,
+        "narHash": "sha256-a7kkQCjhJHR7HEXIHK4rR9P29C72WB6jKVPGQBzvZI4=",
+        "owner": "adyanth",
+        "repo": "cloudflare-operator",
+        "rev": "3973c1e69c83b83cf118686a90a36a3280608a08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "adyanth",
+        "repo": "cloudflare-operator",
+        "type": "github"
+      }
+    },
     "colmena": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -872,6 +888,7 @@
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
+        "cloudflare-operator": "cloudflare-operator",
         "colmena": "colmena",
         "disko": "disko",
         "flake-parts": "flake-parts_2",
@@ -969,15 +986,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1743124632,
-        "narHash": "sha256-VMUZfQ9XbNhVc0X+9U5Avt8wAdtcO4TzqBo6eX3gb78=",
+        "lastModified": 1745018745,
+        "narHash": "sha256-kaClhFuGCxFZkaSFsZIddbfwbumldipsTPtxKawmPVo=",
         "owner": "antholeole",
         "repo": "tldraw-server-client",
-        "rev": "14c2a3404834fdb1fd24ed9852b0466fac6cc48d",
+        "rev": "681b3ba44bcc7fec73aa4f9a07a5e3fc6e672f29",
         "type": "github"
       },
       "original": {
         "owner": "antholeole",
+        "ref": "env-vars",
         "repo": "tldraw-server-client",
         "type": "github"
       }

@@ -13,6 +13,10 @@ if (!process.env.CLOUDFLARE_API_TOKEN) {
 
 // use zod to tell typescript that all these values certainly exist.
 const {
+	// TODO: remove this. i thought i was going to create a tunnel this way,
+	// but the gateway plugin did it for me. this is currently a useful example
+	// for how to pipe info from nix to the cdk - once we do it with another var,
+	// this should be removed.
 	cf__tunnel: cfTunnel,
 	ACCOUNT_ID: accountId,
 	ZONE_ID: zoneId,
@@ -25,10 +29,3 @@ const {
 		DOMAIN: z.string(),
 	})
 	.parse(process.env);
-
-new cloudflare.ZeroTrustTunnelCloudflared("home-server-tunnel", {
-	accountId,
-	name: "home-server-tunnel",
-	secret: btoa(cfTunnel),
-	configSrc: "local",
-});

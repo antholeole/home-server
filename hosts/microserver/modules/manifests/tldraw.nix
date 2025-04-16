@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  ssot,
   ...
 }: let
   tldraw-backend = pkgs.nix-snapshotter.buildImage {
@@ -12,12 +13,38 @@
 in {
   services.k3s.manifests = let
     namespace = "tldraw";
+    app = "tldraw-backend";
+    port = 3000;
+    service-name = "tldraw-service";
   in {
     tldraw-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
 
-    tldraw-backend = let
-      app = "tldraw-backend";
-    in {
+    tldraw-service = {
+      enable = true;
+      target = "tldraw-service.yaml";
+
+      content = {
+        apiVersion = "v1";
+        kind = "Service";
+        metadata = {
+          inherit namespace;
+          name = service-name;
+        };
+
+        spec = {
+          selector.app = app;
+          ports = [
+            {
+              port = 80;
+              targetPort = port;
+              protocol = "TCP";
+            }
+          ];
+        };
+      };
+    };
+
+    tldraw-backend = {
       enable = true;
       target = "${app}.yaml";
 
@@ -41,7 +68,17 @@ in {
                 image = "nix:0${tldraw-backend}";
                 ports = [
                   {
-                    containerPort = 3000;
+                    containerPort = port;
+                  }
+                ];
+                env = [
+                  {
+                    name = "PORT";
+                    value = builtins.toString port;
+                  }
+                  {
+                    name = "HOSTNAME";
+                    value = "0.0.0.0";
                   }
                 ];
               }
@@ -50,14 +87,40 @@ in {
         };
       };
     };
+
+    tldraw-tunnel = {
+      enable = true;
+
+      content = {
+        apiVersion = "networking.cfargotunnel.com/v1alpha1";
+        kind = "TunnelBinding";
+        metadata = {
+          name = "tldraw-cluster-tunnel";
+          inherit namespace;
+        };
+
+        subjects = [
+          {
+            name = service-name;
+            spec = {
+              fqdn = "draw.${ssot.cloudflare.domain}";
+              protocol = "http";
+            };
+          }
+        ];
+        tunnelRef = lib.homeServer.kubernetes.cloudflare.tunnelRef;
+      };
+    };
   };
 
   services.preload-containerd = {
     enable = true;
-    targets = [{
-      archives = [
-        tldraw-backend
-      ];
-    }];
+    targets = [
+      {
+        archives = [
+          tldraw-backend
+        ];
+      }
+    ];
   };
 }
