@@ -31,6 +31,7 @@
         kubectl
         kubeseal
         kubernetes-helm
+        kustomize
 
         pnpm_10
         
