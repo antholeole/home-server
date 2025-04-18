@@ -63,6 +63,8 @@
 
         spec = {
           acme = {
+            server = "https://acme-v02.api.letsencrypt.org/directory";
+            privateKeySecretRef.name = "cluster-issuer-account-key";
             solvers = [
               {
                 dns01.cloudflare.apiTokenSecretRef = api-secret;
