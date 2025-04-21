@@ -81,7 +81,7 @@
     # code for software
     tldraw-server-client = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:antholeole/tldraw-server-client/env-vars";
+      url = "github:antholeole/tldraw-server-client/main";
     };
   };
 
@@ -140,7 +140,9 @@
 
                 # and the following to pkgs.
                 helm-charts = inputs.nixhelm.charts {pkgs = prev;};
+
                 tldraw-server = inputs'.tldraw-server-client.packages.tldraw-server;
+                tldraw-web-client = inputs'.tldraw-server-client.packages.web-frontend;
               };
             in [
               overlay

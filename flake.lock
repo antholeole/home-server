@@ -986,16 +986,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1745018745,
-        "narHash": "sha256-kaClhFuGCxFZkaSFsZIddbfwbumldipsTPtxKawmPVo=",
+        "lastModified": 1745190722,
+        "narHash": "sha256-pKjCRIwXdCrugu9ewTqrx3UehhVimyHo99ydEdxH17E=",
         "owner": "antholeole",
         "repo": "tldraw-server-client",
-        "rev": "681b3ba44bcc7fec73aa4f9a07a5e3fc6e672f29",
+        "rev": "7883e866caf201cf73a32aee3a6d0a57270833de",
         "type": "github"
       },
       "original": {
         "owner": "antholeole",
-        "ref": "env-vars",
+        "ref": "main",
         "repo": "tldraw-server-client",
         "type": "github"
       }
