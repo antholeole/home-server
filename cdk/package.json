@@ -1,13 +1,13 @@
 {
-    "name": "cdk",
-    "main": "index.ts",
-    "devDependencies": {
-        "@types/node": "^18",
-        "typescript": "^5.0.0"
-    },
-    "dependencies": {
-        "@pulumi/cloudflare": "^5.49.1",
-        "@pulumi/pulumi": "^3.113.0",
-        "zod": "^3.24.2"
-    }
+	"name": "cdk",
+	"main": "index.ts",
+	"devDependencies": {
+		"@types/node": "^18",
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@pulumi/cloudflare": "^5.49.1",
+		"@pulumi/pulumi": "^3.113.0",
+		"zod": "^3.24.2"
+	}
 }

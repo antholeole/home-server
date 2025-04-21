@@ -7,11 +7,10 @@ in rec {
   masterIdentities = [
     oleinaIdentity
   ];
-  
+
   # DO NOT USE AGENIX DIRECTLY TO REKEY! instead, use agenix-rekey.
   #
   # This file is for compat with agenix-shell, which does not understand agenix
   # rekey.
   "cf-tunnel-secret.age".publicKeys = builtins.map (identity: identity.pubkey) masterIdentities;
-
 }

@@ -6,13 +6,14 @@
   ...
 }: let
   ssot = import "${inputs.self}/ssot.nix";
-  mkSpecialArgs = system: withSystem system ({ pkgs, ... }:{
-    # TODO: get pkgs out of here. Not a trivial refactor because
-    # we setup the overlays in the flake.nix.
-    inherit inputs system ssot pkgs;
-    lib = pkgs.lib;
-    flake-config = config;
-  });
+  mkSpecialArgs = system:
+    withSystem system ({pkgs, ...}: {
+      # TODO: get pkgs out of here. Not a trivial refactor because
+      # we setup the overlays in the flake.nix.
+      inherit inputs system ssot pkgs;
+      lib = pkgs.lib;
+      flake-config = config;
+    });
 in {
   flake = {
     modules.nixos = {

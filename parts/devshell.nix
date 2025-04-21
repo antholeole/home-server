@@ -21,7 +21,7 @@
   }: {
     devShells.default = pkgs.mkShell {
       inputsFrom = [
-      # Provides $FLAKE_ROOT in dev shell
+        # Provides $FLAKE_ROOT in dev shell
         config.flake-root.devShell
 
         config.packages.cdk
@@ -34,7 +34,7 @@
         kustomize
 
         pnpm_10
-        
+
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
 

@@ -108,10 +108,10 @@
         pkgs,
         system,
         ...
-      } @ sysInputs: {          
+      } @ sysInputs: {
         _module.args = {
           ssot = import "${inputs.self}/ssot.nix";
-          
+
           pkgs = import inputs.nixpkgs {
             inherit system;
             overlays = let
@@ -125,7 +125,7 @@
                   # { lib, ... }: lib.kubernetes.some-custom-function ...
                   # ```
                   #
-                  # 
+                  #
                   customLib = prev.lib.filesystem.packagesFromDirectoryRecursive {
                     callPackage = prev.lib.callPackageWith sysInputs;
                     directory = ./lib;

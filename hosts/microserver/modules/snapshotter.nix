@@ -1,6 +1,6 @@
-{inputs,...}: {
-  imports = [ inputs.nix-snapshotter.nixosModules.default ];
-  
+{inputs, ...}: {
+  imports = [inputs.nix-snapshotter.nixosModules.default];
+
   virtualisation.containerd = {
     enable = true;
     nixSnapshotterIntegration = true;

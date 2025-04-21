@@ -1,5 +1,10 @@
 #  import this to get everything required to make a system
-{inputs, flake-config, pkgs, ...}: {
+{
+  inputs,
+  flake-config,
+  pkgs,
+  ...
+}: {
   imports = with flake-config.flake.modules.nixos; [
     ./hardware-config.nix
 

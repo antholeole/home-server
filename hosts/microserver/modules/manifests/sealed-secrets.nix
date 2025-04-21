@@ -7,7 +7,7 @@
     namespace = "sealed-secrets";
   in {
     sealed-secrets-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
-    
+
     sealed-secrets = {
       enable = true;
       content = lib.kubelib.fromHelm {
