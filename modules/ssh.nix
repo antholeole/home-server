@@ -1,5 +1,4 @@
 {
-  inputs,
   lib,
   ssot,
   pkgs,
@@ -23,9 +22,7 @@
         extraGroups = ["wheel"];
 
         # python3 -c 'import crypt; print(crypt.crypt("1111", "$y$j9T$"))'
-        hashedPassword = "$y$j9T$$wfS3vxRHU4C86kX/3ml/KDvTTi4Y1xC/c/WL.pqLJ1/";
-
-        # TODO: don't get this by import
+        hashedPassword = "$y$j9T$$qEuadQ2VqI36tYXh38UeFIJl/SstzPZsNYraYceeGTB";
         openssh.authorizedKeys.keys = ssot.public-keys;
 
         packages = with pkgs; [
