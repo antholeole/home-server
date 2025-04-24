@@ -1,0 +1,4 @@
+- longhorn should backup to R2
+- add a second node (for fun!)
+- get niri working on the surface go.
+- use luks for disk encryption.
