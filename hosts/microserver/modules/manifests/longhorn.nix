@@ -15,13 +15,6 @@
 
         name = "longhorn";
         chart = pkgs.helm-charts.longhorn.longhorn;
-
-        values = {
-          service.ui = {
-            type = "NodePort";
-            nodePort = 30001;
-          };
-        };
       };
     };
 

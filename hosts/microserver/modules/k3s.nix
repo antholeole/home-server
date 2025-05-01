@@ -2,11 +2,11 @@
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
-    ./manifests/ingress-nginx.nix
     ./manifests/longhorn.nix
     ./manifests/cert-manager.nix
     ./manifests/tldraw.nix
     ./manifests/cloudflared.nix
+    ./manifests/ingress-nginx.nix
   ];
 
   networking.firewall = {
@@ -14,6 +14,9 @@
     allowedTCPPorts = [
       22 # ssh
       6443 # k3s api server
+
+      443
+      80
     ];
   };
 
@@ -23,5 +26,11 @@
     package = pkgs.k3s_1_29;
     snapshotter = "nix";
     setKubeConfig = true;
+    moreFlags = [
+      # traefik is borderline incompatible with external
+      # DNS. We'll install ingress nginx later.
+      "--disable=traefik"
+      "--disable=servicelb"
+    ];
   };
 }

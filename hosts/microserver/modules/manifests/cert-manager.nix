@@ -54,10 +54,9 @@
       enable = true;
       content = {
         apiVersion = "cert-manager.io/v1";
-        kind = "Issuer";
+        kind = "ClusterIssuer";
         metadata = {
           inherit namespace;
-
           name = "cf-issuer";
         };
 

@@ -77,6 +77,10 @@
       url = "github:adyanth/cloudflare-operator";
       flake = false;
     };
+    baremetal-ingress-nginx = {
+      url = "github:kubernetes/ingress-nginx/release-1.12";
+      flake = false;
+    };
 
     # code for software
     tldraw-server-client = {

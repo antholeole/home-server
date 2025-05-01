@@ -1,5 +1,11 @@
 # My Home Server
 
+[here's a writeup about some of fun details](https://anthonyoleinik.com/blog_directory/home-server/)
+
+I'll have another writeup about the architecture soon(TM).
+
+---
+
 This is my tiny home server! It uses k3s and nixos.
 
 - Services are exposed to the internet using cloudflare tunnels.

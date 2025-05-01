@@ -1,11 +1,14 @@
 {
   lib,
+  ssot,
   pkgs,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "kubernetes-dashboard";
     admin-account-name = "dashboard-admin";
+    service-name = "kubernetes-dashboard-service";
+    service-port = 8000;
   in {
     dashboard-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
 
@@ -20,7 +23,8 @@
 
           values = {
             # fix for https://github.com/Kong/kong/issues/13730
-            kong.image.tag = "3.8";
+            # and https://github.com/Kong/kong/issues/13730
+            kong.image.tag = "3.9";
           };
         };
 
@@ -100,15 +104,69 @@
       ];
     };
 
-    nodeport = lib.homeServer.kubernetes.mkNodeport {
-      inherit namespace;
-      name = "kubernetes-dashboard-nodeport";
-      from = 8000;
-      to = 30000;
-      selectors = {
-        "app.kubernetes.io/instance" = "kubernetes-dashboard";
-        "app.kubernetes.io/name" = "kubernetes-dashboard-web";
-        "app.kubernetes.io/part-of" = "kubernetes-dashboard";
+    dashboard-service = {
+      enable = true;
+
+      content = {
+        kind = "Service";
+        apiVersion = "v1";
+        metadata = {
+          inherit namespace;
+          name = service-name;
+        };
+        spec = {
+          selector = {
+            "app.kubernetes.io/instance" = "kubernetes-dashboard";
+            "app.kubernetes.io/name" = "kubernetes-dashboard-web";
+            "app.kubernetes.io/part-of" = "kubernetes-dashboard";
+          };
+          ports = [
+            {
+              port = 8000;
+              targetPort = service-port;
+              protocol = "TCP";
+            }
+          ];
+        };
+      };
+    };
+
+    dashboard-ingress = {
+      enable = true;
+      content = {
+        apiVersion = "networking.k8s.io/v1";
+        kind = "Ingress";
+        metadata = {
+          inherit namespace;
+          name = "dashboard-ingress-route";
+          annotations."cert-manager.io/cluster-issuer" = "cf-issuer";
+        };
+        spec = {
+          ingressClassName = "nginx";
+          tls = [
+            {
+              secretName = "dashboard-tls";
+              hosts = [
+                "dashboard.${ssot.cloudflare.domain}"
+              ];
+            }
+          ];
+          rules = [
+            {
+              host = "dashboard.${ssot.cloudflare.domain}";
+              http.paths = [
+                {
+                  path = "/";
+                  pathType = "Prefix";
+                  backend.service = {
+                    name = service-name;
+                    port.number = service-port;
+                  };
+                }
+              ];
+            }
+          ];
+        };
       };
     };
   };

@@ -72,6 +72,23 @@
         "type": "github"
       }
     },
+    "baremetal-ingress-nginx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746014395,
+        "narHash": "sha256-3lFfMFyeNAFILqKMWtr7K++y8l7sQQmBr5EI9NsnGvM=",
+        "owner": "kubernetes",
+        "repo": "ingress-nginx",
+        "rev": "996743ea6804324c549a3d459395f2ce0e62c66e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kubernetes",
+        "ref": "release-1.12",
+        "repo": "ingress-nginx",
+        "type": "github"
+      }
+    },
     "cloudflare-operator": {
       "flake": false,
       "locked": {
@@ -888,6 +905,7 @@
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
+        "baremetal-ingress-nginx": "baremetal-ingress-nginx",
         "cloudflare-operator": "cloudflare-operator",
         "colmena": "colmena",
         "disko": "disko",
