@@ -29,8 +29,8 @@
         spec = {
           template.metadata = metadata;
           encryptedData = {
-            CLOUDFLARE_API_KEY = lib.homeServer.sealed.secrets.cloudflare.api-key;
-            CLOUDFLARE_API_TOKEN = lib.homeServer.sealed.secrets.cloudflare.api-token;
+            CLOUDFLARE_API_KEY = lib.homeServer.sealed.secrets.cloudflare-operator-system.cloudflare-api-key;
+            CLOUDFLARE_API_TOKEN = lib.homeServer.sealed.secrets.cloudflare-operator-system.cloudflare-api-token;
           };
         };
       };

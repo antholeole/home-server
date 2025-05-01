@@ -45,7 +45,7 @@
             type = "opaque";
           };
 
-          encryptedData.${api-secret.key} = lib.homeServer.sealed.secrets.cloudflare.dns;
+          encryptedData.${api-secret.key} = lib.homeServer.sealed.secrets.cert-manager.cloudflare-dns;
         };
       };
     };
