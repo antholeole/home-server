@@ -1,6 +1,8 @@
 # My Home Server
 
-[here's a writeup about some of fun details](https://anthonyoleinik.com/blog_directory/home-server/)
+Writeups:
+- [intro writeup](https://anthonyoleinik.com/blog_directory/home-server/)
+- [ingress, through cloudflare tunnels & a private network](https://anthonyoleinik.com/blog_directory/strange-dns/)
 
 I'll have another writeup about the architecture soon(TM).
 
