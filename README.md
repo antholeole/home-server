@@ -1,10 +1,17 @@
 # My Home Server
 
-Writeups:
+## Demo
+
+try out one of my services: [draw.oleina.xyz](draw.oleina.xyz)
+
+Below is an image of the tldraw instance if its down for any reason.
+
+!(Image of my tldraw page)[./images/tldraw.png]
+
+## Writeups
+
 - [intro writeup](https://anthonyoleinik.com/blog_directory/home-server/)
 - [ingress, through cloudflare tunnels & a private network](https://anthonyoleinik.com/blog_directory/strange-dns/)
-
-I'll have another writeup about the architecture soon(TM).
 
 ---
 
