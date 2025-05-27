@@ -19,7 +19,7 @@
     config,
     ...
   }: {
-    devShells.default = pkgs.mkShell {
+    devShell.default = pkgs.mkShell {
       inputsFrom = [
         # Provides $FLAKE_ROOT in dev shell
         config.flake-root.devShell
