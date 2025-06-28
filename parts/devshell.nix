@@ -31,6 +31,7 @@
         kubeseal
         kubernetes-helm
         kustomize
+        rage
 
         k3d
 

@@ -29,6 +29,11 @@ It runs on small lenovo server. The frontend is a surface go running KDE
 plasma. I do have a second node ready to be stood up, but I have no reason to
 have the extra power draw currently since I'm only running a single service.
 
+## Developing on a new machine
+
+You need a masterkey to decrypt, so `rage ~/.secrets/age-pk.age` and then
+put that in secrets/secrets.nix in a masterkey.
+
 ## Using
 
 The below instructions assume that you are me; that is, all the configuation
@@ -62,7 +67,8 @@ for others, unless they copy my exact setup.
    secrets using `agenix-rekey`; this will add the private ssh key of the
    server as a decryptor of the secrets, wifi password included.
 1. rekey the secrets.
-1. `colmena apply --all` to re-upload the newly keyed devices to all systems.
+1. `colmena apply --all --impure` to re-upload the newly keyed devices to all
+   systems.
 1. Voila! reboot the system without USB and enjoy your nixOS install.
 
 Colmena will manage the systems from then on.

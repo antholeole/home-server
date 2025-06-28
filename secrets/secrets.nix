@@ -1,7 +1,7 @@
 let
   oleinaIdentity = {
     identity = "/home/oleina/.secrets/age-pk.age";
-    pubkey = "age1799466kpj0snuc5w7375gcufzq5z5xc6k8jtg4jxjqg9z3r9ufusnu2cly";
+    pubkey = "age102rxc45udneyzn8rea2x9aznpeqjy5huj3f60a2zdg9hzu439urq7m0mh2";
   };
 in rec {
   masterIdentities = [
