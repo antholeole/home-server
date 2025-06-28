@@ -11,8 +11,7 @@
       runtimeInputs = with pkgs; [
         pulumi
         pulumiPackages.pulumi-language-nodejs
-        pnpm_10
-        nodejs_23
+        nodejs_24
       ];
 
       text = ''

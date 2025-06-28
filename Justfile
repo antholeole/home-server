@@ -5,3 +5,5 @@ agenix-new-device:
     echo "generating a new private key..."
     rage ~/.secrets/age-pk.age
     echo "make the above a master key in /secrets/secrets.nix!"
+synth:
+    cdk8s synth

@@ -3,7 +3,7 @@
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     ## nix utils
     # format the whole repo in one command
@@ -100,6 +100,7 @@
         ./parts/treefmt.nix
 
         ./cdk
+        ./cdk8s
 
         ./.
       ];

@@ -33,9 +33,10 @@
         kustomize
         rage
 
-        k3d
+        nodejs_24
+        nodePackages_latest.cdk8s-cli
 
-        pnpm_10
+        k3d
 
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
