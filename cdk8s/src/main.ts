@@ -1,60 +1,21 @@
-import type { Construct } from "constructs";
-import { App, Chart, type ChartProps } from "cdk8s";
-import * as kplus from "cdk8s-plus-32";
-import * as fs from "node:fs";
+import { App } from "cdk8s";
+import { CDKKustomize } from "./lib";
+import { CloudflareOperatorChart } from "./services/cloudflare-operator";
 
-export class MyChart extends Chart {
-	constructor(scope: Construct, id: string, props: ChartProps = {}) {
-		super(scope, id, props);
-
-		new kplus.Deployment(this, "FrontEnds", {
-			containers: [
-				{ image: "node" },
-				{ image: "redis" },
-			],
-		});
-	}
-}
-export class MyChart2 extends Chart {
-	constructor(scope: Construct, id: string, props: ChartProps = {}) {
-		super(scope, id, props);
-
-		new kplus.Deployment(this, "FrontEnds2", {
-			containers: [
-				{ image: "node" },
-				{ image: "redis" },
-			],
-		});
-	}
-}
+import { TldrawDeployment } from "./services/tldraw";
 
 // override the synth function to also generate a kustomization.
-class KustomizeApp extends App {
-	synth() {
-		super.synth();
+const app = new App({
+	outputFileExtension: ".yaml"
+});
 
-		const allYamls = fs.readdirSync(app.outdir);
-		fs.writeFileSync(
-			`${app.outdir}/kustomization.yaml`,
-			`
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+// infra
+new CloudflareOperatorChart(app);
 
-resources:
-${allYamls
-	.filter((v) => v !== "kustomization.yaml")
-	.map((v) => `- ${v}`)
-	.join("\n")}
-`,
-		);
-	}
-}
+// services
+new TldrawDeployment(app);
 
-const app = new KustomizeApp();
-
-// put a kustomize file in there so we can update the image tags.
-
-new MyChart(app, "cdk8s");
-new MyChart2(app, "cdk8s2");
+// write a kustomize for every manifest.
+new CDKKustomize(app);
 
 app.synth();

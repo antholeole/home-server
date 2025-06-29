@@ -24,12 +24,27 @@
             pkgs.nodePackages_latest.cdk8s-cli
           ];
 
-          npmDepsHash = "sha256-2ifxpyhZ06sgX3Ac1YbjkeW2hNubihjQE9BSIioJIOc=";
+          npmDepsHash = "sha256-L6IYe7uq7CzNU4s5sm6+n9GdPV74adeQXPjgTi3lSBE=";
           installPhase = ''
             mkdir -p $out/dist
             cp -r dist/ $out/
           '';
         });
+
+        manifestDependencies = pkgs.stdenvNoCC.mkDerivation {
+          name = "manifest-deps";
+          src = "${self}/cdk8s/imports/external-kustomize.json";
+
+          dontUnpack = true;
+
+          nativeBuildInputs = [
+            pkgs.kustomize
+          ];
+          
+          fetchPhase = ''
+              jq -r 'to_entries[]  | "\(.key) \(.value)"' < ./external-kustomize.json | xargs bash -c 'kustomize localize $1 $0 --no-verify' 
+          '';
+        };
 
         manifests = {
           # attrset of { <image>: <image with tag> }
@@ -43,6 +58,7 @@
 
             nativeBuildInputs = [
               pkgs.kustomize
+              # manifestDependencies
             ];
 
             buildPhase = let
