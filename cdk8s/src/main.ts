@@ -1,32 +1,8 @@
-import type { Construct } from "constructs";
-import { App, Chart, type ChartProps } from "cdk8s";
-import * as kplus from "cdk8s-plus-32";
+import { App } from "cdk8s";
 import * as fs from "node:fs";
+import { CloudflareOperatorChart } from "./services/cloudflare-operator";
 
-export class MyChart extends Chart {
-	constructor(scope: Construct, id: string, props: ChartProps = {}) {
-		super(scope, id, props);
-
-		new kplus.Deployment(this, "FrontEnds", {
-			containers: [
-				{ image: "node" },
-				{ image: "redis" },
-			],
-		});
-	}
-}
-export class MyChart2 extends Chart {
-	constructor(scope: Construct, id: string, props: ChartProps = {}) {
-		super(scope, id, props);
-
-		new kplus.Deployment(this, "FrontEnds2", {
-			containers: [
-				{ image: "node" },
-				{ image: "redis" },
-			],
-		});
-	}
-}
+import { TldrawDeployment } from "./services/tldraw";
 
 // override the synth function to also generate a kustomization.
 class KustomizeApp extends App {
@@ -34,6 +10,7 @@ class KustomizeApp extends App {
 		super.synth();
 
 		const allYamls = fs.readdirSync(app.outdir);
+		// put a kustomize file in there so we can update the image tags.
 		fs.writeFileSync(
 			`${app.outdir}/kustomization.yaml`,
 			`
@@ -52,9 +29,10 @@ ${allYamls
 
 const app = new KustomizeApp();
 
-// put a kustomize file in there so we can update the image tags.
+// infra
+new CloudflareOperatorChart(app);
 
-new MyChart(app, "cdk8s");
-new MyChart2(app, "cdk8s2");
+// services
+new TldrawDeployment(app);
 
 app.synth();
