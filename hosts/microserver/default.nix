@@ -20,6 +20,8 @@
   environment.systemPackages = with pkgs; [
     kubeseal
     nerdctl
+
+    iw # tmp, delete me
   ];
 
   networking.hostName = "microserver";

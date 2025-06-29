@@ -7,12 +7,24 @@
 }: let
   ssot = import "${inputs.self}/ssot.nix";
   mkSpecialArgs = system:
-    withSystem system ({pkgs, ...}: {
-      # TODO: get pkgs out of here. Not a trivial refactor because
-      # we setup the overlays in the flake.nix.
-      inherit inputs system ssot pkgs;
-      lib = pkgs.lib;
+    withSystem system ({pkgs, ...} @ sysInputs: {
+      inherit inputs system ssot;
+      pkgs_24_11 = import inputs.nixpkgs_24_11 {
+        inherit system;
+        config.permittedInsecurePackages = [
+          "k3s-1.29.15+k3s1"
+        ];
+      };
       flake-config = config;
+
+      # extend lib with custom functions.
+      lib = pkgs.lib.extend (final: prev: {
+        kubelib = inputs.nix-kube-generators.lib {inherit pkgs;};
+        homeServer = prev.filesystem.packagesFromDirectoryRecursive {
+          callPackage = prev.callPackageWith sysInputs;
+          directory = ./lib;
+        };
+      });
     });
 in {
   flake = {
@@ -25,6 +37,29 @@ in {
       secrets = ./modules/secrets.nix;
       utils = ./modules/utils.nix;
 
+      configure-pkgs = {
+        pkgs,
+        system,
+        ...
+      }: {
+        nixpkgs = {
+          overlays = let
+            overlay = final: prev:
+              withSystem system ({inputs', ...}: {
+                # and the following to pkgs.
+                helm-charts = inputs.nixhelm.charts {pkgs = prev;};
+                tldraw-server = inputs'.tldraw-server-client.packages.tldraw-server;
+                tldraw-web-client = inputs'.tldraw-server-client.packages.web-frontend;
+              });
+          in [
+            overlay
+
+            # 3rd party overlays
+            inputs.nix-snapshotter.overlays.default
+          ];
+        };
+      };
+
       # the abstract default base module, suitable for physical or virtual machines.
       boilerplate = {pkgs, ...}: {
         imports = with config.flake.modules.nixos; [
@@ -32,6 +67,7 @@ in {
           inputs.agenix-rekey.nixosModules.default
           inputs.disko.nixosModules.disko
 
+          configure-pkgs
           ssh
           nix
           wifi

@@ -3,6 +3,7 @@
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nixpkgs_24_11.url = "github:NixOS/nixpkgs/nixos-24.11"; # required for k3s compatible with nix-snapshotter
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     ## nix utils
@@ -113,49 +114,9 @@
         pkgs,
         system,
         ...
-      } @ sysInputs: {
+      }: {
         _module.args = {
           ssot = import "${inputs.self}/ssot.nix";
-
-          pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = let
-              overlay = final: prev: {
-                lib = let
-                  # recurses into ./lib, creating a attrset for every file. so,
-                  # `lib/kubernetes.nix` would be accessable by every module
-                  # like:
-                  #
-                  # ```
-                  # { lib, ... }: lib.kubernetes.some-custom-function ...
-                  # ```
-                  #
-                  #
-                  customLib = prev.lib.filesystem.packagesFromDirectoryRecursive {
-                    callPackage = prev.lib.callPackageWith sysInputs;
-                    directory = ./lib;
-                  };
-                in
-                  prev.lib
-                  // {
-                    # add the following to pkgs.lib
-                    kubelib = inputs.nix-kube-generators.lib {pkgs = prev;};
-                    homeServer = customLib;
-                  };
-
-                # and the following to pkgs.
-                helm-charts = inputs.nixhelm.charts {pkgs = prev;};
-
-                tldraw-server = inputs'.tldraw-server-client.packages.tldraw-server;
-                tldraw-web-client = inputs'.tldraw-server-client.packages.web-frontend;
-              };
-            in [
-              overlay
-
-              # 3rd party overlays
-              inputs.nix-snapshotter.overlays.default
-            ];
-          };
         };
       };
     };

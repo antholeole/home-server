@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{
+  pkgs_24_11,
+  ...
+}: {
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
@@ -23,7 +26,7 @@
   services.k3s = {
     enable = true;
     role = "server";
-    package = pkgs.k3s_1_29;
+    package = pkgs_24_11.k3s_1_29;
     snapshotter = "nix";
     setKubeConfig = true;
     moreFlags = [

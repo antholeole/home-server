@@ -821,6 +821,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_24_11": {
+      "locked": {
+        "lastModified": 1751048012,
+        "narHash": "sha256-MYbotu4UjWpTsq01wglhN5xDRfZYLFtNk7SBY0BcjkU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a684c58d46ebbede49f280b653b9e56100aa3877",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_3": {
       "locked": {
         "lastModified": 1744440957,
@@ -918,6 +934,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs_24_11": "nixpkgs_24_11",
         "tldraw-server-client": "tldraw-server-client",
         "treefmt-nix": "treefmt-nix_4"
       }
@@ -1004,11 +1021,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745190722,
-        "narHash": "sha256-pKjCRIwXdCrugu9ewTqrx3UehhVimyHo99ydEdxH17E=",
+        "lastModified": 1751220166,
+        "narHash": "sha256-YD0lMccKPDC9Fob+SOThbXavnDVmgrUf/4YcFc5jvrE=",
         "owner": "antholeole",
         "repo": "tldraw-server-client",
-        "rev": "7883e866caf201cf73a32aee3a6d0a57270833de",
+        "rev": "2b8fd70db524533894700662e6a42c0c24600f24",
         "type": "github"
       },
       "original": {
