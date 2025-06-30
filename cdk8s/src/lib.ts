@@ -70,7 +70,7 @@ export class CDKKustomize extends Chart {
 
 
 		super(scope, "kustomization");
-		this.files = allContructructs.map((c) => `${c.node.id}.k8s.yaml`);
+		this.files = allContructructs.map((c) => `${c.node.id}.yaml`);
 	}
 
 	toJson(): unknown[] {
