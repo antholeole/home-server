@@ -7,9 +7,9 @@
     ./manifests/kubernetes-dashboard.nix
     ./manifests/longhorn.nix
     ./manifests/cert-manager.nix
-    ./manifests/tldraw.nix
-    ./manifests/cloudflared.nix
     ./manifests/ingress-nginx.nix
+
+    ./flux.nix
   ];
 
   networking.firewall = {

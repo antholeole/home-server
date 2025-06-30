@@ -54,7 +54,10 @@ export class DefaultTunnelBinding extends TunnelBinding {
 			},
 			subjects: props.map((subject) => ({
 				name: subject.service.name,
-				fqdn: `${subject.subdomain}.${ssot.cloudflare}`,
+				spec: {
+					fqdn: `${subject.subdomain}.${ssot.cloudflare.domain}`,
+					protocol: "http"
+				},
 			})),
 		};
 
@@ -63,22 +66,23 @@ export class DefaultTunnelBinding extends TunnelBinding {
 }
 
 export class CDKKustomize extends Chart {
-	private files: string[]
-	
+	private files: string[];
+
 	constructor(scope: Construct) {
 		const allContructructs = scope.node.children;
-
 
 		super(scope, "kustomization");
 		this.files = allContructructs.map((c) => `${c.node.id}.yaml`);
 	}
 
 	toJson(): unknown[] {
-		return [{
-			apiVersion: "kustomize.config.k8s.io/v1beta1",
-			kind: "Kustomization",
-			resources: this.files,
-		}];
+		return [
+			{
+				apiVersion: "kustomize.config.k8s.io/v1beta1",
+				kind: "Kustomization",
+				resources: this.files,
+			},
+		];
 	}
 }
 

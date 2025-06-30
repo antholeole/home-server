@@ -87,7 +87,7 @@
         manifests = {
           # attrset of { <image>: <image with tag> }
           # e.g. { node: "node:21" }
-          manifests,
+          images,
         }:
           pkgs.stdenvNoCC.mkDerivation {
             name = "manifests";
@@ -101,7 +101,7 @@
             ];
 
             buildPhase = let
-              kustomizeParam = lib.attrsets.mapAttrsToList (image: tagged: "${image}=${tagged} ") manifests;
+              kustomizeParam = lib.attrsets.mapAttrsToList (image: tagged: "${image}=${tagged} ") images;
             in ''
               tmpdir=$(mktemp -d)
 
@@ -117,10 +117,10 @@
             '';
           };
       in
-        lib.makeOverridable manifests {manifests = {};};
+        lib.makeOverridable manifests {images = {};};
 
       manifests-example = manifests.override {
-        manifests = {
+        images = {
           node = "node:21";
           redis = "redis:latest";
         };

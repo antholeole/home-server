@@ -1,7 +1,7 @@
-import { EnvValue, Protocol } from "cdk8s-plus-32";
+import { EnvValue, Namespace, Protocol } from "cdk8s-plus-32";
 import type { Construct } from "constructs";
 
-import { DefaultChart, DefaultDeployment } from "../lib";
+import { DefaultChart, DefaultDeployment, DefaultTunnelBinding } from "../lib";
 
 export class TldrawDeployment extends DefaultChart {
 	constructor(scope: Construct, port = 3000) {
@@ -9,7 +9,9 @@ export class TldrawDeployment extends DefaultChart {
 			namespace: "tldraw",
 		});
 
-		const backendDeployment = new DefaultDeployment(this, "tldraw-backend", {
+		new Namespace(this, "tldraw");
+
+		const backendDeployment = new DefaultDeployment(this, "backend", {
 			containers: [
 				{
 					image: "tldraw/backend",
@@ -22,7 +24,7 @@ export class TldrawDeployment extends DefaultChart {
 			],
 		});
 
-		backendDeployment.exposeViaService({
+		const backendService = backendDeployment.exposeViaService({
 			ports: [
 				{
 					port: 80,
@@ -32,11 +34,11 @@ export class TldrawDeployment extends DefaultChart {
 			],
 		});
 
-		const frontendDeployment = new DefaultDeployment(this, "tldraw-frontend", {
+		const frontendDeployment = new DefaultDeployment(this, "frontend", {
 			containers: [{ image: "tldraw/frontend", ports: [{ number: port }] }],
 		});
 
-		frontendDeployment.exposeViaService({
+		const frontendService = frontendDeployment.exposeViaService({
 			ports: [
 				{
 					port: 80,
@@ -45,5 +47,17 @@ export class TldrawDeployment extends DefaultChart {
 				},
 			],
 		});
+
+		
+		new DefaultTunnelBinding(this, "cluster-tunnel", [
+			{
+				subdomain: "draw",
+				service: frontendService,
+			},
+			{
+				subdomain: "draw-api",
+				service: backendService,
+			},
+		]);
 	}
 }
