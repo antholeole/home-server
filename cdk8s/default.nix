@@ -96,24 +96,17 @@
 
             nativeBuildInputs = [
               pkgs.kustomize
-
               manifestDependencies
             ];
 
             buildPhase = let
               kustomizeParam = lib.attrsets.mapAttrsToList (image: tagged: "${image}=${tagged} ") images;
             in ''
-              tmpdir=$(mktemp -d)
-
-              # todo this is bad how do we do it right
-              cp -r ${manifestsRaw}/dist $tmpdir/
-
-              cd $tmpdir/dist
+              mkdir -p $out/dist
+              cp -r ${manifestsRaw}/dist $out
+              cd $out/dist
               chmod +rw ./*
-
               kustomize edit set image ${lib.concatStrings kustomizeParam}
-              mkdir -p $out/
-              kustomize build $tmpdir/dist -o $out/
             '';
           };
       in

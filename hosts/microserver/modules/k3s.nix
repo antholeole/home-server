@@ -5,7 +5,6 @@
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
-    ./manifests/longhorn.nix
     ./manifests/cert-manager.nix
     ./manifests/ingress-nginx.nix
 

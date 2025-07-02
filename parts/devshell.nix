@@ -27,10 +27,6 @@
       ];
 
       packages = with pkgs; [
-        kubectl
-        kubeseal
-        kubernetes-helm
-        kustomize
         rage
 
         nodejs_24

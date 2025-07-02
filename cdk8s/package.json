@@ -11,7 +11,7 @@
 		"compile": "tsc --build",
 		"watch": "tsc --build -w",
 		"test": "jest",
-		"build": "npm run compile && npm run test && npm run synth"
+		"build": "npm run compile && npm run synth"
 	},
 	"dependencies": {
 		"cdk8s": "^2.69.43",

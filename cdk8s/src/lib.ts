@@ -28,9 +28,16 @@ export class DefaultDeployment extends Deployment {
 		const newProps = {
 			...props,
 			replicas: props?.replicas ?? 1,
+
 			containers: props?.containers?.map((container) => ({
 				...container,
 				resources: container.resources === undefined ? {} : container.resources,
+
+				// TODO: setting nonroot could be helpful, but would require changing
+				// the images. Let containers run as root for now.
+				securityContext: props?.securityContext ?? {
+					ensureNonRoot: false,
+				},
 			})),
 		};
 
@@ -56,7 +63,7 @@ export class DefaultTunnelBinding extends TunnelBinding {
 				name: subject.service.name,
 				spec: {
 					fqdn: `${subject.subdomain}.${ssot.cloudflare.domain}`,
-					protocol: "http"
+					protocol: "http",
 				},
 			})),
 		};
