@@ -4,11 +4,9 @@ let
     identity = "/home/${name}/.secrets/age-pk.age";
   };
   
-  oleinaIdentity = mkIdentity "oleina" "age102rxc45udneyzn8rea2x9aznpeqjy5huj3f60a2zdg9hzu439urq7m0mh2";
-  pcIdentity = mkIdentity "anthony" "age1e9w76gh9mhnd8f8gphegpje0x66d8722g8kgr5napaslt7jf5qcswqack4";
+  pcIdentity = mkIdentity "anthony" "age1ewp75txs02a33y6tkqcuwqhg53xcf5cmlgcaqvdfxy3cp3nevs6shscypy";
 in rec {
   masterIdentities = [
-    oleinaIdentity
     pcIdentity
   ];
 

@@ -31,8 +31,9 @@ have the extra power draw currently since I'm only running a single service.
 
 ## Developing on a new machine
 
-You need a masterkey to decrypt, so `rage ~/.secrets/age-pk.age` and then
-put that in secrets/secrets.nix in a masterkey.
+You need a masterkey to decrypt, so `rage-keygen -o ~/.secrets/age-pk.age` and then
+put that in secrets/secrets.nix in a masterkey. Then, an old masterkey needs to
+rekey all the secrets so the new masterkey can decrypt it.
 
 ## Using
 
