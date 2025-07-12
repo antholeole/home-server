@@ -3,6 +3,7 @@
   inputs,
   config,
   self,
+  lib,
   ...
 }: let
   ssot = import "${inputs.self}/ssot.nix";
@@ -102,7 +103,7 @@ in {
         deployment = {
           replaceUnknownProfiles = true;
           targetUser = "root";
-          buildOnTarget = true;
+          buildOnTarget = lib.mkDefault true;
         };
       };
 
@@ -111,7 +112,7 @@ in {
         deployment = {
           targetHost = ssot.ips.tablet;
           targetUser = "root";
-          buildOnTarget = true; #8gb ram good enough
+          buildOnTarget = false; #never enough space
           replaceUnknownProfiles = true;
           tags = ["tablet"];
         };

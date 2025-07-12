@@ -21,8 +21,7 @@
         description = "the user used to manage this server. Typically, only switches nixos generations.";
         extraGroups = ["wheel"];
 
-        # python3 -c 'import crypt; print(crypt.crypt("1111", "$y$j9T$"))'
-        hashedPassword = "$y$j9T$$qEuadQ2VqI36tYXh38UeFIJl/SstzPZsNYraYceeGTB";
+        hashedPassword = "$y$j9T$SVk9MmOKoGETAjhzDCidA/$WYjszgHqPu9T2sSBEkR4gJyoL9XniYdmaruJ1zeoIx8";
         openssh.authorizedKeys.keys = ssot.public-keys;
 
         packages = with pkgs; [

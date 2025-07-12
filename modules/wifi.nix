@@ -7,6 +7,9 @@
     rekeyFile = "${inputs.self}/secrets/wifi-pass.age";
   };
 
+  systemd.services.NetworkManager-ensure-profiles.after = [
+    "Networkmanager.service"
+  ];
   networking = {
     wireless.enable = false;
     networkmanager = {
