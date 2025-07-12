@@ -74,6 +74,13 @@ for others, unless they copy my exact setup.
 
 Colmena will manage the systems from then on.
 
+## Edit a secret
+
+there seems to be a bug where the nonexistance of a key causes rekey to fail.
+
+you can specify the pubkey like `AGENIX_REKEY_PRIMARY_IDENTITY=<pubkey> agenix edit`
+to get it to work.
+
 ## what isn't reproduceable
 
 First of all, I'm fairly certain the above steps aren't perfect. I did it

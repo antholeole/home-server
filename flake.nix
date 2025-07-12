@@ -98,7 +98,6 @@
 
     # setup the manager user on tablets
     home-manager.url = "github:nix-community/home-manager";
-    
   };
 
   outputs = inputs @ {flake-parts, ...}:
