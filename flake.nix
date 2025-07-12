@@ -88,6 +88,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:antholeole/tldraw-server-client/main";
     };
+
+    # TODO: remove after https://github.com/oddlama/agenix-rekey/issues/111
+    # gets merged
+    home-manager.url = "github:nix-community/home-manager";
+    
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -96,6 +101,8 @@
         inputs.treefmt-nix.flakeModule
         inputs.agenix-rekey.flakeModule
         inputs.agenix-shell.flakeModules.default
+
+        inputs.home-manager.flakeModules.home-manager
 
         ./parts/devshell.nix
         ./parts/treefmt.nix
