@@ -3,11 +3,13 @@ let
     inherit pubkey;
     identity = "/home/${name}/.secrets/age-pk.age";
   };
-  
+
+  oleinaIdentity = mkIdentity "oleina" "age19sedt3sjtmpevyuugsyvvmtja0fjrvexcn8mcertvk6cux4wg9tsg4ndj4";
   pcIdentity = mkIdentity "anthony" "age1ewp75txs02a33y6tkqcuwqhg53xcf5cmlgcaqvdfxy3cp3nevs6shscypy";
 in rec {
   masterIdentities = [
     pcIdentity
+    oleinaIdentity
   ];
 
   # DO NOT USE AGENIX DIRECTLY TO REKEY! instead, use agenix-rekey.
