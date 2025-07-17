@@ -1,7 +1,6 @@
 {
   lib,
   ssot,
-  pkgs,
   ...
 }: {
   # enable SSH in boot process.
@@ -18,15 +17,11 @@
 
       manager = {
         isNormalUser = true;
-        description = "the user used to manage this server. Typically, only switches nixos generations.";
+        description = "main user";
         extraGroups = ["wheel"];
 
         hashedPassword = "$y$j9T$SVk9MmOKoGETAjhzDCidA/$WYjszgHqPu9T2sSBEkR4gJyoL9XniYdmaruJ1zeoIx8";
         openssh.authorizedKeys.keys = ssot.public-keys;
-
-        packages = with pkgs; [
-          kakoune
-        ];
       };
     };
   };

@@ -16,6 +16,7 @@
           "k3s-1.29.15+k3s1"
         ];
       };
+      pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
       flake-config = config;
 
       # extend lib with custom functions.
@@ -36,7 +37,7 @@ in {
       nix = ./modules/nix.nix;
       disk-efi = ./modules/disk-efi.nix;
       secrets = ./modules/secrets.nix;
-      utils = ./modules/utils.nix;
+      dev = ./modules/dev.nix;
 
       configure-pkgs = {
         pkgs,
@@ -79,6 +80,7 @@ in {
           nix
           wifi
           secrets
+          dev
         ];
 
         time.timeZone = "America/Los_Angeles";

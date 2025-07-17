@@ -5,6 +5,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs_24_11.url = "github:NixOS/nixpkgs/nixos-24.11"; # required for k3s compatible with nix-snapshotter
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     ## nix utils
     # format the whole repo in one command
@@ -89,8 +90,13 @@
       url = "github:antholeole/tldraw-server-client/main";
     };
 
-    # TODO: remove after https://github.com/oddlama/agenix-rekey/issues/111
-    # gets merged
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprgrass = {
+       url = "github:horriblename/hyprgrass";
+       inputs.hyprland.follows = "hyprland"; 
+    };
+
+    # setup the manager user on tablets
     home-manager.url = "github:nix-community/home-manager";
     
   };

@@ -7,7 +7,9 @@
   imports = with flake-config.flake.modules.nixos; [
     ./tablet-hardware-config.nix
 
-    ./modules/kde.nix
+    ./modules/keyboard.nix
+    ./modules/sddm.nix
+    ./modules/hypr.nix
 
     inputs.nixos-hardware.nixosModules.microsoft-surface-go
 
