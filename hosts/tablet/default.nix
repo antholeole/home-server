@@ -5,14 +5,15 @@
   ...
 }: {
   imports = with flake-config.flake.modules.nixos; [
+    inputs.nixos-hardware.nixosModules.microsoft-surface-go
+    inputs.home-manager.nixosModules.home-manager
+
     ./tablet-hardware-config.nix
 
     ./modules/keyboard.nix
     ./modules/sddm.nix
     ./modules/hypr.nix
     ./modules/home.nix
-
-    inputs.nixos-hardware.nixosModules.microsoft-surface-go
 
     boilerplate
     disk-efi

@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{...}: {
   home-manager.users.manager = {pkgs, ...}: {
     home.stateVersion = "25.05";
 
