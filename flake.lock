@@ -673,31 +673,6 @@
         "type": "github"
       }
     },
-    "hyprgrass": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "nixpkgs": [
-          "hyprgrass",
-          "hyprland",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1752219718,
-        "narHash": "sha256-P4tM0eom+p3XE+nqM+uI/s+nH15HfCGCaWOjfdUO1iI=",
-        "owner": "horriblename",
-        "repo": "hyprgrass",
-        "rev": "7dafd92afedda246a9c1c4187784c3fc1d6261e5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "horriblename",
-        "repo": "hyprgrass",
-        "type": "github"
-      }
-    },
     "hyprland": {
       "inputs": {
         "aquamarine": "aquamarine",
@@ -1372,7 +1347,6 @@
         "flake-parts": "flake-parts_2",
         "flake-root": "flake-root_2",
         "home-manager": "home-manager_2",
-        "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "nix-kube-generators": "nix-kube-generators",
         "nix-snapshotter": "nix-snapshotter",

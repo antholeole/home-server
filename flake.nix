@@ -91,10 +91,6 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprgrass = {
-       url = "github:horriblename/hyprgrass";
-       inputs.hyprland.follows = "hyprland"; 
-    };
 
     # setup the manager user on tablets
     home-manager.url = "github:nix-community/home-manager";

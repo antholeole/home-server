@@ -38,7 +38,7 @@
             };
             wifi-security = {
               key-mgmt = "wpa-psk";
-              psk = "$LOONSTER_PWD";
+              psk = "$LOONSTER_PSK";
             };
           };
         };

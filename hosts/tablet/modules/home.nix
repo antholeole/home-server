@@ -3,7 +3,13 @@
     home.stateVersion = "25.05";
 
     imports = [
-      ./home/hypr.nix
+      ./home/hypr
+
+      ./firefox.nix
+    ];
+
+    home.packages = with pkgs; [
+      waypipe
     ];
   };
 }
