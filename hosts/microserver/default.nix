@@ -12,7 +12,6 @@
     ./modules/longhorn-support.nix
     ./modules/snapshotter.nix
 
-    utils
     boilerplate
     disk-efi
   ];

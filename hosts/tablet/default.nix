@@ -10,6 +10,7 @@
     ./modules/keyboard.nix
     ./modules/sddm.nix
     ./modules/hypr.nix
+    ./modules/home.nix
 
     inputs.nixos-hardware.nixosModules.microsoft-surface-go
 
