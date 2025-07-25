@@ -14,6 +14,7 @@
     ./modules/sddm.nix
     ./modules/hypr.nix
     ./modules/home.nix
+    ./modules/dev.nix
 
     boilerplate
     disk-efi
