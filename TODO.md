@@ -1,4 +1,4 @@
-- longhorn should backup to R2
-- add a second node (for fun!)
-- get niri working on the surface go.
-- use luks for disk encryption.
+- longhorn should backup to R2 (P1)(storage)
+- use luks for disk encryption. (P3)
+- host a binary cache (P0)(id#1)
+- AP and DDNS (P0)(block:#1)

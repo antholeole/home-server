@@ -34,6 +34,7 @@
 
         k3d
 
+        inputs'.ags.packages.ags
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
 

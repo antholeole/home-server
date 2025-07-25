@@ -90,10 +90,12 @@
       url = "github:antholeole/tldraw-server-client/main";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     # setup the manager user on tablets
     home-manager.url = "github:nix-community/home-manager";
+
+    # tablet ui    
+    hyprland.url = "github:hyprwm/Hyprland";
+    ags.url = "github:aylur/ags";
   };
 
   outputs = inputs @ {flake-parts, ...}:
