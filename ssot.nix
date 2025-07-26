@@ -5,7 +5,7 @@
   ];
   ips = {
     tablet = "192.168.12.171";
-    microserver = "192.168.12.167";
+    microserver = "192.168.12.97";
   };
 
   cloudflare = {
