@@ -7,13 +7,18 @@
     rekeyFile = "${inputs.self}/secrets/wifi-pass.age";
   };
 
-  systemd.services.NetworkManager-ensure-profiles.after = [
-    "Networkmanager.service"
-  ];
   networking = {
     wireless.enable = false;
     networkmanager = {
       enable = true;
+
+      # stablize mac since tmo doesn't like it
+      wifi = {
+        scanRandMacAddress = false;
+        macAddress = "permanent";
+      };
+
+      
       ensureProfiles = {
         environmentFiles = [
           config.age.secrets.nm-secrets.path

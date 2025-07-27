@@ -1,0 +1,47 @@
+$text: black;
+
+// note blur is applied by compsitor
+$bg-blur: rgba(125, 125, 125, 0.1);
+
+.debug {
+  border: 1px solid red;
+}
+
+.transparent {
+  background: transparent;
+  outline-color: transparent;
+  border-color: transparent;
+  color: transparent;
+  box-shadow: none;
+}
+
+.blurred {
+  background-color: $bg-blur;
+}
+
+
+* {
+  font-family: "Inter Nerd Font";
+}
+
+.icon {
+  font-family: "Symbols Nerd Font Mono";
+}
+
+.bar {
+  background-color: $bg-blur;
+  padding: 4px 12px;
+  background-color: $bg-blur;
+  font-weight: 500;
+}
+
+.launcher {
+  background-color: $bg-blur;
+  padding: 8px 16px;
+  border-radius: 16px;
+
+  .app-icon {
+    padding: 2px;
+    color: white;
+  }
+}

@@ -1,7 +1,4 @@
-{
-  pkgs_24_11,
-  ...
-}: {
+{pkgs_24_11, ...}: {
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
@@ -21,6 +18,10 @@
       80
     ];
   };
+
+  # don't timeout on boot. the node we run it on in smalllll so it takes
+  # like 5 mins to get everything going.
+  systemd.services.k3s.serviceConfig.TimeoutSec = 0;
 
   services.k3s = {
     enable = true;

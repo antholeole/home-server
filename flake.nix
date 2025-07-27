@@ -93,8 +93,18 @@
     # setup the manager user on tablets
     home-manager.url = "github:nix-community/home-manager";
 
-    # tablet ui    
+    # tablet ui
     hyprland.url = "github:hyprwm/Hyprland";
+
+    ags = {
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      url = "github:antholeole/ags/oleina/systemddefines";
+    };
+
+    astal = {
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      url = "github:aylur/astal";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -116,8 +126,6 @@
       ];
       systems = ["x86_64-linux"];
 
-      
-
       perSystem = {
         config,
         self',
@@ -127,6 +135,17 @@
         ...
       }: {
         _module.args = {
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+
+            overlays = [
+              (prev: next: {
+                agsFull = inputs.ags.packages.${prev.system}.agsFull; # full for devel
+                astral = inputs.astral.packages.${prev.system}.default;
+              })
+            ];
+          };
+
           ssot = import "${inputs.self}/ssot.nix";
         };
       };

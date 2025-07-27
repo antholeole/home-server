@@ -1,19 +1,26 @@
-{...}: {
+{
+  inputs,
+  pkgs-unstable,
+  ...
+}: {
   home-manager = {
-    extraSpecialArgs = {};
+    extraSpecialArgs = {
+      inherit inputs pkgs-unstable;
+    };
 
-    users.manager = {pkgs, ...}: {
+    users.manager = {
+      pkgs,
+      pkgs-unstable,
+      ...
+    }: {
       home.stateVersion = "25.05";
+
 
       imports = [
         ./home/hypr
-        ./home/ags
+        ./home/agsv4
 
         ./firefox.nix
-      ];
-
-      home.packages = with pkgs; [
-        waypipe
       ];
     };
   };
