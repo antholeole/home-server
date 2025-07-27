@@ -33,7 +33,8 @@
         nodePackages_latest.cdk8s-cli
 
         k3d
-        ags
+
+        agsFull
 
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default

@@ -95,6 +95,9 @@
 
     # tablet ui    
     hyprland.url = "github:hyprwm/Hyprland";
+
+    ags.url = "github:Aylur/ags";
+    astral.url = "github:aylur/astal";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -127,6 +130,17 @@
         ...
       }: {
         _module.args = {
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+
+            overlays = [
+              (prev: next: {
+                agsFull = inputs.ags.packages.${prev.system}.agsFull; # full for devel
+                astral = inputs.astral.packages.${prev.system}.default;
+              })
+            ];
+          };
+          
           ssot = import "${inputs.self}/ssot.nix";
         };
       };
