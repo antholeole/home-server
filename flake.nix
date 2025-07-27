@@ -95,7 +95,6 @@
 
     # tablet ui    
     hyprland.url = "github:hyprwm/Hyprland";
-    ags.url = "github:aylur/ags";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -116,6 +115,8 @@
         ./.
       ];
       systems = ["x86_64-linux"];
+
+      
 
       perSystem = {
         config,

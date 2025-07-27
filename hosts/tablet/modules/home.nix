@@ -1,20 +1,20 @@
-{inputs,...}: {
-  home-manager.users.manager = {pkgs, ...}: {
-    home.stateVersion = "25.05";
+{...}: {
+  home-manager = {
+    extraSpecialArgs = {};
 
-    extraSpecialInputs = {
-      inherit inputs;
+    users.manager = {pkgs, ...}: {
+      home.stateVersion = "25.05";
+
+      imports = [
+        ./home/hypr
+        ./home/ags
+
+        ./firefox.nix
+      ];
+
+      home.packages = with pkgs; [
+        waypipe
+      ];
     };
-
-    imports = [
-      ./home/hypr
-      ./home/ags
-
-      ./firefox.nix
-    ];
-
-    home.packages = with pkgs; [
-      waypipe
-    ];
   };
 }
