@@ -16,7 +16,7 @@
           "k3s-1.29.15+k3s1"
         ];
       };
-      pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
+      pkgs-unstable = import inputs.nixpkgs-unstable {inherit system;};
       flake-config = config;
 
       # extend lib with custom functions.

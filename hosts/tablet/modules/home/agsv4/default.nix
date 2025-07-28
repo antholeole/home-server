@@ -1,18 +1,35 @@
-{
-  pkgs,
-  inputs,
-  ags,
-  ...
-}: {
-  home.packages = with pkgs; [
-    watchexec # for dev, delete me
+# TODO: so ugly. use overlays
+inputs: pkgs:
+pkgs.stdenv.mkDerivation {
+  name = "tablet-widgets";
 
-    inter-nerdfont
+  src = ./.;
 
-    # need
-    inputs.ags.packages.${system}.agsFull # use an overlay. also, get rid of after dev
-    # gtksourceview
-    webkitgtk_4_1
-    # accountsservice
+  nativeBuildInputs = with pkgs; [
+    wrapGAppsHook
+    gobject-introspection
+    inputs.ags.packages.${system}.default
   ];
+
+  buildInputs = with pkgs; [
+    pkgs.glib
+    pkgs.gjs
+
+    inputs.astal.packages.${system}.io
+    inputs.astal.packages.${system}.astal4
+    inputs.astal.packages.${system}.battery
+  ];
+
+  installPhase = ''
+    mkdir -p $out/bin
+    ags bundle app.ts $out/bin/tablet-widgets
+  '';
+
+  preFixup = ''
+    gappsWrapperArgs+=(
+      --prefix PATH : ${pkgs.lib.makeBinPath [
+        pkgs.hyprland
+    ]}
+    )
+  '';
 }

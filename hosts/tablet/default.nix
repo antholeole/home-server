@@ -14,7 +14,6 @@
     ./modules/sddm.nix
     ./modules/hypr.nix
     ./modules/home.nix
-    ./modules/dev.nix
     ./modules/upower.nix
 
     boilerplate

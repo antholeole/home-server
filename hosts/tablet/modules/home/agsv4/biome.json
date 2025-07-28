@@ -2,6 +2,9 @@
 	"$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
 	"linter": {
 		"rules": {
+			"correctness": {
+				"useJsxKeyInIterable": "off"
+			},
 			"a11y": {
 				"useButtonType": "off",
 				"noLabelWithoutControl": "off"

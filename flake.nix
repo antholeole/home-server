@@ -97,7 +97,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     ags.url = "github:Aylur/ags";
-    astral.url = "github:aylur/astal";
+    astal.url = "github:aylur/astal";
   };
 
   outputs = inputs @ {flake-parts, ...}:

@@ -146,7 +146,7 @@
         "type": "github"
       }
     },
-    "astral": {
+    "astal_2": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
       },
@@ -1448,7 +1448,7 @@
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
         "ags": "ags",
-        "astral": "astral",
+        "astal": "astal_2",
         "baremetal-ingress-nginx": "baremetal-ingress-nginx",
         "cloudflare-operator": "cloudflare-operator",
         "colmena": "colmena",

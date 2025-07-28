@@ -8,13 +8,19 @@
     package = pkgs.hyprland;
   };
 
-  home.file.".config/hypr/hyprland.conf".text =
-    with pkgs.hyprlandPlugins; ''
-     plugin = ${hyprgrass}/lib/libhyprgrass.so
-     plugin = ${hyprspace}/lib/libhyprspace.so
+  home.file.".config/hypr/hyprland.conf".text = let
+    addToPath = [
+      pkgs.tablet-widgets      
+    ];
+  in
+    with pkgs.hyprlandPlugins;
+      ''
+        plugin = ${hyprgrass}/lib/libhyprgrass.so
+        plugin = ${hyprspace}/lib/libhyprspace.so
 
-    ''
-    + builtins.readFile ./hypr.conf;
+        env=PATH${builtins.concatStringsSep ":" addToPath}
+      ''
+      + builtins.readFile ./hypr.conf;
 
   services.hyprpaper = {
     enable = true;
