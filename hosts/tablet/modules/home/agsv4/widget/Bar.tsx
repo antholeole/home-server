@@ -9,13 +9,13 @@ function Battery() {
 		let icon = "󰂄";
 
 		if (!battery.charging) {
-			if (battery.percentage > 90) {
+			if (battery.percentage > .9) {
 				icon = "󰁹";
-			} else if (battery.percentage > 80) {
+			} else if (battery.percentage > .8) {
 				icon = "󰂂";
-			} else if (battery.percentage > 60) {
+			} else if (battery.percentage > .6) {
 				icon = "󰁿";
-			} else if (battery.percentage > 30) {
+			} else if (battery.percentage > .3) {
 				icon = "󰁼";
 			} else {
 				icon = "󰁻";
@@ -30,7 +30,7 @@ function Battery() {
 
 	const battery = createPoll(
 		unpackBattery(AstalBattery.get_default()),
-		5000,
+		1000,
 		() => unpackBattery(AstalBattery.get_default()),
 	);
 

@@ -15,10 +15,15 @@
     }: {
       home.stateVersion = "25.05";
 
+      nixpkgs.overlays = [
+        inputs.nixzx.overlays.default
+      ];
+
 
       imports = [
         ./home/hypr
         ./home/agsv4
+        ./home/screenmgmt
 
         ./firefox.nix
       ];

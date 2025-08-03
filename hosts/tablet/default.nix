@@ -12,6 +12,7 @@
 
     ./modules/keyboard.nix
     ./modules/sddm.nix
+    ./modules/screenmgmt.nix
     ./modules/hypr.nix
     ./modules/home.nix
     ./modules/upower.nix
@@ -20,6 +21,9 @@
     boilerplate
     disk-efi
   ];
+
+  services.tlp.enable = true; # insane power savings
+  services.libinput.enable = true; # so we can use the stylus
 
   networking.hostName = "tablet";
   diskName = "/dev/sdb";

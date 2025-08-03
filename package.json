@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "zx": "github:google/zx"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0"
+  }
+}

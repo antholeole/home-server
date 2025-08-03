@@ -105,6 +105,12 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       url = "github:aylur/astal";
     };
+
+    nixzx = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:antholeole/nixzx";
+    };
+    
   };
 
   outputs = inputs @ {flake-parts, ...}:

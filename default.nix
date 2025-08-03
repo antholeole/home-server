@@ -64,6 +64,7 @@ in {
 
             # 3rd party overlays
             inputs.nix-snapshotter.overlays.default
+            inputs.nixzx.overlays.default
           ];
         };
       };

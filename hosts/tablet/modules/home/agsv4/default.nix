@@ -10,12 +10,15 @@
 in {
   imports = [inputs.ags.homeManagerModules.default];
 
-  home.packages = astalDeps ++ [
-    pkgs.watchexec
-    pkgs.nerd-fonts.symbols-only
-    pkgs.inter-nerdfont
-  ];
+  home.packages =
+    astalDeps
+    ++ [
+      pkgs.watchexec
+      pkgs.nerd-fonts.symbols-only
+      pkgs.inter-nerdfont
+    ];
 
+  systemd.user.services.ags.Service.RestartSec = 4;
   programs.ags = {
     enable = true;
     systemd = {
@@ -25,10 +28,12 @@ in {
       };
     };
 
-    configDir = ./.;    
-    extraPackages = astalDeps ++ [
-      inputs.astal.packages.${pkgs.system}.astal4
-      pkgs.hyprland
-    ];
+    configDir = ./.;
+    extraPackages =
+      astalDeps
+      ++ [
+        inputs.astal.packages.${pkgs.system}.astal4
+        pkgs.hyprland
+      ];
   };
 }
