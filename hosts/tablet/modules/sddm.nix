@@ -1,16 +1,18 @@
 {
-  pkgs,
+  lib,
+  config,
   ...
 }: {
-  environment.systemPackages = [
-    pkgs.maliit-keyboard
-  ];
-    
-  services.displayManager.sddm = {
+  programs.uwsm.enable = true;
+  services.greetd = {
     enable = true;
-    wayland.enable = true;
-    settings = {
-      General.InputMethod = pkgs.maliit-keyboard.pname;
+    settings = rec {
+      initial_session = {
+        command = "${lib.getExe config.programs.uwsm.package} start hyprland-uwsm.desktop";
+        user = "manager";
+      };
+
+      default_session = initial_session;
     };
   };
 }

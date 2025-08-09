@@ -23,8 +23,6 @@
       imports = [
         ./home/hypr
         ./home/agsv4
-        ./home/screenmgmt
-
         ./firefox.nix
       ];
     };

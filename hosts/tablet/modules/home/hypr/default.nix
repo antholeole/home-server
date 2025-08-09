@@ -11,7 +11,6 @@
   home.file.".config/hypr/hyprland.conf".text = let
     addToPath = [
       config.programs.ags.finalPackage
-      config.programs.notify-lock-pressed.package
 
       inputs.ags.packages.${pkgs.system}.ags
     ];

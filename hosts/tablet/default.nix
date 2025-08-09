@@ -12,7 +12,7 @@
 
     ./modules/keyboard.nix
     ./modules/sddm.nix
-    ./modules/screenmgmt.nix
+    ./modules/hibernate
     ./modules/hypr.nix
     ./modules/home.nix
     ./modules/upower.nix
