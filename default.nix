@@ -171,7 +171,7 @@ in {
     pkgs,
     inputs',
     ...
-  }: rec {
+  }: {
     agenix-rekey.nixosConfigurations = ((inputs.colmena.lib.makeHive self.colmena).introspect (x: x)).nodes;
 
     packages.test-only-full-iso = inputs.nixos-generators.nixosGenerate {
@@ -197,7 +197,9 @@ in {
       specialArgs = mkSpecialArgs system;
 
       modules = with config.flake.modules.nixos; [
-        boilerplate
+        configure-pkgs
+        nix
+        dev
         bootable
 
         ({...}: {
@@ -206,57 +208,6 @@ in {
       ];
 
       format = "iso";
-    };
-
-    apps = {
-      build-iso = {
-        program = pkgs.writeShellApplication {
-          name = "build-iso";
-          runtimeInputs = with pkgs; [libisoburn squashfsTools];
-          meta.description = "builds the minimal-bootable iso and injects secrets.";
-          text = let
-            ageSecretPath = ssot.age-private-key-path;
-          in ''
-            xorriso -indev ${packages.bootstrap-iso}/iso/nixos-*.iso \
-              -outdev iso-with-secrets.iso \
-              -map ~/.secrets/id_ed25519 ${ageSecretPath} \
-              -boot_image any replay \
-              -commit
-          '';
-        };
-      };
-
-      run-iso = {
-        type = "app";
-        program = pkgs.writeShellApplication {
-          meta.description = "runs the secret-injected iso in qemu in a format that is sshable. args: path to iso.";
-          name = "run-iso";
-          runtimeInputs = [pkgs.qemu];
-          text = ''
-            qemu-system-x86_64 -net nic \
-              -net user,hostfwd=tcp::2222-:22 \
-              -enable-kvm -m 256 \
-              -cdrom "$@"
-          '';
-        };
-      };
-
-      nixos-anywhere-full = {
-        type = "app";
-        program = pkgs.writeShellApplication {
-          meta.description = "nixos-anywhere a remote host. args: 1: which device, 2: device ip.";
-          name = "nixos-anywhere-full";
-          runtimeInputs = [
-            inputs'.nixos-anywhere.packages.default
-          ];
-          text = ''
-            root=$(mktemp -d)
-            mkdir -p "$root"/var/lib/private
-            cp ~/.secrets/id_ed25519 "$root"/var/lib/private
-            nixos-anywhere --flake .#"$1" root@"$2" -i ~/.secrets/id_ed25519 --extra-files "$root"
-          '';
-        };
-      };
     };
   };
 }

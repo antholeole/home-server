@@ -19,6 +19,10 @@
         inputs.nixzx.overlays.default
       ];
 
+      home.packages = with pkgs; [
+        glow
+      ];
+
 
       imports = [
         ./home/hypr

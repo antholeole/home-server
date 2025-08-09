@@ -49,18 +49,10 @@ busted. Some manual work is required, it isn't quite headless. This
 documentation is mostly for myself - I wouldn't expect this to be very helpful
 for others, unless they copy my exact setup.
 
-1. Generate an iso with `nix run .#make-iso`. This will inject the encrypted
-   secrets from your nix store along with the master key at
-   `~/.secrets/id_ed25519` - the master key is copied in with a `cp` rather than
-   as a nix object, since we don't want secrets in the nix store.
+1. build an iso with `nix build .#bootable-sio`.
 1. Format a drive with the iso using `dd`, enter BIOS and boot the iso.
-1. The device should show up in an `arpscan` - the iso is pre-configured to
-   connect to my wifi with a wifi password, so this step should be seamless (for
-   me!).
-1. Create a config in `./hosts/<device>/default.nix`. the flake-module
-   `disk-efi` contains a disk config, and `boilerplate` contains some helpful
-   utilities like `btm` and `kak` along side the wifi password, so those are
-   helpful as well.
+   `sudo dd if=./result/iso/nixos-minimal-25.05pre-git-x86_64-linux.iso of=/dev/sda bs=4M status=progress oflag=sync`
+1. make sure you have colmena config for that device setup.
 1. `nixos-anywhere --generate-hardware-config nixos-generate-config \
 ./vm/devices/<device>-hardware-config.nix --flake .#<device> root@<device ip>`
    will format the disk and generate you the hardware config.
