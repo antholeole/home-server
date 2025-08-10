@@ -1,5 +1,6 @@
 #  import this to get everything required to make a system
 {
+  lib,
   flake-config,
   inputs,
   ...
@@ -22,7 +23,7 @@
     disk-efi
   ];
 
-  services.tlp.enable = true; # insane power savings
+  services.tlp.enable = lib.mkForce true; # insane power savings
   services.libinput.enable = true; # so we can use the stylus
 
   networking.hostName = "hrothgar";

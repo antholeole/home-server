@@ -38,6 +38,7 @@ in {
       disk-efi = ./modules/disk-efi.nix;
       secrets = ./modules/secrets.nix;
       dev = ./modules/dev.nix;
+      sensible = ./modules/sensible.nix;
 
       configure-pkgs = {
         pkgs,
@@ -77,6 +78,7 @@ in {
           inputs.disko.nixosModules.disko
 
           configure-pkgs
+          sensible
           ssh
           nix
           wifi
@@ -135,6 +137,18 @@ in {
           (import ./hosts/riverwood)
         ];
       };
+
+      whiterun = {system, ...}: {
+        deployment = {
+          targetHost = ssot.ips.whiterun;
+          buildOnTarget = false; 
+          tags = ["router" "server"];
+        };
+
+        imports = [
+          (import ./hosts/whiterun)
+        ];
+      };
     };
 
     colmenaHive = inputs.colmena.lib.makeHive self.outputs.colmena;
@@ -162,6 +176,15 @@ in {
           (import ./hosts/riverwood)
         ];
       };
+
+      whiterun = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs =
+          mkSpecialArgs system;
+
+        modules = [
+          (import ./hosts/whiterun)
+        ];
+      };
     });
   };
 
@@ -174,23 +197,6 @@ in {
   }: {
     agenix-rekey.nixosConfigurations = ((inputs.colmena.lib.makeHive self.colmena).introspect (x: x)).nodes;
 
-    packages.test-only-full-iso = inputs.nixos-generators.nixosGenerate {
-      # meta.description = "just to test nixos configurations - don't fully-load an iso!";
-      inherit system;
-
-      specialArgs = mkSpecialArgs system;
-
-      modules = [
-        (import ./hosts/riverwood)
-
-        ({...}: {
-          virtualisation.diskSize = 30 * 1024;
-        })
-      ];
-
-      format = "iso";
-    };
-
     packages.bootstrap-iso = inputs.nixos-generators.nixosGenerate {
       # meta.description = "the minimal iso required to boot and switch into the full config.";
       inherit system;
@@ -201,9 +207,13 @@ in {
         nix
         dev
         bootable
+        ssh
 
         ({...}: {
           virtualisation.diskSize = 30 * 1024;
+          networking.networkmanager.enable = true;
+          networking.wireless.enable = false;
+          networking.hostName = "boot";
         })
       ];
 

@@ -6,6 +6,7 @@
   ips = {
     hrothgar = "192.168.12.171";
     riverwood = "192.168.12.97";
+    whiterun = "192.168.12.123";
   };
 
   cloudflare = {
