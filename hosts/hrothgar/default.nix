@@ -8,7 +8,7 @@
     inputs.nixos-hardware.nixosModules.microsoft-surface-go
     inputs.home-manager.nixosModules.home-manager
 
-    ./tablet-hardware-config.nix
+    ./hardware-config.nix
 
     ./modules/keyboard.nix
     ./modules/sddm.nix
@@ -25,7 +25,7 @@
   services.tlp.enable = true; # insane power savings
   services.libinput.enable = true; # so we can use the stylus
 
-  networking.hostName = "tablet";
+  networking.hostName = "hrothgar";
   diskName = "/dev/sdb";
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAFHW56n1jPSySEO3GtALBDEcE8tu4prtAzfRgPJSHn8";
 

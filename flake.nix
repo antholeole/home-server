@@ -90,10 +90,10 @@
       url = "github:antholeole/tldraw-server-client/main";
     };
 
-    # setup the manager user on tablets
+    # setup the manager user on hrothgars
     home-manager.url = "github:nix-community/home-manager";
 
-    # tablet ui
+    # hrothgar ui
     hyprland.url = "github:hyprwm/Hyprland";
 
     ags = {

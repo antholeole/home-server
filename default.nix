@@ -111,28 +111,28 @@ in {
       };
 
       # colmena devices
-      tablet = {system, ...}: {
+      hrothgar = {system, ...}: {
         deployment = {
-          targetHost = ssot.ips.tablet;
+          targetHost = ssot.ips.hrothgar;
           targetUser = "root";
           buildOnTarget = false; #never enough space
           replaceUnknownProfiles = true;
-          tags = ["tablet"];
+          tags = ["hrothgar"];
         };
 
         imports = [
-          (import ./hosts/tablet)
+          (import ./hosts/hrothgar)
         ];
       };
 
-      microserver = {system, ...}: {
+      riverwood = {system, ...}: {
         deployment = {
-          targetHost = ssot.ips.microserver;
+          targetHost = ssot.ips.riverwood;
           tags = ["server" "master"];
         };
 
         imports = [
-          (import ./hosts/microserver)
+          (import ./hosts/riverwood)
         ];
       };
     };
@@ -145,21 +145,21 @@ in {
       system,
       ...
     }: {
-      tablet = inputs.nixpkgs.lib.nixosSystem {
+      hrothgar = inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
           mkSpecialArgs system;
 
         modules = [
-          (import ./hosts/tablet)
+          (import ./hosts/hrothgar)
         ];
       };
 
-      microserver = inputs.nixpkgs.lib.nixosSystem {
+      riverwood = inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
           mkSpecialArgs system;
 
         modules = [
-          (import ./hosts/microserver)
+          (import ./hosts/riverwood)
         ];
       };
     });
@@ -181,7 +181,7 @@ in {
       specialArgs = mkSpecialArgs system;
 
       modules = [
-        (import ./hosts/microserver)
+        (import ./hosts/riverwood)
 
         ({...}: {
           virtualisation.diskSize = 30 * 1024;

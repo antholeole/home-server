@@ -4,8 +4,8 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtgDcuHdgd6/VRuBvKlJU57+bHZJ3UsJU02BYbtUaQ/"
   ];
   ips = {
-    tablet = "192.168.12.171";
-    microserver = "192.168.12.97";
+    hrothgar = "192.168.12.171";
+    riverwood = "192.168.12.97";
   };
 
   cloudflare = {
