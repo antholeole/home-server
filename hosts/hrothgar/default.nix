@@ -19,7 +19,8 @@
     ./modules/upower.nix
     ./modules/qt.nix
 
-    boilerplate
+    core
+    wifi
     disk-efi
   ];
 

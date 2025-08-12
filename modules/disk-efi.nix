@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  # TODO: luks.
   options = {
     diskName = lib.mkOption {
       type = lib.types.str;

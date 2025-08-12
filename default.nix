@@ -30,68 +30,6 @@
     });
 in {
   flake = {
-    modules.nixos = {
-      bootable = ./modules/bootable.nix;
-      wifi = ./modules/wifi.nix;
-      ssh = ./modules/ssh.nix;
-      nix = ./modules/nix.nix;
-      disk-efi = ./modules/disk-efi.nix;
-      secrets = ./modules/secrets.nix;
-      dev = ./modules/dev.nix;
-      sensible = ./modules/sensible.nix;
-
-      configure-pkgs = {
-        pkgs,
-        system,
-        ...
-      }: {
-        nixpkgs = {
-          overlays = let
-            overlay = final: prev:
-              withSystem system ({
-                inputs',
-                config,
-                ...
-              }: {
-                # and the following to pkgs.
-                helm-charts = inputs.nixhelm.charts {pkgs = prev;};
-
-                manifests = config.packages.manifests;
-                tldraw-server = inputs'.tldraw-server-client.packages.tldraw-server;
-                tldraw-web-client = inputs'.tldraw-server-client.packages.web-frontend;
-              });
-          in [
-            overlay
-
-            # 3rd party overlays
-            inputs.nix-snapshotter.overlays.default
-            inputs.nixzx.overlays.default
-          ];
-        };
-      };
-
-      # the abstract default base module, suitable for physical or virtual machines.
-      boilerplate = {pkgs, ...}: {
-        imports = with config.flake.modules.nixos; [
-          inputs.agenix.nixosModules.default
-          inputs.agenix-rekey.nixosModules.default
-          inputs.disko.nixosModules.disko
-
-          configure-pkgs
-          sensible
-          ssh
-          nix
-          wifi
-          secrets
-          dev
-        ];
-
-        time.timeZone = "America/Los_Angeles";
-        nixpkgs.hostPlatform = "x86_64-linux";
-        system.stateVersion = "25.05";
-      };
-    };
-
     colmena = let
       system = "x86_64-linux";
     in {
@@ -141,7 +79,7 @@ in {
       whiterun = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.whiterun;
-          buildOnTarget = false; 
+          buildOnTarget = false;
           tags = ["router" "server"];
         };
 

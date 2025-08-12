@@ -1,4 +1,4 @@
-{pkgs_24_11, ...}: {
+{pkgs_24_11, config, inputs, ssot, ...}: {
   imports = [
     ./manifests/sealed-secrets.nix
     ./manifests/kubernetes-dashboard.nix
@@ -19,6 +19,11 @@
     ];
   };
 
+  age.secrets.k3s-token = {
+    rekeyFile = "${inputs.self}/secrets/k3s-token.age";
+    generator.script = "alnum";
+  };
+
   # don't timeout on boot. the node we run it on in smalllll so it takes
   # like 5 mins to get everything going.
   systemd.services.k3s.serviceConfig.TimeoutSec = 0;
@@ -28,6 +33,10 @@
     role = "server";
     package = pkgs_24_11.k3s_1_29;
     snapshotter = "nix";
+
+    tokenFile = config.age.secrets.k3s-token.path;
+    serverAddr = "https://${ssot.ips.riverwood}:6443";
+    
     setKubeConfig = true;
     moreFlags = [
       # traefik is borderline incompatible with external

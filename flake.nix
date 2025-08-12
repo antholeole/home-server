@@ -122,6 +122,8 @@
 
         inputs.home-manager.flakeModules.home-manager
 
+        ./modules
+
         ./parts/devshell.nix
         ./parts/treefmt.nix
 

@@ -2,7 +2,8 @@
   imports = with flake-config.flake.modules.nixos; [
     ./hardware-config.nix
 
-    boilerplate
+    core
+    wifi
     disk-efi
   ];
 
