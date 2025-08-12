@@ -9,6 +9,7 @@
     # ./manifests/ingress-nginx.nix
     ./manifests/cert-manager.nix
     ./manifests/sealed-secrets.nix
+    ./manifests/external-dns.nix
 
     ./flux.nix
   ];

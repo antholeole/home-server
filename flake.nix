@@ -77,16 +77,6 @@
       url = "github:antholeole/nixhelm/vault";
     };
 
-    # some 3p non-helm repo charts
-    cloudflare-operator = {
-      url = "github:adyanth/cloudflare-operator";
-      flake = false;
-    };
-    baremetal-ingress-nginx = {
-      url = "github:kubernetes/ingress-nginx/release-1.12";
-      flake = false;
-    };
-
     # code for software
     tldraw-server-client = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,6 +102,12 @@
     nixzx = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:antholeole/nixzx";
+    };
+
+    # these are encrypted I'm just scared
+    secrets = {
+      flake = false; # it actually is we just only need the source
+      url = "git+ssh://git@github.com/antholeole/home-server-secrets";
     };
   };
 

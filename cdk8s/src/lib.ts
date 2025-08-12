@@ -2,8 +2,9 @@ import { Chart, type ChartProps } from "cdk8s";
 import { Deployment, type Service, type DeploymentProps } from "cdk8s-plus-32";
 import type { Construct } from "constructs";
 import {
+	type ClusterTunnel,
 	TunnelBinding,
-	TunnelBindingTunnelRefKind,
+	type TunnelBindingTunnelRefKind,
 	type TunnelBindingProps,
 } from "../imports/networking.cfargotunnel.com";
 
@@ -53,11 +54,12 @@ export class DefaultTunnelBinding extends TunnelBinding {
 			service: Service;
 			subdomain: string;
 		}[],
+		tunnel: ClusterTunnel,
 	) {
 		const tunnelBindingProps: TunnelBindingProps = {
 			tunnelRef: {
-				name: "k3s-cluster-tunnel",
-				kind: TunnelBindingTunnelRefKind.CLUSTER_TUNNEL,
+				kind: tunnel.kind as TunnelBindingTunnelRefKind,
+				name: tunnel.name,
 			},
 			subjects: props.map((subject) => ({
 				name: subject.service.name,

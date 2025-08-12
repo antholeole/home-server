@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"esModuleInterop": true,
 		"strict": true,
 		"outDir": "bin",
 		"target": "es2020",
@@ -12,5 +13,7 @@
 		"noImplicitReturns": true,
 		"forceConsistentCasingInFileNames": true
 	},
-	"files": ["index.ts"]
+	"files": [
+		"index.ts"
+	]
 }

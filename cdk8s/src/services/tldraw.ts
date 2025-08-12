@@ -2,9 +2,10 @@ import { EnvValue, Namespace, Protocol } from "cdk8s-plus-32";
 import type { Construct } from "constructs";
 
 import { DefaultChart, DefaultDeployment, DefaultTunnelBinding } from "../lib";
+import type { ClusterTunnel } from "../../imports/networking.cfargotunnel.com";
 
 export class TldrawDeployment extends DefaultChart {
-	constructor(scope: Construct, port = 3000) {
+	constructor(scope: Construct, tunnel: ClusterTunnel, port = 3000) {
 		super(scope, "tldraw", {
 			namespace: "tldraw",
 		});
@@ -58,6 +59,6 @@ export class TldrawDeployment extends DefaultChart {
 				subdomain: "draw-api",
 				service: backendService,
 			},
-		]);
+		], tunnel);
 	}
 }

@@ -1,5 +1,4 @@
 {
-  ssot,
   pkgs,
   lib,
   ...
@@ -9,28 +8,6 @@
     cloudflare-secret-name = "cloudflare-secrets";
   in {
     external-dns-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
-
-    external-dns-cf-secrets = {
-      enable = true;
-      content = let
-        metadata = {
-          inherit namespace;
-          name = cloudflare-secret-name;
-        };
-      in {
-        inherit metadata;
-
-        apiVersion = "bitnami.com/v1alpha1";
-        kind = "SealedSecret";
-
-        spec = {
-          template.metadata = metadata;
-          encryptedData = {
-            CLOUDFLARE_API_TOKEN = lib.homeServer.sealed.secrets.external-dns.cloudflare-api-token;
-          };
-        };
-      };
-    };
 
     external-dns = {
       enable = true;

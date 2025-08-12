@@ -17,23 +17,5 @@
         chart = pkgs.helm-charts.longhorn.longhorn;
       };
     };
-
-    main-storage-class = {
-      enable = true;
-      content = {
-        kind = "StorageClass";
-        apiVersion = "storage.k8s.io/v1";
-        metadata.name = lib.homeServer.kubernetes.longhorn.storageClass.main;
-        provisioner = "driver.longhorn.io";
-        allowVolumeExpansion = true;
-
-        parameters = {
-          numberOfReplicas = "3";
-          staleReplicaTimeout = "2880"; # 48h
-          fromBackup = "";
-          fsType = "ext4";
-        };
-      };
-    };
   };
 }

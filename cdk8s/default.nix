@@ -1,4 +1,8 @@
-{self, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   perSystem = {
     config,
     pkgs,
@@ -10,7 +14,7 @@
       manifestDependencies = let
         manifestFod = pkgs.stdenvNoCC.mkDerivation {
           name = "manifest-deps-fod";
-          src = "${self}/cdk8s/imports";
+          src = "${self}/cdk8s/kustomize";
 
           dontUnpack = true;
 
@@ -37,7 +41,7 @@
         pkgs.stdenvNoCC.mkDerivation {
           name = "manifest-deps";
 
-          src = "${self}/cdk8s/imports";
+          src = "${self}/cdk8s/kustomize";
           dontUnpack = true;
 
           nativeBuildInputs = [
@@ -56,7 +60,8 @@
         version = "1.0.0";
 
         postPatch = ''
-          cp ${manifestDependencies}/external-kustomize.json imports/external-kustomize.json
+          cp ${manifestDependencies}/external-kustomize.json kustomize/external-kustomize.json
+          cp -r ${inputs.secrets}/src/sealed src/sealed
         '';
 
         # don't rebuild the manifests if we're just iterating on this file.
