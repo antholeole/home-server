@@ -10,6 +10,7 @@
         inputs.agenix.nixosModules.default
         inputs.agenix-rekey.nixosModules.default
         inputs.disko.nixosModules.disko
+        inputs.nixos-facter-modules.nixosModules.facter
 
         ./core/default.nix
       ];

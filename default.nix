@@ -140,12 +140,13 @@ in {
       inherit system;
       specialArgs = mkSpecialArgs system;
 
+      imports = [
+        "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+      ];
+
       modules = with config.flake.modules.nixos; [
-        configure-pkgs
-        nix
-        dev
-        bootable
-        ssh
+        core
+        wifi
 
         ({...}: {
           virtualisation.diskSize = 30 * 1024;

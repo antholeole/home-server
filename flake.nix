@@ -55,6 +55,9 @@
       inputs.treefmt-nix.follows = "treefmt-nix";
       inputs.flake-parts.follows = "flake-parts";
     };
+
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+
     # hardware config without generating it
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -110,7 +113,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:antholeole/nixzx";
     };
-    
   };
 
   outputs = inputs @ {flake-parts, ...}:

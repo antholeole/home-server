@@ -1,13 +1,13 @@
 {flake-config, ...}: {
   imports = with flake-config.flake.modules.nixos; [
-    ./hardware-config.nix
-
     core
     wifi
     disk-efi
+
+    {config.facter.reportPath = ./facter.json;}
   ];
 
   networking.hostName = "whiterun";
   diskName = "/dev/nvme0n1";
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsbhWh/MGsZx5y9TX+gjeUV5J1Pn/I3nXu5vYXyP1cp";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP9v7Tjn4O+cCLp9Gf/uRDhrMJvfNIBhG/C5nPXF84xt";
 }
