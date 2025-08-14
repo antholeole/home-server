@@ -4,6 +4,8 @@
     core
     wifi
     disk-efi
+
+    k3s
     
     {config.facter.reportPath = ./facter.json;}
   ];

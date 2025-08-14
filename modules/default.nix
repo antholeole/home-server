@@ -13,6 +13,7 @@
         inputs.nixos-facter-modules.nixosModules.facter
 
         ./core/default.nix
+        ./agenix-generators.nix
       ];
 
       nixpkgs = {

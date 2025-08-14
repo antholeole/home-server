@@ -94,12 +94,16 @@ helpful for others, unless they copy my exact setup.
 
 Colmena will manage the systems from then on.
 
-## Edit a secret
+## Edit a agenix secret
 
 there seems to be a bug where the nonexistance of a key causes rekey to fail.
 
 you can specify the pubkey like `AGENIX_REKEY_PRIMARY_IDENTITY=<pubkey> agenix edit`
 to get it to work.
+
+## edit a kubeseal secret
+
+activate the devshell then run `seal <secret name>`.
 
 ## what isn't reproduceable
 
