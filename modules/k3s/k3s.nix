@@ -3,13 +3,11 @@
   pkgs_24_11,
   config,
   inputs,
-  ssot,
   ...
 }: {
   imports = [
-    # ./manifests/kubernetes-dashboard.nix
-    # ./manifests/cert-manager.nix
     # ./manifests/ingress-nginx.nix
+    ./manifests/cert-manager.nix
     ./manifests/sealed-secrets.nix
 
     ./flux.nix

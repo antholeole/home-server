@@ -22,5 +22,4 @@ new SealedSecrets(app);
 // write a kustomize for every manifest. must be last.
 new CDKKustomize(app);
 
-
 app.synth();

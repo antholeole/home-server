@@ -19,6 +19,7 @@ rapids-cmake/
 CPM_modules/
 RAPIDS.cmake
 cmake/CPM_*.cmake
+cdk8s/imports/
 
 **/result/
 **/target/

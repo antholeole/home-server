@@ -3,3 +3,4 @@ app: npx ts-node main.ts
 imports:
   - k8s
   - crds/cloudflare-operator.yaml
+  - helm:https://charts.jetstack.io/cert-manager@1.15.5

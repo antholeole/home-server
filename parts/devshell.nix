@@ -51,7 +51,7 @@
         nodejs_24
         nodePackages_latest.cdk8s-cli
 
-        k3d
+        kubernetes-helm
 
         agsFull
 
