@@ -1,8 +1,9 @@
 {flake-config, ...}: {
   imports = with flake-config.flake.modules.nixos; [
     core
-    wifi
     disk-efi
+
+    ./router.nix
 
     {config.facter.reportPath = ./facter.json;}
   ];
