@@ -6,9 +6,10 @@
 
   # TODO: get these through ddns
   ips = {
-    hrothgar = "192.168.12.171";
-    riverwood = "192.168.12.211";
-    whiterun = "192.168.12.167";
+    hrothgar = "192.168.12.171"; # tablet, sees the world
+    riverwood = "192.168.12.211"; # my first kubernetes node
+    whiterun = "192.168.12.98"; # router. central to everything
+    # NAS = blackreach. Big AF and you can never find anything
   };
 
   cloudflare = {
