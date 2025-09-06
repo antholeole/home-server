@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  ssot,
   ...
 }: {
   age.secrets.nm-secrets = {
@@ -18,17 +19,17 @@
         macAddress = "permanent";
       };
 
-      
       ensureProfiles = {
         environmentFiles = [
           config.age.secrets.nm-secrets.path
         ];
 
-        profiles = {
-          loonster = {
+        profiles = let
+          mkLoonster = ssid: priority: {
             connection = {
-              id = "LoonsterBoonster9000";
+              id = ssid;
               type = "wifi";
+              autoconnect-priority = builtins.toString priority;
             };
             ipv4 = {
               method = "auto";
@@ -38,14 +39,19 @@
               method = "auto";
             };
             wifi = {
+              inherit ssid;
               mode = "infrastructure";
-              ssid = "LoonsterBoonster9000";
             };
             wifi-security = {
               key-mgmt = "wpa-psk";
               psk = "$LOONSTER_PSK";
             };
           };
+        in {
+          loonster9000 = mkLoonster "LoonsterBoonster9000" 1;
+
+          # prioritize our custom built wifi.
+          loonster9001 = mkLoonster ssot.wifi.ssid 2;
         };
       };
     };

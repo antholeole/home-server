@@ -206,11 +206,9 @@ in {
           ];
         };
 
-        networks = let
-          ssid = "LoonsterBoonster9001";
-        in {
+        networks = {
           ${lan-if} = {
-            inherit ssid;
+            ssid = ssot.wifi.ssid;
             authentication = {
               mode = "wpa3-sae-transition";
               saePasswordsFile = config.age.secrets.loonster-pw.path;

@@ -4,6 +4,8 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtgDcuHdgd6/VRuBvKlJU57+bHZJ3UsJU02BYbtUaQ/"
   ];
 
+  wifi.ssid = "LoonsterBoonster9001";
+
   # TODO: get these through ddns
   ips = {
     hrothgar = "hrothgar.lan"; # tablet, sees the world
