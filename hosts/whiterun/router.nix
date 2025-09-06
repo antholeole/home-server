@@ -135,7 +135,6 @@ in {
       no-hosts = true;
 
       address = [
-        #
         "/${ssot.cloudflare.domain}/${ssot.ips.riverwood}"
         "/${config.networking.hostName}.lan/192.168.10.1"
       ];

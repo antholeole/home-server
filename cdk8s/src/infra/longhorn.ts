@@ -1,5 +1,7 @@
-import { ApiObject } from "cdk8s";
+import { ApiObject, Chart } from "cdk8s";
+import { KubeIngress } from "cdk8s-plus-32/lib/imports/k8s";
 import { Construct } from "constructs";
+import { ssot } from "../lib";
 
 
 // TODO: actually cloud replicate :)
@@ -26,4 +28,44 @@ export class CloudReplicatedStorageClass extends Construct {
 			},
 		});
 	}
+}
+
+
+export class  Longhorn extends Chart {
+  constructor(scope: Construct) {
+    super(scope, "longhorn", {});
+
+    new KubeIngress(this, 'longhorn-ingress', {
+      metadata: {
+        name: 'longhorn-ingress',
+        namespace: 'longhorn-system',
+        annotations: {
+          'kubernetes.io/ingress.class': 'nginx',
+        },
+      },
+      spec: {
+        rules: [
+          {
+            host: `longhorn.${ssot.cloudflare.domain}`,
+            http: {
+              paths: [
+                {
+                  path: '/',
+                  pathType: 'Prefix',
+                  backend: {
+                    service: {
+                      name: 'longhorn-frontend',
+                      port: {
+                        number: 80, // Default Longhorn frontend port
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+  }
 }

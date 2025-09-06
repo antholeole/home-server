@@ -6,10 +6,11 @@
   ...
 }: {
   imports = [
-    # ./manifests/ingress-nginx.nix
+    ./manifests/ingress-nginx.nix
     ./manifests/cert-manager.nix
     ./manifests/sealed-secrets.nix
     ./manifests/external-dns.nix
+    ./manifests/longhorn.nix
 
     ./flux.nix
   ];

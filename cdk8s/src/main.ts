@@ -5,6 +5,7 @@ import { CloudflareOperatorChart } from "./services/cloudflare-operator";
 import { TldrawDeployment } from "./services/tldraw";
 import { SealedSecrets } from "./sealed";
 import { CertManager } from "./infra/cert-manager";
+import { Longhorn } from "./infra/longhorn";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -14,6 +15,8 @@ const app = new App({
 // infra
 const cfOperator = new CloudflareOperatorChart(app);
 new CertManager(app);
+
+new Longhorn(app);
 
 // services
 new TldrawDeployment(app, cfOperator.tunnelRef);
