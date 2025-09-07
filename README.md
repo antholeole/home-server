@@ -81,8 +81,8 @@ helpful for others, unless they copy my exact setup.
 
 1. run `agenix rekey` from the instructions above. You should see `rekeying
    <hostname> nm-secrets`.
-1. `nixos-anywhere --generate-hardware-config nixos-generate-config \
-   ./hosts/<device>/hardware-config.nix --flake .#<device> root@<device ip>`
+1. `nixos-anywhere --generate-hardware-config nixos-facter \
+   ./hosts/<device>/facter.json --flake .#<device> root@boot.lan`
    will format the disk and generate you the hardware config, as well as install
    the nixOS configuration to the device.
 1. Unfortunately, you now have to redo `ssh-keyscan`, fix `age.rekey.pubKey`,

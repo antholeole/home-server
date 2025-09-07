@@ -3,13 +3,11 @@
     core
     wifi
     disk-efi
-
-    k3s
     
     {config.facter.reportPath = ./facter.json;}
   ];
 
-  networking.hostName = "riverwood";
+  networking.hostName = "blackreach";
   diskName = "/dev/nvme0n1";
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsbhWh/MGsZx5y9TX+gjeUV5J1Pn/I3nXu5vYXyP1cp";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEz65TROwu42p35hPLcgTiAXco4iQk9jCDiaxFoToGTs";
 }

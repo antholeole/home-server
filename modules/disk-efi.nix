@@ -3,7 +3,6 @@
   lib,
   ...
 }: {
-  # TODO: luks.
   options = {
     diskName = lib.mkOption {
       type = lib.types.str;
@@ -51,7 +50,7 @@
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "ext4";
+                format = "btrfs";
                 mountpoint = "/";
               };
             };

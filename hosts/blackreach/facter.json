@@ -1941,7 +1941,7 @@
         "resources": [
           {
             "type": "hwaddr",
-            "address": 49
+            "address": 57
           },
           {
             "type": "irq",
@@ -2289,7 +2289,7 @@
         "resources": [
           {
             "type": "hwaddr",
-            "address": 49
+            "address": 57
           },
           {
             "type": "phwaddr",

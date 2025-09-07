@@ -9,6 +9,7 @@
     hrothgar = "192.168.12.171";
     riverwood = "192.168.12.211";
     whiterun = "192.168.12.167";
+    blackreach = "192.168.12.167";
   };
 
   cloudflare = {

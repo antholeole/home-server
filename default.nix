@@ -57,11 +57,23 @@ in {
           targetUser = "root";
           buildOnTarget = false; #never enough space
           replaceUnknownProfiles = true;
-          tags = ["hrothgar"];
+          tags = ["hrothgar" "tablet"];
         };
 
         imports = [
           (import ./hosts/hrothgar)
+        ];
+      };
+
+      whiterun = {system, ...}: {
+        deployment = {
+          targetHost = ssot.ips.whiterun;
+          buildOnTarget = false;
+          tags = ["router" "server"];
+        };
+
+        imports = [
+          (import ./hosts/whiterun)
         ];
       };
 
@@ -76,15 +88,14 @@ in {
         ];
       };
 
-      whiterun = {system, ...}: {
+      blackreach = {system, ...}: {
         deployment = {
-          targetHost = ssot.ips.whiterun;
-          buildOnTarget = false;
-          tags = ["router" "server"];
+          targetHost = ssot.ips.blackreach;
+          tags = ["server" "master" "nas"];
         };
 
         imports = [
-          (import ./hosts/whiterun)
+          (import ./hosts/blackreach)
         ];
       };
     };
@@ -106,6 +117,15 @@ in {
         ];
       };
 
+      whiterun = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs =
+          mkSpecialArgs system;
+
+        modules = [
+          (import ./hosts/whiterun)
+        ];
+      };
+
       riverwood = inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
           mkSpecialArgs system;
@@ -115,12 +135,12 @@ in {
         ];
       };
 
-      whiterun = inputs.nixpkgs.lib.nixosSystem {
+      blackreach = inputs.nixpkgs.lib.nixosSystem {
         specialArgs =
           mkSpecialArgs system;
 
         modules = [
-          (import ./hosts/whiterun)
+          (import ./hosts/blackreach)
         ];
       };
     });
