@@ -4,12 +4,16 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtgDcuHdgd6/VRuBvKlJU57+bHZJ3UsJU02BYbtUaQ/"
   ];
 
-  # TODO: get these through ddns
+  k3sServer = "riverwood";
+
   ips = {
-    hrothgar = "192.168.12.171";
-    riverwood = "192.168.12.211";
+    # whiterun is a router lets just use it's IP using dns here could
+    # be confusing later
     whiterun = "192.168.12.167";
-    blackreach = "192.168.12.167";
+
+    hrothgar = "hrothgar.lan";
+    riverwood = "riverwood.lan";
+    blackreach = "blackreach.lan";
   };
 
   cloudflare = {

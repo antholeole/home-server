@@ -1,15 +1,18 @@
 {
   lib,
   pkgs,
+  ssot,
+  config,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "ingress-nginx"; # this is the default one by the file provided
   in {
-    ingress-nginx-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+    ingress-nginx-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     ingress-nginx = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = lib.kubelib.fromHelm {
         inherit namespace;
 

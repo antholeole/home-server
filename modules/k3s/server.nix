@@ -1,31 +1,21 @@
 {
   pkgs,
-  pkgs_24_11,
-  config,
   inputs,
+  config,
+  lib,
+  ssot,
   ...
 }: {
   imports = [
-    # ./manifests/ingress-nginx.nix
-    ./manifests/cert-manager.nix
-    ./manifests/sealed-secrets.nix
-    ./manifests/external-dns.nix
-
-    ./flux.nix
+    ./manifests
   ];
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [
-      22 # ssh
-      6443 # k3s api server
-
-      443
-      80
-    ];
-  };
-
+  # this also kind of sucks because it straight up fails if the k3s node is
+  # not initalized yet but -\_()_/-
   systemd.services.k8s-sealed-secret-key = {
+    enable =
+      config.networking.hostName == ssot.k3sServer;
+
     description = "Deploy Sealed Secrets TLS Key to Kubernetes";
     after = ["k3s.service"];
     requires = ["k3s.service"];
@@ -65,31 +55,8 @@
     };
   };
 
-  age.secrets = {
-    k3s-token = {
-      rekeyFile = "${inputs.self}/secrets/k3s-token.age";
-      generator.script = "alnum";
-    };
-    sealed-secrets-x509 = {
-      rekeyFile = "${inputs.self}/secrets/sealed-secrets-x509.age";
-      generator.script = "x509-priv";
-    };
-  };
-
-  # don't timeout on boot. the node we run it on in smalllll so it takes
-  # like 5 mins to get everything going.
-  systemd.services.k3s.serviceConfig.TimeoutSec = 0;
-
-  services.k3s = {
-    enable = true;
+  services.k3s = lib.mkIf (config.networking.hostName == ssot.k3sServer) {
     role = "server";
-    package = pkgs_24_11.k3s_1_29;
-    snapshotter = "nix";
-
-    tokenFile = config.age.secrets.k3s-token.path;
-    # serverAddr = "https://${ssot.ips.riverwood}:6443";
-
-    setKubeConfig = true;
     moreFlags = [
       # traefik is borderline incompatible with external
       # DNS. We'll install ingress nginx later.

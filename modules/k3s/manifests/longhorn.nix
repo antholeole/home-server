@@ -1,18 +1,20 @@
 {
   lib,
   pkgs,
+  config,
+  ssot,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "longhorn-system";
   in {
-    longhorn-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+    longhorn-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     longhorn = {
-      enable = true;
+    enable = config.networking.hostName == ssot.k3sServer;
+
       content = lib.kubelib.fromHelm {
         inherit namespace;
-
         name = "longhorn";
         chart = pkgs.helm-charts.longhorn.longhorn;
       };

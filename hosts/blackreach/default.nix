@@ -1,11 +1,20 @@
-{flake-config, ...}: {
+{
+  flake-config,
+  ...
+}: {
   imports = with flake-config.flake.modules.nixos; [
     core
     wifi
     disk-efi
-    
+
+    k3s
+
     {config.facter.reportPath = ./facter.json;}
   ];
+
+  services.k3s = {
+    role = "agent";
+  };
 
   networking.hostName = "blackreach";
   diskName = "/dev/nvme0n1";

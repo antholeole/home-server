@@ -1,15 +1,18 @@
 {
   lib,
   pkgs,
+  ssot,
+  config,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "cert-manager";
   in {
-    cert-manager-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+    cert-manager-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     cert-manager = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = lib.kubelib.fromHelm {
         inherit namespace;
 

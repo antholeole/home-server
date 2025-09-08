@@ -1,33 +1,17 @@
 {
   pkgs,
+  config,
   ssot,
   ...
 }: let
-  images = import ./images pkgs ssot;
-
   namespace = "flux-system";
   name = "manifest-registry";
   port = 80; # s3 needs to run on port 80 for flux to recognize
-
-  manifests = pkgs.manifests.override {inherit images;};
-
-  manifestStaticServe = pkgs.nix-snapshotter.buildImage {
-    inherit name;
-    tag = "latest";
-    resolvedByNix = true;
-    config.entrypoint = [
-      "${pkgs.rclone}/bin/rclone"
-      "serve"
-      "s3"
-      "--addr"
-      "0.0.0.0:${builtins.toString port}"
-      "${manifests}"
-    ];
-  };
 in {
   services.k3s.manifests = {
     namespace = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = {
         apiVersion = "v1";
         kind = "Namespace";
@@ -39,7 +23,8 @@ in {
     };
 
     flux = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       source = let
         flux-manifests = pkgs.runCommand "flux-manifests" {} ''
           mkdir -p $out
@@ -49,6 +34,8 @@ in {
     };
 
     flux-source = {
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = {
         apiVersion = "source.toolkit.fluxcd.io/v1";
         kind = "Bucket";
@@ -67,6 +54,8 @@ in {
     };
 
     flux-kustomize = {
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = {
         apiVersion = "kustomize.toolkit.fluxcd.io/v1";
         kind = "Kustomization";
@@ -92,7 +81,8 @@ in {
     };
 
     manifest-registry = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = {
         kind = "Deployment";
         apiVersion = "apps/v1";
@@ -119,7 +109,7 @@ in {
               containers = [
                 {
                   inherit name;
-                  image = "nix:0${manifestStaticServe}";
+                  image = "nix:0${config.images.manifestStaticServe}";
                   ports = [
                     {
                       containerPort = port;
@@ -134,7 +124,8 @@ in {
     };
 
     manifest-registry-service = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = {
         apiVersion = "v1";
         kind = "Service";
@@ -155,13 +146,5 @@ in {
         };
       };
     };
-  };
-
-  services.preload-containerd = {
-    targets =
-      (builtins.attrValues images)
-      ++ [
-        manifestStaticServe
-      ];
   };
 }

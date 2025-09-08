@@ -1,16 +1,19 @@
 {
   pkgs,
   lib,
+  ssot,
+  config,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "external-dns";
     cloudflare-secret-name = "cloudflare-secrets";
   in {
-    external-dns-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+    external-dns-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     external-dns = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = lib.kubelib.fromHelm {
         inherit namespace;
         name = "external-dns";

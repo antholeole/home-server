@@ -1,15 +1,18 @@
 {
   lib,
   pkgs,
+  ssot,
+  config,
   ...
 }: {
   services.k3s.manifests = let
     namespace = "sealed-secrets";
   in {
-    sealed-secrets-namespace = lib.homeServer.kubernetes.mkNamespace namespace;
+    sealed-secrets-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     sealed-secrets = {
-      enable = true;
+      enable = config.networking.hostName == ssot.k3sServer;
+
       content = lib.kubelib.fromHelm {
         inherit namespace;
 

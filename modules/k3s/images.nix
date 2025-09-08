@@ -1,4 +1,11 @@
-pkgs: ssot: let
+# TODO: split this up again
+{
+  lib,
+  pkgs,
+  ssot,
+  config,
+  ...
+}: let
   port = 3000;
 
   backend-fqdn = "draw-api.${ssot.cloudflare.domain}";
@@ -42,7 +49,45 @@ pkgs: ssot: let
         "${caddyfile}/Caddyfile"
       ];
     };
+
+  otherImages = {
+    "tldraw/backend" = tldraw-backend-pod;
+    "tldraw/frontend" = tldraw-frontend-pod;
+  };
+
+  manifests = pkgs.manifests.override {images = otherImages;};
+
+  manifestStaticServe = pkgs.nix-snapshotter.buildImage {
+    name = "manifest-registry";
+    tag = "latest";
+    resolvedByNix = true;
+    config.entrypoint = [
+      "${pkgs.rclone}/bin/rclone"
+      "serve"
+      "s3"
+      "--addr"
+      "0.0.0.0:${builtins.toString port}"
+      "${manifests}"
+    ];
+  };
 in {
-  "tldraw/backend" = tldraw-backend-pod;
-  "tldraw/frontend" = tldraw-frontend-pod;
+  options = {
+    images = lib.mkOption {
+      readOnly = true;
+      description = "all custom-built images.";
+      default =
+        otherImages
+        // {
+          inherit manifestStaticServe;
+        };
+    };
+  };
+
+  config.services.preload-containerd = {
+    targets =
+      (builtins.attrValues config.options.k3s.images)
+      ++ [
+        manifestStaticServe
+      ];
+  };
 }
