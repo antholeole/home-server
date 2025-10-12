@@ -43,6 +43,11 @@
 
     networking.firewall = {
       enable = true;
+
+      allowedUDPPorts =[
+        8472 # flannel CNI
+      ];
+      
       allowedTCPPorts = [
         22 # ssh
         6443 # k3s api server

@@ -3,10 +3,12 @@ import { Chart } from "cdk8s";
 import { ClusterIssuer } from "../../imports/cert-manager.io";
 
 export class CertManager extends Chart {
+	readonly clusterIssuer: ClusterIssuer
+	
 	constructor(scope: Construct) {
 		super(scope, "cert-manager");
 
-		new ClusterIssuer(this, "cloudflare-issuer", {
+		this.clusterIssuer = new ClusterIssuer(this, "cloudflare-issuer", {
 			spec: {
 				acme: {
 					server: "https://acme-v02.api.letsencrypt.org/directory",

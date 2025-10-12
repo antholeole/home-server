@@ -69,7 +69,7 @@ in {
         deployment = {
           targetHost = ssot.ips.whiterun;
           buildOnTarget = false;
-          tags = ["router" "server"];
+          tags = ["router"];
         };
 
         imports = [
@@ -80,7 +80,7 @@ in {
       riverwood = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.riverwood;
-          tags = ["server" "master"];
+          tags = ["k3" "master"];
         };
 
         imports = [
@@ -91,7 +91,7 @@ in {
       blackreach = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.blackreach;
-          tags = ["server" "master" "nas"];
+          tags = ["k3" "master" "nas"];
         };
 
         imports = [

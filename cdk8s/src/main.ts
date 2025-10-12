@@ -5,6 +5,7 @@ import { CloudflareOperatorChart } from "./services/cloudflare-operator";
 import { TldrawDeployment } from "./services/tldraw";
 import { SealedSecrets } from "./sealed";
 import { CertManager } from "./infra/cert-manager";
+import { Longhorn } from "./infra/longhorn";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -13,15 +14,16 @@ const app = new App({
 
 // infra
 const cfOperator = new CloudflareOperatorChart(app);
-new CertManager(app);
+const certManager = new CertManager(app);
+new Longhorn(app,certManager.clusterIssuer);
 
 // services
 new TldrawDeployment(app, cfOperator.tunnelRef);
 new SealedSecrets(app);
 
-
 // write a kustomize for every manifest. must be last.
 new CDKKustomize(app);
+
 
 
 app.synth();

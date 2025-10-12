@@ -1,4 +1,4 @@
-{flake-config, ...}: {
+{flake-config, pkgs,...}: {
   imports = with flake-config.flake.modules.nixos; [
     core
     wifi
@@ -7,6 +7,10 @@
     k3s
     
     {config.facter.reportPath = ./facter.json;}
+  ];
+
+  environment.systemPackages = with pkgs; [
+    k9s
   ];
 
   services.k3s.role = "server";
