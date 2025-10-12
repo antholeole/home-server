@@ -66,7 +66,7 @@
       "serve"
       "s3"
       "--addr"
-      "0.0.0.0:${builtins.toString port}"
+      "0.0.0.0:80"
       "${manifests}"
     ];
   };

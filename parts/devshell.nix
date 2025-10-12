@@ -30,6 +30,8 @@
         rage
         nodejs_24
         nodePackages_latest.cdk8s-cli
+        kubectl
+        kustomize
 
         kubernetes-helm
 

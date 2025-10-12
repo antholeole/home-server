@@ -81,7 +81,18 @@ in {
     };
 
     manifest-registry = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      # bug here and why we need to remove snapshotter.
+      # Basically, for an image to exist on the node, it has to be in the store.
+      # for the image to be in the store, it has to be used somewhere in its
+      # derivation; so, if the control plane schedules a pod using an image
+      # but the manifest does not exist on that node, the image will fail to
+      # pull.
+      #
+      # two solutions:
+      # 1. proxy store on a single node out to the cluster;
+      # 2. don't use snapshotter for most images (very hard to remove it for the
+      #    manifest serving images)
+      enable = true;
 
       content = {
         kind = "Deployment";

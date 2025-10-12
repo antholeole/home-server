@@ -61,7 +61,7 @@
 
         postPatch = ''
           cp ${manifestDependencies}/external-kustomize.json kustomize/external-kustomize.json
-          cp -r ${inputs.secrets}/src/sealed src/sealed
+          cp -r ${inputs.secrets}/src/sealed src
         '';
 
         # don't rebuild the manifests if we're just iterating on this file.

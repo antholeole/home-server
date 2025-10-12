@@ -21,7 +21,7 @@ export class CertManager extends Chart {
 								cloudflare: {
 									apiTokenSecretRef: {
 										name: "cloudflare-api-token-secret",
-										key: "api-token",
+										key: "api-secret",
 									},
 								},
 							},

@@ -41,7 +41,7 @@ export class Longhorn extends Chart {
 				name: "longhorn-ingress",
 				namespace: "longhorn-system",
 				annotations: {
-					"nginx.ingress.kubernetes.io/ssl-redirect": "false",
+					"nginx.ingress.kubernetes.io/ssl-redirect": "true",
 					"nginx.ingress.kubernetes.io/proxy-bod-size": "10000m",
 					"cert-manager.io/cluster-issuer": clusterIssuer.name,
 				},

@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  ssot,
   config,
   ...
 }: {
@@ -12,7 +11,7 @@
     external-dns-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     external-dns = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = true;
 
       content = lib.kubelib.fromHelm {
         inherit namespace;
