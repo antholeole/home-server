@@ -73,7 +73,9 @@
 
         nativeBuildInputs = [
           pkgs.nodePackages_latest.cdk8s-cli
+
           pkgs.kubectl
+          
           pkgs.git
 
           manifestDependencies

@@ -3,4 +3,7 @@ app: npx ts-node main.ts
 imports:
   - k8s
   - crds/cloudflare-operator.yaml
+  - crds/cnpg.yaml
   - github:cert-manager/cert-manager@1.17.1
+  - helm:https://cloudnative-pg.github.io/charts/cloudnative-pg@0.26.0
+  - helm:https://cloudnative-pg.github.io/charts/cluster@0.3.1
