@@ -1,18 +1,17 @@
 import { ApiObject, Chart } from "cdk8s";
 import { Construct } from "constructs";
 import { ssot } from "../lib";
-import { ClusterIssuer } from "../../imports/cert-manager.io";
+import { KubeStorageClass } from "../../imports/k8s";
+import type { ClusterIssuer } from "../../imports/cert-manager.io";
 
 // TODO: actually cloud replicate :)
 export class CloudReplicatedStorageClass extends Construct {
 	static className = "standard-cloud-replicated";
 
-	constructor(scope: Construct, id: string) {
-		super(scope, id);
+	constructor(scope: Construct) {
+		super(scope, CloudReplicatedStorageClass.className);
 
-		new ApiObject(this, CloudReplicatedStorageClass.className, {
-			kind: "StorageClass",
-			apiVersion: "storage.k8s.io/v1",
+		new KubeStorageClass(this, CloudReplicatedStorageClass.className, {
 			metadata: {
 				name: CloudReplicatedStorageClass.className,
 			},
@@ -21,6 +20,30 @@ export class CloudReplicatedStorageClass extends Construct {
 			parameters: {
 				// single local, single remote backup.
 				numberOfReplicas: "1",
+				staleReplicaTimeout: "2880",
+				fsType: "ext4",
+			},
+		});
+	}
+}
+
+
+// storage class used for charts with replication built in, e.g. cnpg.
+export class StrictLocalStorageClass extends Construct {
+	static className = "standard-strict-local";
+
+	constructor(scope: Construct) {
+		super(scope, "strict-local");
+
+		new KubeStorageClass(this, StrictLocalStorageClass.className, {
+			metadata: {
+				name: StrictLocalStorageClass.className,
+			},
+			provisioner: "driver.longhorn.io",
+			allowVolumeExpansion: true,
+			parameters: {
+				numberOfReplicas: "1",
+				dataLocality: "strict-local",
 				staleReplicaTimeout: "2880",
 				fromBackup: "",
 				fsType: "ext4",
@@ -32,6 +55,9 @@ export class CloudReplicatedStorageClass extends Construct {
 export class Longhorn extends Chart {
 	constructor(scope: Construct, clusterIssuer: ClusterIssuer) {
 		super(scope, "longhorn");
+
+		new CloudReplicatedStorageClass(this);
+		new StrictLocalStorageClass(this);
 
 		const domain = `longhorn.${ssot.cloudflare.domain}`;
 		new ApiObject(this, "longhorn-ingress", {

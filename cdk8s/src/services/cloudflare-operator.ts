@@ -3,6 +3,7 @@ import { Kustomize } from "cdk8s-kustomize";
 import type { Construct } from "constructs";
 import { cloudflareOperator } from "../../kustomize/external-kustomize.json";
 import { ClusterTunnelV1Alpha2 } from "../../imports/networking.cfargotunnel.com";
+import { ssot } from "../lib";
 
 export const tunnelRef = {
 	name: "k3s-cluster-tunnel",
@@ -27,7 +28,7 @@ export class CloudflareOperatorChart extends Chart {
 				cloudflare: {
 					email: "antholeinik@gmail.com",
 					domain: "oleina.xyz",
-					accountId: "e0d74c227439ece29e62209d109ae43e",
+					accountId: ssot.cloudflare.accountId,
 					secret: "cloudflare-tunnel-secrets",
 				},
 			},

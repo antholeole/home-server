@@ -22,8 +22,6 @@
       inputsFrom = [
         # Provides $FLAKE_ROOT in dev shell
         config.flake-root.devShell
-
-        config.packages.cdk
       ];
 
       packages = with pkgs; [
@@ -40,7 +38,6 @@
         inputs'.colmena.packages.colmena
         inputs'.nixos-anywhere.packages.default
 
-        config.packages.cdk
         config.agenix-rekey.package
       ];
 

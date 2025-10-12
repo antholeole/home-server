@@ -74,7 +74,7 @@
     nixhelm = {
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-kube-generators.follows = "nix-kube-generators";
-      url = "github:antholeole/nixhelm/vault";
+      url = "github:antholeole/nixhelm/oleina/qryyoztowrux";
     };
 
     # code for software
@@ -125,7 +125,6 @@
         ./parts/devshell.nix
         ./parts/treefmt.nix
 
-        ./cdk
         ./cdk8s
 
         ./.

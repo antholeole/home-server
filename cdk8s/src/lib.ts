@@ -98,5 +98,7 @@ export class CDKKustomize extends Chart {
 export const ssot = {
 	cloudflare: {
 		domain: "oleina.xyz",
+		bucket: "home-server-bucket",
+    accountId: "e0d74c227439ece29e62209d109ae43e",
 	},
 } as const;

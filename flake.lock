@@ -1055,16 +1055,16 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1742072044,
-        "narHash": "sha256-cPtQGOA+Yj89krJzUrC4tsB8Ubsgw5gehAm2PEJ4K3o=",
+        "lastModified": 1760321709,
+        "narHash": "sha256-qlU1T6XuNzLID3L21GlpE1fqe/Se1eWLgOOrrh8D5/k=",
         "owner": "antholeole",
         "repo": "nixhelm",
-        "rev": "1926955bfbd2226cb15922ab67417e4b405476c6",
+        "rev": "60b17d6c6c18a94b64296d5153bf4a1cd60d8819",
         "type": "github"
       },
       "original": {
         "owner": "antholeole",
-        "ref": "vault",
+        "ref": "oleina/qryyoztowrux",
         "repo": "nixhelm",
         "type": "github"
       }
@@ -1471,11 +1471,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1760303453,
-        "narHash": "sha256-idHldPWBkhxlC8qDpsVkD71RQFFS/23Tx/DloJ3tS8Q=",
+        "lastModified": 1760328453,
+        "narHash": "sha256-XAtm+c+SxtsY+eJ46R/HTw5AO+cDc0T4kRgzqMm4KQU=",
         "ref": "refs/heads/main",
-        "rev": "f9db9cea14f7efeb2d3e763bde6f25a45336758d",
-        "revCount": 8,
+        "rev": "dab0caf25d298b51d2ee42169e05927aa63a807b",
+        "revCount": 12,
         "type": "git",
         "url": "ssh://git@github.com/antholeole/home-server-secrets"
       },

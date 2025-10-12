@@ -51,8 +51,8 @@
     };
 
   otherImages = {
-    "tldraw/backend" = tldraw-backend-pod;
-    "tldraw/frontend" = tldraw-frontend-pod;
+    "tldraw/backend" = "nix:0${tldraw-backend-pod}";
+    "tldraw/frontend" = "nix:0${tldraw-frontend-pod}";
   };
 
   manifests = pkgs.manifests.override {images = otherImages;};

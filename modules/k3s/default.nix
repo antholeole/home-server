@@ -38,6 +38,7 @@
     environment.systemPackages = with pkgs; [
       kubeseal
       nerdctl
+      kubectl-cnpg
       fluxcd
     ];
 
