@@ -7,6 +7,7 @@ import { SealedSecrets } from "./sealed";
 import { CertManager } from "./infra/cert-manager";
 import { Longhorn } from "./infra/longhorn";
 import { CnpgCluster } from "./infra/cnpg";
+import { Authentik } from "./infra/authentik";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -21,7 +22,8 @@ new Longhorn(app,certManager.clusterIssuer);
 // services
 new TldrawDeployment(app, cfOperator.tunnelRef);
 new SealedSecrets(app);
-new CnpgCluster(app);
+const cnpgCluster = new CnpgCluster(app);
+new Authentik(app, cnpgCluster);
 
 // write a kustomize for every manifest. must be last.
 new CDKKustomize(app);

@@ -8,5 +8,6 @@
     ./external-dns.nix
     ./longhorn.nix
     ./flux.nix
+    ./authentik.nix
   ];
 }
