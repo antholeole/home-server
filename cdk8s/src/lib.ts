@@ -51,7 +51,9 @@ export class DefaultTunnelBinding extends TunnelBinding {
 		scope: Construct,
 		id: string,
 		props: {
-			service: Service;
+			service: Service | {
+				name: string
+			};
 			subdomain: string;
 		}[],
 		tunnel: ClusterTunnel,

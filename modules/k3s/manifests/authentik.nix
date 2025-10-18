@@ -49,6 +49,7 @@
         in {
           server =
             volumes
+            # note that we actually run both a cloudflare tunnel and an ingress.
             // {
               ingress = let
                 domain = "authentik.${ssot.cloudflare.domain}";

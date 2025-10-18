@@ -108,4 +108,8 @@ export class CnpgCluster extends Chart {
 			},
 		});
 	}
+
+	get host(): string {
+		return `${this.cluster.name}-rw.${CnpgCluster.namespace}`;
+	}
 }

@@ -69,6 +69,7 @@
           # DNS. We'll install ingress nginx later.
           "--disable=traefik"
           "--disable=servicelb"
+          "--flannel-ipv6-masq"
         ]
         ++ config.k3s.labels;
     };
