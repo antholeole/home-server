@@ -3,6 +3,7 @@ import { Construct } from "constructs";
 import { ssot } from "../lib";
 import { KubeStorageClass } from "../../imports/k8s";
 import type { ClusterIssuer } from "../../imports/cert-manager.io";
+import { BackupTargetV1Beta2 } from "../../imports/longhorn.io";
 
 // TODO: actually cloud replicate :)
 export class CloudReplicatedStorageClass extends Construct {
@@ -10,6 +11,13 @@ export class CloudReplicatedStorageClass extends Construct {
 
 	constructor(scope: Construct) {
 		super(scope, CloudReplicatedStorageClass.className);
+
+		new BackupTargetV1Beta2(this, "cloud-replicated-backup-target", {
+			spec: {
+				credentialSecret: "s3-secret",
+				backupTargetUrl: `s3://${ssot.cloudflare.bucket}@auto/longhorn`
+			}
+		})
 
 		new KubeStorageClass(this, CloudReplicatedStorageClass.className, {
 			metadata: {
@@ -54,7 +62,9 @@ export class StrictLocalStorageClass extends Construct {
 
 export class Longhorn extends Chart {
 	constructor(scope: Construct, clusterIssuer: ClusterIssuer) {
-		super(scope, "longhorn");
+		super(scope, "longhorn", {
+			namespace: "longhorn-system"
+		});
 
 		new CloudReplicatedStorageClass(this);
 		new StrictLocalStorageClass(this);
@@ -65,7 +75,6 @@ export class Longhorn extends Chart {
 			apiVersion: "networking.k8s.io/v1",
 			metadata: {
 				name: "longhorn-ingress",
-				namespace: "longhorn-system",
 				annotations: {
 					"nginx.ingress.kubernetes.io/ssl-redirect": "true",
 					"nginx.ingress.kubernetes.io/proxy-bod-size": "10000m",
