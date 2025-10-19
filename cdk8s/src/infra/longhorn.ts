@@ -3,21 +3,34 @@ import { Construct } from "constructs";
 import { ssot } from "../lib";
 import { KubeStorageClass } from "../../imports/k8s";
 import type { ClusterIssuer } from "../../imports/cert-manager.io";
-import { BackupTargetV1Beta2 } from "../../imports/longhorn.io";
+import {
+	RecurringJobV1Beta2,
+	RecurringJobV1Beta2SpecTask,
+} from "../../imports/longhorn.io";
+import { ConfigMap } from "cdk8s-plus-32";
 
-// TODO: actually cloud replicate :)
+const buildRecurringJobSelector = (recurringJob: RecurringJobV1Beta2) =>
+	JSON.stringify([
+		{
+			name: recurringJob.name,
+			isGroup: false,
+		},
+	]);
+
 export class CloudReplicatedStorageClass extends Construct {
 	static className = "standard-cloud-replicated";
 
 	constructor(scope: Construct) {
 		super(scope, CloudReplicatedStorageClass.className);
 
-		new BackupTargetV1Beta2(this, "cloud-replicated-backup-target", {
+		const recurringJob = new RecurringJobV1Beta2(this, "job", {
 			spec: {
-				credentialSecret: "s3-secret",
-				backupTargetUrl: `s3://${ssot.cloudflare.bucket}@auto/longhorn`
-			}
-		})
+				cron: "0 0 * * *",
+				task: RecurringJobV1Beta2SpecTask.BACKUP, // snapshot then ship to cloud
+				retain: 2,
+				concurrency: 2,
+			},
+		});
 
 		new KubeStorageClass(this, CloudReplicatedStorageClass.className, {
 			metadata: {
@@ -30,11 +43,11 @@ export class CloudReplicatedStorageClass extends Construct {
 				numberOfReplicas: "1",
 				staleReplicaTimeout: "2880",
 				fsType: "ext4",
+				recurringJobSelector: buildRecurringJobSelector(recurringJob),
 			},
 		});
 	}
 }
-
 
 // storage class used for charts with replication built in, e.g. cnpg.
 export class StrictLocalStorageClass extends Construct {
@@ -53,7 +66,6 @@ export class StrictLocalStorageClass extends Construct {
 				numberOfReplicas: "1",
 				dataLocality: "strict-local",
 				staleReplicaTimeout: "2880",
-				fromBackup: "",
 				fsType: "ext4",
 			},
 		});
@@ -63,7 +75,24 @@ export class StrictLocalStorageClass extends Construct {
 export class Longhorn extends Chart {
 	constructor(scope: Construct, clusterIssuer: ClusterIssuer) {
 		super(scope, "longhorn", {
-			namespace: "longhorn-system"
+			namespace: "longhorn-system",
+			disableResourceNameHashes: true,
+		});
+
+		// https://github.com/longhorn/longhorn/issues/11421
+		// longhorn supports many backup targets, but scheduled backup only
+		// lets you use the default one so we have to name this default.
+		new ConfigMap(this, "default", {
+			metadata: {
+				name: "longhorn-default-resource", // magic name
+			},
+			data: {
+				"default-resource.yaml": `
+"backup-target": "s3://${ssot.cloudflare.bucket}@auto/longhorn"
+"backup-target-credential-secret": "s3-secret"
+"backupstore-poll-interval": "180"
+				`.trim(),
+			},
 		});
 
 		new CloudReplicatedStorageClass(this);
