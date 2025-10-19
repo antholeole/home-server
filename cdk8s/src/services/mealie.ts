@@ -73,14 +73,19 @@ export class Mealie extends Chart {
 						},
 					],
 					envVariables: {
+						//general 
 						BASE_URL: EnvValue.fromValue(`https://${host}`),
 						PREFERRED_URL_SCHEME: EnvValue.fromValue("https"),
 						ALLOW_SIGNUP: EnvValue.fromValue("false"),
 						DB_ENGINE: EnvValue.fromValue("postgres"),
+
+						// postgres 
 						POSTGRES_SERVER: EnvValue.fromValue(cnpgCluster.host),
 						POSTGRES_DB: EnvValue.fromValue(pgDb),
 						POSTGRES_USER: secret.envValue("username"),
 						POSTGRES_PASSWORD: secret.envValue("password"),
+
+						// oidc
 						OIDC_AUTH_ENABLED: EnvValue.fromValue("true"),
 						OIDC_PROVIDER_NAME: EnvValue.fromValue("authentik"),
 						ALLOW_PASSWORD_LOGIN: EnvValue.fromValue("false"),

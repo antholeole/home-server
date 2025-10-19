@@ -51,9 +51,11 @@ export class DefaultTunnelBinding extends TunnelBinding {
 		scope: Construct,
 		id: string,
 		props: {
-			service: Service | {
-				name: string
-			};
+			service:
+				| Service
+				| {
+						name: string;
+				  };
 			subdomain: string;
 		}[],
 		tunnel: ClusterTunnel,
@@ -98,9 +100,51 @@ export class CDKKustomize extends Chart {
 }
 
 export const ssot = {
+	tz: "America/Los_Angeles",
 	cloudflare: {
 		domain: "oleina.xyz",
 		bucket: "home-server-bucket",
-    accountId: "e0d74c227439ece29e62209d109ae43e",
+		accountId: "e0d74c227439ece29e62209d109ae43e",
 	},
 } as const;
+
+
+// turns out a lot of services want a redis.
+// maybe we should infra'ize this at some point but for now just stand
+// up ephemeral pods. 
+export const redis = (
+	scope: Construct,
+	props: {
+		name: string;
+		serviceName: string;
+		namespace: string;
+	},
+): Service => {
+	const redisDeployment = new Deployment(scope, `${props.name}-redis`, {
+		replicas: 1,
+		metadata: {
+			namespace: props.namespace,
+		},
+		securityContext: {
+			ensureNonRoot: false,
+		},
+		containers: [
+			{
+				name: "redis",
+				image: "redis:latest",
+				securityContext: {
+					ensureNonRoot: false,
+				},
+				ports: [
+					{
+						number: 6379,
+					},
+				],
+			},
+		],
+	});
+
+	return redisDeployment.exposeViaService({
+		name: props.serviceName,
+	});
+};

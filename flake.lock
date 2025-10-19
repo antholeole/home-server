@@ -1471,11 +1471,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1760844137,
-        "narHash": "sha256-n9xQkLEHrNLNKEK9+bP2M1FoD/3R2/apcxXfe7twntY=",
+        "lastModified": 1760852254,
+        "narHash": "sha256-wcVR9io/HKjM8bPRJcb5EFB533pLZ2bHCRq6WoYDPYs=",
         "ref": "refs/heads/main",
-        "rev": "bb30c806e058cc699b7322e73ba2c29f770be4ea",
-        "revCount": 17,
+        "rev": "e30d6749cd42ce3db1fe159c734340e704709bbb",
+        "revCount": 19,
         "type": "git",
         "url": "ssh://git@github.com/antholeole/home-server-secrets"
       },
