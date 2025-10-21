@@ -10,6 +10,7 @@ import { CnpgCluster } from "./infra/cnpg";
 import { Authentik } from "./infra/authentik";
 import { Mealie } from "./services/mealie";
 import { PaperlessNgx } from "./services/paperless-ngx";
+import { Homebox } from "./services/homebox";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -28,6 +29,7 @@ new Authentik(app, cnpgCluster, cfOperator.tunnelRef);
 new TldrawDeployment(app, cfOperator.tunnelRef);
 new Mealie(app, cnpgCluster, cfOperator.tunnelRef);
 new PaperlessNgx(app, cnpgCluster, cfOperator.tunnelRef);
+new Homebox(app, cnpgCluster, cfOperator.tunnelRef);
 
 // write a kustomize for every manifest. must be last.
 new CDKKustomize(app);
