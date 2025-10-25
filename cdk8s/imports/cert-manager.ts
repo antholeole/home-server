@@ -7,7 +7,7 @@ export interface CertmanagerProps {
   readonly releaseName?: string;
   readonly helmExecutable?: string;
   readonly helmFlags?: string[];
-  readonly values?: { [key: string]: any };
+  readonly values?: HelmValues;
 }
 
 export class Certmanager extends Construct {
@@ -16,20 +16,23 @@ export class Certmanager extends Construct {
     let updatedProps = {};
 
     if (props.values) {
-      const { additionalValues, ...valuesWithoutAdditionalValues } = props.values;
-      updatedProps = {
-        ...props,
-        values: {
-          ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
-          ...additionalValues,
-        },
-      };
+      const values = toJson_HelmValues(props.values);
+      if (values) {
+        const { additionalValues, ...valuesWithoutAdditionalValues } = values;
+        updatedProps = {
+          ...props,
+          values: {
+            ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
+            ...additionalValues,
+          },
+        };
+      }
     }
 
     const finalProps: HelmProps = {
       chart: 'cert-manager',
       repo: 'https://charts.jetstack.io',
-      version: '1.15.5',
+      version: '1.19.1',
       ...(Object.keys(updatedProps).length !== 0 ? updatedProps : props),
     };
 
@@ -59,4 +62,2052 @@ export class Certmanager extends Construct {
     };
   }
 }
+
+/**
+ * @schema helm-values
+ */
+export interface HelmValues {
+  /**
+   * @schema helm-values#acmesolver
+   */
+  readonly acmesolver?: HelmValuesAcmesolver;
+
+  /**
+   * @schema helm-values#affinity
+   */
+  readonly affinity?: any;
+
+  /**
+   * @schema helm-values#approveSignerNames
+   */
+  readonly approveSignerNames?: any[];
+
+  /**
+   * @schema helm-values#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values#cainjector
+   */
+  readonly cainjector?: HelmValuesCainjector;
+
+  /**
+   * @schema helm-values#clusterResourceNamespace
+   */
+  readonly clusterResourceNamespace?: string;
+
+  /**
+   * @schema helm-values#config
+   */
+  readonly config?: any;
+
+  /**
+   * @schema helm-values#containerSecurityContext
+   */
+  readonly containerSecurityContext?: any;
+
+  /**
+   * @schema helm-values#crds
+   */
+  readonly crds?: HelmValuesCrds;
+
+  /**
+   * @schema helm-values#creator
+   */
+  readonly creator?: string;
+
+  /**
+   * @schema helm-values#deploymentAnnotations
+   */
+  readonly deploymentAnnotations?: any;
+
+  /**
+   * @schema helm-values#disableAutoApproval
+   */
+  readonly disableAutoApproval?: boolean;
+
+  /**
+   * @schema helm-values#dns01RecursiveNameservers
+   */
+  readonly dns01RecursiveNameservers?: string;
+
+  /**
+   * @schema helm-values#dns01RecursiveNameserversOnly
+   */
+  readonly dns01RecursiveNameserversOnly?: boolean;
+
+  /**
+   * @schema helm-values#enableCertificateOwnerRef
+   */
+  readonly enableCertificateOwnerRef?: boolean;
+
+  /**
+   * @schema helm-values#enableServiceLinks
+   */
+  readonly enableServiceLinks?: boolean;
+
+  /**
+   * @schema helm-values#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values#extraArgs
+   */
+  readonly extraArgs?: any[];
+
+  /**
+   * @schema helm-values#extraEnv
+   */
+  readonly extraEnv?: any[];
+
+  /**
+   * @schema helm-values#extraObjects
+   */
+  readonly extraObjects?: any[];
+
+  /**
+   * @schema helm-values#featureGates
+   */
+  readonly featureGates?: string;
+
+  /**
+   * @schema helm-values#fullnameOverride
+   */
+  readonly fullnameOverride?: string;
+
+  /**
+   * @schema helm-values#global
+   */
+  readonly global?: HelmValuesGlobal;
+
+  /**
+   * @schema helm-values#hostAliases
+   */
+  readonly hostAliases?: any[];
+
+  /**
+   * @schema helm-values#http_proxy
+   */
+  readonly httpProxy?: string;
+
+  /**
+   * @schema helm-values#https_proxy
+   */
+  readonly httpsProxy?: string;
+
+  /**
+   * @schema helm-values#image
+   */
+  readonly image?: HelmValuesImage;
+
+  /**
+   * @schema helm-values#ingressShim
+   */
+  readonly ingressShim?: HelmValuesIngressShim;
+
+  /**
+   * @schema helm-values#installCRDs
+   */
+  readonly installCrDs?: boolean;
+
+  /**
+   * @schema helm-values#livenessProbe
+   */
+  readonly livenessProbe?: any;
+
+  /**
+   * @schema helm-values#maxConcurrentChallenges
+   */
+  readonly maxConcurrentChallenges?: number;
+
+  /**
+   * @schema helm-values#nameOverride
+   */
+  readonly nameOverride?: string;
+
+  /**
+   * @schema helm-values#namespace
+   */
+  readonly namespace?: string;
+
+  /**
+   * @schema helm-values#no_proxy
+   */
+  readonly noProxy?: string;
+
+  /**
+   * @schema helm-values#nodeSelector
+   */
+  readonly nodeSelector?: any;
+
+  /**
+   * @schema helm-values#podAnnotations
+   */
+  readonly podAnnotations?: any;
+
+  /**
+   * @schema helm-values#podDisruptionBudget
+   */
+  readonly podDisruptionBudget?: HelmValuesPodDisruptionBudget;
+
+  /**
+   * @schema helm-values#podDnsConfig
+   */
+  readonly podDnsConfig?: any;
+
+  /**
+   * @schema helm-values#podDnsPolicy
+   */
+  readonly podDnsPolicy?: string;
+
+  /**
+   * @schema helm-values#podLabels
+   */
+  readonly podLabels?: any;
+
+  /**
+   * @schema helm-values#prometheus
+   */
+  readonly prometheus?: HelmValuesPrometheus;
+
+  /**
+   * @schema helm-values#replicaCount
+   */
+  readonly replicaCount?: number;
+
+  /**
+   * @schema helm-values#resources
+   */
+  readonly resources?: any;
+
+  /**
+   * @schema helm-values#securityContext
+   */
+  readonly securityContext?: any;
+
+  /**
+   * @schema helm-values#serviceAccount
+   */
+  readonly serviceAccount?: HelmValuesServiceAccount;
+
+  /**
+   * @schema helm-values#serviceAnnotations
+   */
+  readonly serviceAnnotations?: any;
+
+  /**
+   * @schema helm-values#serviceIPFamilies
+   */
+  readonly serviceIpFamilies?: any[];
+
+  /**
+   * @schema helm-values#serviceIPFamilyPolicy
+   */
+  readonly serviceIpFamilyPolicy?: string;
+
+  /**
+   * @schema helm-values#serviceLabels
+   */
+  readonly serviceLabels?: any;
+
+  /**
+   * @schema helm-values#startupapicheck
+   */
+  readonly startupapicheck?: HelmValuesStartupapicheck;
+
+  /**
+   * @schema helm-values#strategy
+   */
+  readonly strategy?: any;
+
+  /**
+   * @schema helm-values#tolerations
+   */
+  readonly tolerations?: any[];
+
+  /**
+   * @schema helm-values#topologySpreadConstraints
+   */
+  readonly topologySpreadConstraints?: any[];
+
+  /**
+   * @schema helm-values#volumeMounts
+   */
+  readonly volumeMounts?: any[];
+
+  /**
+   * @schema helm-values#volumes
+   */
+  readonly volumes?: any[];
+
+  /**
+   * @schema helm-values#webhook
+   */
+  readonly webhook?: HelmValuesWebhook;
+}
+
+/**
+ * Converts an object of type 'HelmValues' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValues(obj: HelmValues | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'acmesolver': toJson_HelmValuesAcmesolver(obj.acmesolver),
+    'affinity': obj.affinity,
+    'approveSignerNames': obj.approveSignerNames?.map(y => y),
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'cainjector': toJson_HelmValuesCainjector(obj.cainjector),
+    'clusterResourceNamespace': obj.clusterResourceNamespace,
+    'config': obj.config,
+    'containerSecurityContext': obj.containerSecurityContext,
+    'crds': toJson_HelmValuesCrds(obj.crds),
+    'creator': obj.creator,
+    'deploymentAnnotations': obj.deploymentAnnotations,
+    'disableAutoApproval': obj.disableAutoApproval,
+    'dns01RecursiveNameservers': obj.dns01RecursiveNameservers,
+    'dns01RecursiveNameserversOnly': obj.dns01RecursiveNameserversOnly,
+    'enableCertificateOwnerRef': obj.enableCertificateOwnerRef,
+    'enableServiceLinks': obj.enableServiceLinks,
+    'enabled': obj.enabled,
+    'extraArgs': obj.extraArgs?.map(y => y),
+    'extraEnv': obj.extraEnv?.map(y => y),
+    'extraObjects': obj.extraObjects?.map(y => y),
+    'featureGates': obj.featureGates,
+    'fullnameOverride': obj.fullnameOverride,
+    'global': toJson_HelmValuesGlobal(obj.global),
+    'hostAliases': obj.hostAliases?.map(y => y),
+    'http_proxy': obj.httpProxy,
+    'https_proxy': obj.httpsProxy,
+    'image': toJson_HelmValuesImage(obj.image),
+    'ingressShim': toJson_HelmValuesIngressShim(obj.ingressShim),
+    'installCRDs': obj.installCrDs,
+    'livenessProbe': obj.livenessProbe,
+    'maxConcurrentChallenges': obj.maxConcurrentChallenges,
+    'nameOverride': obj.nameOverride,
+    'namespace': obj.namespace,
+    'no_proxy': obj.noProxy,
+    'nodeSelector': obj.nodeSelector,
+    'podAnnotations': obj.podAnnotations,
+    'podDisruptionBudget': toJson_HelmValuesPodDisruptionBudget(obj.podDisruptionBudget),
+    'podDnsConfig': obj.podDnsConfig,
+    'podDnsPolicy': obj.podDnsPolicy,
+    'podLabels': obj.podLabels,
+    'prometheus': toJson_HelmValuesPrometheus(obj.prometheus),
+    'replicaCount': obj.replicaCount,
+    'resources': obj.resources,
+    'securityContext': obj.securityContext,
+    'serviceAccount': toJson_HelmValuesServiceAccount(obj.serviceAccount),
+    'serviceAnnotations': obj.serviceAnnotations,
+    'serviceIPFamilies': obj.serviceIpFamilies?.map(y => y),
+    'serviceIPFamilyPolicy': obj.serviceIpFamilyPolicy,
+    'serviceLabels': obj.serviceLabels,
+    'startupapicheck': toJson_HelmValuesStartupapicheck(obj.startupapicheck),
+    'strategy': obj.strategy,
+    'tolerations': obj.tolerations?.map(y => y),
+    'topologySpreadConstraints': obj.topologySpreadConstraints?.map(y => y),
+    'volumeMounts': obj.volumeMounts?.map(y => y),
+    'volumes': obj.volumes?.map(y => y),
+    'webhook': toJson_HelmValuesWebhook(obj.webhook),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.acmesolver
+ */
+export interface HelmValuesAcmesolver {
+  /**
+   * @schema helm-values.acmesolver#image
+   */
+  readonly image?: HelmValuesAcmesolverImage;
+}
+
+/**
+ * Converts an object of type 'HelmValuesAcmesolver' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesAcmesolver(obj: HelmValuesAcmesolver | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'image': toJson_HelmValuesAcmesolverImage(obj.image),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.cainjector
+ */
+export interface HelmValuesCainjector {
+  /**
+   * @schema helm-values.cainjector#affinity
+   */
+  readonly affinity?: any;
+
+  /**
+   * @schema helm-values.cainjector#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.cainjector#config
+   */
+  readonly config?: any;
+
+  /**
+   * @schema helm-values.cainjector#containerSecurityContext
+   */
+  readonly containerSecurityContext?: any;
+
+  /**
+   * @schema helm-values.cainjector#deploymentAnnotations
+   */
+  readonly deploymentAnnotations?: any;
+
+  /**
+   * @schema helm-values.cainjector#enableServiceLinks
+   */
+  readonly enableServiceLinks?: boolean;
+
+  /**
+   * @schema helm-values.cainjector#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.cainjector#extraArgs
+   */
+  readonly extraArgs?: any[];
+
+  /**
+   * @schema helm-values.cainjector#extraEnv
+   */
+  readonly extraEnv?: any[];
+
+  /**
+   * @schema helm-values.cainjector#featureGates
+   */
+  readonly featureGates?: string;
+
+  /**
+   * @schema helm-values.cainjector#image
+   */
+  readonly image?: HelmValuesCainjectorImage;
+
+  /**
+   * @schema helm-values.cainjector#nodeSelector
+   */
+  readonly nodeSelector?: any;
+
+  /**
+   * @schema helm-values.cainjector#podAnnotations
+   */
+  readonly podAnnotations?: any;
+
+  /**
+   * @schema helm-values.cainjector#podDisruptionBudget
+   */
+  readonly podDisruptionBudget?: HelmValuesCainjectorPodDisruptionBudget;
+
+  /**
+   * @schema helm-values.cainjector#podLabels
+   */
+  readonly podLabels?: any;
+
+  /**
+   * @schema helm-values.cainjector#replicaCount
+   */
+  readonly replicaCount?: number;
+
+  /**
+   * @schema helm-values.cainjector#resources
+   */
+  readonly resources?: any;
+
+  /**
+   * @schema helm-values.cainjector#securityContext
+   */
+  readonly securityContext?: any;
+
+  /**
+   * @schema helm-values.cainjector#serviceAccount
+   */
+  readonly serviceAccount?: HelmValuesCainjectorServiceAccount;
+
+  /**
+   * @schema helm-values.cainjector#serviceAnnotations
+   */
+  readonly serviceAnnotations?: any;
+
+  /**
+   * @schema helm-values.cainjector#serviceLabels
+   */
+  readonly serviceLabels?: any;
+
+  /**
+   * @schema helm-values.cainjector#strategy
+   */
+  readonly strategy?: any;
+
+  /**
+   * @schema helm-values.cainjector#tolerations
+   */
+  readonly tolerations?: any[];
+
+  /**
+   * @schema helm-values.cainjector#topologySpreadConstraints
+   */
+  readonly topologySpreadConstraints?: any[];
+
+  /**
+   * @schema helm-values.cainjector#volumeMounts
+   */
+  readonly volumeMounts?: any[];
+
+  /**
+   * @schema helm-values.cainjector#volumes
+   */
+  readonly volumes?: any[];
+}
+
+/**
+ * Converts an object of type 'HelmValuesCainjector' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesCainjector(obj: HelmValuesCainjector | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'affinity': obj.affinity,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'config': obj.config,
+    'containerSecurityContext': obj.containerSecurityContext,
+    'deploymentAnnotations': obj.deploymentAnnotations,
+    'enableServiceLinks': obj.enableServiceLinks,
+    'enabled': obj.enabled,
+    'extraArgs': obj.extraArgs?.map(y => y),
+    'extraEnv': obj.extraEnv?.map(y => y),
+    'featureGates': obj.featureGates,
+    'image': toJson_HelmValuesCainjectorImage(obj.image),
+    'nodeSelector': obj.nodeSelector,
+    'podAnnotations': obj.podAnnotations,
+    'podDisruptionBudget': toJson_HelmValuesCainjectorPodDisruptionBudget(obj.podDisruptionBudget),
+    'podLabels': obj.podLabels,
+    'replicaCount': obj.replicaCount,
+    'resources': obj.resources,
+    'securityContext': obj.securityContext,
+    'serviceAccount': toJson_HelmValuesCainjectorServiceAccount(obj.serviceAccount),
+    'serviceAnnotations': obj.serviceAnnotations,
+    'serviceLabels': obj.serviceLabels,
+    'strategy': obj.strategy,
+    'tolerations': obj.tolerations?.map(y => y),
+    'topologySpreadConstraints': obj.topologySpreadConstraints?.map(y => y),
+    'volumeMounts': obj.volumeMounts?.map(y => y),
+    'volumes': obj.volumes?.map(y => y),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.crds
+ */
+export interface HelmValuesCrds {
+  /**
+   * @schema helm-values.crds#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.crds#keep
+   */
+  readonly keep?: boolean;
+}
+
+/**
+ * Converts an object of type 'HelmValuesCrds' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesCrds(obj: HelmValuesCrds | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'keep': obj.keep,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * Global values shared across all (sub)charts
+ *
+ * @schema helm-values.global
+ */
+export interface HelmValuesGlobal {
+  /**
+   * @schema helm-values.global#commonLabels
+   */
+  readonly commonLabels?: any;
+
+  /**
+   * @schema helm-values.global#hostUsers
+   */
+  readonly hostUsers?: boolean;
+
+  /**
+   * @schema helm-values.global#imagePullSecrets
+   */
+  readonly imagePullSecrets?: any[];
+
+  /**
+   * @schema helm-values.global#leaderElection
+   */
+  readonly leaderElection?: HelmValuesGlobalLeaderElection;
+
+  /**
+   * @schema helm-values.global#logLevel
+   */
+  readonly logLevel?: number;
+
+  /**
+   * @schema helm-values.global#nodeSelector
+   */
+  readonly nodeSelector?: any;
+
+  /**
+   * @schema helm-values.global#podSecurityPolicy
+   */
+  readonly podSecurityPolicy?: HelmValuesGlobalPodSecurityPolicy;
+
+  /**
+   * @schema helm-values.global#priorityClassName
+   */
+  readonly priorityClassName?: string;
+
+  /**
+   * @schema helm-values.global#rbac
+   */
+  readonly rbac?: HelmValuesGlobalRbac;
+
+  /**
+   * @schema helm-values.global#revisionHistoryLimit
+   */
+  readonly revisionHistoryLimit?: number;
+}
+
+/**
+ * Converts an object of type 'HelmValuesGlobal' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesGlobal(obj: HelmValuesGlobal | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'commonLabels': obj.commonLabels,
+    'hostUsers': obj.hostUsers,
+    'imagePullSecrets': obj.imagePullSecrets?.map(y => y),
+    'leaderElection': toJson_HelmValuesGlobalLeaderElection(obj.leaderElection),
+    'logLevel': obj.logLevel,
+    'nodeSelector': obj.nodeSelector,
+    'podSecurityPolicy': toJson_HelmValuesGlobalPodSecurityPolicy(obj.podSecurityPolicy),
+    'priorityClassName': obj.priorityClassName,
+    'rbac': toJson_HelmValuesGlobalRbac(obj.rbac),
+    'revisionHistoryLimit': obj.revisionHistoryLimit,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.image
+ */
+export interface HelmValuesImage {
+  /**
+   * @schema helm-values.image#digest
+   */
+  readonly digest?: string;
+
+  /**
+   * @schema helm-values.image#pullPolicy
+   */
+  readonly pullPolicy?: string;
+
+  /**
+   * @schema helm-values.image#registry
+   */
+  readonly registry?: string;
+
+  /**
+   * @schema helm-values.image#repository
+   */
+  readonly repository?: string;
+
+  /**
+   * @schema helm-values.image#tag
+   */
+  readonly tag?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesImage(obj: HelmValuesImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'digest': obj.digest,
+    'pullPolicy': obj.pullPolicy,
+    'registry': obj.registry,
+    'repository': obj.repository,
+    'tag': obj.tag,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.ingressShim
+ */
+export interface HelmValuesIngressShim {
+  /**
+   * @schema helm-values.ingressShim#defaultIssuerGroup
+   */
+  readonly defaultIssuerGroup?: string;
+
+  /**
+   * @schema helm-values.ingressShim#defaultIssuerKind
+   */
+  readonly defaultIssuerKind?: string;
+
+  /**
+   * @schema helm-values.ingressShim#defaultIssuerName
+   */
+  readonly defaultIssuerName?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesIngressShim' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesIngressShim(obj: HelmValuesIngressShim | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'defaultIssuerGroup': obj.defaultIssuerGroup,
+    'defaultIssuerKind': obj.defaultIssuerKind,
+    'defaultIssuerName': obj.defaultIssuerName,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.podDisruptionBudget
+ */
+export interface HelmValuesPodDisruptionBudget {
+  /**
+   * @schema helm-values.podDisruptionBudget#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.podDisruptionBudget#maxUnavailable
+   */
+  readonly maxUnavailable?: any;
+
+  /**
+   * @schema helm-values.podDisruptionBudget#minAvailable
+   */
+  readonly minAvailable?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesPodDisruptionBudget' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesPodDisruptionBudget(obj: HelmValuesPodDisruptionBudget | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'maxUnavailable': obj.maxUnavailable,
+    'minAvailable': obj.minAvailable,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.prometheus
+ */
+export interface HelmValuesPrometheus {
+  /**
+   * @schema helm-values.prometheus#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.prometheus#podmonitor
+   */
+  readonly podmonitor?: HelmValuesPrometheusPodmonitor;
+
+  /**
+   * @schema helm-values.prometheus#servicemonitor
+   */
+  readonly servicemonitor?: HelmValuesPrometheusServicemonitor;
+}
+
+/**
+ * Converts an object of type 'HelmValuesPrometheus' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesPrometheus(obj: HelmValuesPrometheus | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'podmonitor': toJson_HelmValuesPrometheusPodmonitor(obj.podmonitor),
+    'servicemonitor': toJson_HelmValuesPrometheusServicemonitor(obj.servicemonitor),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.serviceAccount
+ */
+export interface HelmValuesServiceAccount {
+  /**
+   * @schema helm-values.serviceAccount#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.serviceAccount#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.serviceAccount#create
+   */
+  readonly create?: boolean;
+
+  /**
+   * @schema helm-values.serviceAccount#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.serviceAccount#name
+   */
+  readonly name?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesServiceAccount' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesServiceAccount(obj: HelmValuesServiceAccount | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'create': obj.create,
+    'labels': obj.labels,
+    'name': obj.name,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.startupapicheck
+ */
+export interface HelmValuesStartupapicheck {
+  /**
+   * @schema helm-values.startupapicheck#affinity
+   */
+  readonly affinity?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.startupapicheck#backoffLimit
+   */
+  readonly backoffLimit?: number;
+
+  /**
+   * @schema helm-values.startupapicheck#containerSecurityContext
+   */
+  readonly containerSecurityContext?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#enableServiceLinks
+   */
+  readonly enableServiceLinks?: boolean;
+
+  /**
+   * @schema helm-values.startupapicheck#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.startupapicheck#extraArgs
+   */
+  readonly extraArgs?: any[];
+
+  /**
+   * @schema helm-values.startupapicheck#extraEnv
+   */
+  readonly extraEnv?: any[];
+
+  /**
+   * @schema helm-values.startupapicheck#image
+   */
+  readonly image?: HelmValuesStartupapicheckImage;
+
+  /**
+   * @schema helm-values.startupapicheck#jobAnnotations
+   */
+  readonly jobAnnotations?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#nodeSelector
+   */
+  readonly nodeSelector?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#podAnnotations
+   */
+  readonly podAnnotations?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#podLabels
+   */
+  readonly podLabels?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#rbac
+   */
+  readonly rbac?: HelmValuesStartupapicheckRbac;
+
+  /**
+   * @schema helm-values.startupapicheck#resources
+   */
+  readonly resources?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#securityContext
+   */
+  readonly securityContext?: any;
+
+  /**
+   * @schema helm-values.startupapicheck#serviceAccount
+   */
+  readonly serviceAccount?: HelmValuesStartupapicheckServiceAccount;
+
+  /**
+   * @schema helm-values.startupapicheck#timeout
+   */
+  readonly timeout?: string;
+
+  /**
+   * @schema helm-values.startupapicheck#tolerations
+   */
+  readonly tolerations?: any[];
+
+  /**
+   * @schema helm-values.startupapicheck#volumeMounts
+   */
+  readonly volumeMounts?: any[];
+
+  /**
+   * @schema helm-values.startupapicheck#volumes
+   */
+  readonly volumes?: any[];
+}
+
+/**
+ * Converts an object of type 'HelmValuesStartupapicheck' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesStartupapicheck(obj: HelmValuesStartupapicheck | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'affinity': obj.affinity,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'backoffLimit': obj.backoffLimit,
+    'containerSecurityContext': obj.containerSecurityContext,
+    'enableServiceLinks': obj.enableServiceLinks,
+    'enabled': obj.enabled,
+    'extraArgs': obj.extraArgs?.map(y => y),
+    'extraEnv': obj.extraEnv?.map(y => y),
+    'image': toJson_HelmValuesStartupapicheckImage(obj.image),
+    'jobAnnotations': obj.jobAnnotations,
+    'nodeSelector': obj.nodeSelector,
+    'podAnnotations': obj.podAnnotations,
+    'podLabels': obj.podLabels,
+    'rbac': toJson_HelmValuesStartupapicheckRbac(obj.rbac),
+    'resources': obj.resources,
+    'securityContext': obj.securityContext,
+    'serviceAccount': toJson_HelmValuesStartupapicheckServiceAccount(obj.serviceAccount),
+    'timeout': obj.timeout,
+    'tolerations': obj.tolerations?.map(y => y),
+    'volumeMounts': obj.volumeMounts?.map(y => y),
+    'volumes': obj.volumes?.map(y => y),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook
+ */
+export interface HelmValuesWebhook {
+  /**
+   * @schema helm-values.webhook#affinity
+   */
+  readonly affinity?: any;
+
+  /**
+   * @schema helm-values.webhook#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.webhook#config
+   */
+  readonly config?: any;
+
+  /**
+   * @schema helm-values.webhook#containerSecurityContext
+   */
+  readonly containerSecurityContext?: any;
+
+  /**
+   * @schema helm-values.webhook#deploymentAnnotations
+   */
+  readonly deploymentAnnotations?: any;
+
+  /**
+   * @schema helm-values.webhook#enableServiceLinks
+   */
+  readonly enableServiceLinks?: boolean;
+
+  /**
+   * @schema helm-values.webhook#extraArgs
+   */
+  readonly extraArgs?: any[];
+
+  /**
+   * @schema helm-values.webhook#extraEnv
+   */
+  readonly extraEnv?: any[];
+
+  /**
+   * @schema helm-values.webhook#featureGates
+   */
+  readonly featureGates?: string;
+
+  /**
+   * @schema helm-values.webhook#hostNetwork
+   */
+  readonly hostNetwork?: boolean;
+
+  /**
+   * @schema helm-values.webhook#image
+   */
+  readonly image?: HelmValuesWebhookImage;
+
+  /**
+   * @schema helm-values.webhook#livenessProbe
+   */
+  readonly livenessProbe?: any;
+
+  /**
+   * @schema helm-values.webhook#loadBalancerIP
+   */
+  readonly loadBalancerIp?: string;
+
+  /**
+   * @schema helm-values.webhook#mutatingWebhookConfiguration
+   */
+  readonly mutatingWebhookConfiguration?: HelmValuesWebhookMutatingWebhookConfiguration;
+
+  /**
+   * @schema helm-values.webhook#mutatingWebhookConfigurationAnnotations
+   */
+  readonly mutatingWebhookConfigurationAnnotations?: any;
+
+  /**
+   * @schema helm-values.webhook#networkPolicy
+   */
+  readonly networkPolicy?: HelmValuesWebhookNetworkPolicy;
+
+  /**
+   * @schema helm-values.webhook#nodeSelector
+   */
+  readonly nodeSelector?: any;
+
+  /**
+   * @schema helm-values.webhook#podAnnotations
+   */
+  readonly podAnnotations?: any;
+
+  /**
+   * @schema helm-values.webhook#podDisruptionBudget
+   */
+  readonly podDisruptionBudget?: HelmValuesWebhookPodDisruptionBudget;
+
+  /**
+   * @schema helm-values.webhook#podLabels
+   */
+  readonly podLabels?: any;
+
+  /**
+   * @schema helm-values.webhook#readinessProbe
+   */
+  readonly readinessProbe?: any;
+
+  /**
+   * @schema helm-values.webhook#replicaCount
+   */
+  readonly replicaCount?: number;
+
+  /**
+   * @schema helm-values.webhook#resources
+   */
+  readonly resources?: any;
+
+  /**
+   * @schema helm-values.webhook#securePort
+   */
+  readonly securePort?: number;
+
+  /**
+   * @schema helm-values.webhook#securityContext
+   */
+  readonly securityContext?: any;
+
+  /**
+   * @schema helm-values.webhook#serviceAccount
+   */
+  readonly serviceAccount?: HelmValuesWebhookServiceAccount;
+
+  /**
+   * @schema helm-values.webhook#serviceAnnotations
+   */
+  readonly serviceAnnotations?: any;
+
+  /**
+   * @schema helm-values.webhook#serviceIPFamilies
+   */
+  readonly serviceIpFamilies?: any[];
+
+  /**
+   * @schema helm-values.webhook#serviceIPFamilyPolicy
+   */
+  readonly serviceIpFamilyPolicy?: string;
+
+  /**
+   * @schema helm-values.webhook#serviceLabels
+   */
+  readonly serviceLabels?: any;
+
+  /**
+   * @schema helm-values.webhook#serviceType
+   */
+  readonly serviceType?: string;
+
+  /**
+   * @schema helm-values.webhook#strategy
+   */
+  readonly strategy?: any;
+
+  /**
+   * @schema helm-values.webhook#timeoutSeconds
+   */
+  readonly timeoutSeconds?: number;
+
+  /**
+   * @schema helm-values.webhook#tolerations
+   */
+  readonly tolerations?: any[];
+
+  /**
+   * @schema helm-values.webhook#topologySpreadConstraints
+   */
+  readonly topologySpreadConstraints?: any[];
+
+  /**
+   * @schema helm-values.webhook#url
+   */
+  readonly url?: any;
+
+  /**
+   * @schema helm-values.webhook#validatingWebhookConfiguration
+   */
+  readonly validatingWebhookConfiguration?: HelmValuesWebhookValidatingWebhookConfiguration;
+
+  /**
+   * @schema helm-values.webhook#validatingWebhookConfigurationAnnotations
+   */
+  readonly validatingWebhookConfigurationAnnotations?: any;
+
+  /**
+   * @schema helm-values.webhook#volumeMounts
+   */
+  readonly volumeMounts?: any[];
+
+  /**
+   * @schema helm-values.webhook#volumes
+   */
+  readonly volumes?: any[];
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhook' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhook(obj: HelmValuesWebhook | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'affinity': obj.affinity,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'config': obj.config,
+    'containerSecurityContext': obj.containerSecurityContext,
+    'deploymentAnnotations': obj.deploymentAnnotations,
+    'enableServiceLinks': obj.enableServiceLinks,
+    'extraArgs': obj.extraArgs?.map(y => y),
+    'extraEnv': obj.extraEnv?.map(y => y),
+    'featureGates': obj.featureGates,
+    'hostNetwork': obj.hostNetwork,
+    'image': toJson_HelmValuesWebhookImage(obj.image),
+    'livenessProbe': obj.livenessProbe,
+    'loadBalancerIP': obj.loadBalancerIp,
+    'mutatingWebhookConfiguration': toJson_HelmValuesWebhookMutatingWebhookConfiguration(obj.mutatingWebhookConfiguration),
+    'mutatingWebhookConfigurationAnnotations': obj.mutatingWebhookConfigurationAnnotations,
+    'networkPolicy': toJson_HelmValuesWebhookNetworkPolicy(obj.networkPolicy),
+    'nodeSelector': obj.nodeSelector,
+    'podAnnotations': obj.podAnnotations,
+    'podDisruptionBudget': toJson_HelmValuesWebhookPodDisruptionBudget(obj.podDisruptionBudget),
+    'podLabels': obj.podLabels,
+    'readinessProbe': obj.readinessProbe,
+    'replicaCount': obj.replicaCount,
+    'resources': obj.resources,
+    'securePort': obj.securePort,
+    'securityContext': obj.securityContext,
+    'serviceAccount': toJson_HelmValuesWebhookServiceAccount(obj.serviceAccount),
+    'serviceAnnotations': obj.serviceAnnotations,
+    'serviceIPFamilies': obj.serviceIpFamilies?.map(y => y),
+    'serviceIPFamilyPolicy': obj.serviceIpFamilyPolicy,
+    'serviceLabels': obj.serviceLabels,
+    'serviceType': obj.serviceType,
+    'strategy': obj.strategy,
+    'timeoutSeconds': obj.timeoutSeconds,
+    'tolerations': obj.tolerations?.map(y => y),
+    'topologySpreadConstraints': obj.topologySpreadConstraints?.map(y => y),
+    'url': obj.url,
+    'validatingWebhookConfiguration': toJson_HelmValuesWebhookValidatingWebhookConfiguration(obj.validatingWebhookConfiguration),
+    'validatingWebhookConfigurationAnnotations': obj.validatingWebhookConfigurationAnnotations,
+    'volumeMounts': obj.volumeMounts?.map(y => y),
+    'volumes': obj.volumes?.map(y => y),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.acmesolver.image
+ */
+export interface HelmValuesAcmesolverImage {
+  /**
+   * @schema helm-values.acmesolver.image#digest
+   */
+  readonly digest?: string;
+
+  /**
+   * @schema helm-values.acmesolver.image#pullPolicy
+   */
+  readonly pullPolicy?: string;
+
+  /**
+   * @schema helm-values.acmesolver.image#registry
+   */
+  readonly registry?: string;
+
+  /**
+   * @schema helm-values.acmesolver.image#repository
+   */
+  readonly repository?: string;
+
+  /**
+   * @schema helm-values.acmesolver.image#tag
+   */
+  readonly tag?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesAcmesolverImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesAcmesolverImage(obj: HelmValuesAcmesolverImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'digest': obj.digest,
+    'pullPolicy': obj.pullPolicy,
+    'registry': obj.registry,
+    'repository': obj.repository,
+    'tag': obj.tag,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.cainjector.image
+ */
+export interface HelmValuesCainjectorImage {
+  /**
+   * @schema helm-values.cainjector.image#digest
+   */
+  readonly digest?: string;
+
+  /**
+   * @schema helm-values.cainjector.image#pullPolicy
+   */
+  readonly pullPolicy?: string;
+
+  /**
+   * @schema helm-values.cainjector.image#registry
+   */
+  readonly registry?: string;
+
+  /**
+   * @schema helm-values.cainjector.image#repository
+   */
+  readonly repository?: string;
+
+  /**
+   * @schema helm-values.cainjector.image#tag
+   */
+  readonly tag?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesCainjectorImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesCainjectorImage(obj: HelmValuesCainjectorImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'digest': obj.digest,
+    'pullPolicy': obj.pullPolicy,
+    'registry': obj.registry,
+    'repository': obj.repository,
+    'tag': obj.tag,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.cainjector.podDisruptionBudget
+ */
+export interface HelmValuesCainjectorPodDisruptionBudget {
+  /**
+   * @schema helm-values.cainjector.podDisruptionBudget#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.cainjector.podDisruptionBudget#maxUnavailable
+   */
+  readonly maxUnavailable?: any;
+
+  /**
+   * @schema helm-values.cainjector.podDisruptionBudget#minAvailable
+   */
+  readonly minAvailable?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesCainjectorPodDisruptionBudget' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesCainjectorPodDisruptionBudget(obj: HelmValuesCainjectorPodDisruptionBudget | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'maxUnavailable': obj.maxUnavailable,
+    'minAvailable': obj.minAvailable,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.cainjector.serviceAccount
+ */
+export interface HelmValuesCainjectorServiceAccount {
+  /**
+   * @schema helm-values.cainjector.serviceAccount#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.cainjector.serviceAccount#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.cainjector.serviceAccount#create
+   */
+  readonly create?: boolean;
+
+  /**
+   * @schema helm-values.cainjector.serviceAccount#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.cainjector.serviceAccount#name
+   */
+  readonly name?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesCainjectorServiceAccount' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesCainjectorServiceAccount(obj: HelmValuesCainjectorServiceAccount | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'create': obj.create,
+    'labels': obj.labels,
+    'name': obj.name,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.global.leaderElection
+ */
+export interface HelmValuesGlobalLeaderElection {
+  /**
+   * @schema helm-values.global.leaderElection#leaseDuration
+   */
+  readonly leaseDuration?: string;
+
+  /**
+   * @schema helm-values.global.leaderElection#namespace
+   */
+  readonly namespace?: string;
+
+  /**
+   * @schema helm-values.global.leaderElection#renewDeadline
+   */
+  readonly renewDeadline?: string;
+
+  /**
+   * @schema helm-values.global.leaderElection#retryPeriod
+   */
+  readonly retryPeriod?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesGlobalLeaderElection' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesGlobalLeaderElection(obj: HelmValuesGlobalLeaderElection | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'leaseDuration': obj.leaseDuration,
+    'namespace': obj.namespace,
+    'renewDeadline': obj.renewDeadline,
+    'retryPeriod': obj.retryPeriod,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.global.podSecurityPolicy
+ */
+export interface HelmValuesGlobalPodSecurityPolicy {
+  /**
+   * @schema helm-values.global.podSecurityPolicy#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.global.podSecurityPolicy#useAppArmor
+   */
+  readonly useAppArmor?: boolean;
+}
+
+/**
+ * Converts an object of type 'HelmValuesGlobalPodSecurityPolicy' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesGlobalPodSecurityPolicy(obj: HelmValuesGlobalPodSecurityPolicy | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'useAppArmor': obj.useAppArmor,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.global.rbac
+ */
+export interface HelmValuesGlobalRbac {
+  /**
+   * @schema helm-values.global.rbac#aggregateClusterRoles
+   */
+  readonly aggregateClusterRoles?: boolean;
+
+  /**
+   * @schema helm-values.global.rbac#create
+   */
+  readonly create?: boolean;
+}
+
+/**
+ * Converts an object of type 'HelmValuesGlobalRbac' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesGlobalRbac(obj: HelmValuesGlobalRbac | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'aggregateClusterRoles': obj.aggregateClusterRoles,
+    'create': obj.create,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.prometheus.podmonitor
+ */
+export interface HelmValuesPrometheusPodmonitor {
+  /**
+   * @schema helm-values.prometheus.podmonitor#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#endpointAdditionalProperties
+   */
+  readonly endpointAdditionalProperties?: any;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#honorLabels
+   */
+  readonly honorLabels?: boolean;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#interval
+   */
+  readonly interval?: string;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#namespace
+   */
+  readonly namespace?: string;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#path
+   */
+  readonly path?: string;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#prometheusInstance
+   */
+  readonly prometheusInstance?: string;
+
+  /**
+   * @schema helm-values.prometheus.podmonitor#scrapeTimeout
+   */
+  readonly scrapeTimeout?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesPrometheusPodmonitor' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesPrometheusPodmonitor(obj: HelmValuesPrometheusPodmonitor | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'enabled': obj.enabled,
+    'endpointAdditionalProperties': obj.endpointAdditionalProperties,
+    'honorLabels': obj.honorLabels,
+    'interval': obj.interval,
+    'labels': obj.labels,
+    'namespace': obj.namespace,
+    'path': obj.path,
+    'prometheusInstance': obj.prometheusInstance,
+    'scrapeTimeout': obj.scrapeTimeout,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.prometheus.servicemonitor
+ */
+export interface HelmValuesPrometheusServicemonitor {
+  /**
+   * @schema helm-values.prometheus.servicemonitor#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#endpointAdditionalProperties
+   */
+  readonly endpointAdditionalProperties?: any;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#honorLabels
+   */
+  readonly honorLabels?: boolean;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#interval
+   */
+  readonly interval?: string;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#namespace
+   */
+  readonly namespace?: string;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#path
+   */
+  readonly path?: string;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#prometheusInstance
+   */
+  readonly prometheusInstance?: string;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#scrapeTimeout
+   */
+  readonly scrapeTimeout?: string;
+
+  /**
+   * @schema helm-values.prometheus.servicemonitor#targetPort
+   */
+  readonly targetPort?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesPrometheusServicemonitor' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesPrometheusServicemonitor(obj: HelmValuesPrometheusServicemonitor | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'enabled': obj.enabled,
+    'endpointAdditionalProperties': obj.endpointAdditionalProperties,
+    'honorLabels': obj.honorLabels,
+    'interval': obj.interval,
+    'labels': obj.labels,
+    'namespace': obj.namespace,
+    'path': obj.path,
+    'prometheusInstance': obj.prometheusInstance,
+    'scrapeTimeout': obj.scrapeTimeout,
+    'targetPort': obj.targetPort,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.startupapicheck.image
+ */
+export interface HelmValuesStartupapicheckImage {
+  /**
+   * @schema helm-values.startupapicheck.image#digest
+   */
+  readonly digest?: string;
+
+  /**
+   * @schema helm-values.startupapicheck.image#pullPolicy
+   */
+  readonly pullPolicy?: string;
+
+  /**
+   * @schema helm-values.startupapicheck.image#registry
+   */
+  readonly registry?: string;
+
+  /**
+   * @schema helm-values.startupapicheck.image#repository
+   */
+  readonly repository?: string;
+
+  /**
+   * @schema helm-values.startupapicheck.image#tag
+   */
+  readonly tag?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesStartupapicheckImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesStartupapicheckImage(obj: HelmValuesStartupapicheckImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'digest': obj.digest,
+    'pullPolicy': obj.pullPolicy,
+    'registry': obj.registry,
+    'repository': obj.repository,
+    'tag': obj.tag,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.startupapicheck.rbac
+ */
+export interface HelmValuesStartupapicheckRbac {
+  /**
+   * @schema helm-values.startupapicheck.rbac#annotations
+   */
+  readonly annotations?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesStartupapicheckRbac' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesStartupapicheckRbac(obj: HelmValuesStartupapicheckRbac | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.startupapicheck.serviceAccount
+ */
+export interface HelmValuesStartupapicheckServiceAccount {
+  /**
+   * @schema helm-values.startupapicheck.serviceAccount#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.startupapicheck.serviceAccount#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.startupapicheck.serviceAccount#create
+   */
+  readonly create?: boolean;
+
+  /**
+   * @schema helm-values.startupapicheck.serviceAccount#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.startupapicheck.serviceAccount#name
+   */
+  readonly name?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesStartupapicheckServiceAccount' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesStartupapicheckServiceAccount(obj: HelmValuesStartupapicheckServiceAccount | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'create': obj.create,
+    'labels': obj.labels,
+    'name': obj.name,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.image
+ */
+export interface HelmValuesWebhookImage {
+  /**
+   * @schema helm-values.webhook.image#digest
+   */
+  readonly digest?: string;
+
+  /**
+   * @schema helm-values.webhook.image#pullPolicy
+   */
+  readonly pullPolicy?: string;
+
+  /**
+   * @schema helm-values.webhook.image#registry
+   */
+  readonly registry?: string;
+
+  /**
+   * @schema helm-values.webhook.image#repository
+   */
+  readonly repository?: string;
+
+  /**
+   * @schema helm-values.webhook.image#tag
+   */
+  readonly tag?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookImage(obj: HelmValuesWebhookImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'digest': obj.digest,
+    'pullPolicy': obj.pullPolicy,
+    'registry': obj.registry,
+    'repository': obj.repository,
+    'tag': obj.tag,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.mutatingWebhookConfiguration
+ */
+export interface HelmValuesWebhookMutatingWebhookConfiguration {
+  /**
+   * @schema helm-values.webhook.mutatingWebhookConfiguration#namespaceSelector
+   */
+  readonly namespaceSelector?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookMutatingWebhookConfiguration' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookMutatingWebhookConfiguration(obj: HelmValuesWebhookMutatingWebhookConfiguration | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'namespaceSelector': obj.namespaceSelector,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.networkPolicy
+ */
+export interface HelmValuesWebhookNetworkPolicy {
+  /**
+   * @schema helm-values.webhook.networkPolicy#egress
+   */
+  readonly egress?: any[];
+
+  /**
+   * @schema helm-values.webhook.networkPolicy#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.webhook.networkPolicy#ingress
+   */
+  readonly ingress?: any[];
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookNetworkPolicy' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookNetworkPolicy(obj: HelmValuesWebhookNetworkPolicy | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'egress': obj.egress?.map(y => y),
+    'enabled': obj.enabled,
+    'ingress': obj.ingress?.map(y => y),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.podDisruptionBudget
+ */
+export interface HelmValuesWebhookPodDisruptionBudget {
+  /**
+   * @schema helm-values.webhook.podDisruptionBudget#enabled
+   */
+  readonly enabled?: boolean;
+
+  /**
+   * @schema helm-values.webhook.podDisruptionBudget#maxUnavailable
+   */
+  readonly maxUnavailable?: any;
+
+  /**
+   * @schema helm-values.webhook.podDisruptionBudget#minAvailable
+   */
+  readonly minAvailable?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookPodDisruptionBudget' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookPodDisruptionBudget(obj: HelmValuesWebhookPodDisruptionBudget | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'maxUnavailable': obj.maxUnavailable,
+    'minAvailable': obj.minAvailable,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.serviceAccount
+ */
+export interface HelmValuesWebhookServiceAccount {
+  /**
+   * @schema helm-values.webhook.serviceAccount#annotations
+   */
+  readonly annotations?: any;
+
+  /**
+   * @schema helm-values.webhook.serviceAccount#automountServiceAccountToken
+   */
+  readonly automountServiceAccountToken?: boolean;
+
+  /**
+   * @schema helm-values.webhook.serviceAccount#create
+   */
+  readonly create?: boolean;
+
+  /**
+   * @schema helm-values.webhook.serviceAccount#labels
+   */
+  readonly labels?: any;
+
+  /**
+   * @schema helm-values.webhook.serviceAccount#name
+   */
+  readonly name?: string;
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookServiceAccount' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookServiceAccount(obj: HelmValuesWebhookServiceAccount | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'automountServiceAccountToken': obj.automountServiceAccountToken,
+    'create': obj.create,
+    'labels': obj.labels,
+    'name': obj.name,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+
+/**
+ * @schema helm-values.webhook.validatingWebhookConfiguration
+ */
+export interface HelmValuesWebhookValidatingWebhookConfiguration {
+  /**
+   * @schema helm-values.webhook.validatingWebhookConfiguration#namespaceSelector
+   */
+  readonly namespaceSelector?: any;
+}
+
+/**
+ * Converts an object of type 'HelmValuesWebhookValidatingWebhookConfiguration' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_HelmValuesWebhookValidatingWebhookConfiguration(obj: HelmValuesWebhookValidatingWebhookConfiguration | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'namespaceSelector': obj.namespaceSelector,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 

@@ -74,14 +74,18 @@
         nativeBuildInputs = [
           pkgs.nodePackages_latest.cdk8s-cli
 
+          (import ./helmcache {
+            inherit pkgs;
+            outputHash = "sha256-VYl5afZUxQvyQb6ecnbR1GSJ5xg0aRfsh1KlI17qjlk=";
+          })
+
           pkgs.kubectl
-          
           pkgs.git
 
           manifestDependencies
         ];
 
-        npmDepsHash = "sha256-L6IYe7uq7CzNU4s5sm6+n9GdPV74adeQXPjgTi3lSBE=";
+        npmDepsHash = "sha256-tVGK4LbnsJFjaKpGi3N53xbCQKB46YzYjmESf7F04sQ=";
         installPhase = ''
           mkdir -p $out/dist
           cp -r dist/ $out/

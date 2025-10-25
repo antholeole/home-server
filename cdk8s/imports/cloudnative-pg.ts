@@ -16,20 +16,23 @@ export class Cloudnativepg extends Construct {
     let updatedProps = {};
 
     if (props.values) {
-      const { additionalValues, ...valuesWithoutAdditionalValues } = props.values;
-      updatedProps = {
-        ...props,
-        values: {
-          ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
-          ...additionalValues,
-        },
-      };
+      const values = toJson_CloudnativepgValues(props.values);
+      if (values) {
+        const { additionalValues, ...valuesWithoutAdditionalValues } = values;
+        updatedProps = {
+          ...props,
+          values: {
+            ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
+            ...additionalValues,
+          },
+        };
+      }
     }
 
     const finalProps: HelmProps = {
       chart: 'cloudnative-pg',
-      repo: 'https://cloudnative-pg.github.io/charts',
-      version: '0.26.0',
+      repo: 'https://cloudnative-pg.io/charts',
+      version: '0.26.1',
       ...(Object.keys(updatedProps).length !== 0 ? updatedProps : props),
     };
 
@@ -230,8 +233,53 @@ export interface CloudnativepgValues {
    * @schema cloudnative-pg#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativepgValues' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativepgValues(obj: CloudnativepgValues | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'additionalArgs': obj.additionalArgs?.map(y => y),
+    'additionalEnv': obj.additionalEnv?.map(y => y),
+    'affinity': obj.affinity,
+    'commonAnnotations': obj.commonAnnotations,
+    'config': toJson_CloudnativePgConfig(obj.config),
+    'containerSecurityContext': toJson_CloudnativePgContainerSecurityContext(obj.containerSecurityContext),
+    'crds': toJson_CloudnativePgCrds(obj.crds),
+    'dnsPolicy': obj.dnsPolicy,
+    'fullnameOverride': obj.fullnameOverride,
+    'hostNetwork': obj.hostNetwork,
+    'image': toJson_CloudnativePgImage(obj.image),
+    'imagePullSecrets': obj.imagePullSecrets?.map(y => y),
+    'monitoring': toJson_CloudnativePgMonitoring(obj.monitoring),
+    'monitoringQueriesConfigMap': toJson_CloudnativePgMonitoringQueriesConfigMap(obj.monitoringQueriesConfigMap),
+    'nameOverride': obj.nameOverride,
+    'namespaceOverride': obj.namespaceOverride,
+    'nodeSelector': obj.nodeSelector,
+    'podAnnotations': obj.podAnnotations,
+    'podLabels': obj.podLabels,
+    'podSecurityContext': toJson_CloudnativePgPodSecurityContext(obj.podSecurityContext),
+    'priorityClassName': obj.priorityClassName,
+    'rbac': toJson_CloudnativePgRbac(obj.rbac),
+    'replicaCount': obj.replicaCount,
+    'resources': obj.resources,
+    'service': toJson_CloudnativePgService(obj.service),
+    'serviceAccount': toJson_CloudnativePgServiceAccount(obj.serviceAccount),
+    'tolerations': obj.tolerations?.map(y => y),
+    'topologySpreadConstraints': obj.topologySpreadConstraints?.map(y => y),
+    'updateStrategy': obj.updateStrategy,
+    'webhook': toJson_CloudnativePgWebhook(obj.webhook),
+    'cluster': ((obj.cluster) === undefined) ? undefined : (Object.entries(obj.cluster).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+    'global': ((obj.global) === undefined) ? undefined : (Object.entries(obj.global).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgConfig
@@ -273,8 +321,27 @@ export interface CloudnativePgConfig {
    * @schema CloudnativePgConfig#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgConfig' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgConfig(obj: CloudnativePgConfig | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'clusterWide': obj.clusterWide,
+    'create': obj.create,
+    'data': obj.data,
+    'maxConcurrentReconciles': obj.maxConcurrentReconciles,
+    'name': obj.name,
+    'secret': obj.secret,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgContainerSecurityContext
@@ -316,8 +383,27 @@ export interface CloudnativePgContainerSecurityContext {
    * @schema CloudnativePgContainerSecurityContext#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgContainerSecurityContext' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgContainerSecurityContext(obj: CloudnativePgContainerSecurityContext | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'allowPrivilegeEscalation': obj.allowPrivilegeEscalation,
+    'capabilities': toJson_CloudnativePgContainerSecurityContextCapabilities(obj.capabilities),
+    'readOnlyRootFilesystem': obj.readOnlyRootFilesystem,
+    'runAsGroup': obj.runAsGroup,
+    'runAsUser': obj.runAsUser,
+    'seccompProfile': toJson_CloudnativePgContainerSecurityContextSeccompProfile(obj.seccompProfile),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgCrds
@@ -334,8 +420,22 @@ export interface CloudnativePgCrds {
    * @schema CloudnativePgCrds#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgCrds' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgCrds(obj: CloudnativePgCrds | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgImage
@@ -362,8 +462,24 @@ export interface CloudnativePgImage {
    * @schema CloudnativePgImage#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgImage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgImage(obj: CloudnativePgImage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'pullPolicy': obj.pullPolicy,
+    'repository': obj.repository,
+    'tag': obj.tag,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgMonitoring
@@ -400,8 +516,26 @@ export interface CloudnativePgMonitoring {
    * @schema CloudnativePgMonitoring#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgMonitoring' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgMonitoring(obj: CloudnativePgMonitoring | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'grafanaDashboard': toJson_CloudnativePgMonitoringGrafanaDashboard(obj.grafanaDashboard),
+    'podMonitorAdditionalLabels': obj.podMonitorAdditionalLabels,
+    'podMonitorEnabled': obj.podMonitorEnabled,
+    'podMonitorMetricRelabelings': obj.podMonitorMetricRelabelings?.map(y => y),
+    'podMonitorRelabelings': obj.podMonitorRelabelings?.map(y => y),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgMonitoringQueriesConfigMap
@@ -423,8 +557,23 @@ export interface CloudnativePgMonitoringQueriesConfigMap {
    * @schema CloudnativePgMonitoringQueriesConfigMap#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgMonitoringQueriesConfigMap' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgMonitoringQueriesConfigMap(obj: CloudnativePgMonitoringQueriesConfigMap | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'name': obj.name,
+    'queries': obj.queries,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgPodSecurityContext
@@ -446,8 +595,23 @@ export interface CloudnativePgPodSecurityContext {
    * @schema CloudnativePgPodSecurityContext#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgPodSecurityContext' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgPodSecurityContext(obj: CloudnativePgPodSecurityContext | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'runAsNonRoot': obj.runAsNonRoot,
+    'seccompProfile': toJson_CloudnativePgPodSecurityContextSeccompProfile(obj.seccompProfile),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgRbac
@@ -469,8 +633,23 @@ export interface CloudnativePgRbac {
    * @schema CloudnativePgRbac#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgRbac' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgRbac(obj: CloudnativePgRbac | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'aggregateClusterRoles': obj.aggregateClusterRoles,
+    'create': obj.create,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgService
@@ -507,8 +686,26 @@ export interface CloudnativePgService {
    * @schema CloudnativePgService#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgService' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgService(obj: CloudnativePgService | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'ipFamilies': obj.ipFamilies?.map(y => y),
+    'ipFamilyPolicy': obj.ipFamilyPolicy,
+    'name': obj.name,
+    'port': obj.port,
+    'type': obj.type,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgServiceAccount
@@ -530,8 +727,23 @@ export interface CloudnativePgServiceAccount {
    * @schema CloudnativePgServiceAccount#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgServiceAccount' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgServiceAccount(obj: CloudnativePgServiceAccount | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhook
@@ -573,8 +785,27 @@ export interface CloudnativePgWebhook {
    * @schema CloudnativePgWebhook#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhook' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhook(obj: CloudnativePgWebhook | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'livenessProbe': toJson_CloudnativePgWebhookLivenessProbe(obj.livenessProbe),
+    'mutating': toJson_CloudnativePgWebhookMutating(obj.mutating),
+    'port': obj.port,
+    'readinessProbe': toJson_CloudnativePgWebhookReadinessProbe(obj.readinessProbe),
+    'startupProbe': toJson_CloudnativePgWebhookStartupProbe(obj.startupProbe),
+    'validating': toJson_CloudnativePgWebhookValidating(obj.validating),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgContainerSecurityContextCapabilities
@@ -591,8 +822,22 @@ export interface CloudnativePgContainerSecurityContextCapabilities {
    * @schema CloudnativePgContainerSecurityContextCapabilities#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgContainerSecurityContextCapabilities' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgContainerSecurityContextCapabilities(obj: CloudnativePgContainerSecurityContextCapabilities | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'drop': obj.drop?.map(y => y),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgContainerSecurityContextSeccompProfile
@@ -609,8 +854,22 @@ export interface CloudnativePgContainerSecurityContextSeccompProfile {
    * @schema CloudnativePgContainerSecurityContextSeccompProfile#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgContainerSecurityContextSeccompProfile' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgContainerSecurityContextSeccompProfile(obj: CloudnativePgContainerSecurityContextSeccompProfile | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'type': obj.type,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgMonitoringGrafanaDashboard
@@ -657,8 +916,28 @@ export interface CloudnativePgMonitoringGrafanaDashboard {
    * @schema CloudnativePgMonitoringGrafanaDashboard#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgMonitoringGrafanaDashboard' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgMonitoringGrafanaDashboard(obj: CloudnativePgMonitoringGrafanaDashboard | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'annotations': obj.annotations,
+    'configMapName': obj.configMapName,
+    'create': obj.create,
+    'labels': obj.labels,
+    'namespace': obj.namespace,
+    'sidecarLabel': obj.sidecarLabel,
+    'sidecarLabelValue': obj.sidecarLabelValue,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgPodSecurityContextSeccompProfile
@@ -675,8 +954,22 @@ export interface CloudnativePgPodSecurityContextSeccompProfile {
    * @schema CloudnativePgPodSecurityContextSeccompProfile#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgPodSecurityContextSeccompProfile' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgPodSecurityContextSeccompProfile(obj: CloudnativePgPodSecurityContextSeccompProfile | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'type': obj.type,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhookLivenessProbe
@@ -693,8 +986,22 @@ export interface CloudnativePgWebhookLivenessProbe {
    * @schema CloudnativePgWebhookLivenessProbe#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhookLivenessProbe' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhookLivenessProbe(obj: CloudnativePgWebhookLivenessProbe | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'initialDelaySeconds': obj.initialDelaySeconds,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhookMutating
@@ -716,8 +1023,23 @@ export interface CloudnativePgWebhookMutating {
    * @schema CloudnativePgWebhookMutating#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhookMutating' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhookMutating(obj: CloudnativePgWebhookMutating | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'failurePolicy': obj.failurePolicy,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhookReadinessProbe
@@ -734,8 +1056,22 @@ export interface CloudnativePgWebhookReadinessProbe {
    * @schema CloudnativePgWebhookReadinessProbe#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhookReadinessProbe' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhookReadinessProbe(obj: CloudnativePgWebhookReadinessProbe | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'initialDelaySeconds': obj.initialDelaySeconds,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhookStartupProbe
@@ -757,8 +1093,23 @@ export interface CloudnativePgWebhookStartupProbe {
    * @schema CloudnativePgWebhookStartupProbe#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhookStartupProbe' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhookStartupProbe(obj: CloudnativePgWebhookStartupProbe | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'failureThreshold': obj.failureThreshold,
+    'periodSeconds': obj.periodSeconds,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema CloudnativePgWebhookValidating
@@ -780,6 +1131,21 @@ export interface CloudnativePgWebhookValidating {
    * @schema CloudnativePgWebhookValidating#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'CloudnativePgWebhookValidating' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_CloudnativePgWebhookValidating(obj: CloudnativePgWebhookValidating | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'failurePolicy': obj.failurePolicy,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 

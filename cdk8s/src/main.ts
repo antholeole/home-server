@@ -11,6 +11,7 @@ import { Authentik } from "./infra/authentik";
 import { Mealie } from "./services/mealie";
 import { PaperlessNgx } from "./services/paperless-ngx";
 import { Homebox } from "./services/homebox";
+import { Reflector } from "./infra/reflector";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -24,6 +25,7 @@ new Longhorn(app, certManager.clusterIssuer);
 new SealedSecrets(app);
 const cnpgCluster = new CnpgCluster(app);
 new Authentik(app, cnpgCluster, cfOperator.tunnelRef);
+new Reflector(app);
 
 // services
 new TldrawDeployment(app, cfOperator.tunnelRef);
