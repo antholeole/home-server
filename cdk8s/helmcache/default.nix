@@ -43,10 +43,13 @@
                    --destination "$CACHE_DIR" \
                    --untar=false
 
+          # some repos pull weird; they say they're version x.y.z, and pull as vx.y.z.
+          PULLED=$(ls $CACHE_DIR | grep "$CHART_NAME")
+
           helm repo remove "$TEMP_REPO_NAME"
 
           set -euxo pipefail
-          cat "$REPLACE_JSON" | jq ". += {\"$REPO_URL\": \"$CHART_NAME-$CHART_VERSION.tgz\"}" | sponge "$REPLACE_JSON"
+          cat "$REPLACE_JSON" | jq ". += {\"$REPO_URL\": \"$PULLED\"}" | sponge "$REPLACE_JSON"
       done <<< "$CHART_LIST"
 
       REPLACE_OUT="$out/replace.json"
@@ -61,32 +64,15 @@
   helm-template-replaced = pkgs.writeShellApplication {
     name = "helm";
     
-    # basically, transforms a call like
-    # helm template --repo https://emberstack.github.io/helm-charts --version 9.1.37 --namespace kubernetes-reflector reflector-helm-c851c0f3 reflector
-    # helm template cnpg-helm-c8c43f88 ./cloudnative-pg-0.26.0.tgz
     
     runtimeInputs = with pkgs; [
       jq
       kubernetes-helm
+      python3
     ];
     
-    text = ''     
-      if [ "$1" != "template" ]; then
-        helm "$@"
-      fi
-
-      if [ "$6" != "--namespace" ]; then
-        echo "to use helmcache you MUST specify --namespace!" >&2 
-        exit 1
-      fi
-
-    LOCAL_CHART="$(jq -er ".\"$3/$9\"" "${cache-helm}/replace.json")"
-    CHART_PATH="${cache-helm}/repocache/$LOCAL_CHART"
-
-
-    # this disables the resource name hash... probably could cause problems down the line but
-    # -\()/-
-    helm template --namespace "$7" "$9" "$CHART_PATH"
+    text = ''
+      python3 ${./helm-cache.py} "$@" --helm-cache ${cache-helm}
     '';
   };
 in helm-template-replaced

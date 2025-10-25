@@ -1,11 +1,7 @@
 {...}: {
   imports = [
-    ./ingress-nginx.nix
-    ./cert-manager.nix
-    ./sealed-secrets.nix
-    ./cnpg.nix
-    ./external-dns.nix
-    ./flux.nix
-    ./authentik.nix
+    ./external-dns.nix # does not work with cdk8s
+    ./longhorn.nix # too hard to uninstall; maybe in another life.
+    ./flux.nix # bootstrap the repo
   ];
 }

@@ -17,6 +17,7 @@ export class Reflector extends Chart {
 		});
 
 		new ReflectorChart(this, "reflector", {
+			releaseName: "kubernetes-reflector",
 			namespace: ns,
 		});
 	}

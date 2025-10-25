@@ -11,6 +11,12 @@
     ...
   }: {
     packages = let
+      outputHashes = {
+        kustomizes = "sha256-X6Ty/OSv8S6pbFZBFfPiFSCvwsFCt9dyxfxzhqxr/yY=";
+        helm = "sha256-yiZrW1IFCazHQCctnFKFHibJ9lhUg/oynoIcLxq6BOg=";
+        npm = "sha256-tVGK4LbnsJFjaKpGi3N53xbCQKB46YzYjmESf7F04sQ=";
+      };
+
       manifestDependencies = let
         manifestFod = pkgs.stdenvNoCC.mkDerivation {
           name = "manifest-deps-fod";
@@ -35,7 +41,7 @@
 
           outputHashAlgo = "sha256";
           outputHashMode = "recursive";
-          outputHash = "sha256-X6Ty/OSv8S6pbFZBFfPiFSCvwsFCt9dyxfxzhqxr/yY=";
+          outputHash = outputHashes.kustomizes;
         };
       in
         pkgs.stdenvNoCC.mkDerivation {
@@ -76,7 +82,7 @@
 
           (import ./helmcache {
             inherit pkgs;
-            outputHash = "sha256-VYl5afZUxQvyQb6ecnbR1GSJ5xg0aRfsh1KlI17qjlk=";
+            outputHash = outputHashes.helm;
           })
 
           pkgs.kubectl
@@ -85,7 +91,7 @@
           manifestDependencies
         ];
 
-        npmDepsHash = "sha256-tVGK4LbnsJFjaKpGi3N53xbCQKB46YzYjmESf7F04sQ=";
+        npmDepsHash = outputHashes.npm;
         installPhase = ''
           mkdir -p $out/dist
           cp -r dist/ $out/

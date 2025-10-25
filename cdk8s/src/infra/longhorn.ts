@@ -7,8 +7,7 @@ import {
 	RecurringJobV1Beta2,
 	RecurringJobV1Beta2SpecTask,
 } from "../../imports/longhorn.io";
-import { ConfigMap, Namespace } from "cdk8s-plus-32";
-import { Longhorn as LonghornChart } from "../../imports/longhorn";
+import { ConfigMap } from "cdk8s-plus-32";
 
 const buildRecurringJobSelector = (recurringJob: RecurringJobV1Beta2) =>
 	JSON.stringify([
@@ -74,22 +73,10 @@ export class StrictLocalStorageClass extends Construct {
 }
 
 export class Longhorn extends Chart {
-	private static readonly ns = "longhorn-system";
-
 	constructor(scope: Construct, clusterIssuer: ClusterIssuer) {
 		super(scope, "longhorn", {
-			namespace: Longhorn.ns,
+			namespace: "longhorn-system",
 			disableResourceNameHashes: true,
-		});
-
-		new Namespace(this, "longhorn-systm", {
-			metadata: {
-				name: Longhorn.ns,
-			},
-		});
-
-		new LonghornChart(this, "longhorn-chart", {
-			namespace: Longhorn.ns
 		});
 
 		// https://github.com/longhorn/longhorn/issues/11421

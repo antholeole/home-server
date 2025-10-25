@@ -7,6 +7,29 @@ import {
 import type { Construct } from "constructs";
 import { Namespace, Secret } from "cdk8s-plus-32";
 import { StrictLocalStorageClass } from "./longhorn";
+import { Cloudnativepg } from "../../imports/cloudnative-pg";
+
+export class CloudNativePg extends Chart {
+	private static readonly ns = "cnpg-system";
+
+	constructor(scope: Construct, id: string) {
+		super(scope, id, {
+			disableResourceNameHashes: true,
+			namespace: CloudNativePg.ns,
+		});
+
+		new Namespace(this, "cnpg-namespace", {
+			metadata: {
+				name: CloudNativePg.ns,
+			},
+		});
+
+		new Cloudnativepg(this, "cloudnative-pg", {
+			releaseName: "cnpg",
+			namespace: CloudNativePg.ns,
+		});
+	}
+}
 
 export class CnpgCluster extends Chart {
 	private static namespace = "cnpgdb";

@@ -1,9 +1,8 @@
 import { App } from "cdk8s";
 import { CDKKustomize } from "./lib";
-import { CloudflareOperatorChart } from "./services/cloudflare-operator";
 
 import { TldrawDeployment } from "./services/tldraw";
-import { SealedSecrets } from "./sealed";
+import { SealedSecrets as Secrets } from "./sealed";
 import { CertManager } from "./infra/cert-manager";
 import { Longhorn } from "./infra/longhorn";
 import { CnpgCluster } from "./infra/cnpg";
@@ -12,6 +11,9 @@ import { Mealie } from "./services/mealie";
 import { PaperlessNgx } from "./services/paperless-ngx";
 import { Homebox } from "./services/homebox";
 import { Reflector } from "./infra/reflector";
+import { CloudflareOperatorChart } from "./infra/cloudflare-operator";
+import { IngressNginx } from "./infra/ingress-nginx";
+import { SealedSecrets } from "./infra/sealed-secrets";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -26,6 +28,9 @@ new SealedSecrets(app);
 const cnpgCluster = new CnpgCluster(app);
 new Authentik(app, cnpgCluster, cfOperator.tunnelRef);
 new Reflector(app);
+new IngressNginx(app);
+
+new Secrets(app);
 
 // services
 new TldrawDeployment(app, cfOperator.tunnelRef);

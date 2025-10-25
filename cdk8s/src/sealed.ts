@@ -6,7 +6,7 @@ import * as path from "node:path";
 
 export class SealedSecrets extends Chart {
 	constructor(scope: Construct) {
-		super(scope, "sealed-secrets");
+		super(scope, "sealed-secrets-secrets");
 
 		const sealedSecrets = path.join(__dirname, "sealed");
 		const files = fs.readdirSync(sealedSecrets);
