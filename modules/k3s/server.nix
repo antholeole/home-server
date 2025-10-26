@@ -71,7 +71,7 @@
           "--disable=servicelb"
           "--flannel-ipv6-masq"
         ]
-        ++ config.k3s.labels;
+        ++ builtins.map (label: "--node-label ${label}") config.k3s.labels;
     };
   };
 }

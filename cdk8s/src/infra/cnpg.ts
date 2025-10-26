@@ -64,7 +64,6 @@ export class CnpgCluster extends Chart {
 						},
 					},
 				},
-				// we shan't have used barman and instead used volume snapshots - alas
 				affinity: {
 					nodeAffinity: {
 						requiredDuringSchedulingIgnoredDuringExecution: {

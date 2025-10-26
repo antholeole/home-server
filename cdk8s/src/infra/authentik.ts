@@ -58,29 +58,8 @@ export class Authentik extends Chart {
 			],
 		};
 
-		// Define Ingress configuration
-		const domain = `authentik.${ssot.cloudflare.domain}`;
-		const ingressConfig = {
-			ingress: {
-				https: false, // TLS is handled by the Ingress/Cert-Manager
-				enabled: true,
-				ingressClassName: "nginx",
-				annotations: {
-					"nginx.ingress.kubernetes.io/ssl-redirect": "true",
-					"cert-manager.io/cluster-issuer": "cert-manager-cloudflare-issuer",
-				},
-				hosts: [domain],
-				tls: [
-					{
-						hosts: [domain],
-						secretName: "authentik-tls-secret",
-					},
-				],
-			},
-		};
-
 		const helmValues = {
-			server: { ...volumesConfig, ...ingressConfig },
+			server: volumesConfig,
 			worker: volumesConfig,
 
 			authentik: {
@@ -102,7 +81,7 @@ export class Authentik extends Chart {
 		redis(this, {
 			name: namespace,
 			namespace,
-			serviceName: "authentik-authentik-redis-master",
+			serviceName: "authentik-redis-master",
 		});
 
 		cnpgCluster.buildAuthSecret(this, namespace);
@@ -115,7 +94,7 @@ export class Authentik extends Chart {
 				{
 					subdomain: "authentik",
 					service: {
-						name: "authentik-authentik-server",
+						name: "authentik-server",
 					},
 				},
 			],
