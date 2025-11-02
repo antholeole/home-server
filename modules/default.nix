@@ -44,5 +44,6 @@
     k3s = ./k3s;
     disk-efi = ./disk-efi.nix;
     wifi = ./metal/wifi.nix;
+    netboot = ./metal/netboot.nix;
   };
 }

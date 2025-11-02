@@ -17,5 +17,5 @@
 
   networking.hostName = "riverwood";
   diskName = "/dev/nvme0n1";
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsbhWh/MGsZx5y9TX+gjeUV5J1Pn/I3nXu5vYXyP1cp";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3Jcg3nuV/KSs4onS3/sjJtn9VRPVhNmL9KRxuYbxDF";
 }

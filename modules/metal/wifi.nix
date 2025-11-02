@@ -2,7 +2,7 @@
   config,
   inputs,
   ...
-}: {
+}: {    
   age.secrets.nm-secrets = {
     rekeyFile = "${inputs.self}/secrets/wifi-pass.age";
   };

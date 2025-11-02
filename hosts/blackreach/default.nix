@@ -7,11 +7,14 @@
     wifi
     disk-efi
 
+    netboot
+
     k3s
 
     {config.facter.reportPath = ./facter.json;}
   ];
 
+  services.pixiecore.enable = true;
   services.k3s = {
     role = "agent";
   };

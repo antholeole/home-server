@@ -12,7 +12,7 @@
     whiterun = "192.168.12.167";
 
     hrothgar = "hrothgar.lan";
-    riverwood = "riverwood.lan";
+    riverwood = "boot.lan";
     blackreach = "blackreach.lan";
   };
 

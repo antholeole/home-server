@@ -48,7 +48,7 @@ This documentation is mostly for myself - I wouldn't expect this to be very
 helpful for others, unless they copy my exact setup.
 
 
-1. build an iso with `nix build .#bootable-sio`.
+1. build an iso with `nix build .#bootstrap-sio`.
 1. Format a drive with the iso using `dd`, enter BIOS and boot the iso.
    `sudo dd if=./result/iso/nixos-minimal-25.05pre-git-x86_64-linux.iso of=/dev/sda bs=4M status=progress oflag=sync`
 1. plug in a direct ethernet connection with the device. You need it to have

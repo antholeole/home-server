@@ -40,6 +40,7 @@
       nerdctl
       kubectl-cnpg
       fluxcd
+      k9s
     ];
 
     networking.firewall = {
