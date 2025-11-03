@@ -87,7 +87,9 @@ export class PaperlessNgx extends Chart {
 						PAPERLESS_URL: EnvValue.fromValue(
 							`https://paperless.${ssot.cloudflare.domain}`,
 						),
-						PAPERLESS_REDIS: EnvValue.fromValue(`redis://${redisService.name}:6379`),
+						PAPERLESS_REDIS: EnvValue.fromValue(
+							`redis://${redisService.name}:6379`,
+						),
 
 						// postgres
 						PAPERLESS_DBENGINE: EnvValue.fromValue("postgres"),
@@ -116,8 +118,9 @@ export class PaperlessNgx extends Chart {
 						PAPERLESS_LOGOUT_REDIRECT_URL: EnvValue.fromValue(
 							Authentik.logoutUrl(slug),
 						),
-						PAPERLESS_SOCIALACCOUNT_PROVIDERS:
-							paperlessSecrets.envValue("SOCIALACCOUNT"),
+						PAPERLESS_SOCIALACCOUNT_PROVIDERS: paperlessSecrets.envValue(
+							"PAPERLESS_SOCIALACCOUNT_PROVIDERS",
+						),
 					},
 					volumeMounts: [
 						{
