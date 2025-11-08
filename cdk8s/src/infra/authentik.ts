@@ -109,5 +109,5 @@ export class Authentik extends Chart {
 	static configurationUrl = (slug: string) =>
 		Authentik.endpointUrl(slug, ".well-known/openid-configuration");
 	static logoutUrl = (slug: string) =>
-		Authentik.endpointUrl(slug, "end-session");
+		Authentik.endpointUrl(slug, "end-session/");
 }
