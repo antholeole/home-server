@@ -9,7 +9,6 @@
     inputs.nixos-hardware.nixosModules.microsoft-surface-go
     inputs.home-manager.nixosModules.home-manager
 
-    ./hardware-config.nix
 
     ./modules/keyboard.nix
     ./modules/sddm.nix
@@ -22,6 +21,7 @@
     core
     wifi
     disk-efi
+    {config.facter.reportPath = ./facter.json;}
   ];
 
   services.tlp.enable = lib.mkForce true; # insane power savings
@@ -29,6 +29,6 @@
 
   networking.hostName = "hrothgar";
   diskName = "/dev/sdb";
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAFHW56n1jPSySEO3GtALBDEcE8tu4prtAzfRgPJSHn8";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH6kGAMTPxDBx8f5NUBSEOaoH3Z1WifwmvuCVnzTlkDX";
 
 }
