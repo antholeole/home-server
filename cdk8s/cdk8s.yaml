@@ -15,3 +15,4 @@ imports:
   - helm:https://cloudnative-pg.io/charts/cloudnative-pg@0.26.1
   - helm:https://kubernetes.github.io/ingress-nginx/ingress-nginx@4.13.3
   - helm:https://bitnami-labs.github.io/sealed-secrets/sealed-secrets@2.17.7
+  - helm:oci://code.forgejo.org/forgejo-helm/forgejo@15.1.0

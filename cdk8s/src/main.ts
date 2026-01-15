@@ -10,6 +10,7 @@ import { Authentik } from "./infra/authentik";
 import { Mealie } from "./services/mealie";
 import { PaperlessNgx } from "./services/paperless-ngx";
 import { Homebox } from "./services/homebox";
+import { Forgejo } from "./services/forgejo";
 import { Reflector } from "./infra/reflector";
 import { CloudflareOperatorChart } from "./infra/cloudflare-operator";
 import { IngressNginx } from "./infra/ingress-nginx";
@@ -37,6 +38,7 @@ new TldrawDeployment(app, cfOperator.tunnelRef);
 new Mealie(app, cnpgCluster, cfOperator.tunnelRef);
 new PaperlessNgx(app, cnpgCluster, cfOperator.tunnelRef);
 new Homebox(app, cnpgCluster, cfOperator.tunnelRef);
+new Forgejo(app, cnpgCluster, cfOperator.tunnelRef);
 
 // write a kustomize for every manifest. must be last.
 new CDKKustomize(app);
