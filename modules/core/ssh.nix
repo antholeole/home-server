@@ -12,7 +12,6 @@
   users = {
     mutableUsers = false;
     users = {
-      # nixos anywhere needs root ssh access...
       root.openssh.authorizedKeys.keys = ssot.public-keys;
 
       manager = {
@@ -20,7 +19,7 @@
         description = "main user";
         extraGroups = ["wheel"];
 
-        hashedPassword = "$y$j9T$SVk9MmOKoGETAjhzDCidA/$WYjszgHqPu9T2sSBEkR4gJyoL9XniYdmaruJ1zeoIx8";
+        hashedPassword = lib.mkDefault "$y$j9T$SVk9MmOKoGETAjhzDCidA/$WYjszgHqPu9T2sSBEkR4gJyoL9XniYdmaruJ1zeoIx8";
         openssh.authorizedKeys.keys = ssot.public-keys;
       };
     };

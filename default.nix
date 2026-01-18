@@ -98,6 +98,17 @@ in {
           (import ./hosts/blackreach)
         ];
       };
+
+      wg-exit = {system, ...}: {
+        deployment = {
+          targetHost = ssot.ips.riverwood;
+          tags = ["k3"];
+        };
+
+        imports = [
+          (import ./hosts/wg-exit)
+        ];
+      };
     };
 
     colmenaHive = inputs.colmena.lib.makeHive self.outputs.colmena;
@@ -141,6 +152,15 @@ in {
 
         modules = [
           (import ./hosts/blackreach)
+        ];
+      };
+
+      wg-exit = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs =
+          mkSpecialArgs system;
+
+        modules = [
+          (import ./hosts/wg-exit)
         ];
       };
     });
