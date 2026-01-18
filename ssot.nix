@@ -14,7 +14,7 @@
     hrothgar = "hrothgar.lan";
     riverwood = "riverwood.lan";
     blackreach = "blackreach.lan";
-    wg-exit = "5.78.110.229 ";
+    wg-exit = "5.78.110.229";
   };
 
   cloudflare = {

@@ -101,8 +101,9 @@ in {
 
       wg-exit = {system, ...}: {
         deployment = {
-          targetHost = ssot.ips.riverwood;
+          targetHost = ssot.ips.wg-exit;
           tags = ["k3"];
+          buildOnTarget = false;
         };
 
         imports = [

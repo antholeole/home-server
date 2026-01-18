@@ -18,7 +18,6 @@
         macAddress = "permanent";
       };
 
-      
       ensureProfiles = {
         environmentFiles = [
           config.age.secrets.nm-secrets.path
