@@ -12,8 +12,8 @@
     whiterun = "192.168.12.167";
 
     hrothgar = "hrothgar.lan";
-    riverwood = "riverwood.lan";
-    blackreach = "blackreach.lan";
+    riverwood = "192.168.12.123";
+    blackreach = "192.168.12.122";
     wg-exit = "5.78.110.229";
   };
 

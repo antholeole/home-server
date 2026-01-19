@@ -10,10 +10,8 @@
 
   backend-fqdn = "draw-api.${ssot.cloudflare.domain}";
 
-  tldraw-backend-pod = pkgs.nix-snapshotter.buildImage {
+  tldraw-backend-pod = pkgs.dockerTools.buildImage {
     name = "tldraw-backend";
-    tag = "latest";
-    resolvedByNix = true;
     config.entrypoint = ["${pkgs.tldraw-server}/bin/tldraw-server"];
   };
 
@@ -38,10 +36,8 @@
       '';
     };
   in
-    pkgs.nix-snapshotter.buildImage {
+    pkgs.dockerTools.buildImage {
       name = "tldraw-frontend";
-      tag = "latest";
-      resolvedByNix = true;
       config.entrypoint = [
         "${pkgs.caddy}/bin/caddy"
         "run"
@@ -51,16 +47,14 @@
     };
 
   otherImages = {
-    "tldraw/backend" = "nix:0${tldraw-backend-pod}";
-    "tldraw/frontend" = "nix:0${tldraw-frontend-pod}";
+    "tldraw/backend" = config.services.zot.mkRef tldraw-backend-pod;
+    "tldraw/frontend" = config.services.zot.mkRef tldraw-frontend-pod;
   };
 
   manifests = pkgs.manifests.override {images = otherImages;};
 
-  manifestStaticServe = pkgs.nix-snapshotter.buildImage {
+  manifestStaticServe = pkgs.dockerTools.buildImage {
     name = "manifest-registry";
-    tag = "latest";
-    resolvedByNix = true;
     config.entrypoint = [
       "${pkgs.rclone}/bin/rclone"
       "serve"
@@ -83,11 +77,14 @@ in {
     };
   };
 
-  config.services.preload-containerd = {
-    targets =
-      (builtins.attrValues config.options.k3s.images)
-      ++ [
+  config.services = {
+    zot = {
+      enable = true;
+      images = [
+        tldraw-backend-pod
+        tldraw-frontend-pod
         manifestStaticServe
       ];
+    };
   };
 }

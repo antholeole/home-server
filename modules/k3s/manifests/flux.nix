@@ -120,7 +120,7 @@ in {
               containers = [
                 {
                   inherit name;
-                  image = "nix:0${config.images.manifestStaticServe}";
+                  image = config.services.zot.mkRef config.images.manifestStaticServe;
                   ports = [
                     {
                       containerPort = port;

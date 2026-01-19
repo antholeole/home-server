@@ -1,14 +1,13 @@
 {
   pkgs,
   inputs,
-  pkgs_24_11,
   config,
   ...
 }: {
   imports = [
     ./images.nix
-
-    ./snapshotter.nix
+    ./zot.nix
+    
     ./longhorn-support.nix
 
     ./agent.nix
@@ -71,12 +70,7 @@
 
     services.k3s = {
       enable = true;
-      package = pkgs_24_11.k3s_1_29;
-      snapshotter = "nix";
-
       tokenFile = config.age.secrets.k3s-token.path;
-
-      setKubeConfig = true;
     };
   };
 }

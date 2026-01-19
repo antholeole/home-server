@@ -10,12 +10,6 @@
   mkSpecialArgs = system:
     withSystem system ({pkgs, ...} @ sysInputs: {
       inherit inputs system ssot;
-      pkgs_24_11 = import inputs.nixpkgs_24_11 {
-        inherit system;
-        config.permittedInsecurePackages = [
-          "k3s-1.29.15+k3s1"
-        ];
-      };
       pkgs-unstable = import inputs.nixpkgs-unstable {inherit system;};
       flake-config = config;
 

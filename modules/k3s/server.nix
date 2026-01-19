@@ -63,7 +63,7 @@
 
     services.k3s = lib.mkIf (config.networking.hostName == ssot.k3sServer) {
       role = "server";
-      moreFlags =
+      extraFlags =
         [
           # traefik is borderline incompatible with external
           # DNS. We'll install ingress nginx later.
@@ -73,5 +73,9 @@
         ]
         ++ builtins.map (label: "--node-label ${label}") config.k3s.labels;
     };
+
+    systemd.services.k3s.restartTriggers = [
+      config.environment.etc."rancher/k3s/registries.yaml".source
+    ];
   };
 }
