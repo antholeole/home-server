@@ -1,4 +1,5 @@
-- longhorn should backup to R2 (P1)(storage)
-- use luks for disk encryption. (P3)
-- host a binary cache (P0)(id#1)
-- AP and DDNS (P0)(block:#1)
+# vps node migration
+- add networkpolicy for longhorn
+- connect up via tailscale
+- remove cloudflared
+- setup metallb or something for the exit node
