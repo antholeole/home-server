@@ -8,6 +8,7 @@
     ./images.nix
     ./zot.nix
     
+    ./manager.nix
     ./longhorn-support.nix
 
     ./agent.nix

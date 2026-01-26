@@ -76,7 +76,10 @@
     };
 
     # setup the manager user on hrothgars
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+    };
 
     # hrothgar ui
     hyprland.url = "github:hyprwm/Hyprland";
