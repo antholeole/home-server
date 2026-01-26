@@ -4,8 +4,7 @@
   config,
   ...
 }: {
-  services.k3s = lib.mkIf (config.networking.hostName != ssot.k3sServer) {
-    role = "agent";
-    serverAddr = "https://${ssot.ips.riverwood}:6443";
+  services.k3s = lib.mkIf (config.services.k3s.role == "agent") {
+    serverAddr = "https://${ssot.k3sMaster}:6443";
   };
 }

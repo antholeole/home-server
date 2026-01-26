@@ -9,8 +9,8 @@ import { Authentik as AuthentikChart } from "../../imports/authentik";
 const namespace = "authentik";
 export class Authentik extends Chart {
 	private static readonly ns = "authentik";
-	private readonly pgVolumeName = "postgres-creds";
-	private readonly secretKeyVolumeName = "secret-key-volume";
+	private static readonly pgVolumeName = "postgres-creds";
+	private static readonly secretKeyVolumeName = "secret-key-volume";
 
 	constructor(
 		scope: Construct,
@@ -32,25 +32,25 @@ export class Authentik extends Chart {
 		const volumesConfig = {
 			volumeMounts: [
 				{
-					name: this.pgVolumeName,
-					mountPath: `/${this.pgVolumeName}`,
+					name: Authentik.pgVolumeName,
+					mountPath: `/${Authentik.pgVolumeName}`,
 					readOnly: true,
 				},
 				{
-					name: this.secretKeyVolumeName,
-					mountPath: `/${this.secretKeyVolumeName}`,
+					name: Authentik.secretKeyVolumeName,
+					mountPath: `/${Authentik.secretKeyVolumeName}`,
 					readOnly: true,
 				},
 			],
 			volumes: [
 				{
-					name: this.pgVolumeName,
+					name: Authentik.pgVolumeName,
 					secret: {
 						secretName: "pg-pass",
 					},
 				},
 				{
-					name: this.secretKeyVolumeName,
+					name: Authentik.secretKeyVolumeName,
 					secret: {
 						secretName: "authentik-secret-key",
 					},
@@ -63,11 +63,11 @@ export class Authentik extends Chart {
 			worker: volumesConfig,
 
 			authentik: {
-				secret_key: `file:///${this.secretKeyVolumeName}/SECRET`,
+				secret_key: `file:///${Authentik.secretKeyVolumeName}/SECRET`,
 				postgresql: {
 					host: "cnpg-cluster-primary-rw.cnpgdb",
-					user: `file:///${this.pgVolumeName}/username`,
-					password: `file:///${this.pgVolumeName}/password`,
+					user: `file:///${Authentik.pgVolumeName}/username`,
+					password: `file:///${Authentik.pgVolumeName}/password`,
 				},
 			},
 		};

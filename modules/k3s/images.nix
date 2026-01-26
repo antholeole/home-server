@@ -11,6 +11,7 @@
   backend-fqdn = "draw-api.${ssot.cloudflare.domain}";
 
   tldraw-backend-pod = pkgs.dockerTools.buildImage {
+    copyToRoot = [pkgs.tldraw-server];
     name = "tldraw-backend";
     config.entrypoint = ["${pkgs.tldraw-server}/bin/tldraw-server"];
   };
@@ -38,6 +39,7 @@
   in
     pkgs.dockerTools.buildImage {
       name = "tldraw-frontend";
+      copyToRoot = [caddyfile pkgs.caddy static-assets];
       config.entrypoint = [
         "${pkgs.caddy}/bin/caddy"
         "run"
@@ -55,6 +57,7 @@
 
   manifestStaticServe = pkgs.dockerTools.buildImage {
     name = "manifest-registry";
+    copyToRoot = [manifests];
     config.entrypoint = [
       "${pkgs.rclone}/bin/rclone"
       "serve"

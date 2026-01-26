@@ -3,7 +3,7 @@
   ...
 }: {
   mkNamespace = namespace: config: {
-    enable = config.networking.hostName == ssot.k3sServer;
+    enable = config.services.k3s.role == "server";
 
     content = {
       apiVersion = "v1";

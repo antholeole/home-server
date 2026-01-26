@@ -3,7 +3,6 @@
   inputs,
   config,
   lib,
-  ssot,
   ...
 }: {
   imports = [
@@ -16,11 +15,14 @@
   };
 
   config = {
+    age.secrets.
+    k3s-vpn-auth.rekeyFile = "${inputs.self}/secrets/k3s-vpn-auth.age";
+
     # this also kind of sucks because it straight up fails if the k3s node is
     # not initalized yet but -\_()_/-
     systemd.services.k8s-sealed-secret-key = {
       enable =
-        config.networking.hostName == ssot.k3sServer;
+        config.services.k3s.role == "server";
 
       description = "Deploy Sealed Secrets TLS Key to Kubernetes";
       after = ["k3s.service"];
@@ -61,16 +63,27 @@
       };
     };
 
-    services.k3s = lib.mkIf (config.networking.hostName == ssot.k3sServer) {
-      role = "server";
+    services.k3s = {
       extraFlags =
         [
           # traefik is borderline incompatible with external
           # DNS. We'll install ingress nginx later.
-          "--disable=traefik"
-          "--disable=servicelb"
-          "--flannel-ipv6-masq"
+          "--vpn-auth-file=${config.age.secrets.k3s-vpn-auth.path}"
+
+          # let kubeconfig be readable by other users. I couldn't
+          # figure out how to change its group to like a k3s group
+          # so this is good enough
+          "--write-kubeconfig-mode=\"0644\""
         ]
+        ++ (
+          if (config.services.k3s.role == "server")
+          then [
+            "--disable=traefik"
+            "--disable=servicelb"
+            "--flannel-ipv6-masq"
+          ]
+          else []
+        )
         ++ builtins.map (label: "--node-label ${label}") config.k3s.labels;
     };
 

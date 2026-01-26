@@ -7,12 +7,11 @@
   imports = [
     ./images.nix
     ./zot.nix
-    
-    ./manager.nix
     ./longhorn-support.nix
 
     ./agent.nix
     ./server.nix
+    ./tailscale.nix
   ];
 
   config = {
@@ -45,10 +44,10 @@
     networking.firewall = {
       enable = true;
 
-      allowedUDPPorts =[
+      allowedUDPPorts = [
         8472 # flannel CNI
       ];
-      
+
       allowedTCPPorts = [
         22 # ssh
         6443 # k3s api server
@@ -73,5 +72,8 @@
       enable = true;
       tokenFile = config.age.secrets.k3s-token.path;
     };
+
+    environment.variables.CONTAINERD_ADDRESS = "/run/k3s/containerd/containerd.sock";
+    environment.variables.KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
   };
 }

@@ -133,7 +133,7 @@
 
       manifests-example = manifests.override {
         images = {
-          node = "node:21";
+          "tldraw/backend" = "leedleleedle:blah";
           redis = "redis:latest";
         };
       };
