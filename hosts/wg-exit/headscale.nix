@@ -4,9 +4,31 @@
   inputs,
   ...
 }: let
-  subdomain = "offsite";
+  subdomain = "headscale";
   domain = "${subdomain}.${ssot.cloudflare.domain}";
 in {
+  age.secrets = {
+    cf-headscale.rekeyFile = "${inputs.self}/secrets/cf-headscale.age";
+
+    headscale-oidc-secret = {
+      rekeyFile = "${inputs.self}/secrets/headscale-oidc-secret.age";
+      owner = config.services.headscale.user;
+      group = config.services.headscale.group;
+      mode = "600";
+    };
+  };
+
+  services.cloudflare-ddns = {
+    enable = true;
+
+    credentialsFile =
+      config.age.secrets.cf-headscale.path;
+
+    domains = [
+      "${subdomain}.${ssot.cloudflare.domain}"
+    ];
+  };
+
   security.acme = {
     acceptTerms = true;
     certs = {
@@ -16,17 +38,6 @@ in {
         dnsProvider = "cloudflare";
         environmentFile = config.age.secrets.cf-headscale.path;
       };
-    };
-  };
-
-  age.secrets = {
-    cf-headscale.rekeyFile = "${inputs.self}/secrets/cf-headscale.age";
-
-    headscale-oidc-secret = {
-      rekeyFile = "${inputs.self}/secrets/headscale-oidc-secret.age";
-      owner = config.services.headscale.user;
-      group = config.services.headscale.group;
-      mode = "600";
     };
   };
 

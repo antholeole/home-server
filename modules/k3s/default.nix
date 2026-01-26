@@ -12,6 +12,7 @@
 
     ./agent.nix
     ./server.nix
+    ./tailscale.nix
   ];
 
   config = {

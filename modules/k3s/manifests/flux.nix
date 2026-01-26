@@ -10,7 +10,7 @@
 in {
   services.k3s.manifests = {
     namespace = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = config.services.k3s.role == "server";
 
       content = {
         apiVersion = "v1";
@@ -23,7 +23,7 @@ in {
     };
 
     flux = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = config.services.k3s.role == "server";
 
       source = let
         flux-manifests = pkgs.runCommand "flux-manifests" {} ''
@@ -34,7 +34,7 @@ in {
     };
 
     flux-source = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = config.services.k3s.role == "server";
 
       content = {
         apiVersion = "source.toolkit.fluxcd.io/v1";
@@ -54,7 +54,7 @@ in {
     };
 
     flux-kustomize = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = config.services.k3s.role == "server";
 
       content = {
         apiVersion = "kustomize.toolkit.fluxcd.io/v1";
@@ -135,7 +135,7 @@ in {
     };
 
     manifest-registry-service = {
-      enable = config.networking.hostName == ssot.k3sServer;
+      enable = config.services.k3s.role == "server";
 
       content = {
         apiVersion = "v1";

@@ -11,7 +11,7 @@
     longhorn-namespace = lib.homeServer.kubernetes.mkNamespace namespace config;
 
     longhorn = {
-    enable = config.networking.hostName == ssot.k3sServer;
+    enable = config.services.k3s.role == "server";
 
       content = lib.kubelib.fromHelm {
         inherit namespace;

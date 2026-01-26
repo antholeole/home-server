@@ -74,7 +74,7 @@ in {
       riverwood = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.riverwood;
-          tags = ["k3" "master"];
+          tags = ["k3s" "master"];
         };
 
         imports = [
@@ -85,7 +85,7 @@ in {
       blackreach = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.blackreach;
-          tags = ["k3" "master" "nas"];
+          tags = ["k3s" "master" "nas"];
         };
 
         imports = [
@@ -96,7 +96,7 @@ in {
       wg-exit = {system, ...}: {
         deployment = {
           targetHost = ssot.ips.wg-exit;
-          tags = ["k3"];
+          tags = ["k3s"];
           buildOnTarget = false;
         };
 
