@@ -1,5 +1,4 @@
 {
-  self,
   inputs,
   ...
 }: {
@@ -20,7 +19,10 @@
       manifestDependencies = let
         manifestFod = pkgs.stdenvNoCC.mkDerivation {
           name = "manifest-deps-fod";
-          src = "${self}/cdk8s/kustomize";
+          # do NOT use ${self} here. this causes the entire self
+          # closure to be an input to the fod, causing frequent
+          # rebuilds.
+          src = ./kustomize;
 
           dontUnpack = true;
 
@@ -47,7 +49,7 @@
         pkgs.stdenvNoCC.mkDerivation {
           name = "manifest-deps";
 
-          src = "${self}/cdk8s/kustomize";
+          src = ./kustomize;
           dontUnpack = true;
 
           nativeBuildInputs = [
