@@ -47,7 +47,7 @@ export class BackingImage extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -72,13 +72,12 @@ export interface BackingImageProps {
    * @schema BackingImage#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackingImageProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageProps(obj: BackingImageProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -88,7 +87,7 @@ export function toJson_BackingImageProps(obj: BackingImageProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -135,7 +134,7 @@ export class BackingImageV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -162,13 +161,12 @@ export interface BackingImageV1Beta2Props {
    * @schema BackingImageV1Beta2#spec
    */
   readonly spec?: BackingImageV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackingImageV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageV1Beta2Props(obj: BackingImageV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -178,7 +176,7 @@ export function toJson_BackingImageV1Beta2Props(obj: BackingImageV1Beta2Props | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackingImageSpec defines the desired state of the Longhorn backing image
@@ -242,13 +240,12 @@ export interface BackingImageV1Beta2Spec {
    * @schema BackingImageV1Beta2Spec#sourceType
    */
   readonly sourceType?: BackingImageV1Beta2SpecSourceType;
-
 }
 
 /**
  * Converts an object of type 'BackingImageV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageV1Beta2Spec(obj: BackingImageV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -267,7 +264,7 @@ export function toJson_BackingImageV1Beta2Spec(obj: BackingImageV1Beta2Spec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema BackingImageV1Beta2SpecDataEngine
@@ -292,13 +289,12 @@ export interface BackingImageV1Beta2SpecDiskFileSpecMap {
    * @schema BackingImageV1Beta2SpecDiskFileSpecMap#evictionRequested
    */
   readonly evictionRequested?: boolean;
-
 }
 
 /**
  * Converts an object of type 'BackingImageV1Beta2SpecDiskFileSpecMap' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageV1Beta2SpecDiskFileSpecMap(obj: BackingImageV1Beta2SpecDiskFileSpecMap | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -308,7 +304,7 @@ export function toJson_BackingImageV1Beta2SpecDiskFileSpecMap(obj: BackingImageV
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema BackingImageV1Beta2SpecSourceType
@@ -381,7 +377,7 @@ export class BackingImageDataSource extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -406,13 +402,12 @@ export interface BackingImageDataSourceProps {
    * @schema BackingImageDataSource#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackingImageDataSourceProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageDataSourceProps(obj: BackingImageDataSourceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -422,7 +417,7 @@ export function toJson_BackingImageDataSourceProps(obj: BackingImageDataSourcePr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -469,7 +464,7 @@ export class BackingImageDataSourceV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -496,13 +491,12 @@ export interface BackingImageDataSourceV1Beta2Props {
    * @schema BackingImageDataSourceV1Beta2#spec
    */
   readonly spec?: BackingImageDataSourceV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackingImageDataSourceV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageDataSourceV1Beta2Props(obj: BackingImageDataSourceV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -512,7 +506,7 @@ export function toJson_BackingImageDataSourceV1Beta2Props(obj: BackingImageDataS
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackingImageDataSourceSpec defines the desired state of the Longhorn backing image data source
@@ -559,13 +553,12 @@ export interface BackingImageDataSourceV1Beta2Spec {
    * @schema BackingImageDataSourceV1Beta2Spec#uuid
    */
   readonly uuid?: string;
-
 }
 
 /**
  * Converts an object of type 'BackingImageDataSourceV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageDataSourceV1Beta2Spec(obj: BackingImageDataSourceV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -581,7 +574,7 @@ export function toJson_BackingImageDataSourceV1Beta2Spec(obj: BackingImageDataSo
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema BackingImageDataSourceV1Beta2SpecSourceType
@@ -644,7 +637,7 @@ export class BackingImageManager extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -669,13 +662,12 @@ export interface BackingImageManagerProps {
    * @schema BackingImageManager#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackingImageManagerProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageManagerProps(obj: BackingImageManagerProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -685,7 +677,7 @@ export function toJson_BackingImageManagerProps(obj: BackingImageManagerProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -732,7 +724,7 @@ export class BackingImageManagerV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -759,13 +751,12 @@ export interface BackingImageManagerV1Beta2Props {
    * @schema BackingImageManagerV1Beta2#spec
    */
   readonly spec?: BackingImageManagerV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackingImageManagerV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageManagerV1Beta2Props(obj: BackingImageManagerV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -775,7 +766,7 @@ export function toJson_BackingImageManagerV1Beta2Props(obj: BackingImageManagerV
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackingImageManagerSpec defines the desired state of the Longhorn backing image manager
@@ -807,13 +798,12 @@ export interface BackingImageManagerV1Beta2Spec {
    * @schema BackingImageManagerV1Beta2Spec#nodeID
    */
   readonly nodeId?: string;
-
 }
 
 /**
  * Converts an object of type 'BackingImageManagerV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackingImageManagerV1Beta2Spec(obj: BackingImageManagerV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -826,7 +816,7 @@ export function toJson_BackingImageManagerV1Beta2Spec(obj: BackingImageManagerV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -873,7 +863,7 @@ export class Backup extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -898,13 +888,12 @@ export interface BackupProps {
    * @schema Backup#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackupProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupProps(obj: BackupProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -914,7 +903,7 @@ export function toJson_BackupProps(obj: BackupProps | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -961,7 +950,7 @@ export class BackupV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -988,13 +977,12 @@ export interface BackupV1Beta2Props {
    * @schema BackupV1Beta2#spec
    */
   readonly spec?: BackupV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackupV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupV1Beta2Props(obj: BackupV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1004,7 +992,7 @@ export function toJson_BackupV1Beta2Props(obj: BackupV1Beta2Props | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackupSpec defines the desired state of the Longhorn backup
@@ -1040,13 +1028,12 @@ export interface BackupV1Beta2Spec {
    * @schema BackupV1Beta2Spec#syncRequestedAt
    */
   readonly syncRequestedAt?: Date;
-
 }
 
 /**
  * Converts an object of type 'BackupV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupV1Beta2Spec(obj: BackupV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1058,7 +1045,7 @@ export function toJson_BackupV1Beta2Spec(obj: BackupV1Beta2Spec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The backup mode of this backup.
@@ -1118,7 +1105,7 @@ export class BackupBackingImage extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1145,13 +1132,12 @@ export interface BackupBackingImageProps {
    * @schema BackupBackingImage#spec
    */
   readonly spec?: BackupBackingImageSpec;
-
 }
 
 /**
  * Converts an object of type 'BackupBackingImageProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupBackingImageProps(obj: BackupBackingImageProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1161,7 +1147,7 @@ export function toJson_BackupBackingImageProps(obj: BackupBackingImageProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackupBackingImageSpec defines the desired state of the Longhorn backing image backup
@@ -1203,13 +1189,12 @@ export interface BackupBackingImageSpec {
    * @schema BackupBackingImageSpec#userCreated
    */
   readonly userCreated: boolean;
-
 }
 
 /**
  * Converts an object of type 'BackupBackingImageSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupBackingImageSpec(obj: BackupBackingImageSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1222,7 +1207,7 @@ export function toJson_BackupBackingImageSpec(obj: BackupBackingImageSpec | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1269,7 +1254,7 @@ export class BackupTarget extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1294,13 +1279,12 @@ export interface BackupTargetProps {
    * @schema BackupTarget#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackupTargetProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupTargetProps(obj: BackupTargetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1310,7 +1294,7 @@ export function toJson_BackupTargetProps(obj: BackupTargetProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1357,7 +1341,7 @@ export class BackupTargetV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1384,13 +1368,12 @@ export interface BackupTargetV1Beta2Props {
    * @schema BackupTargetV1Beta2#spec
    */
   readonly spec?: BackupTargetV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackupTargetV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupTargetV1Beta2Props(obj: BackupTargetV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1400,7 +1383,7 @@ export function toJson_BackupTargetV1Beta2Props(obj: BackupTargetV1Beta2Props | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackupTargetSpec defines the desired state of the Longhorn backup target
@@ -1435,13 +1418,12 @@ export interface BackupTargetV1Beta2Spec {
    * @schema BackupTargetV1Beta2Spec#syncRequestedAt
    */
   readonly syncRequestedAt?: Date;
-
 }
 
 /**
  * Converts an object of type 'BackupTargetV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupTargetV1Beta2Spec(obj: BackupTargetV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1453,7 +1435,7 @@ export function toJson_BackupTargetV1Beta2Spec(obj: BackupTargetV1Beta2Spec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1500,7 +1482,7 @@ export class BackupVolume extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1525,13 +1507,12 @@ export interface BackupVolumeProps {
    * @schema BackupVolume#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'BackupVolumeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupVolumeProps(obj: BackupVolumeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1541,7 +1522,7 @@ export function toJson_BackupVolumeProps(obj: BackupVolumeProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1588,7 +1569,7 @@ export class BackupVolumeV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1615,13 +1596,12 @@ export interface BackupVolumeV1Beta2Props {
    * @schema BackupVolumeV1Beta2#spec
    */
   readonly spec?: BackupVolumeV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'BackupVolumeV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupVolumeV1Beta2Props(obj: BackupVolumeV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1631,7 +1611,7 @@ export function toJson_BackupVolumeV1Beta2Props(obj: BackupVolumeV1Beta2Props | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BackupVolumeSpec defines the desired state of the Longhorn backup volume
@@ -1659,13 +1639,12 @@ export interface BackupVolumeV1Beta2Spec {
    * @schema BackupVolumeV1Beta2Spec#volumeName
    */
   readonly volumeName?: string;
-
 }
 
 /**
  * Converts an object of type 'BackupVolumeV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BackupVolumeV1Beta2Spec(obj: BackupVolumeV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1676,7 +1655,7 @@ export function toJson_BackupVolumeV1Beta2Spec(obj: BackupVolumeV1Beta2Spec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1723,7 +1702,7 @@ export class Engine extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1748,13 +1727,12 @@ export interface EngineProps {
    * @schema Engine#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'EngineProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineProps(obj: EngineProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1764,7 +1742,7 @@ export function toJson_EngineProps(obj: EngineProps | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1811,7 +1789,7 @@ export class EngineV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1838,13 +1816,12 @@ export interface EngineV1Beta2Props {
    * @schema EngineV1Beta2#spec
    */
   readonly spec?: EngineV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'EngineV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineV1Beta2Props(obj: EngineV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1854,7 +1831,7 @@ export function toJson_EngineV1Beta2Props(obj: EngineV1Beta2Props | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EngineSpec defines the desired state of the Longhorn engine
@@ -1961,13 +1938,12 @@ export interface EngineV1Beta2Spec {
    * @schema EngineV1Beta2Spec#volumeSize
    */
   readonly volumeSize?: string;
-
 }
 
 /**
  * Converts an object of type 'EngineV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineV1Beta2Spec(obj: EngineV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1995,7 +1971,7 @@ export function toJson_EngineV1Beta2Spec(obj: EngineV1Beta2Spec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema EngineV1Beta2SpecDataEngine
@@ -2066,7 +2042,7 @@ export class EngineImage extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2091,13 +2067,12 @@ export interface EngineImageProps {
    * @schema EngineImage#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'EngineImageProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineImageProps(obj: EngineImageProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2107,7 +2082,7 @@ export function toJson_EngineImageProps(obj: EngineImageProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -2154,7 +2129,7 @@ export class EngineImageV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2181,13 +2156,12 @@ export interface EngineImageV1Beta2Props {
    * @schema EngineImageV1Beta2#spec
    */
   readonly spec?: EngineImageV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'EngineImageV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineImageV1Beta2Props(obj: EngineImageV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2197,7 +2171,7 @@ export function toJson_EngineImageV1Beta2Props(obj: EngineImageV1Beta2Props | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EngineImageSpec defines the desired state of the Longhorn engine image
@@ -2209,13 +2183,12 @@ export interface EngineImageV1Beta2Spec {
    * @schema EngineImageV1Beta2Spec#image
    */
   readonly image: string;
-
 }
 
 /**
  * Converts an object of type 'EngineImageV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EngineImageV1Beta2Spec(obj: EngineImageV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2224,7 +2197,7 @@ export function toJson_EngineImageV1Beta2Spec(obj: EngineImageV1Beta2Spec | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -2271,7 +2244,7 @@ export class InstanceManager extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2296,13 +2269,12 @@ export interface InstanceManagerProps {
    * @schema InstanceManager#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'InstanceManagerProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_InstanceManagerProps(obj: InstanceManagerProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2312,7 +2284,7 @@ export function toJson_InstanceManagerProps(obj: InstanceManagerProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -2359,7 +2331,7 @@ export class InstanceManagerV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2386,13 +2358,12 @@ export interface InstanceManagerV1Beta2Props {
    * @schema InstanceManagerV1Beta2#spec
    */
   readonly spec?: InstanceManagerV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'InstanceManagerV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_InstanceManagerV1Beta2Props(obj: InstanceManagerV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2402,7 +2373,7 @@ export function toJson_InstanceManagerV1Beta2Props(obj: InstanceManagerV1Beta2Pr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * InstanceManagerSpec defines the desired state of the Longhorn instance manager
@@ -2434,13 +2405,12 @@ export interface InstanceManagerV1Beta2Spec {
    * @schema InstanceManagerV1Beta2Spec#type
    */
   readonly type?: InstanceManagerV1Beta2SpecType;
-
 }
 
 /**
  * Converts an object of type 'InstanceManagerV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_InstanceManagerV1Beta2Spec(obj: InstanceManagerV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2453,7 +2423,7 @@ export function toJson_InstanceManagerV1Beta2Spec(obj: InstanceManagerV1Beta2Spe
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema InstanceManagerV1Beta2SpecDataEngineSpec
@@ -2463,13 +2433,12 @@ export interface InstanceManagerV1Beta2SpecDataEngineSpec {
    * @schema InstanceManagerV1Beta2SpecDataEngineSpec#v2
    */
   readonly v2?: InstanceManagerV1Beta2SpecDataEngineSpecV2;
-
 }
 
 /**
  * Converts an object of type 'InstanceManagerV1Beta2SpecDataEngineSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_InstanceManagerV1Beta2SpecDataEngineSpec(obj: InstanceManagerV1Beta2SpecDataEngineSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2478,7 +2447,7 @@ export function toJson_InstanceManagerV1Beta2SpecDataEngineSpec(obj: InstanceMan
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema InstanceManagerV1Beta2SpecType
@@ -2500,13 +2469,12 @@ export interface InstanceManagerV1Beta2SpecDataEngineSpecV2 {
    * @schema InstanceManagerV1Beta2SpecDataEngineSpecV2#cpuMask
    */
   readonly cpuMask?: string;
-
 }
 
 /**
  * Converts an object of type 'InstanceManagerV1Beta2SpecDataEngineSpecV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_InstanceManagerV1Beta2SpecDataEngineSpecV2(obj: InstanceManagerV1Beta2SpecDataEngineSpecV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2515,7 +2483,7 @@ export function toJson_InstanceManagerV1Beta2SpecDataEngineSpecV2(obj: InstanceM
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -2562,7 +2530,7 @@ export class Node extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2587,13 +2555,12 @@ export interface NodeProps {
    * @schema Node#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'NodeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeProps(obj: NodeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2603,7 +2570,7 @@ export function toJson_NodeProps(obj: NodeProps | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -2650,7 +2617,7 @@ export class NodeV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2677,13 +2644,12 @@ export interface NodeV1Beta2Props {
    * @schema NodeV1Beta2#spec
    */
   readonly spec?: NodeV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'NodeV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeV1Beta2Props(obj: NodeV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2693,7 +2659,7 @@ export function toJson_NodeV1Beta2Props(obj: NodeV1Beta2Props | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NodeSpec defines the desired state of the Longhorn node
@@ -2730,13 +2696,12 @@ export interface NodeV1Beta2Spec {
    * @schema NodeV1Beta2Spec#tags
    */
   readonly tags?: string[];
-
 }
 
 /**
  * Converts an object of type 'NodeV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeV1Beta2Spec(obj: NodeV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2750,7 +2715,7 @@ export function toJson_NodeV1Beta2Spec(obj: NodeV1Beta2Spec | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema NodeV1Beta2SpecDisks
@@ -2790,13 +2755,12 @@ export interface NodeV1Beta2SpecDisks {
    * @schema NodeV1Beta2SpecDisks#tags
    */
   readonly tags?: string[];
-
 }
 
 /**
  * Converts an object of type 'NodeV1Beta2SpecDisks' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeV1Beta2SpecDisks(obj: NodeV1Beta2SpecDisks | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2811,7 +2775,7 @@ export function toJson_NodeV1Beta2SpecDisks(obj: NodeV1Beta2SpecDisks | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema NodeV1Beta2SpecDisksDiskDriver
@@ -2878,7 +2842,7 @@ export class Orphan extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2905,13 +2869,12 @@ export interface OrphanProps {
    * @schema Orphan#spec
    */
   readonly spec?: OrphanSpec;
-
 }
 
 /**
  * Converts an object of type 'OrphanProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_OrphanProps(obj: OrphanProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2921,7 +2884,7 @@ export function toJson_OrphanProps(obj: OrphanProps | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * OrphanSpec defines the desired state of the Longhorn orphaned data
@@ -2958,13 +2921,12 @@ export interface OrphanSpec {
    * @schema OrphanSpec#parameters
    */
   readonly parameters?: { [key: string]: string };
-
 }
 
 /**
  * Converts an object of type 'OrphanSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_OrphanSpec(obj: OrphanSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2976,7 +2938,7 @@ export function toJson_OrphanSpec(obj: OrphanSpec | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The type of data engine for instance orphan.
@@ -3036,7 +2998,7 @@ export class RecurringJob extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3061,13 +3023,12 @@ export interface RecurringJobProps {
    * @schema RecurringJob#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'RecurringJobProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RecurringJobProps(obj: RecurringJobProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3077,7 +3038,7 @@ export function toJson_RecurringJobProps(obj: RecurringJobProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -3124,7 +3085,7 @@ export class RecurringJobV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3151,13 +3112,12 @@ export interface RecurringJobV1Beta2Props {
    * @schema RecurringJobV1Beta2#spec
    */
   readonly spec?: RecurringJobV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'RecurringJobV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RecurringJobV1Beta2Props(obj: RecurringJobV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3167,7 +3127,7 @@ export function toJson_RecurringJobV1Beta2Props(obj: RecurringJobV1Beta2Props | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RecurringJobSpec defines the desired state of the Longhorn recurring job
@@ -3232,13 +3192,12 @@ export interface RecurringJobV1Beta2Spec {
    * @schema RecurringJobV1Beta2Spec#task
    */
   readonly task?: RecurringJobV1Beta2SpecTask;
-
 }
 
 /**
  * Converts an object of type 'RecurringJobV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RecurringJobV1Beta2Spec(obj: RecurringJobV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3254,7 +3213,7 @@ export function toJson_RecurringJobV1Beta2Spec(obj: RecurringJobV1Beta2Spec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The recurring job task.
@@ -3326,7 +3285,7 @@ export class Replica extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3351,13 +3310,12 @@ export interface ReplicaProps {
    * @schema Replica#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'ReplicaProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ReplicaProps(obj: ReplicaProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3367,7 +3325,7 @@ export function toJson_ReplicaProps(obj: ReplicaProps | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -3414,7 +3372,7 @@ export class ReplicaV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3441,13 +3399,12 @@ export interface ReplicaV1Beta2Props {
    * @schema ReplicaV1Beta2#spec
    */
   readonly spec?: ReplicaV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'ReplicaV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ReplicaV1Beta2Props(obj: ReplicaV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3457,7 +3414,7 @@ export function toJson_ReplicaV1Beta2Props(obj: ReplicaV1Beta2Props | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicaSpec defines the desired state of the Longhorn replica
@@ -3624,13 +3581,12 @@ export interface ReplicaV1Beta2Spec {
    * @schema ReplicaV1Beta2Spec#volumeSize
    */
   readonly volumeSize?: string;
-
 }
 
 /**
  * Converts an object of type 'ReplicaV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ReplicaV1Beta2Spec(obj: ReplicaV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3664,7 +3620,7 @@ export function toJson_ReplicaV1Beta2Spec(obj: ReplicaV1Beta2Spec | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ReplicaV1Beta2SpecDataEngine
@@ -3721,7 +3677,7 @@ export class Setting extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3746,13 +3702,12 @@ export interface SettingProps {
    * @schema Setting#value
    */
   readonly value: string;
-
 }
 
 /**
  * Converts an object of type 'SettingProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SettingProps(obj: SettingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3762,7 +3717,7 @@ export function toJson_SettingProps(obj: SettingProps | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -3809,7 +3764,7 @@ export class SettingV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3836,13 +3791,12 @@ export interface SettingV1Beta2Props {
    * @schema SettingV1Beta2#value
    */
   readonly value: string;
-
 }
 
 /**
  * Converts an object of type 'SettingV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SettingV1Beta2Props(obj: SettingV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3852,7 +3806,7 @@ export function toJson_SettingV1Beta2Props(obj: SettingV1Beta2Props | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -3899,7 +3853,7 @@ export class ShareManager extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3924,13 +3878,12 @@ export interface ShareManagerProps {
    * @schema ShareManager#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'ShareManagerProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ShareManagerProps(obj: ShareManagerProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -3940,7 +3893,7 @@ export function toJson_ShareManagerProps(obj: ShareManagerProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -3987,7 +3940,7 @@ export class ShareManagerV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4014,13 +3967,12 @@ export interface ShareManagerV1Beta2Props {
    * @schema ShareManagerV1Beta2#spec
    */
   readonly spec?: ShareManagerV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'ShareManagerV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ShareManagerV1Beta2Props(obj: ShareManagerV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4030,7 +3982,7 @@ export function toJson_ShareManagerV1Beta2Props(obj: ShareManagerV1Beta2Props | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ShareManagerSpec defines the desired state of the Longhorn share manager
@@ -4044,13 +3996,12 @@ export interface ShareManagerV1Beta2Spec {
    * @schema ShareManagerV1Beta2Spec#image
    */
   readonly image?: string;
-
 }
 
 /**
  * Converts an object of type 'ShareManagerV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ShareManagerV1Beta2Spec(obj: ShareManagerV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4059,7 +4010,7 @@ export function toJson_ShareManagerV1Beta2Spec(obj: ShareManagerV1Beta2Spec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4106,7 +4057,7 @@ export class Snapshot extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4133,13 +4084,12 @@ export interface SnapshotProps {
    * @schema Snapshot#spec
    */
   readonly spec?: SnapshotSpec;
-
 }
 
 /**
  * Converts an object of type 'SnapshotProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SnapshotProps(obj: SnapshotProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4149,7 +4099,7 @@ export function toJson_SnapshotProps(obj: SnapshotProps | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SnapshotSpec defines the desired state of Longhorn Snapshot
@@ -4178,13 +4128,12 @@ export interface SnapshotSpec {
    * @schema SnapshotSpec#volume
    */
   readonly volume: string;
-
 }
 
 /**
  * Converts an object of type 'SnapshotSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SnapshotSpec(obj: SnapshotSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4195,7 +4144,7 @@ export function toJson_SnapshotSpec(obj: SnapshotSpec | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4242,7 +4191,7 @@ export class SupportBundle extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4269,13 +4218,12 @@ export interface SupportBundleProps {
    * @schema SupportBundle#spec
    */
   readonly spec?: SupportBundleSpec;
-
 }
 
 /**
  * Converts an object of type 'SupportBundleProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SupportBundleProps(obj: SupportBundleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4285,7 +4233,7 @@ export function toJson_SupportBundleProps(obj: SupportBundleProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SupportBundleSpec defines the desired state of the Longhorn SupportBundle
@@ -4313,13 +4261,12 @@ export interface SupportBundleSpec {
    * @schema SupportBundleSpec#nodeID
    */
   readonly nodeId?: string;
-
 }
 
 /**
  * Converts an object of type 'SupportBundleSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SupportBundleSpec(obj: SupportBundleSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4330,7 +4277,7 @@ export function toJson_SupportBundleSpec(obj: SupportBundleSpec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4377,7 +4324,7 @@ export class SystemBackup extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4404,13 +4351,12 @@ export interface SystemBackupProps {
    * @schema SystemBackup#spec
    */
   readonly spec?: SystemBackupSpec;
-
 }
 
 /**
  * Converts an object of type 'SystemBackupProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SystemBackupProps(obj: SystemBackupProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4420,7 +4366,7 @@ export function toJson_SystemBackupProps(obj: SystemBackupProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SystemBackupSpec defines the desired state of the Longhorn SystemBackup
@@ -4435,13 +4381,12 @@ export interface SystemBackupSpec {
    * @schema SystemBackupSpec#volumeBackupPolicy
    */
   readonly volumeBackupPolicy?: string;
-
 }
 
 /**
  * Converts an object of type 'SystemBackupSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SystemBackupSpec(obj: SystemBackupSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4450,7 +4395,7 @@ export function toJson_SystemBackupSpec(obj: SystemBackupSpec | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4497,7 +4442,7 @@ export class SystemRestore extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4524,13 +4469,12 @@ export interface SystemRestoreProps {
    * @schema SystemRestore#spec
    */
   readonly spec?: SystemRestoreSpec;
-
 }
 
 /**
  * Converts an object of type 'SystemRestoreProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SystemRestoreProps(obj: SystemRestoreProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4540,7 +4484,7 @@ export function toJson_SystemRestoreProps(obj: SystemRestoreProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SystemRestoreSpec defines the desired state of the Longhorn SystemRestore
@@ -4554,13 +4498,12 @@ export interface SystemRestoreSpec {
    * @schema SystemRestoreSpec#systemBackup
    */
   readonly systemBackup: string;
-
 }
 
 /**
  * Converts an object of type 'SystemRestoreSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SystemRestoreSpec(obj: SystemRestoreSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4569,7 +4512,7 @@ export function toJson_SystemRestoreSpec(obj: SystemRestoreSpec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4616,7 +4559,7 @@ export class Volume extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4641,13 +4584,12 @@ export interface VolumeProps {
    * @schema Volume#spec
    */
   readonly spec?: any;
-
 }
 
 /**
  * Converts an object of type 'VolumeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeProps(obj: VolumeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4657,7 +4599,7 @@ export function toJson_VolumeProps(obj: VolumeProps | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -4704,7 +4646,7 @@ export class VolumeV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4731,13 +4673,12 @@ export interface VolumeV1Beta2Props {
    * @schema VolumeV1Beta2#spec
    */
   readonly spec?: VolumeV1Beta2Spec;
-
 }
 
 /**
  * Converts an object of type 'VolumeV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeV1Beta2Props(obj: VolumeV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4747,7 +4688,7 @@ export function toJson_VolumeV1Beta2Props(obj: VolumeV1Beta2Props | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeSpec defines the desired state of the Longhorn volume
@@ -4939,13 +4880,12 @@ export interface VolumeV1Beta2Spec {
    * @schema VolumeV1Beta2Spec#unmapMarkSnapChainRemoved
    */
   readonly unmapMarkSnapChainRemoved?: VolumeV1Beta2SpecUnmapMarkSnapChainRemoved;
-
 }
 
 /**
  * Converts an object of type 'VolumeV1Beta2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeV1Beta2Spec(obj: VolumeV1Beta2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -4987,7 +4927,7 @@ export function toJson_VolumeV1Beta2Spec(obj: VolumeV1Beta2Spec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema VolumeV1Beta2SpecAccessMode
@@ -5217,7 +5157,7 @@ export class VolumeAttachment extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5244,13 +5184,12 @@ export interface VolumeAttachmentProps {
    * @schema VolumeAttachment#spec
    */
   readonly spec?: VolumeAttachmentSpec;
-
 }
 
 /**
  * Converts an object of type 'VolumeAttachmentProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeAttachmentProps(obj: VolumeAttachmentProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -5260,7 +5199,7 @@ export function toJson_VolumeAttachmentProps(obj: VolumeAttachmentProps | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeAttachmentSpec defines the desired state of Longhorn VolumeAttachment
@@ -5279,13 +5218,12 @@ export interface VolumeAttachmentSpec {
    * @schema VolumeAttachmentSpec#volume
    */
   readonly volume: string;
-
 }
 
 /**
  * Converts an object of type 'VolumeAttachmentSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeAttachmentSpec(obj: VolumeAttachmentSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -5295,7 +5233,7 @@ export function toJson_VolumeAttachmentSpec(obj: VolumeAttachmentSpec | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema VolumeAttachmentSpecAttachmentTickets
@@ -5334,13 +5272,12 @@ export interface VolumeAttachmentSpecAttachmentTickets {
    * @schema VolumeAttachmentSpecAttachmentTickets#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'VolumeAttachmentSpecAttachmentTickets' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeAttachmentSpecAttachmentTickets(obj: VolumeAttachmentSpecAttachmentTickets | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -5353,5 +5290,5 @@ export function toJson_VolumeAttachmentSpecAttachmentTickets(obj: VolumeAttachme
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 

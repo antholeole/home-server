@@ -12,7 +12,7 @@
     packages = let
       outputHashes = {
         kustomizes = "sha256-X6Ty/OSv8S6pbFZBFfPiFSCvwsFCt9dyxfxzhqxr/yY=";
-        helm = "sha256-yiZrW1IFCazHQCctnFKFHibJ9lhUg/oynoIcLxq6BOg=";
+        helm = "sha256-6cidRsWXzQQiW+1u1rm8lpbRKNVhbB+fONFa3GCZ6/g=";
         npm = "sha256-tVGK4LbnsJFjaKpGi3N53xbCQKB46YzYjmESf7F04sQ=";
       };
 
@@ -99,7 +99,6 @@
           cp -r dist/ $out/
         '';
       };
-      # FOD that fetches the kustomizes.
     in rec {
       manifests = let
         # the manifests pre kustomize.

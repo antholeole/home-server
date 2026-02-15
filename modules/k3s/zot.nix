@@ -148,6 +148,7 @@ in {
       description = "Zot OCI Registry";
       wantedBy = ["multi-user.target"];
       after = ["network.target"];
+      restartTriggers = [ zotConfig ];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/zot serve ${zotConfig}";

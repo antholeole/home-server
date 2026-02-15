@@ -47,7 +47,7 @@ export class AccessTunnel extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -81,13 +81,12 @@ export interface AccessTunnelProps {
    * @schema AccessTunnel#target
    */
   readonly target?: AccessTunnelTarget;
-
 }
 
 /**
  * Converts an object of type 'AccessTunnelProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AccessTunnelProps(obj: AccessTunnelProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -98,7 +97,7 @@ export function toJson_AccessTunnelProps(obj: AccessTunnelProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AccessTunnelServiceToken defines the access auth if needed
@@ -126,13 +125,12 @@ export interface AccessTunnelServiceToken {
    * @schema AccessTunnelServiceToken#secretRef
    */
   readonly secretRef: string;
-
 }
 
 /**
  * Converts an object of type 'AccessTunnelServiceToken' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AccessTunnelServiceToken(obj: AccessTunnelServiceToken | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -143,7 +141,7 @@ export function toJson_AccessTunnelServiceToken(obj: AccessTunnelServiceToken | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AccessTunnelTarget defines the desired state of Access
@@ -179,13 +177,12 @@ export interface AccessTunnelTarget {
    * @schema AccessTunnelTarget#svc
    */
   readonly svc?: AccessTunnelTargetSvc;
-
 }
 
 /**
  * Converts an object of type 'AccessTunnelTarget' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AccessTunnelTarget(obj: AccessTunnelTarget | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -197,7 +194,7 @@ export function toJson_AccessTunnelTarget(obj: AccessTunnelTarget | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Protocol to forward, better to use TCP?
@@ -238,13 +235,12 @@ export interface AccessTunnelTargetSvc {
    * @schema AccessTunnelTargetSvc#port
    */
   readonly port?: number;
-
 }
 
 /**
  * Converts an object of type 'AccessTunnelTargetSvc' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AccessTunnelTargetSvc(obj: AccessTunnelTargetSvc | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -254,7 +250,7 @@ export function toJson_AccessTunnelTargetSvc(obj: AccessTunnelTargetSvc | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -301,7 +297,7 @@ export class ClusterTunnel extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -328,13 +324,12 @@ export interface ClusterTunnelProps {
    * @schema ClusterTunnel#spec
    */
   readonly spec?: ClusterTunnelSpec;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelProps(obj: ClusterTunnelProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -344,7 +339,7 @@ export function toJson_ClusterTunnelProps(obj: ClusterTunnelProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelSpec defines the desired state of Tunnel
@@ -433,13 +428,12 @@ export interface ClusterTunnelSpec {
    * @schema ClusterTunnelSpec#tolerations
    */
   readonly tolerations?: ClusterTunnelSpecTolerations[];
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelSpec(obj: ClusterTunnelSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -458,7 +452,7 @@ export function toJson_ClusterTunnelSpec(obj: ClusterTunnelSpec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Cloudflare Credentials
@@ -529,13 +523,12 @@ export interface ClusterTunnelSpecCloudflare {
    * @schema ClusterTunnelSpecCloudflare#secret
    */
   readonly secret: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelSpecCloudflare' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelSpecCloudflare(obj: ClusterTunnelSpecCloudflare | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -552,7 +545,7 @@ export function toJson_ClusterTunnelSpecCloudflare(obj: ClusterTunnelSpecCloudfl
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Existing tunnel object.
@@ -574,13 +567,12 @@ export interface ClusterTunnelSpecExistingTunnel {
    * @schema ClusterTunnelSpecExistingTunnel#name
    */
   readonly name?: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelSpecExistingTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelSpecExistingTunnel(obj: ClusterTunnelSpecExistingTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -590,7 +582,7 @@ export function toJson_ClusterTunnelSpecExistingTunnel(obj: ClusterTunnelSpecExi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * New tunnel object.
@@ -605,13 +597,12 @@ export interface ClusterTunnelSpecNewTunnel {
    * @schema ClusterTunnelSpecNewTunnel#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelSpecNewTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelSpecNewTunnel(obj: ClusterTunnelSpecNewTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -620,7 +611,7 @@ export function toJson_ClusterTunnelSpecNewTunnel(obj: ClusterTunnelSpecNewTunne
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Protocol specifies the protocol to use for the tunnel. Defaults to auto. Options are "auto", "quic" and "http2"
@@ -688,13 +679,12 @@ export interface ClusterTunnelSpecTolerations {
    * @schema ClusterTunnelSpecTolerations#value
    */
   readonly value?: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelSpecTolerations' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelSpecTolerations(obj: ClusterTunnelSpecTolerations | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -707,7 +697,7 @@ export function toJson_ClusterTunnelSpecTolerations(obj: ClusterTunnelSpecTolera
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -754,7 +744,7 @@ export class ClusterTunnelV1Alpha2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -781,13 +771,12 @@ export interface ClusterTunnelV1Alpha2Props {
    * @schema ClusterTunnelV1Alpha2#spec
    */
   readonly spec?: ClusterTunnelV1Alpha2Spec;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelV1Alpha2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelV1Alpha2Props(obj: ClusterTunnelV1Alpha2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -797,7 +786,7 @@ export function toJson_ClusterTunnelV1Alpha2Props(obj: ClusterTunnelV1Alpha2Prop
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelSpec defines the desired state of Tunnel
@@ -865,13 +854,12 @@ export interface ClusterTunnelV1Alpha2Spec {
    * @schema ClusterTunnelV1Alpha2Spec#protocol
    */
   readonly protocol?: ClusterTunnelV1Alpha2SpecProtocol;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelV1Alpha2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelV1Alpha2Spec(obj: ClusterTunnelV1Alpha2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -887,7 +875,7 @@ export function toJson_ClusterTunnelV1Alpha2Spec(obj: ClusterTunnelV1Alpha2Spec 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Cloudflare Credentials
@@ -958,13 +946,12 @@ export interface ClusterTunnelV1Alpha2SpecCloudflare {
    * @schema ClusterTunnelV1Alpha2SpecCloudflare#secret
    */
   readonly secret: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelV1Alpha2SpecCloudflare' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelV1Alpha2SpecCloudflare(obj: ClusterTunnelV1Alpha2SpecCloudflare | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -981,7 +968,7 @@ export function toJson_ClusterTunnelV1Alpha2SpecCloudflare(obj: ClusterTunnelV1A
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Existing tunnel object.
@@ -1003,13 +990,12 @@ export interface ClusterTunnelV1Alpha2SpecExistingTunnel {
    * @schema ClusterTunnelV1Alpha2SpecExistingTunnel#name
    */
   readonly name?: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelV1Alpha2SpecExistingTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelV1Alpha2SpecExistingTunnel(obj: ClusterTunnelV1Alpha2SpecExistingTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1019,7 +1005,7 @@ export function toJson_ClusterTunnelV1Alpha2SpecExistingTunnel(obj: ClusterTunne
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * New tunnel object.
@@ -1034,13 +1020,12 @@ export interface ClusterTunnelV1Alpha2SpecNewTunnel {
    * @schema ClusterTunnelV1Alpha2SpecNewTunnel#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'ClusterTunnelV1Alpha2SpecNewTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterTunnelV1Alpha2SpecNewTunnel(obj: ClusterTunnelV1Alpha2SpecNewTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1049,7 +1034,7 @@ export function toJson_ClusterTunnelV1Alpha2SpecNewTunnel(obj: ClusterTunnelV1Al
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Protocol specifies the protocol to use for the tunnel. Defaults to auto. Options are "auto", "quic" and "http2"
@@ -1111,7 +1096,7 @@ export class Tunnel extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1138,13 +1123,12 @@ export interface TunnelProps {
    * @schema Tunnel#spec
    */
   readonly spec?: TunnelSpec;
-
 }
 
 /**
  * Converts an object of type 'TunnelProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelProps(obj: TunnelProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1154,7 +1138,7 @@ export function toJson_TunnelProps(obj: TunnelProps | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelSpec defines the desired state of Tunnel
@@ -1243,13 +1227,12 @@ export interface TunnelSpec {
    * @schema TunnelSpec#tolerations
    */
   readonly tolerations?: TunnelSpecTolerations[];
-
 }
 
 /**
  * Converts an object of type 'TunnelSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelSpec(obj: TunnelSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1268,7 +1251,7 @@ export function toJson_TunnelSpec(obj: TunnelSpec | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Cloudflare Credentials
@@ -1339,13 +1322,12 @@ export interface TunnelSpecCloudflare {
    * @schema TunnelSpecCloudflare#secret
    */
   readonly secret: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelSpecCloudflare' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelSpecCloudflare(obj: TunnelSpecCloudflare | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1362,7 +1344,7 @@ export function toJson_TunnelSpecCloudflare(obj: TunnelSpecCloudflare | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Existing tunnel object.
@@ -1384,13 +1366,12 @@ export interface TunnelSpecExistingTunnel {
    * @schema TunnelSpecExistingTunnel#name
    */
   readonly name?: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelSpecExistingTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelSpecExistingTunnel(obj: TunnelSpecExistingTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1400,7 +1381,7 @@ export function toJson_TunnelSpecExistingTunnel(obj: TunnelSpecExistingTunnel | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * New tunnel object.
@@ -1415,13 +1396,12 @@ export interface TunnelSpecNewTunnel {
    * @schema TunnelSpecNewTunnel#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelSpecNewTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelSpecNewTunnel(obj: TunnelSpecNewTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1430,7 +1410,7 @@ export function toJson_TunnelSpecNewTunnel(obj: TunnelSpecNewTunnel | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Protocol specifies the protocol to use for the tunnel. Defaults to auto. Options are "auto", "quic" and "http2"
@@ -1498,13 +1478,12 @@ export interface TunnelSpecTolerations {
    * @schema TunnelSpecTolerations#value
    */
   readonly value?: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelSpecTolerations' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelSpecTolerations(obj: TunnelSpecTolerations | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1517,7 +1496,7 @@ export function toJson_TunnelSpecTolerations(obj: TunnelSpecTolerations | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 
 /**
@@ -1564,7 +1543,7 @@ export class TunnelV1Alpha2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1591,13 +1570,12 @@ export interface TunnelV1Alpha2Props {
    * @schema TunnelV1Alpha2#spec
    */
   readonly spec?: TunnelV1Alpha2Spec;
-
 }
 
 /**
  * Converts an object of type 'TunnelV1Alpha2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelV1Alpha2Props(obj: TunnelV1Alpha2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1607,7 +1585,7 @@ export function toJson_TunnelV1Alpha2Props(obj: TunnelV1Alpha2Props | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelSpec defines the desired state of Tunnel
@@ -1675,13 +1653,12 @@ export interface TunnelV1Alpha2Spec {
    * @schema TunnelV1Alpha2Spec#protocol
    */
   readonly protocol?: TunnelV1Alpha2SpecProtocol;
-
 }
 
 /**
  * Converts an object of type 'TunnelV1Alpha2Spec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelV1Alpha2Spec(obj: TunnelV1Alpha2Spec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1697,7 +1674,7 @@ export function toJson_TunnelV1Alpha2Spec(obj: TunnelV1Alpha2Spec | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Cloudflare Credentials
@@ -1768,13 +1745,12 @@ export interface TunnelV1Alpha2SpecCloudflare {
    * @schema TunnelV1Alpha2SpecCloudflare#secret
    */
   readonly secret: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelV1Alpha2SpecCloudflare' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelV1Alpha2SpecCloudflare(obj: TunnelV1Alpha2SpecCloudflare | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1791,7 +1767,7 @@ export function toJson_TunnelV1Alpha2SpecCloudflare(obj: TunnelV1Alpha2SpecCloud
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Existing tunnel object.
@@ -1813,13 +1789,12 @@ export interface TunnelV1Alpha2SpecExistingTunnel {
    * @schema TunnelV1Alpha2SpecExistingTunnel#name
    */
   readonly name?: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelV1Alpha2SpecExistingTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelV1Alpha2SpecExistingTunnel(obj: TunnelV1Alpha2SpecExistingTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1829,7 +1804,7 @@ export function toJson_TunnelV1Alpha2SpecExistingTunnel(obj: TunnelV1Alpha2SpecE
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * New tunnel object.
@@ -1844,13 +1819,12 @@ export interface TunnelV1Alpha2SpecNewTunnel {
    * @schema TunnelV1Alpha2SpecNewTunnel#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelV1Alpha2SpecNewTunnel' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelV1Alpha2SpecNewTunnel(obj: TunnelV1Alpha2SpecNewTunnel | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1859,7 +1833,7 @@ export function toJson_TunnelV1Alpha2SpecNewTunnel(obj: TunnelV1Alpha2SpecNewTun
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Protocol specifies the protocol to use for the tunnel. Defaults to auto. Options are "auto", "quic" and "http2"
@@ -1921,7 +1895,7 @@ export class TunnelBinding extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1953,13 +1927,12 @@ export interface TunnelBindingProps {
    * @schema TunnelBinding#tunnelRef
    */
   readonly tunnelRef: TunnelBindingTunnelRef;
-
 }
 
 /**
  * Converts an object of type 'TunnelBindingProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelBindingProps(obj: TunnelBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -1970,7 +1943,7 @@ export function toJson_TunnelBindingProps(obj: TunnelBindingProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelBindingSubject defines the subject TunnelBinding connects to the Tunnel
@@ -1994,13 +1967,12 @@ export interface TunnelBindingSubjects {
    * @schema TunnelBindingSubjects#spec
    */
   readonly spec?: TunnelBindingSubjectsSpec;
-
 }
 
 /**
  * Converts an object of type 'TunnelBindingSubjects' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelBindingSubjects(obj: TunnelBindingSubjects | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2011,7 +1983,7 @@ export function toJson_TunnelBindingSubjects(obj: TunnelBindingSubjects | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TunnelRef defines the Tunnel TunnelBinding connects to
@@ -2039,13 +2011,12 @@ export interface TunnelBindingTunnelRef {
    * @schema TunnelBindingTunnelRef#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelBindingTunnelRef' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelBindingTunnelRef(obj: TunnelBindingTunnelRef | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2056,7 +2027,7 @@ export function toJson_TunnelBindingTunnelRef(obj: TunnelBindingTunnelRef | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema TunnelBindingSubjectsSpec
@@ -2144,13 +2115,12 @@ export interface TunnelBindingSubjectsSpec {
    * @schema TunnelBindingSubjectsSpec#target
    */
   readonly target?: string;
-
 }
 
 /**
  * Converts an object of type 'TunnelBindingSubjectsSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TunnelBindingSubjectsSpec(obj: TunnelBindingSubjectsSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -2168,7 +2138,7 @@ export function toJson_TunnelBindingSubjectsSpec(obj: TunnelBindingSubjectsSpec 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Kind can be Tunnel or ClusterTunnel

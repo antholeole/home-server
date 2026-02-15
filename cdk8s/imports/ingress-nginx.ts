@@ -10,7 +10,7 @@ export interface IngressnginxProps {
   readonly values?: { [key: string]: any };
 }
 
-export class Ingressnginx extends Construct {  
+export class Ingressnginx extends Construct {
   public constructor(scope: Construct, id: string, props: IngressnginxProps = {}) {
     super(scope, id);
     let updatedProps = {};

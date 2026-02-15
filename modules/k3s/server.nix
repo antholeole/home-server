@@ -14,6 +14,11 @@
     default = [];
   };
 
+  options.k3s.taints = lib.mkOption {
+    description = "= seperated list of taints. e.g. type=vps:NoSchedule";
+    default = [];
+  };
+
   config = {
     age.secrets.
     k3s-vpn-auth.rekeyFile = "${inputs.self}/secrets/k3s-vpn-auth.age";
@@ -66,6 +71,9 @@
     services.k3s = {
       extraFlags =
         [
+          # tell flannel to just use tailscale for everything
+          "--flannel-iface=tailscale0"
+          
           # traefik is borderline incompatible with external
           # DNS. We'll install ingress nginx later.
           "--vpn-auth-file=${config.age.secrets.k3s-vpn-auth.path}"
@@ -73,7 +81,11 @@
           # let kubeconfig be readable by other users. I couldn't
           # figure out how to change its group to like a k3s group
           # so this is good enough
-          "--write-kubeconfig-mode=\"0644\""
+          # "--write-kubeconfig-mode=0644"
+
+          # all nodes have a external dns of its own hostname thanks
+          # to magicdns
+          "--node-external-dns=${config.networking.hostName}.oleina"
         ]
         ++ (
           if (config.services.k3s.role == "server")
@@ -84,7 +96,8 @@
           ]
           else []
         )
-        ++ builtins.map (label: "--node-label ${label}") config.k3s.labels;
+        ++ builtins.map (label: "--node-label ${label}") config.k3s.labels
+        ++ builtins.map (label: "--node-taint ${label}") config.k3s.taints;
     };
 
     systemd.services.k3s.restartTriggers = [

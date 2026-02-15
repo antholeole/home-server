@@ -46,7 +46,7 @@ export class KubeMutatingWebhookConfiguration extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -100,7 +100,7 @@ export class KubeMutatingWebhookConfigurationList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -154,7 +154,7 @@ export class KubeValidatingWebhookConfiguration extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -208,7 +208,7 @@ export class KubeValidatingWebhookConfigurationList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -262,7 +262,7 @@ export class KubeStorageVersionV1Alpha1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -316,7 +316,7 @@ export class KubeStorageVersionListV1Alpha1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -370,7 +370,7 @@ export class KubeControllerRevision extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -424,7 +424,7 @@ export class KubeControllerRevisionList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -478,7 +478,7 @@ export class KubeDaemonSet extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -532,7 +532,7 @@ export class KubeDaemonSetList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -586,7 +586,7 @@ export class KubeDeployment extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -640,7 +640,7 @@ export class KubeDeploymentList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -694,7 +694,7 @@ export class KubeReplicaSet extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -748,7 +748,7 @@ export class KubeReplicaSetList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -806,7 +806,7 @@ export class KubeStatefulSet extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -860,7 +860,7 @@ export class KubeStatefulSetList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -914,7 +914,7 @@ export class KubeTokenRequest extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -968,7 +968,7 @@ export class KubeTokenReview extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1022,7 +1022,7 @@ export class KubeLocalSubjectAccessReview extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1076,7 +1076,7 @@ export class KubeSelfSubjectAccessReview extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1130,7 +1130,7 @@ export class KubeSelfSubjectRulesReview extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1184,7 +1184,7 @@ export class KubeSubjectAccessReview extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1238,7 +1238,7 @@ export class KubeHorizontalPodAutoscaler extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1292,7 +1292,7 @@ export class KubeHorizontalPodAutoscalerList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1346,7 +1346,7 @@ export class KubeScale extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1400,7 +1400,7 @@ export class KubeHorizontalPodAutoscalerV2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1454,7 +1454,7 @@ export class KubeHorizontalPodAutoscalerListV2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1508,7 +1508,7 @@ export class KubeHorizontalPodAutoscalerV2Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1562,7 +1562,7 @@ export class KubeHorizontalPodAutoscalerListV2Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1616,7 +1616,7 @@ export class KubeCronJob extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1670,7 +1670,7 @@ export class KubeCronJobList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1724,7 +1724,7 @@ export class KubeJob extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1778,7 +1778,7 @@ export class KubeJobList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1838,7 +1838,7 @@ export class KubeCertificateSigningRequest extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1892,7 +1892,7 @@ export class KubeCertificateSigningRequestList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -1946,7 +1946,7 @@ export class KubeLease extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2000,7 +2000,7 @@ export class KubeLeaseList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2054,7 +2054,7 @@ export class KubeBinding extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2108,7 +2108,7 @@ export class KubeComponentStatus extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2162,7 +2162,7 @@ export class KubeComponentStatusList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2216,7 +2216,7 @@ export class KubeConfigMap extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2270,7 +2270,7 @@ export class KubeConfigMapList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2336,7 +2336,7 @@ export class KubeEndpoints extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2390,7 +2390,7 @@ export class KubeEndpointsList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2444,7 +2444,7 @@ export class KubeEvent extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2498,7 +2498,7 @@ export class KubeEventList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2552,7 +2552,7 @@ export class KubeLimitRange extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2606,7 +2606,7 @@ export class KubeLimitRangeList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2660,7 +2660,7 @@ export class KubeNamespace extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2714,7 +2714,7 @@ export class KubeNamespaceList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2768,7 +2768,7 @@ export class KubeNode extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2822,7 +2822,7 @@ export class KubeNodeList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2876,7 +2876,7 @@ export class KubePersistentVolume extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2930,7 +2930,7 @@ export class KubePersistentVolumeClaim extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -2984,7 +2984,7 @@ export class KubePersistentVolumeClaimList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3038,7 +3038,7 @@ export class KubePersistentVolumeList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3092,7 +3092,7 @@ export class KubePod extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3146,7 +3146,7 @@ export class KubePodList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3200,7 +3200,7 @@ export class KubePodTemplate extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3254,7 +3254,7 @@ export class KubePodTemplateList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3308,7 +3308,7 @@ export class KubeReplicationController extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3362,7 +3362,7 @@ export class KubeReplicationControllerList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3416,7 +3416,7 @@ export class KubeResourceQuota extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3470,7 +3470,7 @@ export class KubeResourceQuotaList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3524,7 +3524,7 @@ export class KubeSecret extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3578,7 +3578,7 @@ export class KubeSecretList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3632,7 +3632,7 @@ export class KubeService extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3686,7 +3686,7 @@ export class KubeServiceAccount extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3740,7 +3740,7 @@ export class KubeServiceAccountList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3794,7 +3794,7 @@ export class KubeServiceList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3848,7 +3848,7 @@ export class KubeEndpointSlice extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3902,7 +3902,7 @@ export class KubeEndpointSliceList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -3956,7 +3956,7 @@ export class KubeFlowSchemaV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4010,7 +4010,7 @@ export class KubeFlowSchemaListV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4064,7 +4064,7 @@ export class KubePriorityLevelConfigurationV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4118,7 +4118,7 @@ export class KubePriorityLevelConfigurationListV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4172,7 +4172,7 @@ export class KubeFlowSchemaV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4226,7 +4226,7 @@ export class KubeFlowSchemaListV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4280,7 +4280,7 @@ export class KubePriorityLevelConfigurationV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4334,7 +4334,7 @@ export class KubePriorityLevelConfigurationListV1Beta2 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4388,7 +4388,7 @@ export class KubeIngress extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4442,7 +4442,7 @@ export class KubeIngressClass extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4496,7 +4496,7 @@ export class KubeIngressClassList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4550,7 +4550,7 @@ export class KubeIngressList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4604,7 +4604,7 @@ export class KubeNetworkPolicy extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4658,7 +4658,7 @@ export class KubeNetworkPolicyList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4712,7 +4712,7 @@ export class KubeClusterCidrv1Alpha1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4766,7 +4766,7 @@ export class KubeClusterCidrListV1Alpha1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4820,7 +4820,7 @@ export class KubeRuntimeClass extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4874,7 +4874,7 @@ export class KubeRuntimeClassList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4928,7 +4928,7 @@ export class KubeEviction extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -4982,7 +4982,7 @@ export class KubePodDisruptionBudget extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5036,7 +5036,7 @@ export class KubePodDisruptionBudgetList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5090,7 +5090,7 @@ export class KubeClusterRole extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5144,7 +5144,7 @@ export class KubeClusterRoleBinding extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5198,7 +5198,7 @@ export class KubeClusterRoleBindingList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5252,7 +5252,7 @@ export class KubeClusterRoleList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5306,7 +5306,7 @@ export class KubeRole extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5360,7 +5360,7 @@ export class KubeRoleBinding extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5414,7 +5414,7 @@ export class KubeRoleBindingList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5468,7 +5468,7 @@ export class KubeRoleList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5522,7 +5522,7 @@ export class KubePriorityClass extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5576,7 +5576,7 @@ export class KubePriorityClassList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5630,7 +5630,7 @@ export class KubeCsiDriver extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5684,7 +5684,7 @@ export class KubeCsiDriverList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5738,7 +5738,7 @@ export class KubeCsiNode extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5792,7 +5792,7 @@ export class KubeCsiNodeList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5854,7 +5854,7 @@ export class KubeCsiStorageCapacity extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5908,7 +5908,7 @@ export class KubeCsiStorageCapacityList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -5964,7 +5964,7 @@ export class KubeStorageClass extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6018,7 +6018,7 @@ export class KubeStorageClassList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6074,7 +6074,7 @@ export class KubeVolumeAttachment extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6128,7 +6128,7 @@ export class KubeVolumeAttachmentList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6190,7 +6190,7 @@ export class KubeCsiStorageCapacityV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6244,7 +6244,7 @@ export class KubeCsiStorageCapacityListV1Beta1 extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6298,7 +6298,7 @@ export class KubeCustomResourceDefinition extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6352,7 +6352,7 @@ export class KubeCustomResourceDefinitionList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6406,7 +6406,7 @@ export class KubeStatus extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6460,7 +6460,7 @@ export class KubeApiService extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6514,7 +6514,7 @@ export class KubeApiServiceList extends ApiObject {
   /**
    * Renders the object to Kubernetes JSON.
    */
-  public toJson(): any {
+  public override toJson(): any {
     const resolved = super.toJson();
 
     return {
@@ -6543,13 +6543,12 @@ export interface KubeMutatingWebhookConfigurationProps {
    * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfiguration#webhooks
    */
   readonly webhooks?: MutatingWebhook[];
-
 }
 
 /**
  * Converts an object of type 'KubeMutatingWebhookConfigurationProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeMutatingWebhookConfigurationProps(obj: KubeMutatingWebhookConfigurationProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6559,7 +6558,7 @@ export function toJson_KubeMutatingWebhookConfigurationProps(obj: KubeMutatingWe
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MutatingWebhookConfigurationList is a list of MutatingWebhookConfiguration.
@@ -6580,13 +6579,12 @@ export interface KubeMutatingWebhookConfigurationListProps {
    * @schema io.k8s.api.admissionregistration.v1.MutatingWebhookConfigurationList#items
    */
   readonly items: KubeMutatingWebhookConfigurationProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeMutatingWebhookConfigurationListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeMutatingWebhookConfigurationListProps(obj: KubeMutatingWebhookConfigurationListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6596,7 +6594,7 @@ export function toJson_KubeMutatingWebhookConfigurationListProps(obj: KubeMutati
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ValidatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and object without changing it.
@@ -6617,13 +6615,12 @@ export interface KubeValidatingWebhookConfigurationProps {
    * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfiguration#webhooks
    */
   readonly webhooks?: ValidatingWebhook[];
-
 }
 
 /**
  * Converts an object of type 'KubeValidatingWebhookConfigurationProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeValidatingWebhookConfigurationProps(obj: KubeValidatingWebhookConfigurationProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6633,7 +6630,7 @@ export function toJson_KubeValidatingWebhookConfigurationProps(obj: KubeValidati
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ValidatingWebhookConfigurationList is a list of ValidatingWebhookConfiguration.
@@ -6654,13 +6651,12 @@ export interface KubeValidatingWebhookConfigurationListProps {
    * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhookConfigurationList#items
    */
   readonly items: KubeValidatingWebhookConfigurationProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeValidatingWebhookConfigurationListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeValidatingWebhookConfigurationListProps(obj: KubeValidatingWebhookConfigurationListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6670,7 +6666,7 @@ export function toJson_KubeValidatingWebhookConfigurationListProps(obj: KubeVali
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Storage version of a specific resource.
@@ -6691,13 +6687,12 @@ export interface KubeStorageVersionV1Alpha1Props {
    * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersion#spec
    */
   readonly spec: any;
-
 }
 
 /**
  * Converts an object of type 'KubeStorageVersionV1Alpha1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStorageVersionV1Alpha1Props(obj: KubeStorageVersionV1Alpha1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6707,7 +6702,7 @@ export function toJson_KubeStorageVersionV1Alpha1Props(obj: KubeStorageVersionV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A list of StorageVersions.
@@ -6728,13 +6723,12 @@ export interface KubeStorageVersionListV1Alpha1Props {
    * @schema io.k8s.api.apiserverinternal.v1alpha1.StorageVersionList#items
    */
   readonly items: KubeStorageVersionV1Alpha1Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeStorageVersionListV1Alpha1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStorageVersionListV1Alpha1Props(obj: KubeStorageVersionListV1Alpha1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6744,7 +6738,7 @@ export function toJson_KubeStorageVersionListV1Alpha1Props(obj: KubeStorageVersi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
@@ -6772,13 +6766,12 @@ export interface KubeControllerRevisionProps {
    * @schema io.k8s.api.apps.v1.ControllerRevision#revision
    */
   readonly revision: number;
-
 }
 
 /**
  * Converts an object of type 'KubeControllerRevisionProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeControllerRevisionProps(obj: KubeControllerRevisionProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6789,7 +6782,7 @@ export function toJson_KubeControllerRevisionProps(obj: KubeControllerRevisionPr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
@@ -6810,13 +6803,12 @@ export interface KubeControllerRevisionListProps {
    * @schema io.k8s.api.apps.v1.ControllerRevisionList#items
    */
   readonly items: KubeControllerRevisionProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeControllerRevisionListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeControllerRevisionListProps(obj: KubeControllerRevisionListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6826,7 +6818,7 @@ export function toJson_KubeControllerRevisionListProps(obj: KubeControllerRevisi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DaemonSet represents the configuration of a daemon set.
@@ -6847,13 +6839,12 @@ export interface KubeDaemonSetProps {
    * @schema io.k8s.api.apps.v1.DaemonSet#spec
    */
   readonly spec?: DaemonSetSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeDaemonSetProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeDaemonSetProps(obj: KubeDaemonSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6863,7 +6854,7 @@ export function toJson_KubeDaemonSetProps(obj: KubeDaemonSetProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DaemonSetList is a collection of daemon sets.
@@ -6884,13 +6875,12 @@ export interface KubeDaemonSetListProps {
    * @schema io.k8s.api.apps.v1.DaemonSetList#items
    */
   readonly items: KubeDaemonSetProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeDaemonSetListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeDaemonSetListProps(obj: KubeDaemonSetListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6900,7 +6890,7 @@ export function toJson_KubeDaemonSetListProps(obj: KubeDaemonSetListProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Deployment enables declarative updates for Pods and ReplicaSets.
@@ -6921,13 +6911,12 @@ export interface KubeDeploymentProps {
    * @schema io.k8s.api.apps.v1.Deployment#spec
    */
   readonly spec?: DeploymentSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeDeploymentProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeDeploymentProps(obj: KubeDeploymentProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6937,7 +6926,7 @@ export function toJson_KubeDeploymentProps(obj: KubeDeploymentProps | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DeploymentList is a list of Deployments.
@@ -6958,13 +6947,12 @@ export interface KubeDeploymentListProps {
    * @schema io.k8s.api.apps.v1.DeploymentList#items
    */
   readonly items: KubeDeploymentProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeDeploymentListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeDeploymentListProps(obj: KubeDeploymentListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -6974,7 +6962,7 @@ export function toJson_KubeDeploymentListProps(obj: KubeDeploymentListProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicaSet ensures that a specified number of pod replicas are running at any given time.
@@ -6995,13 +6983,12 @@ export interface KubeReplicaSetProps {
    * @schema io.k8s.api.apps.v1.ReplicaSet#spec
    */
   readonly spec?: ReplicaSetSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeReplicaSetProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeReplicaSetProps(obj: KubeReplicaSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7011,7 +6998,7 @@ export function toJson_KubeReplicaSetProps(obj: KubeReplicaSetProps | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicaSetList is a collection of ReplicaSets.
@@ -7032,13 +7019,12 @@ export interface KubeReplicaSetListProps {
    * @schema io.k8s.api.apps.v1.ReplicaSetList#items
    */
   readonly items: KubeReplicaSetProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeReplicaSetListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeReplicaSetListProps(obj: KubeReplicaSetListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7048,7 +7034,7 @@ export function toJson_KubeReplicaSetListProps(obj: KubeReplicaSetListProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatefulSet represents a set of pods with consistent identities. Identities are defined as:
@@ -7073,13 +7059,12 @@ export interface KubeStatefulSetProps {
    * @schema io.k8s.api.apps.v1.StatefulSet#spec
    */
   readonly spec?: StatefulSetSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeStatefulSetProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStatefulSetProps(obj: KubeStatefulSetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7089,7 +7074,7 @@ export function toJson_KubeStatefulSetProps(obj: KubeStatefulSetProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatefulSetList is a collection of StatefulSets.
@@ -7110,13 +7095,12 @@ export interface KubeStatefulSetListProps {
    * @schema io.k8s.api.apps.v1.StatefulSetList#items
    */
   readonly items: KubeStatefulSetProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeStatefulSetListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStatefulSetListProps(obj: KubeStatefulSetListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7126,7 +7110,7 @@ export function toJson_KubeStatefulSetListProps(obj: KubeStatefulSetListProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TokenRequest requests a token for a given service account.
@@ -7147,13 +7131,12 @@ export interface KubeTokenRequestProps {
    * @schema io.k8s.api.authentication.v1.TokenRequest#spec
    */
   readonly spec: TokenRequestSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeTokenRequestProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeTokenRequestProps(obj: KubeTokenRequestProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7163,7 +7146,7 @@ export function toJson_KubeTokenRequestProps(obj: KubeTokenRequestProps | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
@@ -7184,13 +7167,12 @@ export interface KubeTokenReviewProps {
    * @schema io.k8s.api.authentication.v1.TokenReview#spec
    */
   readonly spec: TokenReviewSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeTokenReviewProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeTokenReviewProps(obj: KubeTokenReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7200,7 +7182,7 @@ export function toJson_KubeTokenReviewProps(obj: KubeTokenReviewProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
@@ -7221,13 +7203,12 @@ export interface KubeLocalSubjectAccessReviewProps {
    * @schema io.k8s.api.authorization.v1.LocalSubjectAccessReview#spec
    */
   readonly spec: SubjectAccessReviewSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeLocalSubjectAccessReviewProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeLocalSubjectAccessReviewProps(obj: KubeLocalSubjectAccessReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7237,7 +7218,7 @@ export function toJson_KubeLocalSubjectAccessReviewProps(obj: KubeLocalSubjectAc
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
@@ -7258,13 +7239,12 @@ export interface KubeSelfSubjectAccessReviewProps {
    * @schema io.k8s.api.authorization.v1.SelfSubjectAccessReview#spec
    */
   readonly spec: SelfSubjectAccessReviewSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeSelfSubjectAccessReviewProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeSelfSubjectAccessReviewProps(obj: KubeSelfSubjectAccessReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7274,7 +7254,7 @@ export function toJson_KubeSelfSubjectAccessReviewProps(obj: KubeSelfSubjectAcce
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
@@ -7295,13 +7275,12 @@ export interface KubeSelfSubjectRulesReviewProps {
    * @schema io.k8s.api.authorization.v1.SelfSubjectRulesReview#spec
    */
   readonly spec: SelfSubjectRulesReviewSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeSelfSubjectRulesReviewProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeSelfSubjectRulesReviewProps(obj: KubeSelfSubjectRulesReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7311,7 +7290,7 @@ export function toJson_KubeSelfSubjectRulesReviewProps(obj: KubeSelfSubjectRules
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SubjectAccessReview checks whether or not a user or group can perform an action.
@@ -7332,13 +7311,12 @@ export interface KubeSubjectAccessReviewProps {
    * @schema io.k8s.api.authorization.v1.SubjectAccessReview#spec
    */
   readonly spec: SubjectAccessReviewSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeSubjectAccessReviewProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeSubjectAccessReviewProps(obj: KubeSubjectAccessReviewProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7348,7 +7326,7 @@ export function toJson_KubeSubjectAccessReviewProps(obj: KubeSubjectAccessReview
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * configuration of a horizontal pod autoscaler.
@@ -7369,13 +7347,12 @@ export interface KubeHorizontalPodAutoscalerProps {
    * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler#spec
    */
   readonly spec?: HorizontalPodAutoscalerSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerProps(obj: KubeHorizontalPodAutoscalerProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7385,7 +7362,7 @@ export function toJson_KubeHorizontalPodAutoscalerProps(obj: KubeHorizontalPodAu
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * list of horizontal pod autoscaler objects.
@@ -7406,13 +7383,12 @@ export interface KubeHorizontalPodAutoscalerListProps {
    * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList#items
    */
   readonly items: KubeHorizontalPodAutoscalerProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerListProps(obj: KubeHorizontalPodAutoscalerListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7422,7 +7398,7 @@ export function toJson_KubeHorizontalPodAutoscalerListProps(obj: KubeHorizontalP
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Scale represents a scaling request for a resource.
@@ -7443,13 +7419,12 @@ export interface KubeScaleProps {
    * @schema io.k8s.api.autoscaling.v1.Scale#spec
    */
   readonly spec?: ScaleSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeScaleProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeScaleProps(obj: KubeScaleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7459,7 +7434,7 @@ export function toJson_KubeScaleProps(obj: KubeScaleProps | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
@@ -7480,13 +7455,12 @@ export interface KubeHorizontalPodAutoscalerV2Props {
    * @schema io.k8s.api.autoscaling.v2.HorizontalPodAutoscaler#spec
    */
   readonly spec?: HorizontalPodAutoscalerSpecV2;
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerV2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerV2Props(obj: KubeHorizontalPodAutoscalerV2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7496,7 +7470,7 @@ export function toJson_KubeHorizontalPodAutoscalerV2Props(obj: KubeHorizontalPod
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerList is a list of horizontal pod autoscaler objects.
@@ -7517,13 +7491,12 @@ export interface KubeHorizontalPodAutoscalerListV2Props {
    * @schema io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerList#items
    */
   readonly items: KubeHorizontalPodAutoscalerV2Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerListV2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerListV2Props(obj: KubeHorizontalPodAutoscalerListV2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7533,7 +7506,7 @@ export function toJson_KubeHorizontalPodAutoscalerListV2Props(obj: KubeHorizonta
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
@@ -7554,13 +7527,12 @@ export interface KubeHorizontalPodAutoscalerV2Beta2Props {
    * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler#spec
    */
   readonly spec?: HorizontalPodAutoscalerSpecV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerV2Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerV2Beta2Props(obj: KubeHorizontalPodAutoscalerV2Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7570,7 +7542,7 @@ export function toJson_KubeHorizontalPodAutoscalerV2Beta2Props(obj: KubeHorizont
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerList is a list of horizontal pod autoscaler objects.
@@ -7591,13 +7563,12 @@ export interface KubeHorizontalPodAutoscalerListV2Beta2Props {
    * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList#items
    */
   readonly items: KubeHorizontalPodAutoscalerV2Beta2Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeHorizontalPodAutoscalerListV2Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeHorizontalPodAutoscalerListV2Beta2Props(obj: KubeHorizontalPodAutoscalerListV2Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7607,7 +7578,7 @@ export function toJson_KubeHorizontalPodAutoscalerListV2Beta2Props(obj: KubeHori
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CronJob represents the configuration of a single cron job.
@@ -7628,13 +7599,12 @@ export interface KubeCronJobProps {
    * @schema io.k8s.api.batch.v1.CronJob#spec
    */
   readonly spec?: CronJobSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeCronJobProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCronJobProps(obj: KubeCronJobProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7644,7 +7614,7 @@ export function toJson_KubeCronJobProps(obj: KubeCronJobProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CronJobList is a collection of cron jobs.
@@ -7665,13 +7635,12 @@ export interface KubeCronJobListProps {
    * @schema io.k8s.api.batch.v1.CronJobList#items
    */
   readonly items: KubeCronJobProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCronJobListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCronJobListProps(obj: KubeCronJobListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7681,7 +7650,7 @@ export function toJson_KubeCronJobListProps(obj: KubeCronJobListProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Job represents the configuration of a single job.
@@ -7702,13 +7671,12 @@ export interface KubeJobProps {
    * @schema io.k8s.api.batch.v1.Job#spec
    */
   readonly spec?: JobSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeJobProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeJobProps(obj: KubeJobProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7718,7 +7686,7 @@ export function toJson_KubeJobProps(obj: KubeJobProps | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * JobList is a collection of jobs.
@@ -7739,13 +7707,12 @@ export interface KubeJobListProps {
    * @schema io.k8s.api.batch.v1.JobList#items
    */
   readonly items: KubeJobProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeJobListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeJobListProps(obj: KubeJobListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7755,7 +7722,7 @@ export function toJson_KubeJobListProps(obj: KubeJobListProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CertificateSigningRequest objects provide a mechanism to obtain x509 certificates by submitting a certificate signing request, and having it asynchronously approved and issued.
@@ -7780,13 +7747,12 @@ export interface KubeCertificateSigningRequestProps {
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequest#spec
    */
   readonly spec: CertificateSigningRequestSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeCertificateSigningRequestProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCertificateSigningRequestProps(obj: KubeCertificateSigningRequestProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7796,7 +7762,7 @@ export function toJson_KubeCertificateSigningRequestProps(obj: KubeCertificateSi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CertificateSigningRequestList is a collection of CertificateSigningRequest objects
@@ -7815,13 +7781,12 @@ export interface KubeCertificateSigningRequestListProps {
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequestList#items
    */
   readonly items: KubeCertificateSigningRequestProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCertificateSigningRequestListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCertificateSigningRequestListProps(obj: KubeCertificateSigningRequestListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7831,7 +7796,7 @@ export function toJson_KubeCertificateSigningRequestListProps(obj: KubeCertifica
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Lease defines a lease concept.
@@ -7852,13 +7817,12 @@ export interface KubeLeaseProps {
    * @schema io.k8s.api.coordination.v1.Lease#spec
    */
   readonly spec?: LeaseSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeLeaseProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeLeaseProps(obj: KubeLeaseProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7868,7 +7832,7 @@ export function toJson_KubeLeaseProps(obj: KubeLeaseProps | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LeaseList is a list of Lease objects.
@@ -7889,13 +7853,12 @@ export interface KubeLeaseListProps {
    * @schema io.k8s.api.coordination.v1.LeaseList#items
    */
   readonly items: KubeLeaseProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeLeaseListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeLeaseListProps(obj: KubeLeaseListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7905,7 +7868,7 @@ export function toJson_KubeLeaseListProps(obj: KubeLeaseListProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Binding ties one object to another; for example, a pod is bound to a node by a scheduler. Deprecated in 1.7, please use the bindings subresource of pods instead.
@@ -7926,13 +7889,12 @@ export interface KubeBindingProps {
    * @schema io.k8s.api.core.v1.Binding#target
    */
   readonly target: ObjectReference;
-
 }
 
 /**
  * Converts an object of type 'KubeBindingProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeBindingProps(obj: KubeBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7942,7 +7904,7 @@ export function toJson_KubeBindingProps(obj: KubeBindingProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+
@@ -7963,13 +7925,12 @@ export interface KubeComponentStatusProps {
    * @schema io.k8s.api.core.v1.ComponentStatus#conditions
    */
   readonly conditions?: ComponentCondition[];
-
 }
 
 /**
  * Converts an object of type 'KubeComponentStatusProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeComponentStatusProps(obj: KubeComponentStatusProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -7979,7 +7940,7 @@ export function toJson_KubeComponentStatusProps(obj: KubeComponentStatusProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Status of all the conditions for the component as a list of ComponentStatus objects. Deprecated: This API is deprecated in v1.19+
@@ -8000,13 +7961,12 @@ export interface KubeComponentStatusListProps {
    * @schema io.k8s.api.core.v1.ComponentStatusList#items
    */
   readonly items: KubeComponentStatusProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeComponentStatusListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeComponentStatusListProps(obj: KubeComponentStatusListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8016,7 +7976,7 @@ export function toJson_KubeComponentStatusListProps(obj: KubeComponentStatusList
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ConfigMap holds configuration data for pods to consume.
@@ -8051,13 +8011,12 @@ export interface KubeConfigMapProps {
    * @schema io.k8s.api.core.v1.ConfigMap#immutable
    */
   readonly immutable?: boolean;
-
 }
 
 /**
  * Converts an object of type 'KubeConfigMapProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeConfigMapProps(obj: KubeConfigMapProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8069,7 +8028,7 @@ export function toJson_KubeConfigMapProps(obj: KubeConfigMapProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ConfigMapList is a resource containing a list of ConfigMap objects.
@@ -8090,13 +8049,12 @@ export interface KubeConfigMapListProps {
    * @schema io.k8s.api.core.v1.ConfigMapList#items
    */
   readonly items: KubeConfigMapProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeConfigMapListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeConfigMapListProps(obj: KubeConfigMapListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8106,7 +8064,7 @@ export function toJson_KubeConfigMapListProps(obj: KubeConfigMapListProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Endpoints is a collection of endpoints that implement the actual service. Example:
@@ -8139,13 +8097,12 @@ export interface KubeEndpointsProps {
    * @schema io.k8s.api.core.v1.Endpoints#subsets
    */
   readonly subsets?: EndpointSubset[];
-
 }
 
 /**
  * Converts an object of type 'KubeEndpointsProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEndpointsProps(obj: KubeEndpointsProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8155,7 +8112,7 @@ export function toJson_KubeEndpointsProps(obj: KubeEndpointsProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointsList is a list of endpoints.
@@ -8176,13 +8133,12 @@ export interface KubeEndpointsListProps {
    * @schema io.k8s.api.core.v1.EndpointsList#items
    */
   readonly items: KubeEndpointsProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeEndpointsListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEndpointsListProps(obj: KubeEndpointsListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8192,7 +8148,7 @@ export function toJson_KubeEndpointsListProps(obj: KubeEndpointsListProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system. Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
@@ -8304,13 +8260,12 @@ export interface KubeEventProps {
    * @schema io.k8s.api.events.v1.Event#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'KubeEventProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEventProps(obj: KubeEventProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8333,7 +8288,7 @@ export function toJson_KubeEventProps(obj: KubeEventProps | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EventList is a list of Event objects.
@@ -8354,13 +8309,12 @@ export interface KubeEventListProps {
    * @schema io.k8s.api.events.v1.EventList#items
    */
   readonly items: KubeEventProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeEventListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEventListProps(obj: KubeEventListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8370,7 +8324,7 @@ export function toJson_KubeEventListProps(obj: KubeEventListProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitRange sets resource usage limits for each kind of resource in a Namespace.
@@ -8391,13 +8345,12 @@ export interface KubeLimitRangeProps {
    * @schema io.k8s.api.core.v1.LimitRange#spec
    */
   readonly spec?: LimitRangeSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeLimitRangeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeLimitRangeProps(obj: KubeLimitRangeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8407,7 +8360,7 @@ export function toJson_KubeLimitRangeProps(obj: KubeLimitRangeProps | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitRangeList is a list of LimitRange items.
@@ -8428,13 +8381,12 @@ export interface KubeLimitRangeListProps {
    * @schema io.k8s.api.core.v1.LimitRangeList#items
    */
   readonly items: KubeLimitRangeProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeLimitRangeListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeLimitRangeListProps(obj: KubeLimitRangeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8444,7 +8396,7 @@ export function toJson_KubeLimitRangeListProps(obj: KubeLimitRangeListProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Namespace provides a scope for Names. Use of multiple namespaces is optional.
@@ -8465,13 +8417,12 @@ export interface KubeNamespaceProps {
    * @schema io.k8s.api.core.v1.Namespace#spec
    */
   readonly spec?: NamespaceSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeNamespaceProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNamespaceProps(obj: KubeNamespaceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8481,7 +8432,7 @@ export function toJson_KubeNamespaceProps(obj: KubeNamespaceProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NamespaceList is a list of Namespaces.
@@ -8502,13 +8453,12 @@ export interface KubeNamespaceListProps {
    * @schema io.k8s.api.core.v1.NamespaceList#items
    */
   readonly items: KubeNamespaceProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeNamespaceListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNamespaceListProps(obj: KubeNamespaceListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8518,7 +8468,7 @@ export function toJson_KubeNamespaceListProps(obj: KubeNamespaceListProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
@@ -8539,13 +8489,12 @@ export interface KubeNodeProps {
    * @schema io.k8s.api.core.v1.Node#spec
    */
   readonly spec?: NodeSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeNodeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNodeProps(obj: KubeNodeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8555,7 +8504,7 @@ export function toJson_KubeNodeProps(obj: KubeNodeProps | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NodeList is the whole list of all Nodes which have been registered with master.
@@ -8576,13 +8525,12 @@ export interface KubeNodeListProps {
    * @schema io.k8s.api.core.v1.NodeList#items
    */
   readonly items: KubeNodeProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeNodeListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNodeListProps(obj: KubeNodeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8592,7 +8540,7 @@ export function toJson_KubeNodeListProps(obj: KubeNodeListProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
@@ -8613,13 +8561,12 @@ export interface KubePersistentVolumeProps {
    * @schema io.k8s.api.core.v1.PersistentVolume#spec
    */
   readonly spec?: PersistentVolumeSpec;
-
 }
 
 /**
  * Converts an object of type 'KubePersistentVolumeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePersistentVolumeProps(obj: KubePersistentVolumeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8629,7 +8576,7 @@ export function toJson_KubePersistentVolumeProps(obj: KubePersistentVolumeProps 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeClaim is a user's request for and claim to a persistent volume
@@ -8650,13 +8597,12 @@ export interface KubePersistentVolumeClaimProps {
    * @schema io.k8s.api.core.v1.PersistentVolumeClaim#spec
    */
   readonly spec?: PersistentVolumeClaimSpec;
-
 }
 
 /**
  * Converts an object of type 'KubePersistentVolumeClaimProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePersistentVolumeClaimProps(obj: KubePersistentVolumeClaimProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8666,7 +8612,7 @@ export function toJson_KubePersistentVolumeClaimProps(obj: KubePersistentVolumeC
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
@@ -8687,13 +8633,12 @@ export interface KubePersistentVolumeClaimListProps {
    * @schema io.k8s.api.core.v1.PersistentVolumeClaimList#items
    */
   readonly items: KubePersistentVolumeClaimProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePersistentVolumeClaimListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePersistentVolumeClaimListProps(obj: KubePersistentVolumeClaimListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8703,7 +8648,7 @@ export function toJson_KubePersistentVolumeClaimListProps(obj: KubePersistentVol
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeList is a list of PersistentVolume items.
@@ -8724,13 +8669,12 @@ export interface KubePersistentVolumeListProps {
    * @schema io.k8s.api.core.v1.PersistentVolumeList#items
    */
   readonly items: KubePersistentVolumeProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePersistentVolumeListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePersistentVolumeListProps(obj: KubePersistentVolumeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8740,7 +8684,7 @@ export function toJson_KubePersistentVolumeListProps(obj: KubePersistentVolumeLi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
@@ -8761,13 +8705,12 @@ export interface KubePodProps {
    * @schema io.k8s.api.core.v1.Pod#spec
    */
   readonly spec?: PodSpec;
-
 }
 
 /**
  * Converts an object of type 'KubePodProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodProps(obj: KubePodProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8777,7 +8720,7 @@ export function toJson_KubePodProps(obj: KubePodProps | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodList is a list of Pods.
@@ -8798,13 +8741,12 @@ export interface KubePodListProps {
    * @schema io.k8s.api.core.v1.PodList#items
    */
   readonly items: KubePodProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePodListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodListProps(obj: KubePodListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8814,7 +8756,7 @@ export function toJson_KubePodListProps(obj: KubePodListProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodTemplate describes a template for creating copies of a predefined pod.
@@ -8835,13 +8777,12 @@ export interface KubePodTemplateProps {
    * @schema io.k8s.api.core.v1.PodTemplate#template
    */
   readonly template?: PodTemplateSpec;
-
 }
 
 /**
  * Converts an object of type 'KubePodTemplateProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodTemplateProps(obj: KubePodTemplateProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8851,7 +8792,7 @@ export function toJson_KubePodTemplateProps(obj: KubePodTemplateProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodTemplateList is a list of PodTemplates.
@@ -8872,13 +8813,12 @@ export interface KubePodTemplateListProps {
    * @schema io.k8s.api.core.v1.PodTemplateList#items
    */
   readonly items: KubePodTemplateProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePodTemplateListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodTemplateListProps(obj: KubePodTemplateListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8888,7 +8828,7 @@ export function toJson_KubePodTemplateListProps(obj: KubePodTemplateListProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicationController represents the configuration of a replication controller.
@@ -8909,13 +8849,12 @@ export interface KubeReplicationControllerProps {
    * @schema io.k8s.api.core.v1.ReplicationController#spec
    */
   readonly spec?: ReplicationControllerSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeReplicationControllerProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeReplicationControllerProps(obj: KubeReplicationControllerProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8925,7 +8864,7 @@ export function toJson_KubeReplicationControllerProps(obj: KubeReplicationContro
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicationControllerList is a collection of replication controllers.
@@ -8946,13 +8885,12 @@ export interface KubeReplicationControllerListProps {
    * @schema io.k8s.api.core.v1.ReplicationControllerList#items
    */
   readonly items: KubeReplicationControllerProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeReplicationControllerListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeReplicationControllerListProps(obj: KubeReplicationControllerListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8962,7 +8900,7 @@ export function toJson_KubeReplicationControllerListProps(obj: KubeReplicationCo
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceQuota sets aggregate quota restrictions enforced per namespace
@@ -8983,13 +8921,12 @@ export interface KubeResourceQuotaProps {
    * @schema io.k8s.api.core.v1.ResourceQuota#spec
    */
   readonly spec?: ResourceQuotaSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeResourceQuotaProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeResourceQuotaProps(obj: KubeResourceQuotaProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -8999,7 +8936,7 @@ export function toJson_KubeResourceQuotaProps(obj: KubeResourceQuotaProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceQuotaList is a list of ResourceQuota items.
@@ -9020,13 +8957,12 @@ export interface KubeResourceQuotaListProps {
    * @schema io.k8s.api.core.v1.ResourceQuotaList#items
    */
   readonly items: KubeResourceQuotaProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeResourceQuotaListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeResourceQuotaListProps(obj: KubeResourceQuotaListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9036,7 +8972,7 @@ export function toJson_KubeResourceQuotaListProps(obj: KubeResourceQuotaListProp
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
@@ -9078,13 +9014,12 @@ export interface KubeSecretProps {
    * @schema io.k8s.api.core.v1.Secret#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'KubeSecretProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeSecretProps(obj: KubeSecretProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9097,7 +9032,7 @@ export function toJson_KubeSecretProps(obj: KubeSecretProps | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SecretList is a list of Secret.
@@ -9118,13 +9053,12 @@ export interface KubeSecretListProps {
    * @schema io.k8s.api.core.v1.SecretList#items
    */
   readonly items: KubeSecretProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeSecretListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeSecretListProps(obj: KubeSecretListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9134,7 +9068,7 @@ export function toJson_KubeSecretListProps(obj: KubeSecretListProps | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
@@ -9155,13 +9089,12 @@ export interface KubeServiceProps {
    * @schema io.k8s.api.core.v1.Service#spec
    */
   readonly spec?: ServiceSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeServiceProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeServiceProps(obj: KubeServiceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9171,7 +9104,7 @@ export function toJson_KubeServiceProps(obj: KubeServiceProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
@@ -9206,13 +9139,12 @@ export interface KubeServiceAccountProps {
    * @schema io.k8s.api.core.v1.ServiceAccount#secrets
    */
   readonly secrets?: ObjectReference[];
-
 }
 
 /**
  * Converts an object of type 'KubeServiceAccountProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeServiceAccountProps(obj: KubeServiceAccountProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9224,7 +9156,7 @@ export function toJson_KubeServiceAccountProps(obj: KubeServiceAccountProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceAccountList is a list of ServiceAccount objects
@@ -9245,13 +9177,12 @@ export interface KubeServiceAccountListProps {
    * @schema io.k8s.api.core.v1.ServiceAccountList#items
    */
   readonly items: KubeServiceAccountProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeServiceAccountListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeServiceAccountListProps(obj: KubeServiceAccountListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9261,7 +9192,7 @@ export function toJson_KubeServiceAccountListProps(obj: KubeServiceAccountListPr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceList holds a list of services.
@@ -9282,13 +9213,12 @@ export interface KubeServiceListProps {
    * @schema io.k8s.api.core.v1.ServiceList#items
    */
   readonly items: KubeServiceProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeServiceListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeServiceListProps(obj: KubeServiceListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9298,7 +9228,7 @@ export function toJson_KubeServiceListProps(obj: KubeServiceListProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointSlice represents a subset of the endpoints that implement a service. For a given service there may be multiple EndpointSlice objects, selected by labels, which must be joined to produce the full set of endpoints.
@@ -9335,13 +9265,12 @@ export interface KubeEndpointSliceProps {
    * @schema io.k8s.api.discovery.v1.EndpointSlice#ports
    */
   readonly ports?: EndpointPort[];
-
 }
 
 /**
  * Converts an object of type 'KubeEndpointSliceProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEndpointSliceProps(obj: KubeEndpointSliceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9353,7 +9282,7 @@ export function toJson_KubeEndpointSliceProps(obj: KubeEndpointSliceProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointSliceList represents a list of endpoint slices
@@ -9374,13 +9303,12 @@ export interface KubeEndpointSliceListProps {
    * @schema io.k8s.api.discovery.v1.EndpointSliceList#items
    */
   readonly items: KubeEndpointSliceProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeEndpointSliceListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEndpointSliceListProps(obj: KubeEndpointSliceListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9390,7 +9318,7 @@ export function toJson_KubeEndpointSliceListProps(obj: KubeEndpointSliceListProp
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with similar attributes and is identified by a pair of strings: the name of the FlowSchema and a "flow distinguisher".
@@ -9411,13 +9339,12 @@ export interface KubeFlowSchemaV1Beta1Props {
    * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchema#spec
    */
   readonly spec?: FlowSchemaSpecV1Beta1;
-
 }
 
 /**
  * Converts an object of type 'KubeFlowSchemaV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeFlowSchemaV1Beta1Props(obj: KubeFlowSchemaV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9427,7 +9354,7 @@ export function toJson_KubeFlowSchemaV1Beta1Props(obj: KubeFlowSchemaV1Beta1Prop
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchemaList is a list of FlowSchema objects.
@@ -9448,13 +9375,12 @@ export interface KubeFlowSchemaListV1Beta1Props {
    * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchemaList#items
    */
   readonly items: KubeFlowSchemaV1Beta1Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeFlowSchemaListV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeFlowSchemaListV1Beta1Props(obj: KubeFlowSchemaListV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9464,7 +9390,7 @@ export function toJson_KubeFlowSchemaListV1Beta1Props(obj: KubeFlowSchemaListV1B
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfiguration represents the configuration of a priority level.
@@ -9485,13 +9411,12 @@ export interface KubePriorityLevelConfigurationV1Beta1Props {
    * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfiguration#spec
    */
   readonly spec?: PriorityLevelConfigurationSpecV1Beta1;
-
 }
 
 /**
  * Converts an object of type 'KubePriorityLevelConfigurationV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityLevelConfigurationV1Beta1Props(obj: KubePriorityLevelConfigurationV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9501,7 +9426,7 @@ export function toJson_KubePriorityLevelConfigurationV1Beta1Props(obj: KubePrior
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationList is a list of PriorityLevelConfiguration objects.
@@ -9522,13 +9447,12 @@ export interface KubePriorityLevelConfigurationListV1Beta1Props {
    * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationList#items
    */
   readonly items: KubePriorityLevelConfigurationV1Beta1Props[];
-
 }
 
 /**
  * Converts an object of type 'KubePriorityLevelConfigurationListV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityLevelConfigurationListV1Beta1Props(obj: KubePriorityLevelConfigurationListV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9538,7 +9462,7 @@ export function toJson_KubePriorityLevelConfigurationListV1Beta1Props(obj: KubeP
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with similar attributes and is identified by a pair of strings: the name of the FlowSchema and a "flow distinguisher".
@@ -9559,13 +9483,12 @@ export interface KubeFlowSchemaV1Beta2Props {
    * @schema io.k8s.api.flowcontrol.v1beta2.FlowSchema#spec
    */
   readonly spec?: FlowSchemaSpecV1Beta2;
-
 }
 
 /**
  * Converts an object of type 'KubeFlowSchemaV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeFlowSchemaV1Beta2Props(obj: KubeFlowSchemaV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9575,7 +9498,7 @@ export function toJson_KubeFlowSchemaV1Beta2Props(obj: KubeFlowSchemaV1Beta2Prop
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchemaList is a list of FlowSchema objects.
@@ -9596,13 +9519,12 @@ export interface KubeFlowSchemaListV1Beta2Props {
    * @schema io.k8s.api.flowcontrol.v1beta2.FlowSchemaList#items
    */
   readonly items: KubeFlowSchemaV1Beta2Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeFlowSchemaListV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeFlowSchemaListV1Beta2Props(obj: KubeFlowSchemaListV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9612,7 +9534,7 @@ export function toJson_KubeFlowSchemaListV1Beta2Props(obj: KubeFlowSchemaListV1B
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfiguration represents the configuration of a priority level.
@@ -9633,13 +9555,12 @@ export interface KubePriorityLevelConfigurationV1Beta2Props {
    * @schema io.k8s.api.flowcontrol.v1beta2.PriorityLevelConfiguration#spec
    */
   readonly spec?: PriorityLevelConfigurationSpecV1Beta2;
-
 }
 
 /**
  * Converts an object of type 'KubePriorityLevelConfigurationV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityLevelConfigurationV1Beta2Props(obj: KubePriorityLevelConfigurationV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9649,7 +9570,7 @@ export function toJson_KubePriorityLevelConfigurationV1Beta2Props(obj: KubePrior
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationList is a list of PriorityLevelConfiguration objects.
@@ -9670,13 +9591,12 @@ export interface KubePriorityLevelConfigurationListV1Beta2Props {
    * @schema io.k8s.api.flowcontrol.v1beta2.PriorityLevelConfigurationList#items
    */
   readonly items: KubePriorityLevelConfigurationV1Beta2Props[];
-
 }
 
 /**
  * Converts an object of type 'KubePriorityLevelConfigurationListV1Beta2Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityLevelConfigurationListV1Beta2Props(obj: KubePriorityLevelConfigurationListV1Beta2Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9686,7 +9606,7 @@ export function toJson_KubePriorityLevelConfigurationListV1Beta2Props(obj: KubeP
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.
@@ -9707,13 +9627,12 @@ export interface KubeIngressProps {
    * @schema io.k8s.api.networking.v1.Ingress#spec
    */
   readonly spec?: IngressSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeIngressProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeIngressProps(obj: KubeIngressProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9723,7 +9642,7 @@ export function toJson_KubeIngressProps(obj: KubeIngressProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressClass represents the class of the Ingress, referenced by the Ingress Spec. The `ingressclass.kubernetes.io/is-default-class` annotation can be used to indicate that an IngressClass should be considered default. When a single IngressClass resource has this annotation set to true, new Ingress resources without a class specified will be assigned this default class.
@@ -9744,13 +9663,12 @@ export interface KubeIngressClassProps {
    * @schema io.k8s.api.networking.v1.IngressClass#spec
    */
   readonly spec?: IngressClassSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeIngressClassProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeIngressClassProps(obj: KubeIngressClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9760,7 +9678,7 @@ export function toJson_KubeIngressClassProps(obj: KubeIngressClassProps | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressClassList is a collection of IngressClasses.
@@ -9781,13 +9699,12 @@ export interface KubeIngressClassListProps {
    * @schema io.k8s.api.networking.v1.IngressClassList#items
    */
   readonly items: KubeIngressClassProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeIngressClassListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeIngressClassListProps(obj: KubeIngressClassListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9797,7 +9714,7 @@ export function toJson_KubeIngressClassListProps(obj: KubeIngressClassListProps 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressList is a collection of Ingress.
@@ -9818,13 +9735,12 @@ export interface KubeIngressListProps {
    * @schema io.k8s.api.networking.v1.IngressList#items
    */
   readonly items: KubeIngressProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeIngressListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeIngressListProps(obj: KubeIngressListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9834,7 +9750,7 @@ export function toJson_KubeIngressListProps(obj: KubeIngressListProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicy describes what network traffic is allowed for a set of Pods
@@ -9855,13 +9771,12 @@ export interface KubeNetworkPolicyProps {
    * @schema io.k8s.api.networking.v1.NetworkPolicy#spec
    */
   readonly spec?: NetworkPolicySpec;
-
 }
 
 /**
  * Converts an object of type 'KubeNetworkPolicyProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNetworkPolicyProps(obj: KubeNetworkPolicyProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9871,7 +9786,7 @@ export function toJson_KubeNetworkPolicyProps(obj: KubeNetworkPolicyProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicyList is a list of NetworkPolicy objects.
@@ -9892,13 +9807,12 @@ export interface KubeNetworkPolicyListProps {
    * @schema io.k8s.api.networking.v1.NetworkPolicyList#items
    */
   readonly items: KubeNetworkPolicyProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeNetworkPolicyListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeNetworkPolicyListProps(obj: KubeNetworkPolicyListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9908,7 +9822,7 @@ export function toJson_KubeNetworkPolicyListProps(obj: KubeNetworkPolicyListProp
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterCIDR represents a single configuration for per-Node Pod CIDR allocations when the MultiCIDRRangeAllocator is enabled (see the config for kube-controller-manager).  A cluster may have any number of ClusterCIDR resources, all of which will be considered when allocating a CIDR for a Node.  A ClusterCIDR is eligible to be used for a given Node when the node selector matches the node in question and has free CIDRs to allocate.  In case of multiple matching ClusterCIDR resources, the allocator will attempt to break ties using internal heuristics, but any ClusterCIDR whose node selector matches the Node may be used.
@@ -9929,13 +9843,12 @@ export interface KubeClusterCidrv1Alpha1Props {
    * @schema io.k8s.api.networking.v1alpha1.ClusterCIDR#spec
    */
   readonly spec?: ClusterCidrSpecV1Alpha1;
-
 }
 
 /**
  * Converts an object of type 'KubeClusterCidrv1Alpha1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterCidrv1Alpha1Props(obj: KubeClusterCidrv1Alpha1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9945,7 +9858,7 @@ export function toJson_KubeClusterCidrv1Alpha1Props(obj: KubeClusterCidrv1Alpha1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterCIDRList contains a list of ClusterCIDR.
@@ -9966,13 +9879,12 @@ export interface KubeClusterCidrListV1Alpha1Props {
    * @schema io.k8s.api.networking.v1alpha1.ClusterCIDRList#items
    */
   readonly items: KubeClusterCidrv1Alpha1Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeClusterCidrListV1Alpha1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterCidrListV1Alpha1Props(obj: KubeClusterCidrListV1Alpha1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -9982,7 +9894,7 @@ export function toJson_KubeClusterCidrListV1Alpha1Props(obj: KubeClusterCidrList
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RuntimeClass defines a class of container runtime supported in the cluster. The RuntimeClass is used to determine which container runtime is used to run all containers in a pod. RuntimeClasses are manually defined by a user or cluster provisioner, and referenced in the PodSpec. The Kubelet is responsible for resolving the RuntimeClassName reference before running the pod.  For more details, see https://kubernetes.io/docs/concepts/containers/runtime-class/
@@ -10018,13 +9930,12 @@ export interface KubeRuntimeClassProps {
    * @schema io.k8s.api.node.v1.RuntimeClass#scheduling
    */
   readonly scheduling?: Scheduling;
-
 }
 
 /**
  * Converts an object of type 'KubeRuntimeClassProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRuntimeClassProps(obj: KubeRuntimeClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10036,7 +9947,7 @@ export function toJson_KubeRuntimeClassProps(obj: KubeRuntimeClassProps | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RuntimeClassList is a list of RuntimeClass objects.
@@ -10057,13 +9968,12 @@ export interface KubeRuntimeClassListProps {
    * @schema io.k8s.api.node.v1.RuntimeClassList#items
    */
   readonly items: KubeRuntimeClassProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeRuntimeClassListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRuntimeClassListProps(obj: KubeRuntimeClassListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10073,7 +9983,7 @@ export function toJson_KubeRuntimeClassListProps(obj: KubeRuntimeClassListProps 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/<pod name>/evictions.
@@ -10094,13 +10004,12 @@ export interface KubeEvictionProps {
    * @schema io.k8s.api.policy.v1.Eviction#deleteOptions
    */
   readonly deleteOptions?: DeleteOptions;
-
 }
 
 /**
  * Converts an object of type 'KubeEvictionProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeEvictionProps(obj: KubeEvictionProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10110,7 +10019,7 @@ export function toJson_KubeEvictionProps(obj: KubeEvictionProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods
@@ -10131,13 +10040,12 @@ export interface KubePodDisruptionBudgetProps {
    * @schema io.k8s.api.policy.v1.PodDisruptionBudget#spec
    */
   readonly spec?: PodDisruptionBudgetSpec;
-
 }
 
 /**
  * Converts an object of type 'KubePodDisruptionBudgetProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodDisruptionBudgetProps(obj: KubePodDisruptionBudgetProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10147,7 +10055,7 @@ export function toJson_KubePodDisruptionBudgetProps(obj: KubePodDisruptionBudget
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodDisruptionBudgetList is a collection of PodDisruptionBudgets.
@@ -10168,13 +10076,12 @@ export interface KubePodDisruptionBudgetListProps {
    * @schema io.k8s.api.policy.v1.PodDisruptionBudgetList#items
    */
   readonly items: KubePodDisruptionBudgetProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePodDisruptionBudgetListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePodDisruptionBudgetListProps(obj: KubePodDisruptionBudgetListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10184,7 +10091,7 @@ export function toJson_KubePodDisruptionBudgetListProps(obj: KubePodDisruptionBu
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
@@ -10212,13 +10119,12 @@ export interface KubeClusterRoleProps {
    * @schema io.k8s.api.rbac.v1.ClusterRole#rules
    */
   readonly rules?: PolicyRule[];
-
 }
 
 /**
  * Converts an object of type 'KubeClusterRoleProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterRoleProps(obj: KubeClusterRoleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10229,7 +10135,7 @@ export function toJson_KubeClusterRoleProps(obj: KubeClusterRoleProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
@@ -10257,13 +10163,12 @@ export interface KubeClusterRoleBindingProps {
    * @schema io.k8s.api.rbac.v1.ClusterRoleBinding#subjects
    */
   readonly subjects?: Subject[];
-
 }
 
 /**
  * Converts an object of type 'KubeClusterRoleBindingProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterRoleBindingProps(obj: KubeClusterRoleBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10274,7 +10179,7 @@ export function toJson_KubeClusterRoleBindingProps(obj: KubeClusterRoleBindingPr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterRoleBindingList is a collection of ClusterRoleBindings
@@ -10295,13 +10200,12 @@ export interface KubeClusterRoleBindingListProps {
    * @schema io.k8s.api.rbac.v1.ClusterRoleBindingList#items
    */
   readonly items: KubeClusterRoleBindingProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeClusterRoleBindingListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterRoleBindingListProps(obj: KubeClusterRoleBindingListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10311,7 +10215,7 @@ export function toJson_KubeClusterRoleBindingListProps(obj: KubeClusterRoleBindi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterRoleList is a collection of ClusterRoles
@@ -10332,13 +10236,12 @@ export interface KubeClusterRoleListProps {
    * @schema io.k8s.api.rbac.v1.ClusterRoleList#items
    */
   readonly items: KubeClusterRoleProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeClusterRoleListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeClusterRoleListProps(obj: KubeClusterRoleListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10348,7 +10251,7 @@ export function toJson_KubeClusterRoleListProps(obj: KubeClusterRoleListProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
@@ -10369,13 +10272,12 @@ export interface KubeRoleProps {
    * @schema io.k8s.api.rbac.v1.Role#rules
    */
   readonly rules?: PolicyRule[];
-
 }
 
 /**
  * Converts an object of type 'KubeRoleProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRoleProps(obj: KubeRoleProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10385,7 +10287,7 @@ export function toJson_KubeRoleProps(obj: KubeRoleProps | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
@@ -10413,13 +10315,12 @@ export interface KubeRoleBindingProps {
    * @schema io.k8s.api.rbac.v1.RoleBinding#subjects
    */
   readonly subjects?: Subject[];
-
 }
 
 /**
  * Converts an object of type 'KubeRoleBindingProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRoleBindingProps(obj: KubeRoleBindingProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10430,7 +10331,7 @@ export function toJson_KubeRoleBindingProps(obj: KubeRoleBindingProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RoleBindingList is a collection of RoleBindings
@@ -10451,13 +10352,12 @@ export interface KubeRoleBindingListProps {
    * @schema io.k8s.api.rbac.v1.RoleBindingList#items
    */
   readonly items: KubeRoleBindingProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeRoleBindingListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRoleBindingListProps(obj: KubeRoleBindingListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10467,7 +10367,7 @@ export function toJson_KubeRoleBindingListProps(obj: KubeRoleBindingListProps | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RoleList is a collection of Roles
@@ -10488,13 +10388,12 @@ export interface KubeRoleListProps {
    * @schema io.k8s.api.rbac.v1.RoleList#items
    */
   readonly items: KubeRoleProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeRoleListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeRoleListProps(obj: KubeRoleListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10504,7 +10403,7 @@ export function toJson_KubeRoleListProps(obj: KubeRoleListProps | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
@@ -10547,13 +10446,12 @@ export interface KubePriorityClassProps {
    * @schema io.k8s.api.scheduling.v1.PriorityClass#value
    */
   readonly value: number;
-
 }
 
 /**
  * Converts an object of type 'KubePriorityClassProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityClassProps(obj: KubePriorityClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10566,7 +10464,7 @@ export function toJson_KubePriorityClassProps(obj: KubePriorityClassProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityClassList is a collection of priority classes.
@@ -10587,13 +10485,12 @@ export interface KubePriorityClassListProps {
    * @schema io.k8s.api.scheduling.v1.PriorityClassList#items
    */
   readonly items: KubePriorityClassProps[];
-
 }
 
 /**
  * Converts an object of type 'KubePriorityClassListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubePriorityClassListProps(obj: KubePriorityClassListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10603,7 +10500,7 @@ export function toJson_KubePriorityClassListProps(obj: KubePriorityClassListProp
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIDriver captures information about a Container Storage Interface (CSI) volume driver deployed on the cluster. Kubernetes attach detach controller uses this object to determine whether attach is required. Kubelet uses this object to determine whether pod information needs to be passed on mount. CSIDriver objects are non-namespaced.
@@ -10624,13 +10521,12 @@ export interface KubeCsiDriverProps {
    * @schema io.k8s.api.storage.v1.CSIDriver#spec
    */
   readonly spec: CsiDriverSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeCsiDriverProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiDriverProps(obj: KubeCsiDriverProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10640,7 +10536,7 @@ export function toJson_KubeCsiDriverProps(obj: KubeCsiDriverProps | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIDriverList is a collection of CSIDriver objects.
@@ -10661,13 +10557,12 @@ export interface KubeCsiDriverListProps {
    * @schema io.k8s.api.storage.v1.CSIDriverList#items
    */
   readonly items: KubeCsiDriverProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCsiDriverListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiDriverListProps(obj: KubeCsiDriverListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10677,7 +10572,7 @@ export function toJson_KubeCsiDriverListProps(obj: KubeCsiDriverListProps | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSINode holds information about all CSI drivers installed on a node. CSI drivers do not need to create the CSINode object directly. As long as they use the node-driver-registrar sidecar container, the kubelet will automatically populate the CSINode object for the CSI driver as part of kubelet plugin registration. CSINode has the same name as a node. If the object is missing, it means either there are no CSI Drivers available on the node, or the Kubelet version is low enough that it doesn't create this object. CSINode has an OwnerReference that points to the corresponding node object.
@@ -10698,13 +10593,12 @@ export interface KubeCsiNodeProps {
    * @schema io.k8s.api.storage.v1.CSINode#spec
    */
   readonly spec: CsiNodeSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeCsiNodeProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiNodeProps(obj: KubeCsiNodeProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10714,7 +10608,7 @@ export function toJson_KubeCsiNodeProps(obj: KubeCsiNodeProps | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSINodeList is a collection of CSINode objects.
@@ -10735,13 +10629,12 @@ export interface KubeCsiNodeListProps {
    * @schema io.k8s.api.storage.v1.CSINodeList#items
    */
   readonly items: KubeCsiNodeProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCsiNodeListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiNodeListProps(obj: KubeCsiNodeListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10751,7 +10644,7 @@ export function toJson_KubeCsiNodeListProps(obj: KubeCsiNodeListProps | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.
@@ -10809,13 +10702,12 @@ export interface KubeCsiStorageCapacityProps {
    * @schema io.k8s.api.storage.v1.CSIStorageCapacity#storageClassName
    */
   readonly storageClassName: string;
-
 }
 
 /**
  * Converts an object of type 'KubeCsiStorageCapacityProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiStorageCapacityProps(obj: KubeCsiStorageCapacityProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10828,7 +10720,7 @@ export function toJson_KubeCsiStorageCapacityProps(obj: KubeCsiStorageCapacityPr
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIStorageCapacityList is a collection of CSIStorageCapacity objects.
@@ -10849,13 +10741,12 @@ export interface KubeCsiStorageCapacityListProps {
    * @schema io.k8s.api.storage.v1.CSIStorageCapacityList#items
    */
   readonly items: KubeCsiStorageCapacityProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCsiStorageCapacityListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiStorageCapacityListProps(obj: KubeCsiStorageCapacityListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10865,7 +10756,7 @@ export function toJson_KubeCsiStorageCapacityListProps(obj: KubeCsiStorageCapaci
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
@@ -10931,13 +10822,12 @@ export interface KubeStorageClassProps {
    * @schema io.k8s.api.storage.v1.StorageClass#volumeBindingMode
    */
   readonly volumeBindingMode?: string;
-
 }
 
 /**
  * Converts an object of type 'KubeStorageClassProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStorageClassProps(obj: KubeStorageClassProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10953,7 +10843,7 @@ export function toJson_KubeStorageClassProps(obj: KubeStorageClassProps | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StorageClassList is a collection of storage classes.
@@ -10974,13 +10864,12 @@ export interface KubeStorageClassListProps {
    * @schema io.k8s.api.storage.v1.StorageClassList#items
    */
   readonly items: KubeStorageClassProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeStorageClassListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStorageClassListProps(obj: KubeStorageClassListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -10990,7 +10879,7 @@ export function toJson_KubeStorageClassListProps(obj: KubeStorageClassListProps 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.
@@ -11013,13 +10902,12 @@ export interface KubeVolumeAttachmentProps {
    * @schema io.k8s.api.storage.v1.VolumeAttachment#spec
    */
   readonly spec: VolumeAttachmentSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeVolumeAttachmentProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeVolumeAttachmentProps(obj: KubeVolumeAttachmentProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11029,7 +10917,7 @@ export function toJson_KubeVolumeAttachmentProps(obj: KubeVolumeAttachmentProps 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeAttachmentList is a collection of VolumeAttachment objects.
@@ -11050,13 +10938,12 @@ export interface KubeVolumeAttachmentListProps {
    * @schema io.k8s.api.storage.v1.VolumeAttachmentList#items
    */
   readonly items: KubeVolumeAttachmentProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeVolumeAttachmentListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeVolumeAttachmentListProps(obj: KubeVolumeAttachmentListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11066,7 +10953,7 @@ export function toJson_KubeVolumeAttachmentListProps(obj: KubeVolumeAttachmentLi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.
@@ -11124,13 +11011,12 @@ export interface KubeCsiStorageCapacityV1Beta1Props {
    * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacity#storageClassName
    */
   readonly storageClassName: string;
-
 }
 
 /**
  * Converts an object of type 'KubeCsiStorageCapacityV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiStorageCapacityV1Beta1Props(obj: KubeCsiStorageCapacityV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11143,7 +11029,7 @@ export function toJson_KubeCsiStorageCapacityV1Beta1Props(obj: KubeCsiStorageCap
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIStorageCapacityList is a collection of CSIStorageCapacity objects.
@@ -11164,13 +11050,12 @@ export interface KubeCsiStorageCapacityListV1Beta1Props {
    * @schema io.k8s.api.storage.v1beta1.CSIStorageCapacityList#items
    */
   readonly items: KubeCsiStorageCapacityV1Beta1Props[];
-
 }
 
 /**
  * Converts an object of type 'KubeCsiStorageCapacityListV1Beta1Props' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCsiStorageCapacityListV1Beta1Props(obj: KubeCsiStorageCapacityListV1Beta1Props | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11180,7 +11065,7 @@ export function toJson_KubeCsiStorageCapacityListV1Beta1Props(obj: KubeCsiStorag
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceDefinition represents a resource that should be exposed on the API server.  Its name MUST be in the format <.spec.name>.<.spec.group>.
@@ -11201,13 +11086,12 @@ export interface KubeCustomResourceDefinitionProps {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition#spec
    */
   readonly spec: CustomResourceDefinitionSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeCustomResourceDefinitionProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCustomResourceDefinitionProps(obj: KubeCustomResourceDefinitionProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11217,7 +11101,7 @@ export function toJson_KubeCustomResourceDefinitionProps(obj: KubeCustomResource
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceDefinitionList is a list of CustomResourceDefinition objects.
@@ -11238,13 +11122,12 @@ export interface KubeCustomResourceDefinitionListProps {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionList#items
    */
   readonly items: KubeCustomResourceDefinitionProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeCustomResourceDefinitionListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeCustomResourceDefinitionListProps(obj: KubeCustomResourceDefinitionListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11254,7 +11137,7 @@ export function toJson_KubeCustomResourceDefinitionListProps(obj: KubeCustomReso
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Status is a return value for calls that don't return other objects.
@@ -11296,13 +11179,12 @@ export interface KubeStatusProps {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.Status#reason
    */
   readonly reason?: string;
-
 }
 
 /**
  * Converts an object of type 'KubeStatusProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeStatusProps(obj: KubeStatusProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11315,7 +11197,7 @@ export function toJson_KubeStatusProps(obj: KubeStatusProps | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * APIService represents a server for a particular GroupVersion. Name must be "version.group".
@@ -11336,13 +11218,12 @@ export interface KubeApiServiceProps {
    * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService#spec
    */
   readonly spec?: ApiServiceSpec;
-
 }
 
 /**
  * Converts an object of type 'KubeApiServiceProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeApiServiceProps(obj: KubeApiServiceProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11352,7 +11233,7 @@ export function toJson_KubeApiServiceProps(obj: KubeApiServiceProps | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * APIServiceList is a list of APIService objects.
@@ -11373,13 +11254,12 @@ export interface KubeApiServiceListProps {
    * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList#items
    */
   readonly items: KubeApiServiceProps[];
-
 }
 
 /**
  * Converts an object of type 'KubeApiServiceListProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KubeApiServiceListProps(obj: KubeApiServiceListProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11389,7 +11269,7 @@ export function toJson_KubeApiServiceListProps(obj: KubeApiServiceListProps | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
@@ -11515,13 +11395,12 @@ export interface ObjectMeta {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'ObjectMeta' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ObjectMeta(obj: ObjectMeta | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11544,7 +11423,7 @@ export function toJson_ObjectMeta(obj: ObjectMeta | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MutatingWebhook describes an admission webhook and the resources and operations it applies to.
@@ -11676,13 +11555,12 @@ export interface MutatingWebhook {
    * @schema io.k8s.api.admissionregistration.v1.MutatingWebhook#timeoutSeconds
    */
   readonly timeoutSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'MutatingWebhook' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MutatingWebhook(obj: MutatingWebhook | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11701,7 +11579,7 @@ export function toJson_MutatingWebhook(obj: MutatingWebhook | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
@@ -11736,13 +11614,12 @@ export interface ListMeta {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta#selfLink
    */
   readonly selfLink?: string;
-
 }
 
 /**
  * Converts an object of type 'ListMeta' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ListMeta(obj: ListMeta | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11754,7 +11631,7 @@ export function toJson_ListMeta(obj: ListMeta | undefined): Record<string, any> 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ValidatingWebhook describes an admission webhook and the resources and operations it applies to.
@@ -11872,13 +11749,12 @@ export interface ValidatingWebhook {
    * @schema io.k8s.api.admissionregistration.v1.ValidatingWebhook#timeoutSeconds
    */
   readonly timeoutSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'ValidatingWebhook' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ValidatingWebhook(obj: ValidatingWebhook | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11896,7 +11772,7 @@ export function toJson_ValidatingWebhook(obj: ValidatingWebhook | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DaemonSetSpec is the specification of a daemon set.
@@ -11940,13 +11816,12 @@ export interface DaemonSetSpec {
    * @schema io.k8s.api.apps.v1.DaemonSetSpec#updateStrategy
    */
   readonly updateStrategy?: DaemonSetUpdateStrategy;
-
 }
 
 /**
  * Converts an object of type 'DaemonSetSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DaemonSetSpec(obj: DaemonSetSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -11959,7 +11834,7 @@ export function toJson_DaemonSetSpec(obj: DaemonSetSpec | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DeploymentSpec is the specification of the desired behavior of the Deployment.
@@ -12026,13 +11901,12 @@ export interface DeploymentSpec {
    * @schema io.k8s.api.apps.v1.DeploymentSpec#template
    */
   readonly template: PodTemplateSpec;
-
 }
 
 /**
  * Converts an object of type 'DeploymentSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DeploymentSpec(obj: DeploymentSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12048,7 +11922,7 @@ export function toJson_DeploymentSpec(obj: DeploymentSpec | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicaSetSpec is the specification of a ReplicaSet.
@@ -12085,13 +11959,12 @@ export interface ReplicaSetSpec {
    * @schema io.k8s.api.apps.v1.ReplicaSetSpec#template
    */
   readonly template?: PodTemplateSpec;
-
 }
 
 /**
  * Converts an object of type 'ReplicaSetSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ReplicaSetSpec(obj: ReplicaSetSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12103,7 +11976,7 @@ export function toJson_ReplicaSetSpec(obj: ReplicaSetSpec | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A StatefulSetSpec is the specification of a StatefulSet.
@@ -12183,13 +12056,12 @@ export interface StatefulSetSpec {
    * @schema io.k8s.api.apps.v1.StatefulSetSpec#volumeClaimTemplates
    */
   readonly volumeClaimTemplates?: KubePersistentVolumeClaimProps[];
-
 }
 
 /**
  * Converts an object of type 'StatefulSetSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StatefulSetSpec(obj: StatefulSetSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12207,7 +12079,7 @@ export function toJson_StatefulSetSpec(obj: StatefulSetSpec | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TokenRequestSpec contains client provided parameters of a token request.
@@ -12235,13 +12107,12 @@ export interface TokenRequestSpec {
    * @schema io.k8s.api.authentication.v1.TokenRequestSpec#expirationSeconds
    */
   readonly expirationSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'TokenRequestSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TokenRequestSpec(obj: TokenRequestSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12252,7 +12123,7 @@ export function toJson_TokenRequestSpec(obj: TokenRequestSpec | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TokenReviewSpec is a description of the token authentication request.
@@ -12273,13 +12144,12 @@ export interface TokenReviewSpec {
    * @schema io.k8s.api.authentication.v1.TokenReviewSpec#token
    */
   readonly token?: string;
-
 }
 
 /**
  * Converts an object of type 'TokenReviewSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TokenReviewSpec(obj: TokenReviewSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12289,7 +12159,7 @@ export function toJson_TokenReviewSpec(obj: TokenReviewSpec | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
@@ -12338,13 +12208,12 @@ export interface SubjectAccessReviewSpec {
    * @schema io.k8s.api.authorization.v1.SubjectAccessReviewSpec#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'SubjectAccessReviewSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SubjectAccessReviewSpec(obj: SubjectAccessReviewSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12358,7 +12227,7 @@ export function toJson_SubjectAccessReviewSpec(obj: SubjectAccessReviewSpec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
@@ -12379,13 +12248,12 @@ export interface SelfSubjectAccessReviewSpec {
    * @schema io.k8s.api.authorization.v1.SelfSubjectAccessReviewSpec#resourceAttributes
    */
   readonly resourceAttributes?: ResourceAttributes;
-
 }
 
 /**
  * Converts an object of type 'SelfSubjectAccessReviewSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SelfSubjectAccessReviewSpec(obj: SelfSubjectAccessReviewSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12395,7 +12263,7 @@ export function toJson_SelfSubjectAccessReviewSpec(obj: SelfSubjectAccessReviewS
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SelfSubjectRulesReviewSpec defines the specification for SelfSubjectRulesReview.
@@ -12409,13 +12277,12 @@ export interface SelfSubjectRulesReviewSpec {
    * @schema io.k8s.api.authorization.v1.SelfSubjectRulesReviewSpec#namespace
    */
   readonly namespace?: string;
-
 }
 
 /**
  * Converts an object of type 'SelfSubjectRulesReviewSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SelfSubjectRulesReviewSpec(obj: SelfSubjectRulesReviewSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12424,7 +12291,7 @@ export function toJson_SelfSubjectRulesReviewSpec(obj: SelfSubjectRulesReviewSpe
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * specification of a horizontal pod autoscaler.
@@ -12459,13 +12326,12 @@ export interface HorizontalPodAutoscalerSpec {
    * @schema io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerSpec#targetCPUUtilizationPercentage
    */
   readonly targetCpuUtilizationPercentage?: number;
-
 }
 
 /**
  * Converts an object of type 'HorizontalPodAutoscalerSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HorizontalPodAutoscalerSpec(obj: HorizontalPodAutoscalerSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12477,7 +12343,7 @@ export function toJson_HorizontalPodAutoscalerSpec(obj: HorizontalPodAutoscalerS
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ScaleSpec describes the attributes of a scale subresource.
@@ -12491,13 +12357,12 @@ export interface ScaleSpec {
    * @schema io.k8s.api.autoscaling.v1.ScaleSpec#replicas
    */
   readonly replicas?: number;
-
 }
 
 /**
  * Converts an object of type 'ScaleSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ScaleSpec(obj: ScaleSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12506,7 +12371,7 @@ export function toJson_ScaleSpec(obj: ScaleSpec | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
@@ -12548,13 +12413,12 @@ export interface HorizontalPodAutoscalerSpecV2 {
    * @schema io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerSpec#scaleTargetRef
    */
   readonly scaleTargetRef: CrossVersionObjectReferenceV2;
-
 }
 
 /**
  * Converts an object of type 'HorizontalPodAutoscalerSpecV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HorizontalPodAutoscalerSpecV2(obj: HorizontalPodAutoscalerSpecV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12567,7 +12431,7 @@ export function toJson_HorizontalPodAutoscalerSpecV2(obj: HorizontalPodAutoscale
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
@@ -12609,13 +12473,12 @@ export interface HorizontalPodAutoscalerSpecV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerSpec#scaleTargetRef
    */
   readonly scaleTargetRef: CrossVersionObjectReferenceV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'HorizontalPodAutoscalerSpecV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HorizontalPodAutoscalerSpecV2Beta2(obj: HorizontalPodAutoscalerSpecV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12628,7 +12491,7 @@ export function toJson_HorizontalPodAutoscalerSpecV2Beta2(obj: HorizontalPodAuto
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CronJobSpec describes how the job execution will look like and when it will actually run.
@@ -12696,13 +12559,12 @@ export interface CronJobSpec {
    * @schema io.k8s.api.batch.v1.CronJobSpec#timeZone
    */
   readonly timeZone?: string;
-
 }
 
 /**
  * Converts an object of type 'CronJobSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CronJobSpec(obj: CronJobSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12718,7 +12580,7 @@ export function toJson_CronJobSpec(obj: CronJobSpec | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * JobSpec describes how the job execution will look like.
@@ -12812,13 +12674,12 @@ export interface JobSpec {
    * @schema io.k8s.api.batch.v1.JobSpec#ttlSecondsAfterFinished
    */
   readonly ttlSecondsAfterFinished?: number;
-
 }
 
 /**
  * Converts an object of type 'JobSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_JobSpec(obj: JobSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12837,7 +12698,7 @@ export function toJson_JobSpec(obj: JobSpec | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CertificateSigningRequestSpec contains the certificate request.
@@ -12944,13 +12805,12 @@ export interface CertificateSigningRequestSpec {
    * @schema io.k8s.api.certificates.v1.CertificateSigningRequestSpec#username
    */
   readonly username?: string;
-
 }
 
 /**
  * Converts an object of type 'CertificateSigningRequestSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CertificateSigningRequestSpec(obj: CertificateSigningRequestSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -12966,7 +12826,7 @@ export function toJson_CertificateSigningRequestSpec(obj: CertificateSigningRequ
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LeaseSpec is a specification of a Lease.
@@ -13008,13 +12868,12 @@ export interface LeaseSpec {
    * @schema io.k8s.api.coordination.v1.LeaseSpec#renewTime
    */
   readonly renewTime?: Date;
-
 }
 
 /**
  * Converts an object of type 'LeaseSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LeaseSpec(obj: LeaseSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13027,7 +12886,7 @@ export function toJson_LeaseSpec(obj: LeaseSpec | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ObjectReference contains enough information to let you inspect or modify the referred object.
@@ -13083,13 +12942,12 @@ export interface ObjectReference {
    * @schema io.k8s.api.core.v1.ObjectReference#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'ObjectReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ObjectReference(obj: ObjectReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13104,7 +12962,7 @@ export function toJson_ObjectReference(obj: ObjectReference | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Information about the condition of a component.
@@ -13139,13 +12997,12 @@ export interface ComponentCondition {
    * @schema io.k8s.api.core.v1.ComponentCondition#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'ComponentCondition' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ComponentCondition(obj: ComponentCondition | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13157,7 +13014,7 @@ export function toJson_ComponentCondition(obj: ComponentCondition | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointSubset is a group of addresses with a common set of ports. The expanded set of endpoints is the Cartesian product of Addresses x Ports. For example, given:
@@ -13195,13 +13052,12 @@ export interface EndpointSubset {
    * @schema io.k8s.api.core.v1.EndpointSubset#ports
    */
   readonly ports?: EndpointPort[];
-
 }
 
 /**
  * Converts an object of type 'EndpointSubset' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EndpointSubset(obj: EndpointSubset | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13212,7 +13068,7 @@ export function toJson_EndpointSubset(obj: EndpointSubset | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EventSource contains information for an event.
@@ -13233,13 +13089,12 @@ export interface EventSource {
    * @schema io.k8s.api.core.v1.EventSource#host
    */
   readonly host?: string;
-
 }
 
 /**
  * Converts an object of type 'EventSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EventSource(obj: EventSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13249,7 +13104,7 @@ export function toJson_EventSource(obj: EventSource | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time. How often to update the EventSeries is up to the event reporters. The default event reporter in "k8s.io/client-go/tools/events/event_broadcaster.go" shows how this struct is updated on heartbeats and can guide customized reporter implementations.
@@ -13270,13 +13125,12 @@ export interface EventSeries {
    * @schema io.k8s.api.events.v1.EventSeries#lastObservedTime
    */
   readonly lastObservedTime: Date;
-
 }
 
 /**
  * Converts an object of type 'EventSeries' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EventSeries(obj: EventSeries | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13286,7 +13140,7 @@ export function toJson_EventSeries(obj: EventSeries | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitRangeSpec defines a min/max usage limit for resources that match on kind.
@@ -13300,13 +13154,12 @@ export interface LimitRangeSpec {
    * @schema io.k8s.api.core.v1.LimitRangeSpec#limits
    */
   readonly limits: LimitRangeItem[];
-
 }
 
 /**
  * Converts an object of type 'LimitRangeSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitRangeSpec(obj: LimitRangeSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13315,7 +13168,7 @@ export function toJson_LimitRangeSpec(obj: LimitRangeSpec | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NamespaceSpec describes the attributes on a Namespace.
@@ -13329,13 +13182,12 @@ export interface NamespaceSpec {
    * @schema io.k8s.api.core.v1.NamespaceSpec#finalizers
    */
   readonly finalizers?: string[];
-
 }
 
 /**
  * Converts an object of type 'NamespaceSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NamespaceSpec(obj: NamespaceSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13344,7 +13196,7 @@ export function toJson_NamespaceSpec(obj: NamespaceSpec | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NodeSpec describes the attributes that a node is created with.
@@ -13400,13 +13252,12 @@ export interface NodeSpec {
    * @schema io.k8s.api.core.v1.NodeSpec#unschedulable
    */
   readonly unschedulable?: boolean;
-
 }
 
 /**
  * Converts an object of type 'NodeSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeSpec(obj: NodeSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13421,7 +13272,7 @@ export function toJson_NodeSpec(obj: NodeSpec | undefined): Record<string, any> 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeSpec is the specification of a persistent volume.
@@ -13640,13 +13491,12 @@ export interface PersistentVolumeSpec {
    * @schema io.k8s.api.core.v1.PersistentVolumeSpec#vsphereVolume
    */
   readonly vsphereVolume?: VsphereVirtualDiskVolumeSource;
-
 }
 
 /**
  * Converts an object of type 'PersistentVolumeSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PersistentVolumeSpec(obj: PersistentVolumeSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13684,7 +13534,7 @@ export function toJson_PersistentVolumeSpec(obj: PersistentVolumeSpec | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
@@ -13752,13 +13602,12 @@ export interface PersistentVolumeClaimSpec {
    * @schema io.k8s.api.core.v1.PersistentVolumeClaimSpec#volumeName
    */
   readonly volumeName?: string;
-
 }
 
 /**
  * Converts an object of type 'PersistentVolumeClaimSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PersistentVolumeClaimSpec(obj: PersistentVolumeClaimSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -13774,7 +13623,7 @@ export function toJson_PersistentVolumeClaimSpec(obj: PersistentVolumeClaimSpec 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodSpec is a description of a pod.
@@ -14060,13 +13909,12 @@ export interface PodSpec {
    * @schema io.k8s.api.core.v1.PodSpec#volumes
    */
   readonly volumes?: Volume[];
-
 }
 
 /**
  * Converts an object of type 'PodSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodSpec(obj: PodSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14111,7 +13959,7 @@ export function toJson_PodSpec(obj: PodSpec | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodTemplateSpec describes the data a pod should have when created from a template
@@ -14132,13 +13980,12 @@ export interface PodTemplateSpec {
    * @schema io.k8s.api.core.v1.PodTemplateSpec#spec
    */
   readonly spec?: PodSpec;
-
 }
 
 /**
  * Converts an object of type 'PodTemplateSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodTemplateSpec(obj: PodTemplateSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14148,7 +13995,7 @@ export function toJson_PodTemplateSpec(obj: PodTemplateSpec | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ReplicationControllerSpec is the specification of a replication controller.
@@ -14185,13 +14032,12 @@ export interface ReplicationControllerSpec {
    * @schema io.k8s.api.core.v1.ReplicationControllerSpec#template
    */
   readonly template?: PodTemplateSpec;
-
 }
 
 /**
  * Converts an object of type 'ReplicationControllerSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ReplicationControllerSpec(obj: ReplicationControllerSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14203,7 +14049,7 @@ export function toJson_ReplicationControllerSpec(obj: ReplicationControllerSpec 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
@@ -14231,13 +14077,12 @@ export interface ResourceQuotaSpec {
    * @schema io.k8s.api.core.v1.ResourceQuotaSpec#scopes
    */
   readonly scopes?: string[];
-
 }
 
 /**
  * Converts an object of type 'ResourceQuotaSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceQuotaSpec(obj: ResourceQuotaSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14248,7 +14093,7 @@ export function toJson_ResourceQuotaSpec(obj: ResourceQuotaSpec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceSpec describes the attributes that a user creates on a service.
@@ -14401,13 +14246,12 @@ export interface ServiceSpec {
    * @schema io.k8s.api.core.v1.ServiceSpec#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'ServiceSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceSpec(obj: ServiceSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14434,7 +14278,7 @@ export function toJson_ServiceSpec(obj: ServiceSpec | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
@@ -14448,13 +14292,12 @@ export interface LocalObjectReference {
    * @schema io.k8s.api.core.v1.LocalObjectReference#name
    */
   readonly name?: string;
-
 }
 
 /**
  * Converts an object of type 'LocalObjectReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LocalObjectReference(obj: LocalObjectReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14463,7 +14306,7 @@ export function toJson_LocalObjectReference(obj: LocalObjectReference | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Endpoint represents a single logical "backend" implementing a service.
@@ -14526,13 +14369,12 @@ export interface Endpoint {
    * @schema io.k8s.api.discovery.v1.Endpoint#zone
    */
   readonly zone?: string;
-
 }
 
 /**
  * Converts an object of type 'Endpoint' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Endpoint(obj: Endpoint | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14548,7 +14390,7 @@ export function toJson_Endpoint(obj: Endpoint | undefined): Record<string, any> 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointPort is a tuple that describes a single port.
@@ -14586,13 +14428,12 @@ export interface EndpointPort {
    * @schema io.k8s.api.core.v1.EndpointPort#protocol
    */
   readonly protocol?: string;
-
 }
 
 /**
  * Converts an object of type 'EndpointPort' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EndpointPort(obj: EndpointPort | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14604,7 +14445,7 @@ export function toJson_EndpointPort(obj: EndpointPort | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchemaSpec describes how the FlowSchema's specification looks like.
@@ -14639,13 +14480,12 @@ export interface FlowSchemaSpecV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.FlowSchemaSpec#rules
    */
   readonly rules?: PolicyRulesWithSubjectsV1Beta1[];
-
 }
 
 /**
  * Converts an object of type 'FlowSchemaSpecV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlowSchemaSpecV1Beta1(obj: FlowSchemaSpecV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14657,7 +14497,7 @@ export function toJson_FlowSchemaSpecV1Beta1(obj: FlowSchemaSpecV1Beta1 | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationSpec specifies the configuration of a priority level.
@@ -14678,13 +14518,12 @@ export interface PriorityLevelConfigurationSpecV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationSpec#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'PriorityLevelConfigurationSpecV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PriorityLevelConfigurationSpecV1Beta1(obj: PriorityLevelConfigurationSpecV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14694,7 +14533,7 @@ export function toJson_PriorityLevelConfigurationSpecV1Beta1(obj: PriorityLevelC
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowSchemaSpec describes how the FlowSchema's specification looks like.
@@ -14729,13 +14568,12 @@ export interface FlowSchemaSpecV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.FlowSchemaSpec#rules
    */
   readonly rules?: PolicyRulesWithSubjectsV1Beta2[];
-
 }
 
 /**
  * Converts an object of type 'FlowSchemaSpecV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlowSchemaSpecV1Beta2(obj: FlowSchemaSpecV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14747,7 +14585,7 @@ export function toJson_FlowSchemaSpecV1Beta2(obj: FlowSchemaSpecV1Beta2 | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationSpec specifies the configuration of a priority level.
@@ -14768,13 +14606,12 @@ export interface PriorityLevelConfigurationSpecV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.PriorityLevelConfigurationSpec#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'PriorityLevelConfigurationSpecV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PriorityLevelConfigurationSpecV1Beta2(obj: PriorityLevelConfigurationSpecV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14784,7 +14621,7 @@ export function toJson_PriorityLevelConfigurationSpecV1Beta2(obj: PriorityLevelC
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressSpec describes the Ingress the user wishes to exist.
@@ -14819,13 +14656,12 @@ export interface IngressSpec {
    * @schema io.k8s.api.networking.v1.IngressSpec#tls
    */
   readonly tls?: IngressTls[];
-
 }
 
 /**
  * Converts an object of type 'IngressSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressSpec(obj: IngressSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14837,7 +14673,7 @@ export function toJson_IngressSpec(obj: IngressSpec | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressClassSpec provides information about the class of an Ingress.
@@ -14858,13 +14694,12 @@ export interface IngressClassSpec {
    * @schema io.k8s.api.networking.v1.IngressClassSpec#parameters
    */
   readonly parameters?: IngressClassParametersReference;
-
 }
 
 /**
  * Converts an object of type 'IngressClassSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressClassSpec(obj: IngressClassSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14874,7 +14709,7 @@ export function toJson_IngressClassSpec(obj: IngressClassSpec | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicySpec provides the specification of a NetworkPolicy
@@ -14909,13 +14744,12 @@ export interface NetworkPolicySpec {
    * @schema io.k8s.api.networking.v1.NetworkPolicySpec#policyTypes
    */
   readonly policyTypes?: string[];
-
 }
 
 /**
  * Converts an object of type 'NetworkPolicySpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NetworkPolicySpec(obj: NetworkPolicySpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14927,7 +14761,7 @@ export function toJson_NetworkPolicySpec(obj: NetworkPolicySpec | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClusterCIDRSpec defines the desired state of ClusterCIDR.
@@ -14962,13 +14796,12 @@ export interface ClusterCidrSpecV1Alpha1 {
    * @schema io.k8s.api.networking.v1alpha1.ClusterCIDRSpec#perNodeHostBits
    */
   readonly perNodeHostBits: number;
-
 }
 
 /**
  * Converts an object of type 'ClusterCidrSpecV1Alpha1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClusterCidrSpecV1Alpha1(obj: ClusterCidrSpecV1Alpha1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -14980,7 +14813,7 @@ export function toJson_ClusterCidrSpecV1Alpha1(obj: ClusterCidrSpecV1Alpha1 | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Overhead structure represents the resource overhead associated with running a pod.
@@ -14994,13 +14827,12 @@ export interface Overhead {
    * @schema io.k8s.api.node.v1.Overhead#podFixed
    */
   readonly podFixed?: { [key: string]: Quantity };
-
 }
 
 /**
  * Converts an object of type 'Overhead' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Overhead(obj: Overhead | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15009,7 +14841,7 @@ export function toJson_Overhead(obj: Overhead | undefined): Record<string, any> 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Scheduling specifies the scheduling constraints for nodes supporting a RuntimeClass.
@@ -15030,13 +14862,12 @@ export interface Scheduling {
    * @schema io.k8s.api.node.v1.Scheduling#tolerations
    */
   readonly tolerations?: Toleration[];
-
 }
 
 /**
  * Converts an object of type 'Scheduling' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Scheduling(obj: Scheduling | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15046,7 +14877,7 @@ export function toJson_Scheduling(obj: Scheduling | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DeleteOptions may be provided when deleting an API object.
@@ -15103,13 +14934,12 @@ export interface DeleteOptions {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions#propagationPolicy
    */
   readonly propagationPolicy?: string;
-
 }
 
 /**
  * Converts an object of type 'DeleteOptions' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DeleteOptions(obj: DeleteOptions | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15124,7 +14954,7 @@ export function toJson_DeleteOptions(obj: DeleteOptions | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.
@@ -15152,13 +14982,12 @@ export interface PodDisruptionBudgetSpec {
    * @schema io.k8s.api.policy.v1.PodDisruptionBudgetSpec#selector
    */
   readonly selector?: LabelSelector;
-
 }
 
 /**
  * Converts an object of type 'PodDisruptionBudgetSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodDisruptionBudgetSpec(obj: PodDisruptionBudgetSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15169,7 +14998,7 @@ export function toJson_PodDisruptionBudgetSpec(obj: PodDisruptionBudgetSpec | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
@@ -15183,13 +15012,12 @@ export interface AggregationRule {
    * @schema io.k8s.api.rbac.v1.AggregationRule#clusterRoleSelectors
    */
   readonly clusterRoleSelectors?: LabelSelector[];
-
 }
 
 /**
  * Converts an object of type 'AggregationRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AggregationRule(obj: AggregationRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15198,7 +15026,7 @@ export function toJson_AggregationRule(obj: AggregationRule | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
@@ -15240,13 +15068,12 @@ export interface PolicyRule {
    * @schema io.k8s.api.rbac.v1.PolicyRule#verbs
    */
   readonly verbs: string[];
-
 }
 
 /**
  * Converts an object of type 'PolicyRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PolicyRule(obj: PolicyRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15259,7 +15086,7 @@ export function toJson_PolicyRule(obj: PolicyRule | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RoleRef contains information that points to the role being used
@@ -15287,13 +15114,12 @@ export interface RoleRef {
    * @schema io.k8s.api.rbac.v1.RoleRef#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'RoleRef' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RoleRef(obj: RoleRef | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15304,7 +15130,7 @@ export function toJson_RoleRef(obj: RoleRef | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
@@ -15340,13 +15166,12 @@ export interface Subject {
    * @schema io.k8s.api.rbac.v1.Subject#namespace
    */
   readonly namespace?: string;
-
 }
 
 /**
  * Converts an object of type 'Subject' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Subject(obj: Subject | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15358,7 +15183,7 @@ export function toJson_Subject(obj: Subject | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSIDriverSpec is the specification of a CSIDriver.
@@ -15459,13 +15284,12 @@ export interface CsiDriverSpec {
    * @schema io.k8s.api.storage.v1.CSIDriverSpec#volumeLifecycleModes
    */
   readonly volumeLifecycleModes?: string[];
-
 }
 
 /**
  * Converts an object of type 'CsiDriverSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CsiDriverSpec(obj: CsiDriverSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15481,7 +15305,7 @@ export function toJson_CsiDriverSpec(obj: CsiDriverSpec | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSINodeSpec holds information about the specification of all CSI drivers installed on a node
@@ -15495,13 +15319,12 @@ export interface CsiNodeSpec {
    * @schema io.k8s.api.storage.v1.CSINodeSpec#drivers
    */
   readonly drivers: CsiNodeDriver[];
-
 }
 
 /**
  * Converts an object of type 'CsiNodeSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CsiNodeSpec(obj: CsiNodeSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15510,7 +15333,7 @@ export function toJson_CsiNodeSpec(obj: CsiNodeSpec | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema io.k8s.apimachinery.pkg.api.resource.Quantity
@@ -15545,13 +15368,12 @@ export interface LabelSelector {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector#matchLabels
    */
   readonly matchLabels?: { [key: string]: string };
-
 }
 
 /**
  * Converts an object of type 'LabelSelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LabelSelector(obj: LabelSelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15561,7 +15383,7 @@ export function toJson_LabelSelector(obj: LabelSelector | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A topology selector term represents the result of label queries. A null or empty topology selector term matches no objects. The requirements of them are ANDed. It provides a subset of functionality as NodeSelectorTerm. This is an alpha feature and may change in the future.
@@ -15575,13 +15397,12 @@ export interface TopologySelectorTerm {
    * @schema io.k8s.api.core.v1.TopologySelectorTerm#matchLabelExpressions
    */
   readonly matchLabelExpressions?: TopologySelectorLabelRequirement[];
-
 }
 
 /**
  * Converts an object of type 'TopologySelectorTerm' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TopologySelectorTerm(obj: TopologySelectorTerm | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15590,7 +15411,7 @@ export function toJson_TopologySelectorTerm(obj: TopologySelectorTerm | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
@@ -15618,13 +15439,12 @@ export interface VolumeAttachmentSpec {
    * @schema io.k8s.api.storage.v1.VolumeAttachmentSpec#source
    */
   readonly source: VolumeAttachmentSource;
-
 }
 
 /**
  * Converts an object of type 'VolumeAttachmentSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeAttachmentSpec(obj: VolumeAttachmentSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15635,7 +15455,7 @@ export function toJson_VolumeAttachmentSpec(obj: VolumeAttachmentSpec | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceDefinitionSpec describes how a user wants their resource to appear
@@ -15684,13 +15504,12 @@ export interface CustomResourceDefinitionSpec {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionSpec#versions
    */
   readonly versions: CustomResourceDefinitionVersion[];
-
 }
 
 /**
  * Converts an object of type 'CustomResourceDefinitionSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceDefinitionSpec(obj: CustomResourceDefinitionSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15704,7 +15523,7 @@ export function toJson_CustomResourceDefinitionSpec(obj: CustomResourceDefinitio
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
@@ -15753,13 +15572,12 @@ export interface StatusDetails {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'StatusDetails' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StatusDetails(obj: StatusDetails | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15773,7 +15591,7 @@ export function toJson_StatusDetails(obj: StatusDetails | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
@@ -15829,13 +15647,12 @@ export interface ApiServiceSpec {
    * @schema io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceSpec#versionPriority
    */
   readonly versionPriority: number;
-
 }
 
 /**
  * Converts an object of type 'ApiServiceSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ApiServiceSpec(obj: ApiServiceSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15850,7 +15667,7 @@ export function toJson_ApiServiceSpec(obj: ApiServiceSpec | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
@@ -15906,13 +15723,12 @@ export interface ManagedFieldsEntry {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry#time
    */
   readonly time?: Date;
-
 }
 
 /**
  * Converts an object of type 'ManagedFieldsEntry' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ManagedFieldsEntry(obj: ManagedFieldsEntry | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15927,7 +15743,7 @@ export function toJson_ManagedFieldsEntry(obj: ManagedFieldsEntry | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
@@ -15977,13 +15793,12 @@ export interface OwnerReference {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.OwnerReference#uid
    */
   readonly uid: string;
-
 }
 
 /**
  * Converts an object of type 'OwnerReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_OwnerReference(obj: OwnerReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -15997,7 +15812,7 @@ export function toJson_OwnerReference(obj: OwnerReference | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * WebhookClientConfig contains the information to make a TLS connection with the webhook
@@ -16037,13 +15852,12 @@ export interface WebhookClientConfig {
    * @schema io.k8s.api.admissionregistration.v1.WebhookClientConfig#url
    */
   readonly url?: string;
-
 }
 
 /**
  * Converts an object of type 'WebhookClientConfig' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_WebhookClientConfig(obj: WebhookClientConfig | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16054,7 +15868,7 @@ export function toJson_WebhookClientConfig(obj: WebhookClientConfig | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RuleWithOperations is a tuple of Operations and Resources. It is recommended to make sure that all the tuple expansions are valid.
@@ -16103,13 +15917,12 @@ export interface RuleWithOperations {
    * @schema io.k8s.api.admissionregistration.v1.RuleWithOperations#scope
    */
   readonly scope?: string;
-
 }
 
 /**
  * Converts an object of type 'RuleWithOperations' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RuleWithOperations(obj: RuleWithOperations | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16122,7 +15935,7 @@ export function toJson_RuleWithOperations(obj: RuleWithOperations | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
@@ -16146,13 +15959,12 @@ export interface DaemonSetUpdateStrategy {
    * @schema io.k8s.api.apps.v1.DaemonSetUpdateStrategy#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'DaemonSetUpdateStrategy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DaemonSetUpdateStrategy(obj: DaemonSetUpdateStrategy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16162,7 +15974,7 @@ export function toJson_DaemonSetUpdateStrategy(obj: DaemonSetUpdateStrategy | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DeploymentStrategy describes how to replace existing pods with new ones.
@@ -16186,13 +15998,12 @@ export interface DeploymentStrategy {
    * @schema io.k8s.api.apps.v1.DeploymentStrategy#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'DeploymentStrategy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DeploymentStrategy(obj: DeploymentStrategy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16202,7 +16013,7 @@ export function toJson_DeploymentStrategy(obj: DeploymentStrategy | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatefulSetPersistentVolumeClaimRetentionPolicy describes the policy used for PVCs created from the StatefulSet VolumeClaimTemplates.
@@ -16223,13 +16034,12 @@ export interface StatefulSetPersistentVolumeClaimRetentionPolicy {
    * @schema io.k8s.api.apps.v1.StatefulSetPersistentVolumeClaimRetentionPolicy#whenScaled
    */
   readonly whenScaled?: string;
-
 }
 
 /**
  * Converts an object of type 'StatefulSetPersistentVolumeClaimRetentionPolicy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StatefulSetPersistentVolumeClaimRetentionPolicy(obj: StatefulSetPersistentVolumeClaimRetentionPolicy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16239,7 +16049,7 @@ export function toJson_StatefulSetPersistentVolumeClaimRetentionPolicy(obj: Stat
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
@@ -16263,13 +16073,12 @@ export interface StatefulSetUpdateStrategy {
    * @schema io.k8s.api.apps.v1.StatefulSetUpdateStrategy#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'StatefulSetUpdateStrategy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StatefulSetUpdateStrategy(obj: StatefulSetUpdateStrategy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16279,7 +16088,7 @@ export function toJson_StatefulSetUpdateStrategy(obj: StatefulSetUpdateStrategy 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * BoundObjectReference is a reference to an object that a token is bound to.
@@ -16314,13 +16123,12 @@ export interface BoundObjectReference {
    * @schema io.k8s.api.authentication.v1.BoundObjectReference#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'BoundObjectReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_BoundObjectReference(obj: BoundObjectReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16332,7 +16140,7 @@ export function toJson_BoundObjectReference(obj: BoundObjectReference | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
@@ -16353,13 +16161,12 @@ export interface NonResourceAttributes {
    * @schema io.k8s.api.authorization.v1.NonResourceAttributes#verb
    */
   readonly verb?: string;
-
 }
 
 /**
  * Converts an object of type 'NonResourceAttributes' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NonResourceAttributes(obj: NonResourceAttributes | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16369,7 +16176,7 @@ export function toJson_NonResourceAttributes(obj: NonResourceAttributes | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
@@ -16425,13 +16232,12 @@ export interface ResourceAttributes {
    * @schema io.k8s.api.authorization.v1.ResourceAttributes#version
    */
   readonly version?: string;
-
 }
 
 /**
  * Converts an object of type 'ResourceAttributes' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceAttributes(obj: ResourceAttributes | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16446,7 +16252,7 @@ export function toJson_ResourceAttributes(obj: ResourceAttributes | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CrossVersionObjectReference contains enough information to let you identify the referred resource.
@@ -16474,13 +16280,12 @@ export interface CrossVersionObjectReference {
    * @schema io.k8s.api.autoscaling.v1.CrossVersionObjectReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'CrossVersionObjectReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CrossVersionObjectReference(obj: CrossVersionObjectReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16491,7 +16296,7 @@ export function toJson_CrossVersionObjectReference(obj: CrossVersionObjectRefere
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerBehavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively).
@@ -16515,13 +16320,12 @@ export interface HorizontalPodAutoscalerBehaviorV2 {
    * @schema io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerBehavior#scaleUp
    */
   readonly scaleUp?: HpaScalingRulesV2;
-
 }
 
 /**
  * Converts an object of type 'HorizontalPodAutoscalerBehaviorV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HorizontalPodAutoscalerBehaviorV2(obj: HorizontalPodAutoscalerBehaviorV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16531,7 +16335,7 @@ export function toJson_HorizontalPodAutoscalerBehaviorV2(obj: HorizontalPodAutos
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
@@ -16580,13 +16384,12 @@ export interface MetricSpecV2 {
    * @schema io.k8s.api.autoscaling.v2.MetricSpec#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'MetricSpecV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricSpecV2(obj: MetricSpecV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16600,7 +16403,7 @@ export function toJson_MetricSpecV2(obj: MetricSpecV2 | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CrossVersionObjectReference contains enough information to let you identify the referred resource.
@@ -16628,13 +16431,12 @@ export interface CrossVersionObjectReferenceV2 {
    * @schema io.k8s.api.autoscaling.v2.CrossVersionObjectReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'CrossVersionObjectReferenceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CrossVersionObjectReferenceV2(obj: CrossVersionObjectReferenceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16645,7 +16447,7 @@ export function toJson_CrossVersionObjectReferenceV2(obj: CrossVersionObjectRefe
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HorizontalPodAutoscalerBehavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively).
@@ -16669,13 +16471,12 @@ export interface HorizontalPodAutoscalerBehaviorV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerBehavior#scaleUp
    */
   readonly scaleUp?: HpaScalingRulesV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'HorizontalPodAutoscalerBehaviorV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HorizontalPodAutoscalerBehaviorV2Beta2(obj: HorizontalPodAutoscalerBehaviorV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16685,7 +16486,7 @@ export function toJson_HorizontalPodAutoscalerBehaviorV2Beta2(obj: HorizontalPod
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
@@ -16734,13 +16535,12 @@ export interface MetricSpecV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.MetricSpec#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'MetricSpecV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricSpecV2Beta2(obj: MetricSpecV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16754,7 +16554,7 @@ export function toJson_MetricSpecV2Beta2(obj: MetricSpecV2Beta2 | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CrossVersionObjectReference contains enough information to let you identify the referred resource.
@@ -16782,13 +16582,12 @@ export interface CrossVersionObjectReferenceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.CrossVersionObjectReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'CrossVersionObjectReferenceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CrossVersionObjectReferenceV2Beta2(obj: CrossVersionObjectReferenceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16799,7 +16598,7 @@ export function toJson_CrossVersionObjectReferenceV2Beta2(obj: CrossVersionObjec
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * JobTemplateSpec describes the data a Job should have when created from a template
@@ -16820,13 +16619,12 @@ export interface JobTemplateSpec {
    * @schema io.k8s.api.batch.v1.JobTemplateSpec#spec
    */
   readonly spec?: JobSpec;
-
 }
 
 /**
  * Converts an object of type 'JobTemplateSpec' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_JobTemplateSpec(obj: JobTemplateSpec | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16836,7 +16634,7 @@ export function toJson_JobTemplateSpec(obj: JobTemplateSpec | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodFailurePolicy describes how failed pods influence the backoffLimit.
@@ -16850,13 +16648,12 @@ export interface PodFailurePolicy {
    * @schema io.k8s.api.batch.v1.PodFailurePolicy#rules
    */
   readonly rules: PodFailurePolicyRule[];
-
 }
 
 /**
  * Converts an object of type 'PodFailurePolicy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodFailurePolicy(obj: PodFailurePolicy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16865,7 +16662,7 @@ export function toJson_PodFailurePolicy(obj: PodFailurePolicy | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointAddress is a tuple that describes single IP address.
@@ -16900,13 +16697,12 @@ export interface EndpointAddress {
    * @schema io.k8s.api.core.v1.EndpointAddress#targetRef
    */
   readonly targetRef?: ObjectReference;
-
 }
 
 /**
  * Converts an object of type 'EndpointAddress' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EndpointAddress(obj: EndpointAddress | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16918,7 +16714,7 @@ export function toJson_EndpointAddress(obj: EndpointAddress | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
@@ -16967,13 +16763,12 @@ export interface LimitRangeItem {
    * @schema io.k8s.api.core.v1.LimitRangeItem#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'LimitRangeItem' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitRangeItem(obj: LimitRangeItem | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -16987,7 +16782,7 @@ export function toJson_LimitRangeItem(obj: LimitRangeItem | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
@@ -17001,13 +16796,12 @@ export interface NodeConfigSource {
    * @schema io.k8s.api.core.v1.NodeConfigSource#configMap
    */
   readonly configMap?: ConfigMapNodeConfigSource;
-
 }
 
 /**
  * Converts an object of type 'NodeConfigSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeConfigSource(obj: NodeConfigSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17016,7 +16810,7 @@ export function toJson_NodeConfigSource(obj: NodeConfigSource | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The node this Taint is attached to has the "effect" on any pod that does not tolerate the Taint.
@@ -17053,13 +16847,12 @@ export interface Taint {
    * @schema io.k8s.api.core.v1.Taint#value
    */
   readonly value?: string;
-
 }
 
 /**
  * Converts an object of type 'Taint' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Taint(obj: Taint | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17071,7 +16864,7 @@ export function toJson_Taint(obj: Taint | undefined): Record<string, any> | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Persistent Disk resource in AWS.
@@ -17108,13 +16901,12 @@ export interface AwsElasticBlockStoreVolumeSource {
    * @schema io.k8s.api.core.v1.AWSElasticBlockStoreVolumeSource#volumeID
    */
   readonly volumeId: string;
-
 }
 
 /**
  * Converts an object of type 'AwsElasticBlockStoreVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AwsElasticBlockStoreVolumeSource(obj: AwsElasticBlockStoreVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17126,7 +16918,7 @@ export function toJson_AwsElasticBlockStoreVolumeSource(obj: AwsElasticBlockStor
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
@@ -17176,13 +16968,12 @@ export interface AzureDiskVolumeSource {
    * @schema io.k8s.api.core.v1.AzureDiskVolumeSource#readOnly
    */
   readonly readOnly?: boolean;
-
 }
 
 /**
  * Converts an object of type 'AzureDiskVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AzureDiskVolumeSource(obj: AzureDiskVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17196,7 +16987,7 @@ export function toJson_AzureDiskVolumeSource(obj: AzureDiskVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
@@ -17231,13 +17022,12 @@ export interface AzureFilePersistentVolumeSource {
    * @schema io.k8s.api.core.v1.AzureFilePersistentVolumeSource#shareName
    */
   readonly shareName: string;
-
 }
 
 /**
  * Converts an object of type 'AzureFilePersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AzureFilePersistentVolumeSource(obj: AzureFilePersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17249,7 +17039,7 @@ export function toJson_AzureFilePersistentVolumeSource(obj: AzureFilePersistentV
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
@@ -17299,13 +17089,12 @@ export interface CephFsPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.CephFSPersistentVolumeSource#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'CephFsPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CephFsPersistentVolumeSource(obj: CephFsPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17319,7 +17108,7 @@ export function toJson_CephFsPersistentVolumeSource(obj: CephFsPersistentVolumeS
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
@@ -17355,13 +17144,12 @@ export interface CinderPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.CinderPersistentVolumeSource#volumeID
    */
   readonly volumeId: string;
-
 }
 
 /**
  * Converts an object of type 'CinderPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CinderPersistentVolumeSource(obj: CinderPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17373,7 +17161,7 @@ export function toJson_CinderPersistentVolumeSource(obj: CinderPersistentVolumeS
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents storage that is managed by an external CSI volume driver (Beta feature)
@@ -17451,13 +17239,12 @@ export interface CsiPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.CSIPersistentVolumeSource#volumeHandle
    */
   readonly volumeHandle: string;
-
 }
 
 /**
  * Converts an object of type 'CsiPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CsiPersistentVolumeSource(obj: CsiPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17475,7 +17262,7 @@ export function toJson_CsiPersistentVolumeSource(obj: CsiPersistentVolumeSource 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Fibre Channel volume. Fibre Channel volumes can only be mounted as read/write once. Fibre Channel volumes support ownership management and SELinux relabeling.
@@ -17518,13 +17305,12 @@ export interface FcVolumeSource {
    * @schema io.k8s.api.core.v1.FCVolumeSource#wwids
    */
   readonly wwids?: string[];
-
 }
 
 /**
  * Converts an object of type 'FcVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FcVolumeSource(obj: FcVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17537,7 +17323,7 @@ export function toJson_FcVolumeSource(obj: FcVolumeSource | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
@@ -17579,13 +17365,12 @@ export interface FlexPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.FlexPersistentVolumeSource#secretRef
    */
   readonly secretRef?: SecretReference;
-
 }
 
 /**
  * Converts an object of type 'FlexPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlexPersistentVolumeSource(obj: FlexPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17598,7 +17383,7 @@ export function toJson_FlexPersistentVolumeSource(obj: FlexPersistentVolumeSourc
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
@@ -17619,13 +17404,12 @@ export interface FlockerVolumeSource {
    * @schema io.k8s.api.core.v1.FlockerVolumeSource#datasetUUID
    */
   readonly datasetUuid?: string;
-
 }
 
 /**
  * Converts an object of type 'FlockerVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlockerVolumeSource(obj: FlockerVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17635,7 +17419,7 @@ export function toJson_FlockerVolumeSource(obj: FlockerVolumeSource | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Persistent Disk resource in Google Compute Engine.
@@ -17673,13 +17457,12 @@ export interface GcePersistentDiskVolumeSource {
    * @schema io.k8s.api.core.v1.GCEPersistentDiskVolumeSource#readOnly
    */
   readonly readOnly?: boolean;
-
 }
 
 /**
  * Converts an object of type 'GcePersistentDiskVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GcePersistentDiskVolumeSource(obj: GcePersistentDiskVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17691,7 +17474,7 @@ export function toJson_GcePersistentDiskVolumeSource(obj: GcePersistentDiskVolum
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
@@ -17727,13 +17510,12 @@ export interface GlusterfsPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.GlusterfsPersistentVolumeSource#readOnly
    */
   readonly readOnly?: boolean;
-
 }
 
 /**
  * Converts an object of type 'GlusterfsPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GlusterfsPersistentVolumeSource(obj: GlusterfsPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17745,7 +17527,7 @@ export function toJson_GlusterfsPersistentVolumeSource(obj: GlusterfsPersistentV
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
@@ -17767,13 +17549,12 @@ export interface HostPathVolumeSource {
    * @schema io.k8s.api.core.v1.HostPathVolumeSource#type
    */
   readonly type?: string;
-
 }
 
 /**
  * Converts an object of type 'HostPathVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HostPathVolumeSource(obj: HostPathVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17783,7 +17564,7 @@ export function toJson_HostPathVolumeSource(obj: HostPathVolumeSource | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
@@ -17869,13 +17650,12 @@ export interface IscsiPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.ISCSIPersistentVolumeSource#targetPortal
    */
   readonly targetPortal: string;
-
 }
 
 /**
  * Converts an object of type 'IscsiPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IscsiPersistentVolumeSource(obj: IscsiPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17894,7 +17674,7 @@ export function toJson_IscsiPersistentVolumeSource(obj: IscsiPersistentVolumeSou
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Local represents directly-attached storage with node affinity (Beta feature)
@@ -17915,13 +17695,12 @@ export interface LocalVolumeSource {
    * @schema io.k8s.api.core.v1.LocalVolumeSource#path
    */
   readonly path: string;
-
 }
 
 /**
  * Converts an object of type 'LocalVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LocalVolumeSource(obj: LocalVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17931,7 +17710,7 @@ export function toJson_LocalVolumeSource(obj: LocalVolumeSource | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
@@ -17960,13 +17739,12 @@ export interface NfsVolumeSource {
    * @schema io.k8s.api.core.v1.NFSVolumeSource#server
    */
   readonly server: string;
-
 }
 
 /**
  * Converts an object of type 'NfsVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NfsVolumeSource(obj: NfsVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -17977,7 +17755,7 @@ export function toJson_NfsVolumeSource(obj: NfsVolumeSource | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
@@ -17991,13 +17769,12 @@ export interface VolumeNodeAffinity {
    * @schema io.k8s.api.core.v1.VolumeNodeAffinity#required
    */
   readonly required?: NodeSelector;
-
 }
 
 /**
  * Converts an object of type 'VolumeNodeAffinity' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeNodeAffinity(obj: VolumeNodeAffinity | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18006,7 +17783,7 @@ export function toJson_VolumeNodeAffinity(obj: VolumeNodeAffinity | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Photon Controller persistent disk resource.
@@ -18027,13 +17804,12 @@ export interface PhotonPersistentDiskVolumeSource {
    * @schema io.k8s.api.core.v1.PhotonPersistentDiskVolumeSource#pdID
    */
   readonly pdId: string;
-
 }
 
 /**
  * Converts an object of type 'PhotonPersistentDiskVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PhotonPersistentDiskVolumeSource(obj: PhotonPersistentDiskVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18043,7 +17819,7 @@ export function toJson_PhotonPersistentDiskVolumeSource(obj: PhotonPersistentDis
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PortworxVolumeSource represents a Portworx volume resource.
@@ -18071,13 +17847,12 @@ export interface PortworxVolumeSource {
    * @schema io.k8s.api.core.v1.PortworxVolumeSource#volumeID
    */
   readonly volumeId: string;
-
 }
 
 /**
  * Converts an object of type 'PortworxVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PortworxVolumeSource(obj: PortworxVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18088,7 +17863,7 @@ export function toJson_PortworxVolumeSource(obj: PortworxVolumeSource | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
@@ -18140,13 +17915,12 @@ export interface QuobyteVolumeSource {
    * @schema io.k8s.api.core.v1.QuobyteVolumeSource#volume
    */
   readonly volume: string;
-
 }
 
 /**
  * Converts an object of type 'QuobyteVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_QuobyteVolumeSource(obj: QuobyteVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18160,7 +17934,7 @@ export function toJson_QuobyteVolumeSource(obj: QuobyteVolumeSource | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
@@ -18228,13 +18002,12 @@ export interface RbdPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.RBDPersistentVolumeSource#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'RbdPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RbdPersistentVolumeSource(obj: RbdPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18250,7 +18023,7 @@ export function toJson_RbdPersistentVolumeSource(obj: RbdPersistentVolumeSource 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
@@ -18329,13 +18102,12 @@ export interface ScaleIoPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.ScaleIOPersistentVolumeSource#volumeName
    */
   readonly volumeName?: string;
-
 }
 
 /**
  * Converts an object of type 'ScaleIoPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ScaleIoPersistentVolumeSource(obj: ScaleIoPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18353,7 +18125,7 @@ export function toJson_ScaleIoPersistentVolumeSource(obj: ScaleIoPersistentVolum
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a StorageOS persistent volume resource.
@@ -18395,13 +18167,12 @@ export interface StorageOsPersistentVolumeSource {
    * @schema io.k8s.api.core.v1.StorageOSPersistentVolumeSource#volumeNamespace
    */
   readonly volumeNamespace?: string;
-
 }
 
 /**
  * Converts an object of type 'StorageOsPersistentVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StorageOsPersistentVolumeSource(obj: StorageOsPersistentVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18414,7 +18185,7 @@ export function toJson_StorageOsPersistentVolumeSource(obj: StorageOsPersistentV
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a vSphere volume resource.
@@ -18449,13 +18220,12 @@ export interface VsphereVirtualDiskVolumeSource {
    * @schema io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource#volumePath
    */
   readonly volumePath: string;
-
 }
 
 /**
  * Converts an object of type 'VsphereVirtualDiskVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VsphereVirtualDiskVolumeSource(obj: VsphereVirtualDiskVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18467,7 +18237,7 @@ export function toJson_VsphereVirtualDiskVolumeSource(obj: VsphereVirtualDiskVol
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
@@ -18495,13 +18265,12 @@ export interface TypedLocalObjectReference {
    * @schema io.k8s.api.core.v1.TypedLocalObjectReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'TypedLocalObjectReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TypedLocalObjectReference(obj: TypedLocalObjectReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18512,7 +18281,7 @@ export function toJson_TypedLocalObjectReference(obj: TypedLocalObjectReference 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceRequirements describes the compute resource requirements.
@@ -18533,13 +18302,12 @@ export interface ResourceRequirements {
    * @schema io.k8s.api.core.v1.ResourceRequirements#requests
    */
   readonly requests?: { [key: string]: Quantity };
-
 }
 
 /**
  * Converts an object of type 'ResourceRequirements' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceRequirements(obj: ResourceRequirements | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18549,7 +18317,7 @@ export function toJson_ResourceRequirements(obj: ResourceRequirements | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Affinity is a group of affinity scheduling rules.
@@ -18577,13 +18345,12 @@ export interface Affinity {
    * @schema io.k8s.api.core.v1.Affinity#podAntiAffinity
    */
   readonly podAntiAffinity?: PodAntiAffinity;
-
 }
 
 /**
  * Converts an object of type 'Affinity' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Affinity(obj: Affinity | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18594,7 +18361,7 @@ export function toJson_Affinity(obj: Affinity | undefined): Record<string, any> 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A single application container that you want to run within a pod.
@@ -18765,13 +18532,12 @@ export interface Container {
    * @schema io.k8s.api.core.v1.Container#workingDir
    */
   readonly workingDir?: string;
-
 }
 
 /**
  * Converts an object of type 'Container' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Container(obj: Container | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18801,7 +18567,7 @@ export function toJson_Container(obj: Container | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
@@ -18829,13 +18595,12 @@ export interface PodDnsConfig {
    * @schema io.k8s.api.core.v1.PodDNSConfig#searches
    */
   readonly searches?: string[];
-
 }
 
 /**
  * Converts an object of type 'PodDnsConfig' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodDnsConfig(obj: PodDnsConfig | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -18846,7 +18611,7 @@ export function toJson_PodDnsConfig(obj: PodDnsConfig | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * An EphemeralContainer is a temporary container that you may add to an existing Pod for user-initiated activities such as debugging. Ephemeral containers have no resource or scheduling guarantees, and they will not be restarted when they exit or when a Pod is removed or restarted. The kubelet may evict a Pod if an ephemeral container causes the Pod to exceed its resource allocation.
@@ -19028,13 +18793,12 @@ export interface EphemeralContainer {
    * @schema io.k8s.api.core.v1.EphemeralContainer#workingDir
    */
   readonly workingDir?: string;
-
 }
 
 /**
  * Converts an object of type 'EphemeralContainer' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EphemeralContainer(obj: EphemeralContainer | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19065,7 +18829,7 @@ export function toJson_EphemeralContainer(obj: EphemeralContainer | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
@@ -19086,13 +18850,12 @@ export interface HostAlias {
    * @schema io.k8s.api.core.v1.HostAlias#ip
    */
   readonly ip?: string;
-
 }
 
 /**
  * Converts an object of type 'HostAlias' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HostAlias(obj: HostAlias | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19102,7 +18865,7 @@ export function toJson_HostAlias(obj: HostAlias | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodOS defines the OS parameters of a pod.
@@ -19116,13 +18879,12 @@ export interface PodOs {
    * @schema io.k8s.api.core.v1.PodOS#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'PodOs' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodOs(obj: PodOs | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19131,7 +18893,7 @@ export function toJson_PodOs(obj: PodOs | undefined): Record<string, any> | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodReadinessGate contains the reference to a pod condition
@@ -19145,13 +18907,12 @@ export interface PodReadinessGate {
    * @schema io.k8s.api.core.v1.PodReadinessGate#conditionType
    */
   readonly conditionType: string;
-
 }
 
 /**
  * Converts an object of type 'PodReadinessGate' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodReadinessGate(obj: PodReadinessGate | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19160,7 +18921,7 @@ export function toJson_PodReadinessGate(obj: PodReadinessGate | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
@@ -19242,13 +19003,12 @@ export interface PodSecurityContext {
    * @schema io.k8s.api.core.v1.PodSecurityContext#windowsOptions
    */
   readonly windowsOptions?: WindowsSecurityContextOptions;
-
 }
 
 /**
  * Converts an object of type 'PodSecurityContext' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodSecurityContext(obj: PodSecurityContext | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19266,7 +19026,7 @@ export function toJson_PodSecurityContext(obj: PodSecurityContext | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
@@ -19313,13 +19073,12 @@ export interface Toleration {
    * @schema io.k8s.api.core.v1.Toleration#value
    */
   readonly value?: string;
-
 }
 
 /**
  * Converts an object of type 'Toleration' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Toleration(obj: Toleration | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19332,7 +19091,7 @@ export function toJson_Toleration(obj: Toleration | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TopologySpreadConstraint specifies how to spread matching pods among the given topology.
@@ -19408,13 +19167,12 @@ export interface TopologySpreadConstraint {
    * @schema io.k8s.api.core.v1.TopologySpreadConstraint#whenUnsatisfiable
    */
   readonly whenUnsatisfiable: string;
-
 }
 
 /**
  * Converts an object of type 'TopologySpreadConstraint' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TopologySpreadConstraint(obj: TopologySpreadConstraint | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19430,7 +19188,7 @@ export function toJson_TopologySpreadConstraint(obj: TopologySpreadConstraint | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Volume represents a named volume in a pod that may be accessed by any container in the pod.
@@ -19660,13 +19418,12 @@ export interface Volume {
    * @schema io.k8s.api.core.v1.Volume#vsphereVolume
    */
   readonly vsphereVolume?: VsphereVirtualDiskVolumeSource;
-
 }
 
 /**
  * Converts an object of type 'Volume' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Volume(obj: Volume | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19704,7 +19461,7 @@ export function toJson_Volume(obj: Volume | undefined): Record<string, any> | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
@@ -19718,13 +19475,12 @@ export interface ScopeSelector {
    * @schema io.k8s.api.core.v1.ScopeSelector#matchExpressions
    */
   readonly matchExpressions?: ScopedResourceSelectorRequirement[];
-
 }
 
 /**
  * Converts an object of type 'ScopeSelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ScopeSelector(obj: ScopeSelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19733,7 +19489,7 @@ export function toJson_ScopeSelector(obj: ScopeSelector | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServicePort contains information on service's port.
@@ -19785,13 +19541,12 @@ export interface ServicePort {
    * @schema io.k8s.api.core.v1.ServicePort#targetPort
    */
   readonly targetPort?: IntOrString;
-
 }
 
 /**
  * Converts an object of type 'ServicePort' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServicePort(obj: ServicePort | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19805,7 +19560,7 @@ export function toJson_ServicePort(obj: ServicePort | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SessionAffinityConfig represents the configurations of session affinity.
@@ -19819,13 +19574,12 @@ export interface SessionAffinityConfig {
    * @schema io.k8s.api.core.v1.SessionAffinityConfig#clientIP
    */
   readonly clientIp?: ClientIpConfig;
-
 }
 
 /**
  * Converts an object of type 'SessionAffinityConfig' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SessionAffinityConfig(obj: SessionAffinityConfig | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19834,7 +19588,7 @@ export function toJson_SessionAffinityConfig(obj: SessionAffinityConfig | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointConditions represents the current condition of an endpoint.
@@ -19862,13 +19616,12 @@ export interface EndpointConditions {
    * @schema io.k8s.api.discovery.v1.EndpointConditions#terminating
    */
   readonly terminating?: boolean;
-
 }
 
 /**
  * Converts an object of type 'EndpointConditions' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EndpointConditions(obj: EndpointConditions | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19879,7 +19632,7 @@ export function toJson_EndpointConditions(obj: EndpointConditions | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EndpointHints provides hints describing how an endpoint should be consumed.
@@ -19893,13 +19646,12 @@ export interface EndpointHints {
    * @schema io.k8s.api.discovery.v1.EndpointHints#forZones
    */
   readonly forZones?: ForZone[];
-
 }
 
 /**
  * Converts an object of type 'EndpointHints' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EndpointHints(obj: EndpointHints | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19908,7 +19660,7 @@ export function toJson_EndpointHints(obj: EndpointHints | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowDistinguisherMethod specifies the method of a flow distinguisher.
@@ -19922,13 +19674,12 @@ export interface FlowDistinguisherMethodV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.FlowDistinguisherMethod#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'FlowDistinguisherMethodV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlowDistinguisherMethodV1Beta1(obj: FlowDistinguisherMethodV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19937,7 +19688,7 @@ export function toJson_FlowDistinguisherMethodV1Beta1(obj: FlowDistinguisherMeth
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationReference contains information that points to the "request-priority" being used.
@@ -19951,13 +19702,12 @@ export interface PriorityLevelConfigurationReferenceV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.PriorityLevelConfigurationReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'PriorityLevelConfigurationReferenceV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PriorityLevelConfigurationReferenceV1Beta1(obj: PriorityLevelConfigurationReferenceV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -19966,7 +19716,7 @@ export function toJson_PriorityLevelConfigurationReferenceV1Beta1(obj: PriorityL
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PolicyRulesWithSubjects prescribes a test that applies to a request to an apiserver. The test considers the subject making the request, the verb being requested, and the resource to be acted upon. This PolicyRulesWithSubjects matches a request if and only if both (a) at least one member of subjects matches the request and (b) at least one member of resourceRules or nonResourceRules matches the request.
@@ -19994,13 +19744,12 @@ export interface PolicyRulesWithSubjectsV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.PolicyRulesWithSubjects#subjects
    */
   readonly subjects: SubjectV1Beta1[];
-
 }
 
 /**
  * Converts an object of type 'PolicyRulesWithSubjectsV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PolicyRulesWithSubjectsV1Beta1(obj: PolicyRulesWithSubjectsV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20011,7 +19760,7 @@ export function toJson_PolicyRulesWithSubjectsV1Beta1(obj: PolicyRulesWithSubjec
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitedPriorityLevelConfiguration specifies how to handle requests that are subject to limits. It addresses two issues:
@@ -20038,13 +19787,12 @@ export interface LimitedPriorityLevelConfigurationV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.LimitedPriorityLevelConfiguration#limitResponse
    */
   readonly limitResponse?: LimitResponseV1Beta1;
-
 }
 
 /**
  * Converts an object of type 'LimitedPriorityLevelConfigurationV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitedPriorityLevelConfigurationV1Beta1(obj: LimitedPriorityLevelConfigurationV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20054,7 +19802,7 @@ export function toJson_LimitedPriorityLevelConfigurationV1Beta1(obj: LimitedPrio
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlowDistinguisherMethod specifies the method of a flow distinguisher.
@@ -20068,13 +19816,12 @@ export interface FlowDistinguisherMethodV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.FlowDistinguisherMethod#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'FlowDistinguisherMethodV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlowDistinguisherMethodV1Beta2(obj: FlowDistinguisherMethodV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20083,7 +19830,7 @@ export function toJson_FlowDistinguisherMethodV1Beta2(obj: FlowDistinguisherMeth
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PriorityLevelConfigurationReference contains information that points to the "request-priority" being used.
@@ -20097,13 +19844,12 @@ export interface PriorityLevelConfigurationReferenceV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.PriorityLevelConfigurationReference#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'PriorityLevelConfigurationReferenceV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PriorityLevelConfigurationReferenceV1Beta2(obj: PriorityLevelConfigurationReferenceV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20112,7 +19858,7 @@ export function toJson_PriorityLevelConfigurationReferenceV1Beta2(obj: PriorityL
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PolicyRulesWithSubjects prescribes a test that applies to a request to an apiserver. The test considers the subject making the request, the verb being requested, and the resource to be acted upon. This PolicyRulesWithSubjects matches a request if and only if both (a) at least one member of subjects matches the request and (b) at least one member of resourceRules or nonResourceRules matches the request.
@@ -20140,13 +19886,12 @@ export interface PolicyRulesWithSubjectsV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.PolicyRulesWithSubjects#subjects
    */
   readonly subjects: SubjectV1Beta2[];
-
 }
 
 /**
  * Converts an object of type 'PolicyRulesWithSubjectsV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PolicyRulesWithSubjectsV1Beta2(obj: PolicyRulesWithSubjectsV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20157,7 +19902,7 @@ export function toJson_PolicyRulesWithSubjectsV1Beta2(obj: PolicyRulesWithSubjec
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitedPriorityLevelConfiguration specifies how to handle requests that are subject to limits. It addresses two issues:
@@ -20184,13 +19929,12 @@ export interface LimitedPriorityLevelConfigurationV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.LimitedPriorityLevelConfiguration#limitResponse
    */
   readonly limitResponse?: LimitResponseV1Beta2;
-
 }
 
 /**
  * Converts an object of type 'LimitedPriorityLevelConfigurationV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitedPriorityLevelConfigurationV1Beta2(obj: LimitedPriorityLevelConfigurationV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20200,7 +19944,7 @@ export function toJson_LimitedPriorityLevelConfigurationV1Beta2(obj: LimitedPrio
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressBackend describes all endpoints for a given service and port.
@@ -20221,13 +19965,12 @@ export interface IngressBackend {
    * @schema io.k8s.api.networking.v1.IngressBackend#service
    */
   readonly service?: IngressServiceBackend;
-
 }
 
 /**
  * Converts an object of type 'IngressBackend' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressBackend(obj: IngressBackend | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20237,7 +19980,7 @@ export function toJson_IngressBackend(obj: IngressBackend | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressRule represents the rules mapping the paths under a specified host to the related backend services. Incoming requests are first evaluated for a host match, then routed to the backend associated with the matching IngressRuleValue.
@@ -20263,13 +20006,12 @@ export interface IngressRule {
    * @schema io.k8s.api.networking.v1.IngressRule#http
    */
   readonly http?: HttpIngressRuleValue;
-
 }
 
 /**
  * Converts an object of type 'IngressRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressRule(obj: IngressRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20279,7 +20021,7 @@ export function toJson_IngressRule(obj: IngressRule | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressTLS describes the transport layer security associated with an Ingress.
@@ -20301,13 +20043,12 @@ export interface IngressTls {
    * @schema io.k8s.api.networking.v1.IngressTLS#secretName
    */
   readonly secretName?: string;
-
 }
 
 /**
  * Converts an object of type 'IngressTls' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressTls(obj: IngressTls | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20317,7 +20058,7 @@ export function toJson_IngressTls(obj: IngressTls | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressClassParametersReference identifies an API object. This can be used to specify a cluster or namespace-scoped resource.
@@ -20359,13 +20100,12 @@ export interface IngressClassParametersReference {
    * @schema io.k8s.api.networking.v1.IngressClassParametersReference#scope
    */
   readonly scope?: string;
-
 }
 
 /**
  * Converts an object of type 'IngressClassParametersReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressClassParametersReference(obj: IngressClassParametersReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20378,7 +20118,7 @@ export function toJson_IngressClassParametersReference(obj: IngressClassParamete
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicyEgressRule describes a particular set of traffic that is allowed out of pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and to. This type is beta-level in 1.8
@@ -20399,13 +20139,12 @@ export interface NetworkPolicyEgressRule {
    * @schema io.k8s.api.networking.v1.NetworkPolicyEgressRule#to
    */
   readonly to?: NetworkPolicyPeer[];
-
 }
 
 /**
  * Converts an object of type 'NetworkPolicyEgressRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NetworkPolicyEgressRule(obj: NetworkPolicyEgressRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20415,7 +20154,7 @@ export function toJson_NetworkPolicyEgressRule(obj: NetworkPolicyEgressRule | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicyIngressRule describes a particular set of traffic that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and from.
@@ -20436,13 +20175,12 @@ export interface NetworkPolicyIngressRule {
    * @schema io.k8s.api.networking.v1.NetworkPolicyIngressRule#ports
    */
   readonly ports?: NetworkPolicyPort[];
-
 }
 
 /**
  * Converts an object of type 'NetworkPolicyIngressRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NetworkPolicyIngressRule(obj: NetworkPolicyIngressRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20452,7 +20190,7 @@ export function toJson_NetworkPolicyIngressRule(obj: NetworkPolicyIngressRule | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
@@ -20466,13 +20204,12 @@ export interface NodeSelector {
    * @schema io.k8s.api.core.v1.NodeSelector#nodeSelectorTerms
    */
   readonly nodeSelectorTerms: NodeSelectorTerm[];
-
 }
 
 /**
  * Converts an object of type 'NodeSelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeSelector(obj: NodeSelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20481,7 +20218,7 @@ export function toJson_NodeSelector(obj: NodeSelector | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
@@ -20512,13 +20249,12 @@ export interface Preconditions {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'Preconditions' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Preconditions(obj: Preconditions | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20528,7 +20264,7 @@ export function toJson_Preconditions(obj: Preconditions | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema io.k8s.apimachinery.pkg.util.intstr.IntOrString
@@ -20563,13 +20299,12 @@ export interface TokenRequest {
    * @schema io.k8s.api.storage.v1.TokenRequest#expirationSeconds
    */
   readonly expirationSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'TokenRequest' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TokenRequest(obj: TokenRequest | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20579,7 +20314,7 @@ export function toJson_TokenRequest(obj: TokenRequest | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CSINodeDriver holds information about the specification of one CSI driver installed on a node
@@ -20614,13 +20349,12 @@ export interface CsiNodeDriver {
    * @schema io.k8s.api.storage.v1.CSINodeDriver#topologyKeys
    */
   readonly topologyKeys?: string[];
-
 }
 
 /**
  * Converts an object of type 'CsiNodeDriver' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CsiNodeDriver(obj: CsiNodeDriver | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20632,7 +20366,7 @@ export function toJson_CsiNodeDriver(obj: CsiNodeDriver | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
@@ -20660,13 +20394,12 @@ export interface LabelSelectorRequirement {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement#values
    */
   readonly values?: string[];
-
 }
 
 /**
  * Converts an object of type 'LabelSelectorRequirement' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LabelSelectorRequirement(obj: LabelSelectorRequirement | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20677,7 +20410,7 @@ export function toJson_LabelSelectorRequirement(obj: LabelSelectorRequirement | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A topology selector requirement is a selector that matches given label. This is an alpha feature and may change in the future.
@@ -20698,13 +20431,12 @@ export interface TopologySelectorLabelRequirement {
    * @schema io.k8s.api.core.v1.TopologySelectorLabelRequirement#values
    */
   readonly values: string[];
-
 }
 
 /**
  * Converts an object of type 'TopologySelectorLabelRequirement' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TopologySelectorLabelRequirement(obj: TopologySelectorLabelRequirement | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20714,7 +20446,7 @@ export function toJson_TopologySelectorLabelRequirement(obj: TopologySelectorLab
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeAttachmentSource represents a volume that should be attached. Right now only PersistenVolumes can be attached via external attacher, in future we may allow also inline volumes in pods. Exactly one member can be set.
@@ -20735,13 +20467,12 @@ export interface VolumeAttachmentSource {
    * @schema io.k8s.api.storage.v1.VolumeAttachmentSource#persistentVolumeName
    */
   readonly persistentVolumeName?: string;
-
 }
 
 /**
  * Converts an object of type 'VolumeAttachmentSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeAttachmentSource(obj: VolumeAttachmentSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20751,7 +20482,7 @@ export function toJson_VolumeAttachmentSource(obj: VolumeAttachmentSource | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceConversion describes how to convert different versions of a CR.
@@ -20773,13 +20504,12 @@ export interface CustomResourceConversion {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceConversion#webhook
    */
   readonly webhook?: WebhookConversion;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceConversion' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceConversion(obj: CustomResourceConversion | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20789,7 +20519,7 @@ export function toJson_CustomResourceConversion(obj: CustomResourceConversion | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
@@ -20840,13 +20570,12 @@ export interface CustomResourceDefinitionNames {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionNames#singular
    */
   readonly singular?: string;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceDefinitionNames' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceDefinitionNames(obj: CustomResourceDefinitionNames | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20860,7 +20589,7 @@ export function toJson_CustomResourceDefinitionNames(obj: CustomResourceDefiniti
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceDefinitionVersion describes a version for CRD.
@@ -20924,13 +20653,12 @@ export interface CustomResourceDefinitionVersion {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionVersion#subresources
    */
   readonly subresources?: CustomResourceSubresources;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceDefinitionVersion' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceDefinitionVersion(obj: CustomResourceDefinitionVersion | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20946,7 +20674,7 @@ export function toJson_CustomResourceDefinitionVersion(obj: CustomResourceDefini
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
@@ -20978,13 +20706,12 @@ export interface StatusCause {
    * @schema io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause#reason
    */
   readonly reason?: string;
-
 }
 
 /**
  * Converts an object of type 'StatusCause' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StatusCause(obj: StatusCause | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -20995,7 +20722,7 @@ export function toJson_StatusCause(obj: StatusCause | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceReference holds a reference to Service.legacy.k8s.io
@@ -21031,13 +20758,12 @@ export interface ServiceReference {
    * @schema io.k8s.api.admissionregistration.v1.ServiceReference#port
    */
   readonly port?: number;
-
 }
 
 /**
  * Converts an object of type 'ServiceReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceReference(obj: ServiceReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21049,7 +20775,7 @@ export function toJson_ServiceReference(obj: ServiceReference | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Spec to control the desired behavior of daemon set rolling update.
@@ -21070,13 +20796,12 @@ export interface RollingUpdateDaemonSet {
    * @schema io.k8s.api.apps.v1.RollingUpdateDaemonSet#maxUnavailable
    */
   readonly maxUnavailable?: IntOrString;
-
 }
 
 /**
  * Converts an object of type 'RollingUpdateDaemonSet' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RollingUpdateDaemonSet(obj: RollingUpdateDaemonSet | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21086,7 +20811,7 @@ export function toJson_RollingUpdateDaemonSet(obj: RollingUpdateDaemonSet | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Spec to control the desired behavior of rolling update.
@@ -21109,13 +20834,12 @@ export interface RollingUpdateDeployment {
    * @schema io.k8s.api.apps.v1.RollingUpdateDeployment#maxUnavailable
    */
   readonly maxUnavailable?: IntOrString;
-
 }
 
 /**
  * Converts an object of type 'RollingUpdateDeployment' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RollingUpdateDeployment(obj: RollingUpdateDeployment | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21125,7 +20849,7 @@ export function toJson_RollingUpdateDeployment(obj: RollingUpdateDeployment | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
@@ -21147,13 +20871,12 @@ export interface RollingUpdateStatefulSetStrategy {
    * @schema io.k8s.api.apps.v1.RollingUpdateStatefulSetStrategy#partition
    */
   readonly partition?: number;
-
 }
 
 /**
  * Converts an object of type 'RollingUpdateStatefulSetStrategy' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RollingUpdateStatefulSetStrategy(obj: RollingUpdateStatefulSetStrategy | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21163,7 +20886,7 @@ export function toJson_RollingUpdateStatefulSetStrategy(obj: RollingUpdateStatef
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HPAScalingRules configures the scaling behavior for one direction. These Rules are applied after calculating DesiredReplicas from metrics for the HPA. They can limit the scaling velocity by specifying scaling policies. They can prevent flapping by specifying the stabilization window, so that the number of replicas is not set instantly, instead, the safest value from the stabilization window is chosen.
@@ -21191,13 +20914,12 @@ export interface HpaScalingRulesV2 {
    * @schema io.k8s.api.autoscaling.v2.HPAScalingRules#stabilizationWindowSeconds
    */
   readonly stabilizationWindowSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'HpaScalingRulesV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HpaScalingRulesV2(obj: HpaScalingRulesV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21208,7 +20930,7 @@ export function toJson_HpaScalingRulesV2(obj: HpaScalingRulesV2 | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ContainerResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
@@ -21236,13 +20958,12 @@ export interface ContainerResourceMetricSourceV2 {
    * @schema io.k8s.api.autoscaling.v2.ContainerResourceMetricSource#target
    */
   readonly target: MetricTargetV2;
-
 }
 
 /**
  * Converts an object of type 'ContainerResourceMetricSourceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ContainerResourceMetricSourceV2(obj: ContainerResourceMetricSourceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21253,7 +20974,7 @@ export function toJson_ContainerResourceMetricSourceV2(obj: ContainerResourceMet
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).
@@ -21274,13 +20995,12 @@ export interface ExternalMetricSourceV2 {
    * @schema io.k8s.api.autoscaling.v2.ExternalMetricSource#target
    */
   readonly target: MetricTargetV2;
-
 }
 
 /**
  * Converts an object of type 'ExternalMetricSourceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ExternalMetricSourceV2(obj: ExternalMetricSourceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21290,7 +21010,7 @@ export function toJson_ExternalMetricSourceV2(obj: ExternalMetricSourceV2 | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
@@ -21318,13 +21038,12 @@ export interface ObjectMetricSourceV2 {
    * @schema io.k8s.api.autoscaling.v2.ObjectMetricSource#target
    */
   readonly target: MetricTargetV2;
-
 }
 
 /**
  * Converts an object of type 'ObjectMetricSourceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ObjectMetricSourceV2(obj: ObjectMetricSourceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21335,7 +21054,7 @@ export function toJson_ObjectMetricSourceV2(obj: ObjectMetricSourceV2 | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
@@ -21356,13 +21075,12 @@ export interface PodsMetricSourceV2 {
    * @schema io.k8s.api.autoscaling.v2.PodsMetricSource#target
    */
   readonly target: MetricTargetV2;
-
 }
 
 /**
  * Converts an object of type 'PodsMetricSourceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodsMetricSourceV2(obj: PodsMetricSourceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21372,7 +21090,7 @@ export function toJson_PodsMetricSourceV2(obj: PodsMetricSourceV2 | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
@@ -21393,13 +21111,12 @@ export interface ResourceMetricSourceV2 {
    * @schema io.k8s.api.autoscaling.v2.ResourceMetricSource#target
    */
   readonly target: MetricTargetV2;
-
 }
 
 /**
  * Converts an object of type 'ResourceMetricSourceV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceMetricSourceV2(obj: ResourceMetricSourceV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21409,7 +21126,7 @@ export function toJson_ResourceMetricSourceV2(obj: ResourceMetricSourceV2 | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HPAScalingRules configures the scaling behavior for one direction. These Rules are applied after calculating DesiredReplicas from metrics for the HPA. They can limit the scaling velocity by specifying scaling policies. They can prevent flapping by specifying the stabilization window, so that the number of replicas is not set instantly, instead, the safest value from the stabilization window is chosen.
@@ -21437,13 +21154,12 @@ export interface HpaScalingRulesV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.HPAScalingRules#stabilizationWindowSeconds
    */
   readonly stabilizationWindowSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'HpaScalingRulesV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HpaScalingRulesV2Beta2(obj: HpaScalingRulesV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21454,7 +21170,7 @@ export function toJson_HpaScalingRulesV2Beta2(obj: HpaScalingRulesV2Beta2 | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ContainerResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
@@ -21482,13 +21198,12 @@ export interface ContainerResourceMetricSourceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.ContainerResourceMetricSource#target
    */
   readonly target: MetricTargetV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'ContainerResourceMetricSourceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ContainerResourceMetricSourceV2Beta2(obj: ContainerResourceMetricSourceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21499,7 +21214,7 @@ export function toJson_ContainerResourceMetricSourceV2Beta2(obj: ContainerResour
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).
@@ -21520,13 +21235,12 @@ export interface ExternalMetricSourceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.ExternalMetricSource#target
    */
   readonly target: MetricTargetV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'ExternalMetricSourceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ExternalMetricSourceV2Beta2(obj: ExternalMetricSourceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21536,7 +21250,7 @@ export function toJson_ExternalMetricSourceV2Beta2(obj: ExternalMetricSourceV2Be
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
@@ -21562,13 +21276,12 @@ export interface ObjectMetricSourceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.ObjectMetricSource#target
    */
   readonly target: MetricTargetV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'ObjectMetricSourceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ObjectMetricSourceV2Beta2(obj: ObjectMetricSourceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21579,7 +21292,7 @@ export function toJson_ObjectMetricSourceV2Beta2(obj: ObjectMetricSourceV2Beta2 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
@@ -21600,13 +21313,12 @@ export interface PodsMetricSourceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.PodsMetricSource#target
    */
   readonly target: MetricTargetV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'PodsMetricSourceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodsMetricSourceV2Beta2(obj: PodsMetricSourceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21616,7 +21328,7 @@ export function toJson_PodsMetricSourceV2Beta2(obj: PodsMetricSourceV2Beta2 | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
@@ -21637,13 +21349,12 @@ export interface ResourceMetricSourceV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.ResourceMetricSource#target
    */
   readonly target: MetricTargetV2Beta2;
-
 }
 
 /**
  * Converts an object of type 'ResourceMetricSourceV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceMetricSourceV2Beta2(obj: ResourceMetricSourceV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21653,7 +21364,7 @@ export function toJson_ResourceMetricSourceV2Beta2(obj: ResourceMetricSourceV2Be
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodFailurePolicyRule describes how a pod failure is handled when the requirements are met. One of OnExitCodes and onPodConditions, but not both, can be used in each rule.
@@ -21689,13 +21400,12 @@ export interface PodFailurePolicyRule {
    * @schema io.k8s.api.batch.v1.PodFailurePolicyRule#onPodConditions
    */
   readonly onPodConditions: PodFailurePolicyOnPodConditionsPattern[];
-
 }
 
 /**
  * Converts an object of type 'PodFailurePolicyRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodFailurePolicyRule(obj: PodFailurePolicyRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21706,7 +21416,7 @@ export function toJson_PodFailurePolicyRule(obj: PodFailurePolicyRule | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node. This API is deprecated since 1.22: https://git.k8s.io/enhancements/keps/sig-node/281-dynamic-kubelet-configuration
@@ -21748,13 +21458,12 @@ export interface ConfigMapNodeConfigSource {
    * @schema io.k8s.api.core.v1.ConfigMapNodeConfigSource#uid
    */
   readonly uid?: string;
-
 }
 
 /**
  * Converts an object of type 'ConfigMapNodeConfigSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ConfigMapNodeConfigSource(obj: ConfigMapNodeConfigSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21767,7 +21476,7 @@ export function toJson_ConfigMapNodeConfigSource(obj: ConfigMapNodeConfigSource 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
@@ -21788,13 +21497,12 @@ export interface SecretReference {
    * @schema io.k8s.api.core.v1.SecretReference#namespace
    */
   readonly namespace?: string;
-
 }
 
 /**
  * Converts an object of type 'SecretReference' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecretReference(obj: SecretReference | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21804,7 +21512,7 @@ export function toJson_SecretReference(obj: SecretReference | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Node affinity is a group of node affinity scheduling rules.
@@ -21825,13 +21533,12 @@ export interface NodeAffinity {
    * @schema io.k8s.api.core.v1.NodeAffinity#requiredDuringSchedulingIgnoredDuringExecution
    */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: NodeSelector;
-
 }
 
 /**
  * Converts an object of type 'NodeAffinity' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeAffinity(obj: NodeAffinity | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21841,7 +21548,7 @@ export function toJson_NodeAffinity(obj: NodeAffinity | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Pod affinity is a group of inter pod affinity scheduling rules.
@@ -21862,13 +21569,12 @@ export interface PodAffinity {
    * @schema io.k8s.api.core.v1.PodAffinity#requiredDuringSchedulingIgnoredDuringExecution
    */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTerm[];
-
 }
 
 /**
  * Converts an object of type 'PodAffinity' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodAffinity(obj: PodAffinity | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21878,7 +21584,7 @@ export function toJson_PodAffinity(obj: PodAffinity | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Pod anti affinity is a group of inter pod anti affinity scheduling rules.
@@ -21899,13 +21605,12 @@ export interface PodAntiAffinity {
    * @schema io.k8s.api.core.v1.PodAntiAffinity#requiredDuringSchedulingIgnoredDuringExecution
    */
   readonly requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTerm[];
-
 }
 
 /**
  * Converts an object of type 'PodAntiAffinity' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodAntiAffinity(obj: PodAntiAffinity | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21915,7 +21620,7 @@ export function toJson_PodAntiAffinity(obj: PodAntiAffinity | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EnvVar represents an environment variable present in a Container.
@@ -21944,13 +21649,12 @@ export interface EnvVar {
    * @schema io.k8s.api.core.v1.EnvVar#valueFrom
    */
   readonly valueFrom?: EnvVarSource;
-
 }
 
 /**
  * Converts an object of type 'EnvVar' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EnvVar(obj: EnvVar | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -21961,7 +21665,7 @@ export function toJson_EnvVar(obj: EnvVar | undefined): Record<string, any> | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EnvFromSource represents the source of a set of ConfigMaps
@@ -21989,13 +21693,12 @@ export interface EnvFromSource {
    * @schema io.k8s.api.core.v1.EnvFromSource#secretRef
    */
   readonly secretRef?: SecretEnvSource;
-
 }
 
 /**
  * Converts an object of type 'EnvFromSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EnvFromSource(obj: EnvFromSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22006,7 +21709,7 @@ export function toJson_EnvFromSource(obj: EnvFromSource | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
@@ -22027,13 +21730,12 @@ export interface Lifecycle {
    * @schema io.k8s.api.core.v1.Lifecycle#preStop
    */
   readonly preStop?: LifecycleHandler;
-
 }
 
 /**
  * Converts an object of type 'Lifecycle' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Lifecycle(obj: Lifecycle | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22043,7 +21745,7 @@ export function toJson_Lifecycle(obj: Lifecycle | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
@@ -22124,13 +21826,12 @@ export interface Probe {
    * @schema io.k8s.api.core.v1.Probe#timeoutSeconds
    */
   readonly timeoutSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'Probe' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Probe(obj: Probe | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22148,7 +21849,7 @@ export function toJson_Probe(obj: Probe | undefined): Record<string, any> | unde
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ContainerPort represents a network port in a single container.
@@ -22193,13 +21894,12 @@ export interface ContainerPort {
    * @schema io.k8s.api.core.v1.ContainerPort#protocol
    */
   readonly protocol?: string;
-
 }
 
 /**
  * Converts an object of type 'ContainerPort' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ContainerPort(obj: ContainerPort | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22212,7 +21912,7 @@ export function toJson_ContainerPort(obj: ContainerPort | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.
@@ -22300,13 +22000,12 @@ export interface SecurityContext {
    * @schema io.k8s.api.core.v1.SecurityContext#windowsOptions
    */
   readonly windowsOptions?: WindowsSecurityContextOptions;
-
 }
 
 /**
  * Converts an object of type 'SecurityContext' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecurityContext(obj: SecurityContext | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22325,7 +22024,7 @@ export function toJson_SecurityContext(obj: SecurityContext | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * volumeDevice describes a mapping of a raw block device within a container.
@@ -22346,13 +22045,12 @@ export interface VolumeDevice {
    * @schema io.k8s.api.core.v1.VolumeDevice#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'VolumeDevice' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeDevice(obj: VolumeDevice | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22362,7 +22060,7 @@ export function toJson_VolumeDevice(obj: VolumeDevice | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeMount describes a mounting of a Volume within a container.
@@ -22414,13 +22112,12 @@ export interface VolumeMount {
    * @schema io.k8s.api.core.v1.VolumeMount#subPathExpr
    */
   readonly subPathExpr?: string;
-
 }
 
 /**
  * Converts an object of type 'VolumeMount' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeMount(obj: VolumeMount | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22434,7 +22131,7 @@ export function toJson_VolumeMount(obj: VolumeMount | undefined): Record<string,
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodDNSConfigOption defines DNS resolver options of a pod.
@@ -22453,13 +22150,12 @@ export interface PodDnsConfigOption {
    * @schema io.k8s.api.core.v1.PodDNSConfigOption#value
    */
   readonly value?: string;
-
 }
 
 /**
  * Converts an object of type 'PodDnsConfigOption' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodDnsConfigOption(obj: PodDnsConfigOption | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22469,7 +22165,7 @@ export function toJson_PodDnsConfigOption(obj: PodDnsConfigOption | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SELinuxOptions are the labels to be applied to the container
@@ -22504,13 +22200,12 @@ export interface SeLinuxOptions {
    * @schema io.k8s.api.core.v1.SELinuxOptions#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'SeLinuxOptions' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SeLinuxOptions(obj: SeLinuxOptions | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22522,7 +22217,7 @@ export function toJson_SeLinuxOptions(obj: SeLinuxOptions | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SeccompProfile defines a pod/container's seccomp profile settings. Only one profile source may be set.
@@ -22547,13 +22242,12 @@ export interface SeccompProfile {
    * @schema io.k8s.api.core.v1.SeccompProfile#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'SeccompProfile' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SeccompProfile(obj: SeccompProfile | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22563,7 +22257,7 @@ export function toJson_SeccompProfile(obj: SeccompProfile | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Sysctl defines a kernel parameter to be set
@@ -22584,13 +22278,12 @@ export interface Sysctl {
    * @schema io.k8s.api.core.v1.Sysctl#value
    */
   readonly value: string;
-
 }
 
 /**
  * Converts an object of type 'Sysctl' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Sysctl(obj: Sysctl | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22600,7 +22293,7 @@ export function toJson_Sysctl(obj: Sysctl | undefined): Record<string, any> | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * WindowsSecurityContextOptions contain Windows-specific options and credentials.
@@ -22636,13 +22329,12 @@ export interface WindowsSecurityContextOptions {
    * @schema io.k8s.api.core.v1.WindowsSecurityContextOptions#runAsUserName
    */
   readonly runAsUserName?: string;
-
 }
 
 /**
  * Converts an object of type 'WindowsSecurityContextOptions' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_WindowsSecurityContextOptions(obj: WindowsSecurityContextOptions | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22654,7 +22346,7 @@ export function toJson_WindowsSecurityContextOptions(obj: WindowsSecurityContext
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
@@ -22682,13 +22374,12 @@ export interface AzureFileVolumeSource {
    * @schema io.k8s.api.core.v1.AzureFileVolumeSource#shareName
    */
   readonly shareName: string;
-
 }
 
 /**
  * Converts an object of type 'AzureFileVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_AzureFileVolumeSource(obj: AzureFileVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22699,7 +22390,7 @@ export function toJson_AzureFileVolumeSource(obj: AzureFileVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
@@ -22749,13 +22440,12 @@ export interface CephFsVolumeSource {
    * @schema io.k8s.api.core.v1.CephFSVolumeSource#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'CephFsVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CephFsVolumeSource(obj: CephFsVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22769,7 +22459,7 @@ export function toJson_CephFsVolumeSource(obj: CephFsVolumeSource | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
@@ -22804,13 +22494,12 @@ export interface CinderVolumeSource {
    * @schema io.k8s.api.core.v1.CinderVolumeSource#volumeID
    */
   readonly volumeId: string;
-
 }
 
 /**
  * Converts an object of type 'CinderVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CinderVolumeSource(obj: CinderVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22822,7 +22511,7 @@ export function toJson_CinderVolumeSource(obj: CinderVolumeSource | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Adapts a ConfigMap into a volume.
@@ -22860,13 +22549,12 @@ export interface ConfigMapVolumeSource {
    * @schema io.k8s.api.core.v1.ConfigMapVolumeSource#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'ConfigMapVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ConfigMapVolumeSource(obj: ConfigMapVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22878,7 +22566,7 @@ export function toJson_ConfigMapVolumeSource(obj: ConfigMapVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a source location of a volume to mount, managed by an external CSI driver
@@ -22921,13 +22609,12 @@ export interface CsiVolumeSource {
    * @schema io.k8s.api.core.v1.CSIVolumeSource#volumeAttributes
    */
   readonly volumeAttributes?: { [key: string]: string };
-
 }
 
 /**
  * Converts an object of type 'CsiVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CsiVolumeSource(obj: CsiVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22940,7 +22627,7 @@ export function toJson_CsiVolumeSource(obj: CsiVolumeSource | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DownwardAPIVolumeSource represents a volume containing downward API info. Downward API volumes support ownership management and SELinux relabeling.
@@ -22962,13 +22649,12 @@ export interface DownwardApiVolumeSource {
    * @schema io.k8s.api.core.v1.DownwardAPIVolumeSource#items
    */
   readonly items?: DownwardApiVolumeFile[];
-
 }
 
 /**
  * Converts an object of type 'DownwardApiVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DownwardApiVolumeSource(obj: DownwardApiVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -22978,7 +22664,7 @@ export function toJson_DownwardApiVolumeSource(obj: DownwardApiVolumeSource | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents an empty directory for a pod. Empty directory volumes support ownership management and SELinux relabeling.
@@ -22999,13 +22685,12 @@ export interface EmptyDirVolumeSource {
    * @schema io.k8s.api.core.v1.EmptyDirVolumeSource#sizeLimit
    */
   readonly sizeLimit?: Quantity;
-
 }
 
 /**
  * Converts an object of type 'EmptyDirVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EmptyDirVolumeSource(obj: EmptyDirVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23015,7 +22700,7 @@ export function toJson_EmptyDirVolumeSource(obj: EmptyDirVolumeSource | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents an ephemeral volume that is handled by a normal storage driver.
@@ -23035,13 +22720,12 @@ export interface EphemeralVolumeSource {
    * @schema io.k8s.api.core.v1.EphemeralVolumeSource#volumeClaimTemplate
    */
   readonly volumeClaimTemplate?: PersistentVolumeClaimTemplate;
-
 }
 
 /**
  * Converts an object of type 'EphemeralVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EphemeralVolumeSource(obj: EphemeralVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23050,7 +22734,7 @@ export function toJson_EphemeralVolumeSource(obj: EphemeralVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * FlexVolume represents a generic volume resource that is provisioned/attached using an exec based plugin.
@@ -23092,13 +22776,12 @@ export interface FlexVolumeSource {
    * @schema io.k8s.api.core.v1.FlexVolumeSource#secretRef
    */
   readonly secretRef?: LocalObjectReference;
-
 }
 
 /**
  * Converts an object of type 'FlexVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_FlexVolumeSource(obj: FlexVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23111,7 +22794,7 @@ export function toJson_FlexVolumeSource(obj: FlexVolumeSource | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a volume that is populated with the contents of a git repository. Git repo volumes do not support ownership management. Git repo volumes support SELinux relabeling.
@@ -23141,13 +22824,12 @@ export interface GitRepoVolumeSource {
    * @schema io.k8s.api.core.v1.GitRepoVolumeSource#revision
    */
   readonly revision?: string;
-
 }
 
 /**
  * Converts an object of type 'GitRepoVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GitRepoVolumeSource(obj: GitRepoVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23158,7 +22840,7 @@ export function toJson_GitRepoVolumeSource(obj: GitRepoVolumeSource | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
@@ -23187,13 +22869,12 @@ export interface GlusterfsVolumeSource {
    * @schema io.k8s.api.core.v1.GlusterfsVolumeSource#readOnly
    */
   readonly readOnly?: boolean;
-
 }
 
 /**
  * Converts an object of type 'GlusterfsVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GlusterfsVolumeSource(obj: GlusterfsVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23204,7 +22885,7 @@ export function toJson_GlusterfsVolumeSource(obj: GlusterfsVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
@@ -23290,13 +22971,12 @@ export interface IscsiVolumeSource {
    * @schema io.k8s.api.core.v1.ISCSIVolumeSource#targetPortal
    */
   readonly targetPortal: string;
-
 }
 
 /**
  * Converts an object of type 'IscsiVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IscsiVolumeSource(obj: IscsiVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23315,7 +22995,7 @@ export function toJson_IscsiVolumeSource(obj: IscsiVolumeSource | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).
@@ -23336,13 +23016,12 @@ export interface PersistentVolumeClaimVolumeSource {
    * @schema io.k8s.api.core.v1.PersistentVolumeClaimVolumeSource#readOnly
    */
   readonly readOnly?: boolean;
-
 }
 
 /**
  * Converts an object of type 'PersistentVolumeClaimVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PersistentVolumeClaimVolumeSource(obj: PersistentVolumeClaimVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23352,7 +23031,7 @@ export function toJson_PersistentVolumeClaimVolumeSource(obj: PersistentVolumeCl
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a projected volume source
@@ -23373,13 +23052,12 @@ export interface ProjectedVolumeSource {
    * @schema io.k8s.api.core.v1.ProjectedVolumeSource#sources
    */
   readonly sources?: VolumeProjection[];
-
 }
 
 /**
  * Converts an object of type 'ProjectedVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ProjectedVolumeSource(obj: ProjectedVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23389,7 +23067,7 @@ export function toJson_ProjectedVolumeSource(obj: ProjectedVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
@@ -23457,13 +23135,12 @@ export interface RbdVolumeSource {
    * @schema io.k8s.api.core.v1.RBDVolumeSource#user
    */
   readonly user?: string;
-
 }
 
 /**
  * Converts an object of type 'RbdVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_RbdVolumeSource(obj: RbdVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23479,7 +23156,7 @@ export function toJson_RbdVolumeSource(obj: RbdVolumeSource | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ScaleIOVolumeSource represents a persistent ScaleIO volume
@@ -23559,13 +23236,12 @@ export interface ScaleIoVolumeSource {
    * @schema io.k8s.api.core.v1.ScaleIOVolumeSource#volumeName
    */
   readonly volumeName?: string;
-
 }
 
 /**
  * Converts an object of type 'ScaleIoVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ScaleIoVolumeSource(obj: ScaleIoVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23583,7 +23259,7 @@ export function toJson_ScaleIoVolumeSource(obj: ScaleIoVolumeSource | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Adapts a Secret into a volume.
@@ -23621,13 +23297,12 @@ export interface SecretVolumeSource {
    * @schema io.k8s.api.core.v1.SecretVolumeSource#secretName
    */
   readonly secretName?: string;
-
 }
 
 /**
  * Converts an object of type 'SecretVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecretVolumeSource(obj: SecretVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23639,7 +23314,7 @@ export function toJson_SecretVolumeSource(obj: SecretVolumeSource | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents a StorageOS persistent volume resource.
@@ -23681,13 +23356,12 @@ export interface StorageOsVolumeSource {
    * @schema io.k8s.api.core.v1.StorageOSVolumeSource#volumeNamespace
    */
   readonly volumeNamespace?: string;
-
 }
 
 /**
  * Converts an object of type 'StorageOsVolumeSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_StorageOsVolumeSource(obj: StorageOsVolumeSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23700,7 +23374,7 @@ export function toJson_StorageOsVolumeSource(obj: StorageOsVolumeSource | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.
@@ -23732,13 +23406,12 @@ export interface ScopedResourceSelectorRequirement {
    * @schema io.k8s.api.core.v1.ScopedResourceSelectorRequirement#values
    */
   readonly values?: string[];
-
 }
 
 /**
  * Converts an object of type 'ScopedResourceSelectorRequirement' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ScopedResourceSelectorRequirement(obj: ScopedResourceSelectorRequirement | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23749,7 +23422,7 @@ export function toJson_ScopedResourceSelectorRequirement(obj: ScopedResourceSele
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ClientIPConfig represents the configurations of Client IP based session affinity.
@@ -23763,13 +23436,12 @@ export interface ClientIpConfig {
    * @schema io.k8s.api.core.v1.ClientIPConfig#timeoutSeconds
    */
   readonly timeoutSeconds?: number;
-
 }
 
 /**
  * Converts an object of type 'ClientIpConfig' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ClientIpConfig(obj: ClientIpConfig | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23778,7 +23450,7 @@ export function toJson_ClientIpConfig(obj: ClientIpConfig | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ForZone provides information about which zones should consume this endpoint.
@@ -23792,13 +23464,12 @@ export interface ForZone {
    * @schema io.k8s.api.discovery.v1.ForZone#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'ForZone' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ForZone(obj: ForZone | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23807,7 +23478,7 @@ export function toJson_ForZone(obj: ForZone | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NonResourcePolicyRule is a predicate that matches non-resource requests according to their verb and the target non-resource URL. A NonResourcePolicyRule matches a request if and only if both (a) at least one member of verbs matches the request and (b) at least one member of nonResourceURLs matches the request.
@@ -23834,13 +23505,12 @@ export interface NonResourcePolicyRuleV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.NonResourcePolicyRule#verbs
    */
   readonly verbs: string[];
-
 }
 
 /**
  * Converts an object of type 'NonResourcePolicyRuleV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NonResourcePolicyRuleV1Beta1(obj: NonResourcePolicyRuleV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23850,7 +23520,7 @@ export function toJson_NonResourcePolicyRuleV1Beta1(obj: NonResourcePolicyRuleV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourcePolicyRule is a predicate that matches some resource requests, testing the request's verb and the target resource. A ResourcePolicyRule matches a resource request if and only if: (a) at least one member of verbs matches the request, (b) at least one member of apiGroups matches the request, (c) at least one member of resources matches the request, and (d) either (d1) the request does not specify a namespace (i.e., `Namespace==""`) and clusterScope is true or (d2) the request specifies a namespace and least one member of namespaces matches the request's namespace.
@@ -23892,13 +23562,12 @@ export interface ResourcePolicyRuleV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.ResourcePolicyRule#verbs
    */
   readonly verbs: string[];
-
 }
 
 /**
  * Converts an object of type 'ResourcePolicyRuleV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourcePolicyRuleV1Beta1(obj: ResourcePolicyRuleV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23911,7 +23580,7 @@ export function toJson_ResourcePolicyRuleV1Beta1(obj: ResourcePolicyRuleV1Beta1 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Subject matches the originator of a request, as identified by the request authentication system. There are three ways of matching an originator; by user, group, or service account.
@@ -23946,13 +23615,12 @@ export interface SubjectV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.Subject#user
    */
   readonly user?: UserSubjectV1Beta1;
-
 }
 
 /**
  * Converts an object of type 'SubjectV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SubjectV1Beta1(obj: SubjectV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -23964,7 +23632,7 @@ export function toJson_SubjectV1Beta1(obj: SubjectV1Beta1 | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitResponse defines how to handle requests that can not be executed right now.
@@ -23985,13 +23653,12 @@ export interface LimitResponseV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.LimitResponse#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'LimitResponseV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitResponseV1Beta1(obj: LimitResponseV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24001,7 +23668,7 @@ export function toJson_LimitResponseV1Beta1(obj: LimitResponseV1Beta1 | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NonResourcePolicyRule is a predicate that matches non-resource requests according to their verb and the target non-resource URL. A NonResourcePolicyRule matches a request if and only if both (a) at least one member of verbs matches the request and (b) at least one member of nonResourceURLs matches the request.
@@ -24028,13 +23695,12 @@ export interface NonResourcePolicyRuleV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.NonResourcePolicyRule#verbs
    */
   readonly verbs: string[];
-
 }
 
 /**
  * Converts an object of type 'NonResourcePolicyRuleV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NonResourcePolicyRuleV1Beta2(obj: NonResourcePolicyRuleV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24044,7 +23710,7 @@ export function toJson_NonResourcePolicyRuleV1Beta2(obj: NonResourcePolicyRuleV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourcePolicyRule is a predicate that matches some resource requests, testing the request's verb and the target resource. A ResourcePolicyRule matches a resource request if and only if: (a) at least one member of verbs matches the request, (b) at least one member of apiGroups matches the request, (c) at least one member of resources matches the request, and (d) either (d1) the request does not specify a namespace (i.e., `Namespace==""`) and clusterScope is true or (d2) the request specifies a namespace and least one member of namespaces matches the request's namespace.
@@ -24086,13 +23752,12 @@ export interface ResourcePolicyRuleV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.ResourcePolicyRule#verbs
    */
   readonly verbs: string[];
-
 }
 
 /**
  * Converts an object of type 'ResourcePolicyRuleV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourcePolicyRuleV1Beta2(obj: ResourcePolicyRuleV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24105,7 +23770,7 @@ export function toJson_ResourcePolicyRuleV1Beta2(obj: ResourcePolicyRuleV1Beta2 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Subject matches the originator of a request, as identified by the request authentication system. There are three ways of matching an originator; by user, group, or service account.
@@ -24140,13 +23805,12 @@ export interface SubjectV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.Subject#user
    */
   readonly user?: UserSubjectV1Beta2;
-
 }
 
 /**
  * Converts an object of type 'SubjectV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SubjectV1Beta2(obj: SubjectV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24158,7 +23822,7 @@ export function toJson_SubjectV1Beta2(obj: SubjectV1Beta2 | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LimitResponse defines how to handle requests that can not be executed right now.
@@ -24179,13 +23843,12 @@ export interface LimitResponseV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.LimitResponse#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'LimitResponseV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LimitResponseV1Beta2(obj: LimitResponseV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24195,7 +23858,7 @@ export function toJson_LimitResponseV1Beta2(obj: LimitResponseV1Beta2 | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IngressServiceBackend references a Kubernetes Service as a Backend.
@@ -24216,13 +23879,12 @@ export interface IngressServiceBackend {
    * @schema io.k8s.api.networking.v1.IngressServiceBackend#port
    */
   readonly port?: ServiceBackendPort;
-
 }
 
 /**
  * Converts an object of type 'IngressServiceBackend' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IngressServiceBackend(obj: IngressServiceBackend | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24232,7 +23894,7 @@ export function toJson_IngressServiceBackend(obj: IngressServiceBackend | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://<host>/<path>?<searchpart> -> backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.
@@ -24246,13 +23908,12 @@ export interface HttpIngressRuleValue {
    * @schema io.k8s.api.networking.v1.HTTPIngressRuleValue#paths
    */
   readonly paths: HttpIngressPath[];
-
 }
 
 /**
  * Converts an object of type 'HttpIngressRuleValue' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HttpIngressRuleValue(obj: HttpIngressRuleValue | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24261,7 +23922,7 @@ export function toJson_HttpIngressRuleValue(obj: HttpIngressRuleValue | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicyPort describes a port to allow traffic on
@@ -24289,13 +23950,12 @@ export interface NetworkPolicyPort {
    * @schema io.k8s.api.networking.v1.NetworkPolicyPort#protocol
    */
   readonly protocol?: string;
-
 }
 
 /**
  * Converts an object of type 'NetworkPolicyPort' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NetworkPolicyPort(obj: NetworkPolicyPort | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24306,7 +23966,7 @@ export function toJson_NetworkPolicyPort(obj: NetworkPolicyPort | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of fields are allowed
@@ -24338,13 +23998,12 @@ export interface NetworkPolicyPeer {
    * @schema io.k8s.api.networking.v1.NetworkPolicyPeer#podSelector
    */
   readonly podSelector?: LabelSelector;
-
 }
 
 /**
  * Converts an object of type 'NetworkPolicyPeer' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NetworkPolicyPeer(obj: NetworkPolicyPeer | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24355,7 +24014,7 @@ export function toJson_NetworkPolicyPeer(obj: NetworkPolicyPeer | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
@@ -24376,13 +24035,12 @@ export interface NodeSelectorTerm {
    * @schema io.k8s.api.core.v1.NodeSelectorTerm#matchFields
    */
   readonly matchFields?: NodeSelectorRequirement[];
-
 }
 
 /**
  * Converts an object of type 'NodeSelectorTerm' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeSelectorTerm(obj: NodeSelectorTerm | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24392,7 +24050,7 @@ export function toJson_NodeSelectorTerm(obj: NodeSelectorTerm | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * VolumeNodeResources is a set of resource limits for scheduling of volumes.
@@ -24406,13 +24064,12 @@ export interface VolumeNodeResources {
    * @schema io.k8s.api.storage.v1.VolumeNodeResources#count
    */
   readonly count?: number;
-
 }
 
 /**
  * Converts an object of type 'VolumeNodeResources' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeNodeResources(obj: VolumeNodeResources | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24421,7 +24078,7 @@ export function toJson_VolumeNodeResources(obj: VolumeNodeResources | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * WebhookConversion describes how to call a conversion webhook
@@ -24442,13 +24099,12 @@ export interface WebhookConversion {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.WebhookConversion#conversionReviewVersions
    */
   readonly conversionReviewVersions: string[];
-
 }
 
 /**
  * Converts an object of type 'WebhookConversion' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_WebhookConversion(obj: WebhookConversion | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24458,7 +24114,7 @@ export function toJson_WebhookConversion(obj: WebhookConversion | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceColumnDefinition specifies a column for server side printing.
@@ -24507,13 +24163,12 @@ export interface CustomResourceColumnDefinition {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceColumnDefinition#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceColumnDefinition' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceColumnDefinition(obj: CustomResourceColumnDefinition | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24527,7 +24182,7 @@ export function toJson_CustomResourceColumnDefinition(obj: CustomResourceColumnD
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceValidation is a list of validation methods for CustomResources.
@@ -24541,13 +24196,12 @@ export interface CustomResourceValidation {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceValidation#openAPIV3Schema
    */
   readonly openApiv3Schema?: JsonSchemaProps;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceValidation' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceValidation(obj: CustomResourceValidation | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24556,7 +24210,7 @@ export function toJson_CustomResourceValidation(obj: CustomResourceValidation | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceSubresources defines the status and scale subresources for CustomResources.
@@ -24577,13 +24231,12 @@ export interface CustomResourceSubresources {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresources#status
    */
   readonly status?: any;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceSubresources' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceSubresources(obj: CustomResourceSubresources | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24593,7 +24246,7 @@ export function toJson_CustomResourceSubresources(obj: CustomResourceSubresource
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HPAScalingPolicy is a single policy which must hold true for a specified past interval.
@@ -24621,13 +24274,12 @@ export interface HpaScalingPolicyV2 {
    * @schema io.k8s.api.autoscaling.v2.HPAScalingPolicy#value
    */
   readonly value: number;
-
 }
 
 /**
  * Converts an object of type 'HpaScalingPolicyV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HpaScalingPolicyV2(obj: HpaScalingPolicyV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24638,7 +24290,7 @@ export function toJson_HpaScalingPolicyV2(obj: HpaScalingPolicyV2 | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricTarget defines the target value, average value, or average utilization of a specific metric
@@ -24673,13 +24325,12 @@ export interface MetricTargetV2 {
    * @schema io.k8s.api.autoscaling.v2.MetricTarget#value
    */
   readonly value?: Quantity;
-
 }
 
 /**
  * Converts an object of type 'MetricTargetV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricTargetV2(obj: MetricTargetV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24691,7 +24342,7 @@ export function toJson_MetricTargetV2(obj: MetricTargetV2 | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricIdentifier defines the name and optionally selector for a metric
@@ -24712,13 +24363,12 @@ export interface MetricIdentifierV2 {
    * @schema io.k8s.api.autoscaling.v2.MetricIdentifier#selector
    */
   readonly selector?: LabelSelector;
-
 }
 
 /**
  * Converts an object of type 'MetricIdentifierV2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricIdentifierV2(obj: MetricIdentifierV2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24728,7 +24378,7 @@ export function toJson_MetricIdentifierV2(obj: MetricIdentifierV2 | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HPAScalingPolicy is a single policy which must hold true for a specified past interval.
@@ -24756,13 +24406,12 @@ export interface HpaScalingPolicyV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.HPAScalingPolicy#value
    */
   readonly value: number;
-
 }
 
 /**
  * Converts an object of type 'HpaScalingPolicyV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HpaScalingPolicyV2Beta2(obj: HpaScalingPolicyV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24773,7 +24422,7 @@ export function toJson_HpaScalingPolicyV2Beta2(obj: HpaScalingPolicyV2Beta2 | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricTarget defines the target value, average value, or average utilization of a specific metric
@@ -24808,13 +24457,12 @@ export interface MetricTargetV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.MetricTarget#value
    */
   readonly value?: Quantity;
-
 }
 
 /**
  * Converts an object of type 'MetricTargetV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricTargetV2Beta2(obj: MetricTargetV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24826,7 +24474,7 @@ export function toJson_MetricTargetV2Beta2(obj: MetricTargetV2Beta2 | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * MetricIdentifier defines the name and optionally selector for a metric
@@ -24847,13 +24495,12 @@ export interface MetricIdentifierV2Beta2 {
    * @schema io.k8s.api.autoscaling.v2beta2.MetricIdentifier#selector
    */
   readonly selector?: LabelSelector;
-
 }
 
 /**
  * Converts an object of type 'MetricIdentifierV2Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_MetricIdentifierV2Beta2(obj: MetricIdentifierV2Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24863,7 +24510,7 @@ export function toJson_MetricIdentifierV2Beta2(obj: MetricIdentifierV2Beta2 | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodFailurePolicyOnExitCodesRequirement describes the requirement for handling a failed pod based on its container exit codes. In particular, it lookups the .state.terminated.exitCode for each app container and init container status, represented by the .status.containerStatuses and .status.initContainerStatuses fields in the Pod status, respectively. Containers completed with success (exit code 0) are excluded from the requirement check.
@@ -24899,13 +24546,12 @@ export interface PodFailurePolicyOnExitCodesRequirement {
    * @schema io.k8s.api.batch.v1.PodFailurePolicyOnExitCodesRequirement#values
    */
   readonly values: number[];
-
 }
 
 /**
  * Converts an object of type 'PodFailurePolicyOnExitCodesRequirement' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodFailurePolicyOnExitCodesRequirement(obj: PodFailurePolicyOnExitCodesRequirement | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24916,7 +24562,7 @@ export function toJson_PodFailurePolicyOnExitCodesRequirement(obj: PodFailurePol
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PodFailurePolicyOnPodConditionsPattern describes a pattern for matching an actual pod condition type.
@@ -24938,13 +24584,12 @@ export interface PodFailurePolicyOnPodConditionsPattern {
    * @schema io.k8s.api.batch.v1.PodFailurePolicyOnPodConditionsPattern#type
    */
   readonly type: string;
-
 }
 
 /**
  * Converts an object of type 'PodFailurePolicyOnPodConditionsPattern' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodFailurePolicyOnPodConditionsPattern(obj: PodFailurePolicyOnPodConditionsPattern | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24954,7 +24599,7 @@ export function toJson_PodFailurePolicyOnPodConditionsPattern(obj: PodFailurePol
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
@@ -24975,13 +24620,12 @@ export interface PreferredSchedulingTerm {
    * @schema io.k8s.api.core.v1.PreferredSchedulingTerm#weight
    */
   readonly weight: number;
-
 }
 
 /**
  * Converts an object of type 'PreferredSchedulingTerm' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PreferredSchedulingTerm(obj: PreferredSchedulingTerm | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -24991,7 +24635,7 @@ export function toJson_PreferredSchedulingTerm(obj: PreferredSchedulingTerm | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
@@ -25012,13 +24656,12 @@ export interface WeightedPodAffinityTerm {
    * @schema io.k8s.api.core.v1.WeightedPodAffinityTerm#weight
    */
   readonly weight: number;
-
 }
 
 /**
  * Converts an object of type 'WeightedPodAffinityTerm' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_WeightedPodAffinityTerm(obj: WeightedPodAffinityTerm | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25028,7 +24671,7 @@ export function toJson_WeightedPodAffinityTerm(obj: WeightedPodAffinityTerm | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running
@@ -25063,13 +24706,12 @@ export interface PodAffinityTerm {
    * @schema io.k8s.api.core.v1.PodAffinityTerm#topologyKey
    */
   readonly topologyKey: string;
-
 }
 
 /**
  * Converts an object of type 'PodAffinityTerm' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PodAffinityTerm(obj: PodAffinityTerm | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25081,7 +24723,7 @@ export function toJson_PodAffinityTerm(obj: PodAffinityTerm | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * EnvVarSource represents a source for the value of an EnvVar.
@@ -25116,13 +24758,12 @@ export interface EnvVarSource {
    * @schema io.k8s.api.core.v1.EnvVarSource#secretKeyRef
    */
   readonly secretKeyRef?: SecretKeySelector;
-
 }
 
 /**
  * Converts an object of type 'EnvVarSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_EnvVarSource(obj: EnvVarSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25134,7 +24775,7 @@ export function toJson_EnvVarSource(obj: EnvVarSource | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ConfigMapEnvSource selects a ConfigMap to populate the environment variables with.
@@ -25157,13 +24798,12 @@ export interface ConfigMapEnvSource {
    * @schema io.k8s.api.core.v1.ConfigMapEnvSource#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'ConfigMapEnvSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ConfigMapEnvSource(obj: ConfigMapEnvSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25173,7 +24813,7 @@ export function toJson_ConfigMapEnvSource(obj: ConfigMapEnvSource | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SecretEnvSource selects a Secret to populate the environment variables with.
@@ -25196,13 +24836,12 @@ export interface SecretEnvSource {
    * @schema io.k8s.api.core.v1.SecretEnvSource#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'SecretEnvSource' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecretEnvSource(obj: SecretEnvSource | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25212,7 +24851,7 @@ export function toJson_SecretEnvSource(obj: SecretEnvSource | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * LifecycleHandler defines a specific action that should be taken in a lifecycle hook. One and only one of the fields, except TCPSocket must be specified.
@@ -25240,13 +24879,12 @@ export interface LifecycleHandler {
    * @schema io.k8s.api.core.v1.LifecycleHandler#tcpSocket
    */
   readonly tcpSocket?: TcpSocketAction;
-
 }
 
 /**
  * Converts an object of type 'LifecycleHandler' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_LifecycleHandler(obj: LifecycleHandler | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25257,7 +24895,7 @@ export function toJson_LifecycleHandler(obj: LifecycleHandler | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ExecAction describes a "run in container" action.
@@ -25271,13 +24909,12 @@ export interface ExecAction {
    * @schema io.k8s.api.core.v1.ExecAction#command
    */
   readonly command?: string[];
-
 }
 
 /**
  * Converts an object of type 'ExecAction' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ExecAction(obj: ExecAction | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25286,7 +24923,7 @@ export function toJson_ExecAction(obj: ExecAction | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema io.k8s.api.core.v1.GRPCAction
@@ -25307,13 +24944,12 @@ export interface GrpcAction {
    * @schema io.k8s.api.core.v1.GRPCAction#service
    */
   readonly service?: string;
-
 }
 
 /**
  * Converts an object of type 'GrpcAction' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GrpcAction(obj: GrpcAction | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25323,7 +24959,7 @@ export function toJson_GrpcAction(obj: GrpcAction | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HTTPGetAction describes an action based on HTTP Get requests.
@@ -25368,13 +25004,12 @@ export interface HttpGetAction {
    * @schema io.k8s.api.core.v1.HTTPGetAction#scheme
    */
   readonly scheme?: string;
-
 }
 
 /**
  * Converts an object of type 'HttpGetAction' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HttpGetAction(obj: HttpGetAction | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25387,7 +25022,7 @@ export function toJson_HttpGetAction(obj: HttpGetAction | undefined): Record<str
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * TCPSocketAction describes an action based on opening a socket
@@ -25408,13 +25043,12 @@ export interface TcpSocketAction {
    * @schema io.k8s.api.core.v1.TCPSocketAction#port
    */
   readonly port: IntOrString;
-
 }
 
 /**
  * Converts an object of type 'TcpSocketAction' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_TcpSocketAction(obj: TcpSocketAction | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25424,7 +25058,7 @@ export function toJson_TcpSocketAction(obj: TcpSocketAction | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Adds and removes POSIX capabilities from running containers.
@@ -25445,13 +25079,12 @@ export interface Capabilities {
    * @schema io.k8s.api.core.v1.Capabilities#drop
    */
   readonly drop?: string[];
-
 }
 
 /**
  * Converts an object of type 'Capabilities' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_Capabilities(obj: Capabilities | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25461,7 +25094,7 @@ export function toJson_Capabilities(obj: Capabilities | undefined): Record<strin
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Maps a string key to a path within a volume.
@@ -25489,13 +25122,12 @@ export interface KeyToPath {
    * @schema io.k8s.api.core.v1.KeyToPath#path
    */
   readonly path: string;
-
 }
 
 /**
  * Converts an object of type 'KeyToPath' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_KeyToPath(obj: KeyToPath | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25506,7 +25138,7 @@ export function toJson_KeyToPath(obj: KeyToPath | undefined): Record<string, any
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * DownwardAPIVolumeFile represents information to create the file containing the pod field
@@ -25541,13 +25173,12 @@ export interface DownwardApiVolumeFile {
    * @schema io.k8s.api.core.v1.DownwardAPIVolumeFile#resourceFieldRef
    */
   readonly resourceFieldRef?: ResourceFieldSelector;
-
 }
 
 /**
  * Converts an object of type 'DownwardApiVolumeFile' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DownwardApiVolumeFile(obj: DownwardApiVolumeFile | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25559,7 +25190,7 @@ export function toJson_DownwardApiVolumeFile(obj: DownwardApiVolumeFile | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
@@ -25580,13 +25211,12 @@ export interface PersistentVolumeClaimTemplate {
    * @schema io.k8s.api.core.v1.PersistentVolumeClaimTemplate#spec
    */
   readonly spec: PersistentVolumeClaimSpec;
-
 }
 
 /**
  * Converts an object of type 'PersistentVolumeClaimTemplate' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_PersistentVolumeClaimTemplate(obj: PersistentVolumeClaimTemplate | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25596,7 +25226,7 @@ export function toJson_PersistentVolumeClaimTemplate(obj: PersistentVolumeClaimT
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Projection that may be projected along with other supported volume types
@@ -25631,13 +25261,12 @@ export interface VolumeProjection {
    * @schema io.k8s.api.core.v1.VolumeProjection#serviceAccountToken
    */
   readonly serviceAccountToken?: ServiceAccountTokenProjection;
-
 }
 
 /**
  * Converts an object of type 'VolumeProjection' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_VolumeProjection(obj: VolumeProjection | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25649,7 +25278,7 @@ export function toJson_VolumeProjection(obj: VolumeProjection | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * GroupSubject holds detailed information for group-kind subject.
@@ -25663,13 +25292,12 @@ export interface GroupSubjectV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.GroupSubject#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'GroupSubjectV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GroupSubjectV1Beta1(obj: GroupSubjectV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25678,7 +25306,7 @@ export function toJson_GroupSubjectV1Beta1(obj: GroupSubjectV1Beta1 | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceAccountSubject holds detailed information for service-account-kind subject.
@@ -25699,13 +25327,12 @@ export interface ServiceAccountSubjectV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.ServiceAccountSubject#namespace
    */
   readonly namespace: string;
-
 }
 
 /**
  * Converts an object of type 'ServiceAccountSubjectV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceAccountSubjectV1Beta1(obj: ServiceAccountSubjectV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25715,7 +25342,7 @@ export function toJson_ServiceAccountSubjectV1Beta1(obj: ServiceAccountSubjectV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * UserSubject holds detailed information for user-kind subject.
@@ -25729,13 +25356,12 @@ export interface UserSubjectV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.UserSubject#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'UserSubjectV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_UserSubjectV1Beta1(obj: UserSubjectV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25744,7 +25370,7 @@ export function toJson_UserSubjectV1Beta1(obj: UserSubjectV1Beta1 | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * QueuingConfiguration holds the configuration parameters for queuing
@@ -25772,13 +25398,12 @@ export interface QueuingConfigurationV1Beta1 {
    * @schema io.k8s.api.flowcontrol.v1beta1.QueuingConfiguration#queues
    */
   readonly queues?: number;
-
 }
 
 /**
  * Converts an object of type 'QueuingConfigurationV1Beta1' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_QueuingConfigurationV1Beta1(obj: QueuingConfigurationV1Beta1 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25789,7 +25414,7 @@ export function toJson_QueuingConfigurationV1Beta1(obj: QueuingConfigurationV1Be
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * GroupSubject holds detailed information for group-kind subject.
@@ -25803,13 +25428,12 @@ export interface GroupSubjectV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.GroupSubject#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'GroupSubjectV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_GroupSubjectV1Beta2(obj: GroupSubjectV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25818,7 +25442,7 @@ export function toJson_GroupSubjectV1Beta2(obj: GroupSubjectV1Beta2 | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceAccountSubject holds detailed information for service-account-kind subject.
@@ -25839,13 +25463,12 @@ export interface ServiceAccountSubjectV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.ServiceAccountSubject#namespace
    */
   readonly namespace: string;
-
 }
 
 /**
  * Converts an object of type 'ServiceAccountSubjectV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceAccountSubjectV1Beta2(obj: ServiceAccountSubjectV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25855,7 +25478,7 @@ export function toJson_ServiceAccountSubjectV1Beta2(obj: ServiceAccountSubjectV1
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * UserSubject holds detailed information for user-kind subject.
@@ -25869,13 +25492,12 @@ export interface UserSubjectV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.UserSubject#name
    */
   readonly name: string;
-
 }
 
 /**
  * Converts an object of type 'UserSubjectV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_UserSubjectV1Beta2(obj: UserSubjectV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25884,7 +25506,7 @@ export function toJson_UserSubjectV1Beta2(obj: UserSubjectV1Beta2 | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * QueuingConfiguration holds the configuration parameters for queuing
@@ -25912,13 +25534,12 @@ export interface QueuingConfigurationV1Beta2 {
    * @schema io.k8s.api.flowcontrol.v1beta2.QueuingConfiguration#queues
    */
   readonly queues?: number;
-
 }
 
 /**
  * Converts an object of type 'QueuingConfigurationV1Beta2' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_QueuingConfigurationV1Beta2(obj: QueuingConfigurationV1Beta2 | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25929,7 +25550,7 @@ export function toJson_QueuingConfigurationV1Beta2(obj: QueuingConfigurationV1Be
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceBackendPort is the service port being referenced.
@@ -25950,13 +25571,12 @@ export interface ServiceBackendPort {
    * @schema io.k8s.api.networking.v1.ServiceBackendPort#number
    */
   readonly number?: number;
-
 }
 
 /**
  * Converts an object of type 'ServiceBackendPort' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceBackendPort(obj: ServiceBackendPort | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -25966,7 +25586,7 @@ export function toJson_ServiceBackendPort(obj: ServiceBackendPort | undefined): 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HTTPIngressPath associates a path with a backend. Incoming urls matching the path are forwarded to the backend.
@@ -26004,13 +25624,12 @@ export interface HttpIngressPath {
    * @schema io.k8s.api.networking.v1.HTTPIngressPath#pathType
    */
   readonly pathType: string;
-
 }
 
 /**
  * Converts an object of type 'HttpIngressPath' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HttpIngressPath(obj: HttpIngressPath | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26021,7 +25640,7 @@ export function toJson_HttpIngressPath(obj: HttpIngressPath | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * IPBlock describes a particular CIDR (Ex. "192.168.1.1/24","2001:db9::/64") that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs that should not be included within this rule.
@@ -26042,13 +25661,12 @@ export interface IpBlock {
    * @schema io.k8s.api.networking.v1.IPBlock#except
    */
   readonly except?: string[];
-
 }
 
 /**
  * Converts an object of type 'IpBlock' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_IpBlock(obj: IpBlock | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26058,7 +25676,7 @@ export function toJson_IpBlock(obj: IpBlock | undefined): Record<string, any> | 
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
@@ -26088,13 +25706,12 @@ export interface NodeSelectorRequirement {
    * @schema io.k8s.api.core.v1.NodeSelectorRequirement#values
    */
   readonly values?: string[];
-
 }
 
 /**
  * Converts an object of type 'NodeSelectorRequirement' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_NodeSelectorRequirement(obj: NodeSelectorRequirement | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26105,7 +25722,7 @@ export function toJson_NodeSelectorRequirement(obj: NodeSelectorRequirement | un
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * JSONSchemaProps is a JSON-Schema following Specification Draft 4 (http://json-schema.org/).
@@ -26386,13 +26003,12 @@ export interface JsonSchemaProps {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaProps#x-kubernetes-validations
    */
   readonly xKubernetesValidations?: ValidationRule[];
-
 }
 
 /**
  * Converts an object of type 'JsonSchemaProps' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_JsonSchemaProps(obj: JsonSchemaProps | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26444,7 +26060,7 @@ export function toJson_JsonSchemaProps(obj: JsonSchemaProps | undefined): Record
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * CustomResourceSubresourceScale defines how to serve the scale subresource for CustomResources.
@@ -26472,13 +26088,12 @@ export interface CustomResourceSubresourceScale {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresourceScale#statusReplicasPath
    */
   readonly statusReplicasPath: string;
-
 }
 
 /**
  * Converts an object of type 'CustomResourceSubresourceScale' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_CustomResourceSubresourceScale(obj: CustomResourceSubresourceScale | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26489,7 +26104,7 @@ export function toJson_CustomResourceSubresourceScale(obj: CustomResourceSubreso
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Selects a key from a ConfigMap.
@@ -26517,13 +26132,12 @@ export interface ConfigMapKeySelector {
    * @schema io.k8s.api.core.v1.ConfigMapKeySelector#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'ConfigMapKeySelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ConfigMapKeySelector(obj: ConfigMapKeySelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26534,7 +26148,7 @@ export function toJson_ConfigMapKeySelector(obj: ConfigMapKeySelector | undefine
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ObjectFieldSelector selects an APIVersioned field of an object.
@@ -26555,13 +26169,12 @@ export interface ObjectFieldSelector {
    * @schema io.k8s.api.core.v1.ObjectFieldSelector#fieldPath
    */
   readonly fieldPath: string;
-
 }
 
 /**
  * Converts an object of type 'ObjectFieldSelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ObjectFieldSelector(obj: ObjectFieldSelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26571,7 +26184,7 @@ export function toJson_ObjectFieldSelector(obj: ObjectFieldSelector | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ResourceFieldSelector represents container resources (cpu, memory) and their output format
@@ -26599,13 +26212,12 @@ export interface ResourceFieldSelector {
    * @schema io.k8s.api.core.v1.ResourceFieldSelector#resource
    */
   readonly resource: string;
-
 }
 
 /**
  * Converts an object of type 'ResourceFieldSelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ResourceFieldSelector(obj: ResourceFieldSelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26616,7 +26228,7 @@ export function toJson_ResourceFieldSelector(obj: ResourceFieldSelector | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * SecretKeySelector selects a key of a Secret.
@@ -26644,13 +26256,12 @@ export interface SecretKeySelector {
    * @schema io.k8s.api.core.v1.SecretKeySelector#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'SecretKeySelector' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecretKeySelector(obj: SecretKeySelector | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26661,7 +26272,7 @@ export function toJson_SecretKeySelector(obj: SecretKeySelector | undefined): Re
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * HTTPHeader describes a custom header to be used in HTTP probes
@@ -26682,13 +26293,12 @@ export interface HttpHeader {
    * @schema io.k8s.api.core.v1.HTTPHeader#value
    */
   readonly value: string;
-
 }
 
 /**
  * Converts an object of type 'HttpHeader' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_HttpHeader(obj: HttpHeader | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26698,7 +26308,7 @@ export function toJson_HttpHeader(obj: HttpHeader | undefined): Record<string, a
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Adapts a ConfigMap into a projected volume.
@@ -26728,13 +26338,12 @@ export interface ConfigMapProjection {
    * @schema io.k8s.api.core.v1.ConfigMapProjection#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'ConfigMapProjection' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ConfigMapProjection(obj: ConfigMapProjection | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26745,7 +26354,7 @@ export function toJson_ConfigMapProjection(obj: ConfigMapProjection | undefined)
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Represents downward API info for projecting into a projected volume. Note that this is identical to a downwardAPI volume source without the default mode.
@@ -26759,13 +26368,12 @@ export interface DownwardApiProjection {
    * @schema io.k8s.api.core.v1.DownwardAPIProjection#items
    */
   readonly items?: DownwardApiVolumeFile[];
-
 }
 
 /**
  * Converts an object of type 'DownwardApiProjection' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_DownwardApiProjection(obj: DownwardApiProjection | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26774,7 +26382,7 @@ export function toJson_DownwardApiProjection(obj: DownwardApiProjection | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * Adapts a secret into a projected volume.
@@ -26804,13 +26412,12 @@ export interface SecretProjection {
    * @schema io.k8s.api.core.v1.SecretProjection#optional
    */
   readonly optional?: boolean;
-
 }
 
 /**
  * Converts an object of type 'SecretProjection' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_SecretProjection(obj: SecretProjection | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26821,7 +26428,7 @@ export function toJson_SecretProjection(obj: SecretProjection | undefined): Reco
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ServiceAccountTokenProjection represents a projected service account token volume. This projection can be used to insert a service account token into the pods runtime filesystem for use against APIs (Kubernetes API Server or otherwise).
@@ -26850,13 +26457,12 @@ export interface ServiceAccountTokenProjection {
    * @schema io.k8s.api.core.v1.ServiceAccountTokenProjection#path
    */
   readonly path: string;
-
 }
 
 /**
  * Converts an object of type 'ServiceAccountTokenProjection' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ServiceAccountTokenProjection(obj: ServiceAccountTokenProjection | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26867,7 +26473,7 @@ export function toJson_ServiceAccountTokenProjection(obj: ServiceAccountTokenPro
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ExternalDocumentation allows referencing an external resource for extended documentation.
@@ -26884,13 +26490,12 @@ export interface ExternalDocumentation {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ExternalDocumentation#url
    */
   readonly url?: string;
-
 }
 
 /**
  * Converts an object of type 'ExternalDocumentation' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ExternalDocumentation(obj: ExternalDocumentation | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26900,7 +26505,7 @@ export function toJson_ExternalDocumentation(obj: ExternalDocumentation | undefi
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * ValidationRule describes a validation rule written in the CEL expression language.
@@ -26945,13 +26550,12 @@ export interface ValidationRule {
    * @schema io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.ValidationRule#rule
    */
   readonly rule: string;
-
 }
 
 /**
  * Converts an object of type 'ValidationRule' to JSON representation.
  */
-/* eslint-disable max-len, quote-props */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 export function toJson_ValidationRule(obj: ValidationRule | undefined): Record<string, any> | undefined {
   if (obj === undefined) { return undefined; }
   const result = {
@@ -26961,5 +26565,5 @@ export function toJson_ValidationRule(obj: ValidationRule | undefined): Record<s
   // filter undefined values
   return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
-/* eslint-enable max-len, quote-props */
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 

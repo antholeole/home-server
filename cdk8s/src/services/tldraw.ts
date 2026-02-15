@@ -1,11 +1,11 @@
 import { EnvValue, Namespace, Protocol } from "cdk8s-plus-32";
 import type { Construct } from "constructs";
 
-import { DefaultChart, DefaultDeployment, DefaultTunnelBinding } from "../lib";
-import type { ClusterTunnel } from "../../imports/networking.cfargotunnel.com";
+import { DefaultChart, DefaultDeployment } from "../lib";
+import type { Traefik } from "../infra/traefik";
 
 export class TldrawDeployment extends DefaultChart {
-	constructor(scope: Construct, tunnel: ClusterTunnel, port = 3000) {
+	constructor(scope: Construct, traefik: Traefik, port = 3000) {
 		super(scope, "tldraw", {
 			namespace: "tldraw",
 		});
@@ -34,6 +34,7 @@ export class TldrawDeployment extends DefaultChart {
 				},
 			],
 		});
+		traefik.createRoute(this, "draw-api", backendService);
 
 		const frontendDeployment = new DefaultDeployment(this, "frontend", {
 			containers: [{ image: "tldraw/frontend", ports: [{ number: port }] }],
@@ -48,17 +49,6 @@ export class TldrawDeployment extends DefaultChart {
 				},
 			],
 		});
-
-		
-		new DefaultTunnelBinding(this, "cluster-tunnel", [
-			{
-				subdomain: "draw",
-				service: frontendService,
-			},
-			{
-				subdomain: "draw-api",
-				service: backendService,
-			},
-		], tunnel);
+		traefik.createRoute(this, "draw", frontendService);
 	}
 }

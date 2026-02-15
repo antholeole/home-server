@@ -5,6 +5,8 @@ imports:
   - crds/cloudflare-operator.yaml
   - crds/cnpg.yaml
   - crds/longhorn.yaml
+  - crds/traefik-crds.yaml
+  - crds/gateway.yaml
   - github:cert-manager/cert-manager@1.17.1
   - helm:https://cloudnative-pg.github.io/charts/cloudnative-pg@0.26.0
   - helm:https://cloudnative-pg.github.io/charts/cluster@0.3.1
@@ -15,3 +17,5 @@ imports:
   - helm:https://cloudnative-pg.io/charts/cloudnative-pg@0.26.1
   - helm:https://kubernetes.github.io/ingress-nginx/ingress-nginx@4.13.3
   - helm:https://bitnami-labs.github.io/sealed-secrets/sealed-secrets@2.17.7
+  - helm:https://traefik.github.io/charts/traefik@39.0.1
+  - helm:https://traefik.github.io/charts/traefik-crds@1.14.0

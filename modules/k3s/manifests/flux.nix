@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  ssot,
   ...
 }: let
   namespace = "flux-system";
@@ -116,6 +117,9 @@ in {
               };
             };
             spec = {
+              nodeSelector = {
+                "kubernetes.io/hostname" = ssot.k3sServer;
+              };
               containers = [
                 {
                   inherit name;

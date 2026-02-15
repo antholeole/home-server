@@ -2,6 +2,7 @@
   ssot,
   config,
   inputs,
+  pkgs,
   ...
 }: let
   subdomain = "headscale";
@@ -18,17 +19,6 @@ in {
     };
   };
 
-  services.cloudflare-ddns = {
-    enable = true;
-
-    credentialsFile =
-      config.age.secrets.cf-headscale.path;
-
-    domains = [
-      "${subdomain}.${ssot.cloudflare.domain}"
-    ];
-  };
-
   security.acme = {
     acceptTerms = true;
     certs = {
@@ -41,52 +31,65 @@ in {
     };
   };
 
-  networking.firewall.allowedTCPPorts = [80 443];
+  services.headscale = {
+    enable = true;
 
-  services = {
-    nginx = {
-      enable = true;
-      virtualHosts.${domain} = {
-        forceSSL = true;
-        useACMEHost = domain;
+    settings = {
+      address = "127.0.0.1";
+      port = 8080;
+      server_url = "https://${domain}";
 
-        locations."/" = {
-          proxyPass = "http://localhost:${toString config.services.headscale.port}";
-          proxyWebsockets = true;
-        };
-      };
-    };
+      policy.path = let
+        k3sGroup = "group:k3s-nodes";
+      in
+        pkgs.writeTextFile {
+          name = "headscale-acl.hujson";
+          text = builtins.toJSON {
+            groups = {
+              ${k3sGroup} = ["k3s@"];
+            };
+            autoApprovers = {
+              routes = {
+                "10.42.0.0/16" = [k3sGroup];
+              };
+            };
 
-    headscale = {
-      enable = true;
-
-      settings = {
-        address = "127.0.0.1";
-        port = 8080;
-        server_url = "https://${domain}";
-        dns = {
-          base_domain = "oleina"; # no .xyz tld since its resolved here. so like `hrothgar.oleina`
-          magic_dns = true;
-          nameservers.global = [
-            "1.1.1.1"
-            "1.0.0.1"
-          ];
-        };
-
-        oidc = {
-          # solves a chicken and egg problem. The K3 network requires this
-          # instance to be up and running, but if we block on the k3s network
-          # we deadlock.
-          only_start_if_oidc_is_available = false;
-
-          issuer = "https://authentik.${ssot.cloudflare.domain}/application/o/headscale/";
-          client_id = "EY5wQGR9WvPiA4DBtZHq4bpGILrFceOaR5ppcQ9v";
-          scope = ["openid" "profile" "email" "custom"];
-          client_secret_path = config.age.secrets.headscale-oidc-secret.path;
-          pkce = {
-            enabled = true;
-            method = "S256";
+            acls = [
+              {
+                action = "accept";
+                src = ["*"];
+                dst = ["*:*"];
+              }
+            ];
           };
+        };
+
+      dns = {
+        base_domain = "oleina"; # no .xyz tld since its resolved here. so like `hrothgar.oleina`
+        magic_dns = true;
+        nameservers.global = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
+      };
+
+      ip_prefixes = [
+        "100.64.0.0/10"
+      ];
+
+      oidc = {
+        # solves a chicken and egg problem. The K3 network requires this
+        # instance to be up and running, but if we block on the k3s network
+        # we deadlock.
+        only_start_if_oidc_is_available = false;
+
+        issuer = "https://authentik.${ssot.cloudflare.domain}/application/o/headscale/";
+        client_id = "EY5wQGR9WvPiA4DBtZHq4bpGILrFceOaR5ppcQ9v";
+        scope = ["openid" "profile" "email" "custom"];
+        client_secret_path = config.age.secrets.headscale-oidc-secret.path;
+        pkce = {
+          enabled = true;
+          method = "S256";
         };
       };
     };

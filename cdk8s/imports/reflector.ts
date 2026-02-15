@@ -16,14 +16,17 @@ export class Reflector extends Construct {
     let updatedProps = {};
 
     if (props.values) {
-      const { additionalValues, ...valuesWithoutAdditionalValues } = props.values;
-      updatedProps = {
-        ...props,
-        values: {
-          ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
-          ...additionalValues,
-        },
-      };
+      const values = props.values;
+      if (values) {
+        const { additionalValues, ...valuesWithoutAdditionalValues } = values;
+        updatedProps = {
+          ...props,
+          values: {
+            ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
+            ...additionalValues,
+          },
+        };
+      }
     }
 
     const finalProps: HelmProps = {

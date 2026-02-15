@@ -1,13 +1,12 @@
-import { ApiObject, Chart } from "cdk8s";
+import { Chart } from "cdk8s";
+import { ConfigMap, Namespace } from "cdk8s-plus-32";
 import { Construct } from "constructs";
-import { ssot } from "../lib";
 import { KubeStorageClass } from "../../imports/k8s";
-import type { ClusterIssuer } from "../../imports/cert-manager.io";
 import {
 	RecurringJobV1Beta2,
 	RecurringJobV1Beta2SpecTask,
 } from "../../imports/longhorn.io";
-import { ConfigMap, Namespace } from "cdk8s-plus-32";
+import { ssot } from "../lib";
 
 const buildRecurringJobSelector = (recurringJob: RecurringJobV1Beta2) =>
 	JSON.stringify([
@@ -75,7 +74,7 @@ export class StrictLocalStorageClass extends Construct {
 export class Longhorn extends Chart {
 	private static readonly ns = "longhorn-system";
 
-	constructor(scope: Construct, clusterIssuer: ClusterIssuer) {
+	constructor(scope: Construct) {
 		super(scope, "longhorn", {
 			namespace: Longhorn.ns,
 			disableResourceNameHashes: true,
@@ -106,49 +105,50 @@ export class Longhorn extends Chart {
 		new CloudReplicatedStorageClass(this);
 		new StrictLocalStorageClass(this);
 
-		const domain = `longhorn.${ssot.cloudflare.domain}`;
-		new ApiObject(this, "longhorn-ingress", {
-			kind: "Ingress",
-			apiVersion: "networking.k8s.io/v1",
-			metadata: {
-				name: "longhorn-ingress",
-				annotations: {
-					"nginx.ingress.kubernetes.io/ssl-redirect": "true",
-					"nginx.ingress.kubernetes.io/proxy-bod-size": "10000m",
-					"cert-manager.io/cluster-issuer": clusterIssuer.name,
-				},
-			},
-			spec: {
-				ingressClassName: "nginx",
-				tls: [
-					{
-						hosts: [domain],
-						secretName: "longhorn-tls-secret",
-					},
-				],
+		// TODO: convert to traefik non-public.
+		// const domain = `longhorn.${ssot.cloudflare.domain}`;
+		// new ApiObject(this, "longhorn-ingress", {
+		// 	kind: "Ingress",
+		// 	apiVersion: "networking.k8s.io/v1",
+		// 	metadata: {
+		// 		name: "longhorn-ingress",
+		// 		annotations: {
+		// 			"nginx.ingress.kubernetes.io/ssl-redirect": "true",
+		// 			"nginx.ingress.kubernetes.io/proxy-bod-size": "10000m",
+		// 			"cert-manager.io/cluster-issuer": clusterIssuer.name,
+		// 		},
+		// 	},
+		// 	spec: {
+		// 		ingressClassName: "nginx",
+		// 		tls: [
+		// 			{
+		// 				hosts: [domain],
+		// 				secretName: "longhorn-tls-secret",
+		// 			},
+		// 		],
 
-				rules: [
-					{
-						host: domain,
-						http: {
-							paths: [
-								{
-									pathType: "Prefix",
-									path: "/",
-									backend: {
-										service: {
-											name: "longhorn-frontend",
-											port: {
-												number: 80,
-											},
-										},
-									},
-								},
-							],
-						},
-					},
-				],
-			},
-		});
+		// 		rules: [
+		// 			{
+		// 				host: domain,
+		// 				http: {
+		// 					paths: [
+		// 						{
+		// 							pathType: "Prefix",
+		// 							path: "/",
+		// 							backend: {
+		// 								service: {
+		// 									name: "longhorn-frontend",
+		// 									port: {
+		// 										number: 80,
+		// 									},
+		// 								},
+		// 							},
+		// 						},
+		// 					],
+		// 				},
+		// 			},
+		// 		],
+		// 	},
+		// });
 	}
 }

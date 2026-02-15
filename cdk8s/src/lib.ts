@@ -106,12 +106,15 @@ export const ssot = {
 		bucket: "home-server-bucket",
 		accountId: "e0d74c227439ece29e62209d109ae43e",
 	},
+	ports: {
+		webPort: 30080,
+		webSecurePort: 30443,
+	},
 } as const;
-
 
 // turns out a lot of services want a redis.
 // maybe we should infra'ize this at some point but for now just stand
-// up ephemeral pods. 
+// up ephemeral pods.
 export const redis = (
 	scope: Construct,
 	props: {

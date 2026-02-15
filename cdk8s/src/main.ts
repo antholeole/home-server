@@ -1,19 +1,18 @@
 import { App } from "cdk8s";
-import { CDKKustomize } from "./lib";
-
-import { TldrawDeployment } from "./services/tldraw";
-import { SealedSecrets as Secrets } from "./sealed";
-import { CertManager } from "./infra/cert-manager";
-import { Longhorn } from "./infra/longhorn";
-import { CnpgCluster } from "./infra/cnpg";
 import { Authentik } from "./infra/authentik";
+import { CertManager } from "./infra/cert-manager";
+import { CloudflareOperatorChart } from "./infra/cloudflare-operator";
+import { CnpgCluster } from "./infra/cnpg";
+import { Longhorn } from "./infra/longhorn";
+import { Reflector } from "./infra/reflector";
+import { SealedSecrets } from "./infra/sealed-secrets";
+import { Traefik } from "./infra/traefik";
+import { CDKKustomize } from "./lib";
+import { SealedSecrets as Secrets } from "./sealed";
+import { Homebox } from "./services/homebox";
 import { Mealie } from "./services/mealie";
 import { PaperlessNgx } from "./services/paperless-ngx";
-import { Homebox } from "./services/homebox";
-import { Reflector } from "./infra/reflector";
-import { CloudflareOperatorChart } from "./infra/cloudflare-operator";
-import { IngressNginx } from "./infra/ingress-nginx";
-import { SealedSecrets } from "./infra/sealed-secrets";
+import { TldrawDeployment } from "./services/tldraw";
 
 // override the synth function to also generate a kustomization.
 const app = new App({
@@ -23,17 +22,17 @@ const app = new App({
 // infra
 const cfOperator = new CloudflareOperatorChart(app);
 const certManager = new CertManager(app);
-new Longhorn(app, certManager.clusterIssuer);
+new Longhorn(app);
 new SealedSecrets(app);
 const cnpgCluster = new CnpgCluster(app);
 new Authentik(app, cnpgCluster, cfOperator.tunnelRef);
 new Reflector(app);
-new IngressNginx(app);
+const traefik = new Traefik(app, certManager);
 
 new Secrets(app);
 
 // services
-new TldrawDeployment(app, cfOperator.tunnelRef);
+new TldrawDeployment(app, traefik);
 new Mealie(app, cnpgCluster, cfOperator.tunnelRef);
 new PaperlessNgx(app, cnpgCluster, cfOperator.tunnelRef);
 new Homebox(app, cnpgCluster, cfOperator.tunnelRef);

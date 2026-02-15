@@ -16,14 +16,17 @@ export class Cluster extends Construct {
     let updatedProps = {};
 
     if (props.values) {
-      const { additionalValues, ...valuesWithoutAdditionalValues } = props.values;
-      updatedProps = {
-        ...props,
-        values: {
-          ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
-          ...additionalValues,
-        },
-      };
+      const values = toJson_ClusterValues(props.values);
+      if (values) {
+        const { additionalValues, ...valuesWithoutAdditionalValues } = values;
+        updatedProps = {
+          ...props,
+          values: {
+            ...this.flattenAdditionalValues(valuesWithoutAdditionalValues),
+            ...additionalValues,
+          },
+        };
+      }
     }
 
     const finalProps: HelmProps = {
@@ -130,8 +133,33 @@ export interface ClusterValues {
    * @schema cluster#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterValues' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterValues(obj: ClusterValues | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'backups': toJson_ClusterBackups(obj.backups),
+    'cluster': toJson_ClusterCluster(obj.cluster),
+    'fullnameOverride': obj.fullnameOverride,
+    'imageCatalog': toJson_ClusterImageCatalog(obj.imageCatalog),
+    'mode': obj.mode,
+    'nameOverride': obj.nameOverride,
+    'namespaceOverride': obj.namespaceOverride,
+    'poolers': obj.poolers?.map(y => y),
+    'recovery': toJson_ClusterRecovery(obj.recovery),
+    'type': obj.type,
+    'version': toJson_ClusterVersion(obj.version),
+    'global': ((obj.global) === undefined) ? undefined : (Object.entries(obj.global).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackups
@@ -208,8 +236,34 @@ export interface ClusterBackups {
    * @schema ClusterBackups#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackups' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackups(obj: ClusterBackups | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'azure': toJson_ClusterBackupsAzure(obj.azure),
+    'data': toJson_ClusterBackupsData(obj.data),
+    'destinationPath': obj.destinationPath,
+    'enabled': obj.enabled,
+    'endpointCA': toJson_ClusterBackupsEndpointCa(obj.endpointCa),
+    'endpointURL': obj.endpointUrl,
+    'google': toJson_ClusterBackupsGoogle(obj.google),
+    'provider': obj.provider,
+    'retentionPolicy': obj.retentionPolicy,
+    's3': toJson_ClusterBackupsS3(obj.s3),
+    'scheduledBackups': obj.scheduledBackups?.map(y => toJson_ClusterBackupsScheduledBackups(y)),
+    'secret': toJson_ClusterBackupsSecret(obj.secret),
+    'wal': toJson_ClusterBackupsWal(obj.wal),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterCluster
@@ -356,8 +410,48 @@ export interface ClusterCluster {
    * @schema ClusterCluster#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterCluster' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterCluster(obj: ClusterCluster | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'additionalLabels': obj.additionalLabels,
+    'affinity': toJson_ClusterClusterAffinity(obj.affinity),
+    'annotations': obj.annotations,
+    'certificates': obj.certificates,
+    'enablePDB': obj.enablePdb,
+    'enableSuperuserAccess': obj.enableSuperuserAccess,
+    'imageCatalogRef': obj.imageCatalogRef,
+    'imageName': obj.imageName,
+    'imagePullPolicy': obj.imagePullPolicy,
+    'imagePullSecrets': obj.imagePullSecrets?.map(y => y),
+    'initdb': obj.initdb,
+    'instances': obj.instances,
+    'logLevel': obj.logLevel,
+    'monitoring': toJson_ClusterClusterMonitoring(obj.monitoring),
+    'postgresGID': obj.postgresGid,
+    'postgresUID': obj.postgresUid,
+    'postgresql': toJson_ClusterClusterPostgresql(obj.postgresql),
+    'primaryUpdateMethod': obj.primaryUpdateMethod,
+    'primaryUpdateStrategy': obj.primaryUpdateStrategy,
+    'priorityClassName': obj.priorityClassName,
+    'resources': obj.resources,
+    'roles': obj.roles?.map(y => y),
+    'serviceAccountTemplate': obj.serviceAccountTemplate,
+    'services': obj.services,
+    'storage': toJson_ClusterClusterStorage(obj.storage),
+    'superuserSecret': obj.superuserSecret,
+    'walStorage': toJson_ClusterClusterWalStorage(obj.walStorage),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterImageCatalog
@@ -379,8 +473,23 @@ export interface ClusterImageCatalog {
    * @schema ClusterImageCatalog#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterImageCatalog' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterImageCatalog(obj: ClusterImageCatalog | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'images': obj.images?.map(y => y),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecovery
@@ -472,8 +581,37 @@ export interface ClusterRecovery {
    * @schema ClusterRecovery#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecovery' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecovery(obj: ClusterRecovery | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'azure': toJson_ClusterRecoveryAzure(obj.azure),
+    'backupName': obj.backupName,
+    'clusterName': obj.clusterName,
+    'database': obj.database,
+    'destinationPath': obj.destinationPath,
+    'endpointCA': toJson_ClusterRecoveryEndpointCa(obj.endpointCa),
+    'endpointURL': obj.endpointUrl,
+    'google': toJson_ClusterRecoveryGoogle(obj.google),
+    'import': toJson_ClusterRecoveryImport(obj.import),
+    'method': obj.method,
+    'owner': obj.owner,
+    'pgBaseBackup': toJson_ClusterRecoveryPgBaseBackup(obj.pgBaseBackup),
+    'pitrTarget': toJson_ClusterRecoveryPitrTarget(obj.pitrTarget),
+    'provider': obj.provider,
+    's3': toJson_ClusterRecoveryS3(obj.s3),
+    'secret': toJson_ClusterRecoverySecret(obj.secret),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterVersion
@@ -500,8 +638,24 @@ export interface ClusterVersion {
    * @schema ClusterVersion#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterVersion' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterVersion(obj: ClusterVersion | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'postgis': obj.postgis,
+    'postgresql': obj.postgresql,
+    'timescaledb': obj.timescaledb,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsAzure
@@ -553,8 +707,29 @@ export interface ClusterBackupsAzure {
    * @schema ClusterBackupsAzure#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsAzure' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsAzure(obj: ClusterBackupsAzure | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'connectionString': obj.connectionString,
+    'containerName': obj.containerName,
+    'inheritFromAzureAD': obj.inheritFromAzureAd,
+    'path': obj.path,
+    'serviceName': obj.serviceName,
+    'storageAccount': obj.storageAccount,
+    'storageKey': obj.storageKey,
+    'storageSasToken': obj.storageSasToken,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsData
@@ -581,8 +756,24 @@ export interface ClusterBackupsData {
    * @schema ClusterBackupsData#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsData' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsData(obj: ClusterBackupsData | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'compression': obj.compression,
+    'encryption': obj.encryption,
+    'jobs': obj.jobs,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsEndpointCa
@@ -614,8 +805,25 @@ export interface ClusterBackupsEndpointCa {
    * @schema ClusterBackupsEndpointCa#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsEndpointCa' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsEndpointCa(obj: ClusterBackupsEndpointCa | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'key': obj.key,
+    'name': obj.name,
+    'value': obj.value,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsGoogle
@@ -647,8 +855,25 @@ export interface ClusterBackupsGoogle {
    * @schema ClusterBackupsGoogle#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsGoogle' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsGoogle(obj: ClusterBackupsGoogle | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'applicationCredentials': obj.applicationCredentials,
+    'bucket': obj.bucket,
+    'gkeEnvironment': obj.gkeEnvironment,
+    'path': obj.path,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsS3
@@ -690,8 +915,27 @@ export interface ClusterBackupsS3 {
    * @schema ClusterBackupsS3#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsS3' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsS3(obj: ClusterBackupsS3 | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'accessKey': obj.accessKey,
+    'bucket': obj.bucket,
+    'inheritFromIAMRole': obj.inheritFromIamRole,
+    'path': obj.path,
+    'region': obj.region,
+    'secretKey': obj.secretKey,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsScheduledBackups
@@ -716,8 +960,24 @@ export interface ClusterBackupsScheduledBackups {
    * @schema ClusterBackupsScheduledBackups#schedule
    */
   readonly schedule?: string;
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsScheduledBackups' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsScheduledBackups(obj: ClusterBackupsScheduledBackups | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'backupOwnerReference': obj.backupOwnerReference,
+    'method': obj.method,
+    'name': obj.name,
+    'schedule': obj.schedule,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsSecret
@@ -739,8 +999,23 @@ export interface ClusterBackupsSecret {
    * @schema ClusterBackupsSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsSecret(obj: ClusterBackupsSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterBackupsWal
@@ -767,8 +1042,24 @@ export interface ClusterBackupsWal {
    * @schema ClusterBackupsWal#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterBackupsWal' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterBackupsWal(obj: ClusterBackupsWal | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'compression': obj.compression,
+    'encryption': obj.encryption,
+    'maxParallel': obj.maxParallel,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterAffinity
@@ -785,8 +1076,22 @@ export interface ClusterClusterAffinity {
    * @schema ClusterClusterAffinity#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterAffinity' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterAffinity(obj: ClusterClusterAffinity | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'topologyKey': obj.topologyKey,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterMonitoring
@@ -828,8 +1133,27 @@ export interface ClusterClusterMonitoring {
    * @schema ClusterClusterMonitoring#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterMonitoring' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterMonitoring(obj: ClusterClusterMonitoring | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'customQueries': obj.customQueries?.map(y => y),
+    'customQueriesSecret': obj.customQueriesSecret?.map(y => y),
+    'disableDefaultQueries': obj.disableDefaultQueries,
+    'enabled': obj.enabled,
+    'podMonitor': toJson_ClusterClusterMonitoringPodMonitor(obj.podMonitor),
+    'prometheusRule': toJson_ClusterClusterMonitoringPrometheusRule(obj.prometheusRule),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterPostgresql
@@ -871,8 +1195,27 @@ export interface ClusterClusterPostgresql {
    * @schema ClusterClusterPostgresql#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterPostgresql' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterPostgresql(obj: ClusterClusterPostgresql | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'ldap': obj.ldap,
+    'parameters': obj.parameters,
+    'pg_hba': obj.pgHba?.map(y => y),
+    'pg_ident': obj.pgIdent?.map(y => y),
+    'shared_preload_libraries': obj.sharedPreloadLibraries?.map(y => y),
+    'synchronous': obj.synchronous,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterStorage
@@ -894,8 +1237,23 @@ export interface ClusterClusterStorage {
    * @schema ClusterClusterStorage#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterStorage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterStorage(obj: ClusterClusterStorage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'size': obj.size,
+    'storageClass': obj.storageClass,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterWalStorage
@@ -922,8 +1280,24 @@ export interface ClusterClusterWalStorage {
    * @schema ClusterClusterWalStorage#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterWalStorage' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterWalStorage(obj: ClusterClusterWalStorage | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'size': obj.size,
+    'storageClass': obj.storageClass,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryAzure
@@ -975,8 +1349,29 @@ export interface ClusterRecoveryAzure {
    * @schema ClusterRecoveryAzure#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryAzure' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryAzure(obj: ClusterRecoveryAzure | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'connectionString': obj.connectionString,
+    'containerName': obj.containerName,
+    'inheritFromAzureAD': obj.inheritFromAzureAd,
+    'path': obj.path,
+    'serviceName': obj.serviceName,
+    'storageAccount': obj.storageAccount,
+    'storageKey': obj.storageKey,
+    'storageSasToken': obj.storageSasToken,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryEndpointCa
@@ -1008,8 +1403,25 @@ export interface ClusterRecoveryEndpointCa {
    * @schema ClusterRecoveryEndpointCa#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryEndpointCa' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryEndpointCa(obj: ClusterRecoveryEndpointCa | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'key': obj.key,
+    'name': obj.name,
+    'value': obj.value,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryGoogle
@@ -1041,8 +1453,25 @@ export interface ClusterRecoveryGoogle {
    * @schema ClusterRecoveryGoogle#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryGoogle' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryGoogle(obj: ClusterRecoveryGoogle | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'applicationCredentials': obj.applicationCredentials,
+    'bucket': obj.bucket,
+    'gkeEnvironment': obj.gkeEnvironment,
+    'path': obj.path,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImport
@@ -1094,8 +1523,29 @@ export interface ClusterRecoveryImport {
    * @schema ClusterRecoveryImport#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImport' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImport(obj: ClusterRecoveryImport | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'databases': obj.databases?.map(y => y),
+    'pgDumpExtraOptions': obj.pgDumpExtraOptions?.map(y => y),
+    'pgRestoreExtraOptions': obj.pgRestoreExtraOptions?.map(y => y),
+    'postImportApplicationSQL': obj.postImportApplicationSql?.map(y => y),
+    'roles': obj.roles?.map(y => y),
+    'schemaOnly': obj.schemaOnly,
+    'source': toJson_ClusterRecoveryImportSource(obj.source),
+    'type': obj.type,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackup
@@ -1127,8 +1577,25 @@ export interface ClusterRecoveryPgBaseBackup {
    * @schema ClusterRecoveryPgBaseBackup#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackup' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackup(obj: ClusterRecoveryPgBaseBackup | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'database': obj.database,
+    'owner': obj.owner,
+    'secret': obj.secret,
+    'source': toJson_ClusterRecoveryPgBaseBackupSource(obj.source),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPitrTarget
@@ -1145,8 +1612,22 @@ export interface ClusterRecoveryPitrTarget {
    * @schema ClusterRecoveryPitrTarget#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPitrTarget' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPitrTarget(obj: ClusterRecoveryPitrTarget | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'time': obj.time,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryS3
@@ -1188,8 +1669,27 @@ export interface ClusterRecoveryS3 {
    * @schema ClusterRecoveryS3#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryS3' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryS3(obj: ClusterRecoveryS3 | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'accessKey': obj.accessKey,
+    'bucket': obj.bucket,
+    'inheritFromIAMRole': obj.inheritFromIamRole,
+    'path': obj.path,
+    'region': obj.region,
+    'secretKey': obj.secretKey,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoverySecret
@@ -1211,8 +1711,23 @@ export interface ClusterRecoverySecret {
    * @schema ClusterRecoverySecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoverySecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoverySecret(obj: ClusterRecoverySecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterMonitoringPodMonitor
@@ -1239,8 +1754,24 @@ export interface ClusterClusterMonitoringPodMonitor {
    * @schema ClusterClusterMonitoringPodMonitor#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterMonitoringPodMonitor' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterMonitoringPodMonitor(obj: ClusterClusterMonitoringPodMonitor | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'metricRelabelings': obj.metricRelabelings?.map(y => y),
+    'relabelings': obj.relabelings?.map(y => y),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterClusterMonitoringPrometheusRule
@@ -1262,8 +1793,23 @@ export interface ClusterClusterMonitoringPrometheusRule {
    * @schema ClusterClusterMonitoringPrometheusRule#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterClusterMonitoringPrometheusRule' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterClusterMonitoringPrometheusRule(obj: ClusterClusterMonitoringPrometheusRule | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'enabled': obj.enabled,
+    'excludeRules': obj.excludeRules?.map(y => y),
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImportSource
@@ -1320,8 +1866,30 @@ export interface ClusterRecoveryImportSource {
    * @schema ClusterRecoveryImportSource#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImportSource' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImportSource(obj: ClusterRecoveryImportSource | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'database': obj.database,
+    'host': obj.host,
+    'passwordSecret': toJson_ClusterRecoveryImportSourcePasswordSecret(obj.passwordSecret),
+    'port': obj.port,
+    'sslCertSecret': toJson_ClusterRecoveryImportSourceSslCertSecret(obj.sslCertSecret),
+    'sslKeySecret': toJson_ClusterRecoveryImportSourceSslKeySecret(obj.sslKeySecret),
+    'sslMode': obj.sslMode,
+    'sslRootCertSecret': toJson_ClusterRecoveryImportSourceSslRootCertSecret(obj.sslRootCertSecret),
+    'username': obj.username,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackupSource
@@ -1378,8 +1946,30 @@ export interface ClusterRecoveryPgBaseBackupSource {
    * @schema ClusterRecoveryPgBaseBackupSource#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackupSource' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackupSource(obj: ClusterRecoveryPgBaseBackupSource | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'database': obj.database,
+    'host': obj.host,
+    'passwordSecret': toJson_ClusterRecoveryPgBaseBackupSourcePasswordSecret(obj.passwordSecret),
+    'port': obj.port,
+    'sslCertSecret': toJson_ClusterRecoveryPgBaseBackupSourceSslCertSecret(obj.sslCertSecret),
+    'sslKeySecret': toJson_ClusterRecoveryPgBaseBackupSourceSslKeySecret(obj.sslKeySecret),
+    'sslMode': obj.sslMode,
+    'sslRootCertSecret': toJson_ClusterRecoveryPgBaseBackupSourceSslRootCertSecret(obj.sslRootCertSecret),
+    'username': obj.username,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImportSourcePasswordSecret
@@ -1411,8 +2001,25 @@ export interface ClusterRecoveryImportSourcePasswordSecret {
    * @schema ClusterRecoveryImportSourcePasswordSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImportSourcePasswordSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImportSourcePasswordSecret(obj: ClusterRecoveryImportSourcePasswordSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'key': obj.key,
+    'name': obj.name,
+    'value': obj.value,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImportSourceSslCertSecret
@@ -1434,8 +2041,23 @@ export interface ClusterRecoveryImportSourceSslCertSecret {
    * @schema ClusterRecoveryImportSourceSslCertSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImportSourceSslCertSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImportSourceSslCertSecret(obj: ClusterRecoveryImportSourceSslCertSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImportSourceSslKeySecret
@@ -1457,8 +2079,23 @@ export interface ClusterRecoveryImportSourceSslKeySecret {
    * @schema ClusterRecoveryImportSourceSslKeySecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImportSourceSslKeySecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImportSourceSslKeySecret(obj: ClusterRecoveryImportSourceSslKeySecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryImportSourceSslRootCertSecret
@@ -1480,8 +2117,23 @@ export interface ClusterRecoveryImportSourceSslRootCertSecret {
    * @schema ClusterRecoveryImportSourceSslRootCertSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryImportSourceSslRootCertSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryImportSourceSslRootCertSecret(obj: ClusterRecoveryImportSourceSslRootCertSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackupSourcePasswordSecret
@@ -1513,8 +2165,25 @@ export interface ClusterRecoveryPgBaseBackupSourcePasswordSecret {
    * @schema ClusterRecoveryPgBaseBackupSourcePasswordSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackupSourcePasswordSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackupSourcePasswordSecret(obj: ClusterRecoveryPgBaseBackupSourcePasswordSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'create': obj.create,
+    'key': obj.key,
+    'name': obj.name,
+    'value': obj.value,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackupSourceSslCertSecret
@@ -1536,8 +2205,23 @@ export interface ClusterRecoveryPgBaseBackupSourceSslCertSecret {
    * @schema ClusterRecoveryPgBaseBackupSourceSslCertSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackupSourceSslCertSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackupSourceSslCertSecret(obj: ClusterRecoveryPgBaseBackupSourceSslCertSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackupSourceSslKeySecret
@@ -1559,8 +2243,23 @@ export interface ClusterRecoveryPgBaseBackupSourceSslKeySecret {
    * @schema ClusterRecoveryPgBaseBackupSourceSslKeySecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackupSourceSslKeySecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackupSourceSslKeySecret(obj: ClusterRecoveryPgBaseBackupSourceSslKeySecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
 /**
  * @schema ClusterRecoveryPgBaseBackupSourceSslRootCertSecret
@@ -1582,6 +2281,21 @@ export interface ClusterRecoveryPgBaseBackupSourceSslRootCertSecret {
    * @schema ClusterRecoveryPgBaseBackupSourceSslRootCertSecret#additionalValues
    */
   readonly additionalValues?: { [key: string]: any };
-
 }
+
+/**
+ * Converts an object of type 'ClusterRecoveryPgBaseBackupSourceSslRootCertSecret' to JSON representation.
+ */
+/* eslint-disable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
+export function toJson_ClusterRecoveryPgBaseBackupSourceSslRootCertSecret(obj: ClusterRecoveryPgBaseBackupSourceSslRootCertSecret | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
+  const result = {
+    'key': obj.key,
+    'name': obj.name,
+    'additionalValues': ((obj.additionalValues) === undefined) ? undefined : (Object.entries(obj.additionalValues).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {})),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
+}
+/* eslint-enable max-len, @stylistic/max-len, quote-props, @stylistic/quote-props */
 
