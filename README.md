@@ -1,3 +1,8 @@
+> IMPORTANT: I no longer maintain this repo publically. It now lives on my forgejo instance
+> forgejo.oleina.xyz - although it isn't public there either.
+>
+> there have been a great many updates, but the scaffolding setup is still accurate. 
+
 # My Home Server
 
 ## Demo
